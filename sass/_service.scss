@@ -1,0 +1,85 @@
+#service {
+  width: 100%;
+
+  >section {
+    position: relative;
+    margin: 0 auto;
+    padding: 5rem 1rem;
+    width: 100%;
+    max-width: $maxWidth;
+
+    header {
+      display: flex;
+      flex-flow: column;
+      align-items: center;
+
+      h6 {
+        position: relative;
+        max-width: 800px;
+        text-align: center;
+        font-size: 2rem;
+      }
+
+      p {
+        position: relative;
+        margin-top: 0.25rem;
+        max-width: 640px;
+        text-align: center;
+        line-height: 1.75rem;
+        font-family: "Roboto Mono", monospace;
+      }
+    }
+
+    section {
+      display: flex;
+      flex-flow: row wrap;
+      gap: 3rem 2rem;
+      margin-top: 3rem;
+
+      article {
+        position: relative;
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+        gap: 1rem;
+        width: 100%;
+        transition: 0.5s;
+
+        @media screen and (min-width: 480px) {
+          align-items: flex-start;
+          width: calc((100% - 2rem) / 2);
+        }
+
+        // @media screen and (min-width: 640px) {
+        // 	width: calc((100% - 2rem * 2) / 3);
+        // }
+
+        i {
+          position: relative;
+          padding: 0 0.125rem;
+          font-size: 2.5rem;
+        }
+
+        h6 {
+          position: relative;
+          font-size: 1.25rem;
+          font-weight: 500;
+          letter-spacing: 2px;
+        }
+
+        p {
+          position: relative;
+          line-height: 1.5rem;
+          text-align: center;
+          font-size: 0.875rem;
+          font-family: "Roboto Mono", monospace;
+          color: #00000080;
+
+          @media screen and (min-width: 480px) {
+            text-align: left;
+          }
+        }
+      }
+    }
+  }
+}

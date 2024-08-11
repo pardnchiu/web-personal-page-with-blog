@@ -1,0 +1,26 @@
+<section id="service">
+  <section>
+    <header>
+      <h6 class="at delay">Lorem ipsum dolor sit amet consectetur.</h6>
+      <p class="at delay">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequuntur mollitia fugiat doloremque.</p>
+    </header>
+    <section>
+      <article :for="e in items">
+        <i :class="at delay fa-solid fa-{{ e }}"></i>
+        <h6 class="at delay">Lorem ipsum dolor sit.</h6>
+        <p class="at delay">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+      </article>
+    </section>
+  </section>
+</section>
+<script>
+  const section4 = new PD({
+    id: "service",
+    data: {
+      items: ["home", "server", "headset", "envelope", "camera", "car"]
+    },
+    next: function () {
+      section4.dom.querySelectorAll("*.delay").forEach(e => delay_observer.observe(e));
+    }
+  })
+</script>

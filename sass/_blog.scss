@@ -1,0 +1,576 @@
+#blog {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+
+  >section {
+    display: flex;
+    flex-flow: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    max-width: $maxWidth;
+    gap: 0;
+
+    @media screen and (min-width: $_800) {
+      flex-flow: row;
+      align-items: flex-start;
+      gap: $_24;
+    }
+
+    >section {
+
+      >header {
+        flex-shrink: 0;
+        margin-bottom: -$_24;
+        max-height: 0;
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+        opacity: 0;
+        overflow: hidden;
+        transition: 0.3s;
+
+        >img {
+          width: $_80;
+          height: $_80;
+          border-radius: 50%;
+        }
+
+        >strong {
+          margin-top: $_12;
+          font-weight: 500;
+        }
+
+        >p {
+          margin-top: $_4;
+          text-align: center;
+          font-size: $_14;
+          color: $text4;
+
+          &:nth-last-child(1) {
+            margin-top: $_8;
+            line-height: 1.5rem;
+            max-height: 4.5rem;
+          }
+        }
+
+        >section {
+          display: flex;
+          align-items: center;
+          gap: $_4;
+          margin-top: $_8;
+
+          >a {
+            width: $_24;
+            line-height: $_24;
+            text-align: center;
+            transition: 0.2s;
+
+            &:hover {
+              font-size: $_20;
+            }
+          }
+        }
+      }
+
+      &.bl {
+        flex-shrink: 1;
+        display: flex;
+        flex-flow: column;
+        gap: $_24;
+        width: calc(100% - $_320 - $_24);
+
+        @media screen and (max-width: 799.99px) {
+          width: 100%;
+          max-width: $_640;
+        }
+
+        >h1 {
+          line-height: 2.5rem;
+          font-size: 2rem;
+          color: $text9;
+
+          padding: 0 $_16;
+
+          @media screen and (min-width: $_800) {
+            padding: 0 $_24 0 $_16;
+          }
+        }
+
+        >h2 {
+          margin-top: -$_16;
+          line-height: 2rem;
+          font-size: 1.5rem;
+          font-weight: 400;
+          color: $text7;
+
+          padding: 0 $_16;
+
+          @media screen and (min-width: $_800) {
+            padding: 0 $_24 0 $_16;
+          }
+        }
+
+        >p {
+          margin: -$_16 $_18 0;
+          padding-bottom: 1rem;
+          font-size: $_14;
+          color: $text5;
+          border-bottom: 1px solid $border2;
+
+          @media screen and (min-width: $_800) {
+            margin: -$_16 $_24 0 $_18;
+          }
+
+          >i,
+          >time {
+            color: inherit
+          }
+        }
+
+        #PDMDViewer {
+          min-height: calc(100vh - $_64);
+
+          &:has(*) {
+            min-height: unset;
+          }
+        }
+
+        @media screen and (max-width: 799.99px) {
+
+          >header {
+            margin-bottom: 0;
+            max-height: calc(11rem + 4.5rem + $_8);
+            // max-height: 11rem;
+            opacity: 1;
+          }
+        }
+
+        @media screen and (min-width: $_800) {
+          padding: $_24 0 $_80;
+          border-right: 1px solid $border1;
+        }
+
+        >section.post {
+          display: flex;
+          flex-flow: column;
+          padding: 0 $_16;
+
+          @media screen and (min-width: $_800) {
+            padding: 0 $_24 0 $_16;
+          }
+
+          >a {
+            display: flex;
+            flex-flow: column;
+            gap: $_4;
+            padding: $_12 $_4 $_12;
+            width: 100%;
+            border-bottom: 1px solid $border1;
+            transition: 0.3s;
+
+            &:hover {
+              background-color: $border1;
+            }
+
+            >strong {
+              font-size: $_20;
+              font-weight: 500;
+            }
+
+            >p {
+              line-height: $_24;
+              font-size: $_14;
+              color: #00000080;
+
+              >i,
+              >time {
+                color: inherit
+              }
+
+              &:nth-last-child(1) {
+                display: -webkit-box;
+                -webkit-line-clamp: 3;
+                -webkit-box-orient: vertical;
+                max-height: $_72;
+                text-overflow: ellipsis;
+                overflow: hidden;
+              }
+            }
+          }
+        }
+
+        >details.heading {
+          position: relative;
+          display: flex;
+          flex-flow: column;
+          margin-bottom: -1.5rem;
+          padding: 0 $_16;
+
+          @media screen and (min-width: $_800) {
+            padding: 0 $_24 0 $_16;
+          }
+
+          &[open] {
+
+            >summary::before {
+              content: '▾ ';
+            }
+          }
+
+          >summary {
+            line-height: 1.875rem;
+            color: #000;
+            list-style: none;
+            cursor: pointer;
+
+            &::-webkit-details-marker {
+              display: none;
+            }
+
+            &::before {
+              display: inline-block;
+              content: '▸ ';
+              width: 1rem;
+            }
+          }
+
+          >a {
+            display: flex;
+            font-size: 0.875rem;
+            line-height: 1.875rem;
+
+            &:hover {
+              color: blue;
+            }
+          }
+
+          >a::before {
+            content: "•";
+            margin-left: 1.5rem;
+            margin-right: 0.5rem;
+            line-height: 1.875rem;
+            color: #000;
+          }
+
+          >a.layer2::before {
+            content: "◦";
+            margin-left: 3rem;
+            margin-right: 0.5rem;
+            line-height: 1.875rem;
+            color: #000;
+          }
+
+          >a.layer3::before {
+            content: "▪︎";
+            margin-left: 4.5rem;
+            margin-right: 0.5rem;
+            line-height: 1.875rem;
+            color: #000;
+          }
+        }
+
+        >section.page {
+          position: relative;
+          display: flex;
+          justify-content: center;
+          gap: $_16;
+          padding: 0 $_16;
+
+          &.around {
+            justify-content: space-between;
+
+            >a:nth-child(1)::before {
+              left: 0;
+              text-align: left;
+            }
+
+            >a:nth-last-child(1)::before {
+              right: 0;
+              text-align: right;
+            }
+          }
+
+          @media screen and (min-width: $_800) {
+            justify-content: flex-start;
+            padding: 0 $_24 0 $_16;
+          }
+
+          >a {
+            padding: 0 $_8;
+            line-height: $_32;
+            background-color: $border1;
+            transition: 0.3s;
+            overflow: hidden;
+
+            &:hover {
+              background-color: $border2;
+              overflow: visible;
+
+              &::before {
+                padding: 0 0.75rem;
+                max-width: calc(100vw - 32px);
+                opacity: 1;
+              }
+            }
+
+            &::before {
+              content: attr(name);
+              position: absolute;
+              bottom: calc(2rem + 0.5rem);
+              padding: 0;
+              max-width: 0;
+              text-overflow: ellipsis;
+              white-space: nowrap;
+              background-color: #000000b3;
+              color: #fff;
+              opacity: 0;
+              transition: 0.3s;
+              overflow: hidden;
+
+              @media screen and (min-width: $_640) {
+                max-width: 608px;
+              }
+
+              @media screen and (min-width: $_800) {
+                max-width: 640px;
+              }
+            }
+          }
+        }
+      }
+
+      &.br {
+        flex-shrink: 0;
+        position: sticky;
+        top: $_64;
+        display: flex;
+        flex-flow: column;
+        gap: $_24;
+        padding: $_48 $_16 $_80;
+        width: 100%;
+        max-width: $_640;
+
+        @media screen and (min-width: $_800) {
+          padding: $_24 $_16 $_80 0;
+          max-width: $_320;
+
+          >header {
+            margin-bottom: 0;
+            max-height: calc(11rem + 4.5rem + $_8);
+            // max-height: 11rem;
+            opacity: 1;
+          }
+        }
+
+        >section.search {
+          display: none;
+          align-items: center;
+          padding: 0 $_8;
+          border: 1px solid $border1;
+
+          @media screen and (min-width: 800px) {
+            display: flex;
+          }
+
+          >label {
+            display: flex;
+            flex-grow: 1;
+
+            >input {
+              flex-grow: 1;
+              padding-right: $_8;
+              line-height: $_40;
+            }
+          }
+
+          >i {
+            color: $border2;
+            cursor: pointer;
+            transition: 0.3s;
+
+            &:hover {
+              color: $text5;
+            }
+          }
+        }
+
+        >section.post {
+          display: flex;
+          flex-flow: column;
+          align-items: center;
+
+          &.desktop {
+            display: none;
+
+            @media screen and (min-width: 800px) {
+              display: flex;
+            }
+          }
+
+          >strong {
+            width: 100%;
+            font-weight: 500;
+            color: $text9;
+          }
+
+          >a {
+            display: flex;
+            flex-flow: column;
+            gap: $_4;
+            padding: $_8 $_4;
+            width: 100%;
+            border-bottom: 1px solid $border1;
+            transition: 0.3s;
+
+            &:nth-child(2) {
+              margin-top: $_8;
+            }
+
+            &:hover {
+              background-color: $border1;
+            }
+
+            >strong {
+              font-size: $_14;
+              font-weight: 400;
+              color: $text9;
+            }
+
+            >p {
+              font-size: $_12;
+              color: $text4;
+
+              >i,
+              >time {
+                color: inherit
+              }
+            }
+          }
+
+          >button {
+            margin-top: $_16;
+            padding: 0 $_16;
+            line-height: $_32;
+            font-size: $_12;
+            background-color: $border1;
+            transition: 0.3s;
+
+            &:hover {
+              background-color: $border2;
+            }
+          }
+        }
+
+        >section.topic {
+          display: flex;
+          flex-flow: row wrap;
+          gap: $_8;
+
+          >strong {
+            width: 100%;
+            font-weight: 500;
+            color: $text9;
+          }
+
+          >a {
+            padding: $_4;
+            font-size: $_14;
+            transition: 0.3s;
+
+            &:hover {
+              background-color: $border1;
+            }
+          }
+        }
+
+        >section.tag {
+          display: flex;
+          flex-flow: row wrap;
+          gap: 0.5rem;
+
+          >strong {
+            width: 100%;
+            font-weight: 500;
+            color: $text9;
+          }
+
+          >a {
+            padding: $_4 $_8;
+            font-size: $_12;
+            transition: 0.3s;
+            background-color: $border1;
+
+            &::before {
+              content: "#";
+            }
+
+            &:hover {
+              background-color: $border2;
+            }
+          }
+        }
+      }
+
+      #PDMDViewer {
+        position: relative;
+        padding: 0 $_16;
+        width: 100%;
+
+        @media screen and (min-width: $_800) {
+          padding: 0 $_24 0 $_16;
+
+        }
+      }
+    }
+  }
+}
+
+>section.float-bottom {
+  position: sticky;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  bottom: 0;
+  padding: 0 1rem;
+  width: 100%;
+  height: 4rem;
+  background-color: #fff;
+  overflow: hidden;
+  transition: 0.3s;
+
+  @media screen and (min-width: 800px) {
+    height: 0;
+    opacity: 0;
+  }
+
+  >section.search {
+    display: flex;
+    align-items: center;
+    padding: 0 $_8;
+    width: 100%;
+    border: 1px solid $border1;
+
+    >label {
+      display: flex;
+      flex-grow: 1;
+
+      >input {
+        flex-grow: 1;
+        padding-right: $_8;
+        line-height: $_40;
+      }
+    }
+
+    >i {
+      color: $border2;
+      cursor: pointer;
+      transition: 0.3s;
+
+      &:hover {
+        color: $text5;
+      }
+    }
+  }
+}
