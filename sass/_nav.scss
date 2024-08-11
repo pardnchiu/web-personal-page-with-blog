@@ -54,14 +54,13 @@
           right: 0;
           padding: 5rem 2rem;
           width: 100%;
-          height: calc(100vh - var(--safe-top) - var(--safe-bottom));
+          height: 100vh;
           max-width: 100%;
           opacity: 1;
           background-color: #ffffffcc;
           backdrop-filter: blur(1rem);
           -webkit-backdrop-filter: blur(1rem);
         }
-
       }
 
       @media screen and (min-width: 800px) {

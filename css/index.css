@@ -188,7 +188,7 @@ body > nav section ul {
     right: 0;
     padding: 5rem 2rem;
     width: 100%;
-    height: calc(100vh - var(--safe-top) - var(--safe-bottom));
+    height: 100vh;
     max-width: 100%;
     opacity: 1;
     background-color: rgba(255, 255, 255, 0.8);
@@ -239,7 +239,7 @@ body > header > section article {
 body > header > section article h1 {
   position: relative;
   padding-right: 0.5rem;
-  width: 800px;
+  max-width: 800px;
   font-size: 2.5rem;
   font-weight: 400;
 }
@@ -259,7 +259,7 @@ body > header > section article h1 strong::after {
 body > header > section article h2 {
   position: relative;
   margin-top: 0.25rem;
-  width: 640px;
+  max-width: 640px;
   line-height: 2rem;
   font-family: "Roboto Mono", monospace;
   font-size: 1.25rem;

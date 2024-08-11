@@ -3,6 +3,13 @@ let delay_observer;
   document.addEventListener("DOMContentLoaded", _ => {
     const body = new PD({
       id: "body",
+      data: {
+        items: [
+          { href: "./index.html", name: "HOME" },
+          { href: "./portfolio.html", name: "PORTFOLIO" },
+          { href: "./blog.html", name: "BLOG" },
+        ],
+      },
       event: {
         tab: function () {
           this.$pre().$$class("show") ? this.$pre().class_("show") : this.$pre()._class("show")

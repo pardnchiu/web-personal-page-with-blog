@@ -16,7 +16,7 @@
       h1 {
         position: relative;
         padding-right: 0.5rem;
-        width: 800px;
+        max-width: 800px;
         font-size: 2.5rem;
         font-weight: 400;
 
@@ -39,7 +39,7 @@
       h2 {
         position: relative;
         margin-top: 0.25rem;
-        width: 640px;
+        max-width: 640px;
         line-height: 2rem;
         font-family: "Roboto Mono", monospace;
         font-size: 1.25rem;

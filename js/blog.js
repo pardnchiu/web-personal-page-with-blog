@@ -250,6 +250,11 @@ H2
     const body = new PD({
       id: "body",
       data: {
+        items: [
+          { href: "./index.html", name: "HOME" },
+          { href: "./portfolio.html", name: "PORTFOLIO" },
+          { href: "./blog.html", name: "BLOG" },
+        ],
         list_4: Array.from({ length: 4 }, (_, i) => i + 1),
         list_8: Array.from({ length: 8 }, (_, i) => i + 1)
       },
