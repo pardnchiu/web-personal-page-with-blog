@@ -1,0 +1,168 @@
+>section#section-9 {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+
+    &::before {
+        content: "";
+        position: absolute;
+        z-index: 1;
+        left: -7rem;
+        bottom: -9rem;
+        width: 19rem;
+        height: 19rem;
+        background: linear-gradient(to right bottom, var(--color-blue-1), var(--color-purple-1), var(--color-brand));
+        border-radius: 50%;
+        opacity: 0;
+        transition: 0.4s;
+
+        @media screen and (min-width: 480px) {
+            opacity: 1;
+        }
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        z-index: 1;
+        left: -4.5rem;
+        bottom: -6.5rem;
+        width: 14rem;
+        height: 14rem;
+        background-color: #fff;
+        border-radius: 50%;
+        opacity: 0;
+        transition: 0.4s;
+
+        @media screen and (min-width: 480px) {
+            opacity: 1;
+        }
+    }
+
+    >section {
+        position: relative;
+        z-index: 2;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0 auto;
+        padding: 7rem 1rem;
+        width: 100%;
+        max-width: var(--width-max);
+
+        @media screen and (min-width: 800px) {
+            flex-flow: row;
+        }
+
+        section {
+            display: flex;
+            justify-content: center;
+            flex-flow: column;
+            gap: 2rem;
+            width: 100%;
+
+            @media screen and (min-width: 800px) {
+                padding-left: 4rem;
+                width: initial;
+                max-width: 39rem;
+            }
+
+            h6 {
+                padding-bottom: 4rem;
+                width: 100%;
+                font-size: 2.5rem;
+                text-align: center;
+
+                @media screen and (min-width: 800px) {
+                    padding-bottom: 0;
+                    text-align: left;
+                }
+            }
+
+            section {
+                display: flex;
+                flex-flow: row;
+                gap: 1rem;
+
+                a,
+                button {
+                    position: relative;
+                    padding: 0 2rem;
+                    line-height: 2.5rem;
+                    background-color: var(--color-dark-0);
+                    color: #fff;
+                    border-radius: 1.25rem;
+                    overflow: hidden;
+
+                    &:hover::before {
+                        width: 100%;
+                    }
+
+                    &::before {
+                        content: "";
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        bottom: 0;
+                        width: 0;
+                        height: 100%;
+                        background-color: var(--color-dark-1);
+                        transition: 0.4s;
+                    }
+
+                    &::after {
+                        content: attr(txt);
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        bottom: 0;
+                        width: 100%;
+                        line-height: 2.5rem;
+                        height: 100%;
+                        text-align: center;
+                        color: #fff;
+                    }
+                }
+            }
+        }
+    }
+
+    img {
+        position: absolute;
+        z-index: 0;
+        left: -7rem;
+        bottom: -9rem;
+        width: 19rem;
+        height: 19rem;
+        border-radius: 50%;
+        animation: rotate 30s linear infinite;
+        -webkit-animation: rotate 30s linear infinite;
+        -moz-animation: rotate 30s linear infinite;
+        transform: rotate(0) translateZ(0);
+        opacity: 0;
+        transition: 0.4s;
+
+        @media screen and (min-width: 480px) {
+            opacity: 1;
+        }
+
+        @keyframes rotate {
+            0% {
+                transform: rotate(360deg);
+            }
+        }
+
+        @-webkit-keyframes rotate {
+            0% {
+                transform: rotate(360deg);
+            }
+        }
+
+        @-moz-keyframes rotate {
+            0% {
+                transform: rotate(360deg);
+            }
+        }
+    }
+}

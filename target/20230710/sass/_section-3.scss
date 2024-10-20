@@ -1,0 +1,106 @@
+>section#section-3 {
+    position: relative;
+    width: 100%;
+
+    &::before {
+        content: "section-3";
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        font-size: 0.75rem;
+        color: lightgrey;
+    }
+
+    >section {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 4rem;
+        margin: 0 auto;
+        padding: 5rem 1rem;
+        width: 100%;
+        max-width: var(--width-max);
+
+        img {
+            margin-right: -4rem;
+            width: 100%;
+            max-width: 0;
+            transition: 0.4s;
+
+            @media screen and (min-width: 800px) {
+                margin-right: 0;
+                max-width: 16rem;
+            }
+
+            @media screen and (min-width: 960px) {
+                max-width: 24rem;
+            }
+
+            @media screen and (min-width: 1120px) {
+                max-width: 32rem;
+            }
+        }
+
+        >section {
+            display: flex;
+            flex-flow: column;
+            width: 100%;
+
+            h6 {
+                width: 100%;
+                max-width: 40rem;
+                font-size: 2rem;
+            }
+
+            >section {
+                display: flex;
+                flex-flow: row wrap;
+                gap: 2rem;
+                margin-top: 2rem;
+                width: 100%;
+
+                div {
+                    display: flex;
+                    align-items: flex-start;
+                    gap: 1rem;
+                    margin-top: 2rem;
+                    width: 100%;
+                    transition: 0.4s;
+
+                    @media screen and (min-width: 512px) {
+                        width: calc((100% - 2rem) / 2);
+                    }
+
+                    i,
+                    img {
+                        flex-shrink: 0;
+                        width: 4rem;
+                        line-height: 4rem;
+                        height: 4rem;
+                        text-align: center;
+                        background: linear-gradient(to right bottom, var(--color-blue-1), var(--color-purple-1), var(--color-brand));
+                        color: #fff;
+                        border-radius: 50%;
+                    }
+
+                    >section {
+                        display: flex;
+                        flex-flow: column;
+                        width: 100%;
+
+                        strong {
+                            font-size: 1.125rem;
+                        }
+
+                        p {
+                            margin-top: 0.5rem;
+                            line-height: 1.5rem;
+                            font-size: 0.875rem;
+                            color: var(--color-dark-0);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

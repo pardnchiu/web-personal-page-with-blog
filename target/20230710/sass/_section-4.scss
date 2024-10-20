@@ -1,0 +1,162 @@
+>section#section-4 {
+    position: relative;
+    width: 100%;
+    background-color: #ff00000d;
+    overflow: hidden;
+
+    &::before {
+        content: "section-4";
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        font-size: 0.75rem;
+        color: lightgrey;
+    }
+
+    >section {
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        align-items: center;
+        gap: 4rem;
+        margin: 0 auto;
+        padding: 5rem 1rem;
+        width: 100%;
+        max-width: var(--width-max);
+
+        h6 {
+            width: 100%;
+            max-width: 40rem;
+            font-size: 2rem;
+            text-align: center;
+        }
+
+        >section {
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: center;
+            gap: 2rem;
+            width: 100%;
+
+            div {
+                position: relative;
+                display: flex;
+                align-items: center;
+                flex-flow: column;
+                gap: 2rem;
+                padding: 5rem 2rem;
+                width: 100%;
+                max-width: 480px;
+                background: linear-gradient(to right bottom, steelblue, purple, red);
+                border-radius: 1rem;
+                transition: 0.4s;
+
+                @media screen and (min-width: 800px) {
+                    width: calc((100% - 2rem * 2) / 3);
+                }
+
+                &:hover {
+
+                    &::before {
+                        top: 0.25rem;
+                        left: 0.25rem;
+                        bottom: 0.25rem;
+                        right: 0.25rem;
+                        width: calc(100% - 0.5rem);
+                        height: calc(100% - 0.5rem);
+                    }
+
+                    i {
+                        background-color: var(--color-purple-1);
+                    }
+
+                    svg {
+                        left: calc(50% + 1rem);
+                    }
+                }
+
+                &::before {
+                    content: "";
+                    position: absolute;
+                    z-index: 0;
+                    top: -0.125rem;
+                    left: -0.125rem;
+                    bottom: -0.125rem;
+                    right: -0.125rem;
+                    width: calc(100% + 0.25rem);
+                    height: calc(100% + 0.25rem);
+                    background-color: #fff;
+                    border-radius: 0.75rem;
+                    transition: 0.2s;
+                }
+
+                @media screen and (min-width: 800px) {
+
+                    &:nth-child(2) {
+
+                        &::before {
+                            top: 0.25rem;
+                            left: 0.25rem;
+                            bottom: 0.25rem;
+                            right: 0.25rem;
+                            width: calc(100% - 0.5rem);
+                            height: calc(100% - 0.5rem);
+                        }
+
+                        i {
+                            background-color: var(--color-purple-1);
+                        }
+
+                        svg {
+                            left: calc(50% + 1rem);
+                        }
+                    }
+                }
+
+                i {
+                    position: relative;
+                    z-index: 1;
+                    width: 6rem;
+                    line-height: 6rem;
+                    height: 6rem;
+                    text-align: center;
+                    font-size: 1.5rem;
+                    background-color: var(--color-blue-0);
+                    color: #fff;
+                    border-radius: 50%;
+                    transition: 0.4s;
+                    backdrop-filter: blur(1rem);
+                    -webkit-backdrop-filter: blur(1rem);
+                }
+
+                svg {
+                    position: absolute;
+                    z-index: 0;
+                    top: 2rem;
+                    left: 50%;
+                    width: 5rem;
+                    transition: 0.4s;
+
+                    path {
+                        fill: var(--color-dark-0);
+                        opacity: 0.3;
+                    }
+                }
+
+                strong {
+                    position: relative;
+                    z-index: 1;
+                    font-size: 1.25rem;
+                }
+
+                p {
+                    position: relative;
+                    z-index: 1;
+                    line-height: 2rem;
+                    text-align: center;
+                    color: var(--color-dark-0);
+                }
+            }
+        }
+    }
+}

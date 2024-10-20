@@ -1,0 +1,1819 @@
+@charset "UTF-8";
+
+:root {
+    --main-color: #FCC852;
+    --content-max-width: 480px;
+    --num-pad-color: #47B7DF;
+    --num-pad-enter: #F97473;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-size: 1em;
+    font-family: "Noto Sans TC", sans-serif;
+    letter-spacing: 0;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    color: #000;
+    word-wrap: break-word;
+    text-decoration: none;
+    box-sizing: border-box;
+    touch-action: manipulation;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    -webkit-touch-callout: inherit;
+    -webkit-user-select: inherit;
+    -khtml-user-select: inherit;
+    -moz-user-select: inherit;
+    -ms-user-select: inherit;
+    user-select: inherit;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+}
+
+*::-webkit-scrollbar {
+    display: none;
+}
+
+img {
+    object-fit: contain;
+}
+
+img[data-src] {
+    content: url("data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==");
+    background: linear-gradient(to right, #EEF0F3, #E0E2E8, #EEF0F3);
+}
+
+button,
+a[href]:not([href=""]) {
+    cursor: pointer;
+}
+
+html {
+    position: fixed;
+    display: block;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: #fff;
+}
+
+body {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    background-color: #fff;
+}
+
+body::before {
+    content: "";
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+}
+
+@media screen and (min-width: 480px) {
+    body::before {
+        display: block;
+        width: calc((100% - 480px) / 2);
+        background-color: #000;
+    }
+}
+
+body::after {
+    content: "";
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+}
+
+@media screen and (min-width: 480px) {
+    body::after {
+        display: block;
+        width: calc((100% - 480px) / 2);
+        background-color: #000;
+    }
+}
+
+body>nav {
+    z-index: 1000;
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    align-items: start;
+    gap: 0;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 0 1rem;
+    width: 100%;
+    max-width: var(--content-max-width);
+    height: initial;
+    background-color: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(0.5rem);
+    -webkit-backdrop-filter: blur(0.5rem);
+}
+
+body>nav>button {
+    position: relative;
+    display: block;
+}
+
+body>nav>button * {
+    pointer-events: none;
+}
+
+body>nav>button.show>i {
+    transform: rotate(180deg);
+}
+
+body>nav>button.tab {
+    margin-top: calc(1rem - 1px);
+    font-size: 0;
+    border-radius: 0.5rem;
+    border: 2px solid #000;
+}
+
+body>nav>button.tab[data-value]:not([data-value=""]) span,
+body>nav>button.tab[data-value=income] span {
+    left: 50%;
+    background-color: var(--num-pad-color);
+}
+
+body>nav>button.tab[data-value]:not([data-value=""])::after,
+body>nav>button.tab[data-value=income]::after {
+    color: #fff;
+}
+
+body>nav>button.tab::before {
+    z-index: 1;
+    content: "支出";
+    position: relative;
+    display: inline-block;
+    vertical-align: center;
+    width: 5rem;
+    line-height: 2rem;
+    font-size: 1.25rem;
+    letter-spacing: 2px;
+}
+
+body>nav>button.tab::after {
+    content: "收入";
+    z-index: 1;
+    position: relative;
+    display: inline-block;
+    vertical-align: center;
+    width: 5rem;
+    line-height: 2rem;
+    font-size: 1.25rem;
+    letter-spacing: 2px;
+    transition: 0.3s;
+}
+
+body>nav>button.tab span {
+    z-index: 0;
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    width: 5rem;
+    height: 2rem;
+    border-radius: 0.25rem;
+    background-color: var(--main-color);
+    transition: 0.3s;
+}
+
+body>nav>button>p {
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    line-height: 4rem;
+    font-size: 1.25rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+
+body>nav>button>i {
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    width: 2rem;
+    line-height: 4rem !important;
+    font-size: 1.5rem;
+    text-align: center;
+    transition: 0.3s;
+}
+
+body>nav>button>i:nth-child(2) {
+    font-size: 1.5rem;
+}
+
+body>section.calendar {
+    z-index: 100;
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    padding-top: 4rem;
+    margin-top: -100%;
+    width: 100%;
+    max-width: var(--content-max-width);
+    height: 0;
+    background-color: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(0.5rem);
+    -webkit-backdrop-filter: blur(0.5rem);
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+body>section.calendar.show {
+    margin-top: 0;
+    height: 100%;
+}
+
+body>section.calendar>section:nth-child(1) {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    align-items: start;
+    gap: 0;
+    padding: 0 1rem;
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+}
+
+body>section.calendar>section:nth-child(1)>p {
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 0.5rem;
+    line-height: 3rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+
+body>section.calendar>section:nth-child(1)>button {
+    position: relative;
+    display: block;
+}
+
+body>section.calendar>section:nth-child(1)>button>i {
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    width: 2rem;
+    line-height: 3rem !important;
+    font-size: 2rem;
+}
+
+body>section.calendar>section:nth-last-child(1) {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: start;
+    gap: 1rem;
+    padding: 1rem;
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1019607843);
+}
+
+body>section.calendar>section:nth-last-child(1)>button {
+    width: calc((100% - 3rem) / 4);
+    line-height: 3rem;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    border: 2px solid #000;
+    border-radius: 1.5rem;
+}
+
+body>section.calendar>section:nth-last-child(1)>button.sel {
+    background-color: var(--num-pad-enter);
+    color: #fff;
+}
+
+body>section.tab {
+    z-index: 0;
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    padding-top: 4rem;
+    width: 100%;
+    max-width: var(--content-max-width);
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(0.5rem);
+    -webkit-backdrop-filter: blur(0.5rem);
+    opacity: 0;
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+body>section.tab.show {
+    z-index: 10000;
+    opacity: 1;
+    transition: 0s;
+}
+
+body>section.tab.show>section {
+    left: 0;
+}
+
+body>section.tab>section {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    bottom: 0;
+    width: 250px;
+    background-color: #fff;
+    border-right: 2px solid #000;
+    transition: 0.3s;
+}
+
+body>section.tab>section>button {
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    left: 1rem;
+}
+
+body>section.tab>section>button>i {
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    width: 2rem;
+    line-height: 4rem !important;
+    font-size: 1.5rem;
+    text-align: center;
+    transition: 0.3s;
+}
+
+body>section.tab>section>section:nth-child(2) {
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: 1rem;
+    padding: 5rem 1rem 2rem;
+    background-color: var(--main-color);
+    border-bottom: 2px solid #000;
+}
+
+body>section.tab>section>section:nth-child(2)>img {
+    object-fit: cover;
+    width: 4rem;
+    height: 4rem;
+    background-color: rgba(0, 0, 0, 0.05);
+    border-radius: 50%;
+    outline: 2px solid #000;
+}
+
+body>section.tab>section>section:nth-child(2)>p {
+    position: relative;
+}
+
+body>section.tab>section>section:nth-child(2)>p>b {
+    position: relative;
+    display: block;
+    font-size: 1.25rem;
+    letter-spacing: 1px;
+}
+
+body>section.tab>section>section:nth-child(2)>p>a {
+    position: relative;
+    display: block;
+    margin-top: 0.5rem;
+    padding: 0.25rem 1rem;
+    letter-spacing: 1px;
+    background-color: var(--num-pad-color);
+    color: #fff;
+    border-radius: 0.5rem;
+    outline: 2px solid #000;
+}
+
+body>section.tab>section>section:nth-child(2)>p>a>i {
+    position: relative;
+    margin-right: 0.5rem;
+    color: #fff;
+}
+
+body>section.tab>section>section:nth-child(3) {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: initial;
+    text-align: center;
+}
+
+body>section.tab>section>section:nth-child(3)>a,
+body>section.tab>section>section:nth-child(3)>button {
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 1.5rem;
+    width: calc(100% - 2rem);
+    line-height: 3rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    border: 2px solid #000;
+    border-radius: 1.5rem;
+}
+
+body>section.tab>section>section:nth-child(3)>a>i,
+body>section.tab>section>section:nth-child(3)>button>i {
+    margin-right: 0.5rem;
+}
+
+body>section.tab>section>footer {
+    position: absolute;
+    left: 0;
+    bottom: 1rem;
+    right: 0;
+    width: 100%;
+    height: initial;
+}
+
+body>section.tab>section>footer>p {
+    position: relative;
+    width: 100%;
+    text-align: center;
+    font-size: 0.875rem;
+}
+
+body>button.add {
+    z-index: 10;
+    position: fixed;
+    left: 50%;
+    bottom: 2rem;
+    transform: translateX(-50%);
+    width: 4rem;
+    height: 4rem;
+    line-height: 2rem;
+    font-size: 2.5rem;
+    border: 2px solid #000;
+    border-radius: 2rem;
+    background-color: var(--num-pad-enter);
+}
+
+body>button.add>i {
+    color: #fff;
+}
+
+body>section.body {
+    z-index: 1;
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 50%;
+    margin-right: -50%;
+    padding-top: 4rem;
+    padding-bottom: 8rem;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: var(--content-max-width);
+    height: initial;
+    min-height: 100%;
+    background-color: #fff;
+}
+
+body>section.body>section.index-pie {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: start;
+    gap: 0;
+    width: 100%;
+    height: initial;
+    animation-name: index-pie-show;
+    animation-duration: 0.3s;
+}
+
+@keyframes index-pie-show {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+body>section.body>section.index-pie>section:nth-child(1) {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: start;
+    gap: 0;
+    width: 100%;
+    height: initial;
+}
+
+body>section.body>section.index-pie>section:nth-child(1) p {
+    position: relative;
+    display: block;
+    padding: 0 1rem;
+    font-size: 1.25rem;
+    line-height: 2rem;
+}
+
+body>section.body>section.index-pie>section:nth-child(1) p:nth-child(2) {
+    text-align: right;
+}
+
+body>section.body>section.index-pie>section:nth-child(1) p:nth-child(2)::before {
+    left: unset;
+    right: 1rem;
+}
+
+body>section.body>section.index-pie>section:nth-child(1) p::before {
+    content: "";
+    position: absolute;
+    display: block;
+    top: 1.75rem;
+    left: 1rem;
+    width: 60px;
+    height: 4px;
+    border-radius: 2px;
+    background-color: var(--num-pad-enter);
+}
+
+body>section.body>section.index-pie>section:nth-child(1) p::after {
+    content: "$" attr(data-value);
+    position: relative;
+    display: block;
+    padding: 0 0.25rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    line-height: 2.25rem;
+}
+
+body>section.body>section.index-pie>section:nth-child(1)>section {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: initial;
+}
+
+body>section.body>section.index-pie>section:nth-child(1)>section>span {
+    --pie-width: 200px;
+    --pie-border-width: 1.5rem;
+    --pie-border-default: #ddd;
+    /* 單色外框 */
+    --pie-border-bgcolor: var(--main-color);
+    /* 漸層 / 圖片外框 */
+    --pie-center-bg: #fff;
+    --pie-center-color: #000;
+    --pie-center-size: 1.5rem;
+    position: relative;
+    display: block;
+    margin-left: 50%;
+    margin-right: -50%;
+    transform: translateX(-50%);
+    width: var(--pie-width);
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    background-color: var(--pie-border-bgcolor);
+    background-image: var(--pie-border-bg);
+}
+
+body>section.body>section.index-pie>section:nth-child(1)>section>span[percent="1"]>span:nth-child(1)::after {
+    transform: rotate(calc(3.6deg * 1)) translateZ(0);
+}
+
+body>section.body>section.index-pie>section:nth-child(1)>section>span[percent="2"]>span:nth-child(1)::after {
+    transform: rotate(calc(3.6deg * 2)) translateZ(0);
+}
+
+body>section.body>section.index-pie>section:nth-child(1)>section>span[percent="3"]>span:nth-child(1)::after {
+    transform: rotate(calc(3.6deg * 3)) translateZ(0);
+}
+
+body>section.body>section.index-pie>section:nth-child(1)>section>span[percent="4"]>span:nth-child(1)::after {
+    transform: rotate(calc(3.6deg * 4)) translateZ(0);
+}
+
+body>section.body>section.index-pie>section:nth-child(1)>section>span[percent="5"]>span:nth-child(1)::after {
+    transform: rotate(calc(3.6deg * 5)) translateZ(0);
+}
+
+body>section.body>section.index-pie>section:nth-child(1)>section>span[percent="6"]>span:nth-child(1)::after {
+    transform: rotate(calc(3.6deg * 6)) translateZ(0);
+}
+
+body>section.body>section.index-pie>section:nth-child(1)>section>span[percent="7"]>span:nth-child(1)::after {
+    transform: rotate(calc(3.6deg * 7)) translateZ(0);
+}
+
+body>section.body>section.index-pie>section:nth-child(1)>section>span[percent="8"]>span:nth-child(1)::after {
+    transform: rotate(calc(3.6deg * 8)) translateZ(0);
+}
+
+body>section.body>section.index-pie>section:nth-child(1)>section>span[percent="9"]>span:nth-child(1)::after {
+    transform: rotate(calc(3.6deg * 9)) translateZ(0);
+}
+
+body>section.body>section.index-pie>section:nth-child(1)>section>span[percent="10"]>span:nth-child(1)::after {
+    transform: rotate(calc(3.6deg * 10)) translateZ(0);
+}
+
+body>section.body>section.index-pie>section:nth-child(1)>section>span[percent="11"]>span:nth-child(1)::after {
+    transform: rotate(calc(3.6deg * 11)) translateZ(0);
+}
+
+body>section.body>section.index-pie>section:nth-child(1)>section>span[percent="12"]>span:nth-child(1)::after {
+    transform: rotate(calc(3.6deg * 12)) translateZ(0);
+}
+
+body>section.body>section.index-pie>section:nth-child(1)>section>span[percent="13"]>span:nth-child(1)::after {
+    transform: rotate(calc(3.6deg * 13)) translateZ(0);
+}
+
+body>section.body>section.index-pie>section:nth-child(1)>section>span[percent="14"]>span:nth-child(1)::after {
+    transform: rotate(calc(3.6deg * 14)) translateZ(0);
+}
+
+body>section.body>section.index-pie>section:nth-child(1)>section>span[percent="15"]>span:nth-child(1)::after {
+    transform: rotate(calc(3.6deg * 15)) translateZ(0);
+}
+
+body>section.body>section.index-pie>section:nth-child(1)>section>span[percent="16"]>span:nth-child(1)::after {
+    transform: rotate(calc(3.6deg * 16)) translateZ(0);
+}
+
+body>section.body>section.index-pie>section:nth-child(1)>section>span[percent="17"]>span:nth-child(1)::after {
+    transform: rotate(calc(3.6deg * 17)) translateZ(0);
+}
+
+body>section.body>section.index-pie>section:nth-child(1)>section>span[percent="18"]>span:nth-child(1)::after {
+    transform: rotate(calc(3.6deg * 18)) translateZ(0);
+}
+
+body>section.body>section.index-pie>section:nth-child(1)>section>span[percent="19"]>span:nth-child(1)::after {
+    transform: rotate(calc(3.6deg * 19)) translateZ(0);
+}
+
+body>section.body>section.index-pie>section:nth-child(1)>section>span[percent="20"]>span:nth-child(1)::after {
+    transform: rotate(calc(3.6deg * 20)) translateZ(0);
+}
+
+body>section.body>section.index-pie>section:nth-child(1)>section>span[percent="21"]>span:nth-child(1)::after {
+    transform: rotate(calc(3.6deg * 21)) translateZ(0);
+}
+
+body>section.body>section.index-pie>section:nth-child(1)>section>span[percent="22"]>span:nth-child(1)::after {
+    transform: rotate(calc(3.6deg * 22)) translateZ(0);
+}
+
+body>section.body>section.index-pie>section:nth-child(1)>section>span[percent="23"]>span:nth-child(1)::after {
+    transform: rotate(calc(3.6deg * 23)) translateZ(0);
+}
+
+body>section.body>section.index-pie>section:nth-child(1)>section>span[percent="24"]>span:nth-child(1)::after {
+    transform: rotate(calc(3.6deg * 24)) translateZ(0);
+}
+
+body>section.body>section.index-pie>section:nth-child(1)>section>span[percent="25"]>span:nth-child(1)::after {
+    transform: rotate(calc(3.6deg * 25)) translateZ(0);
+}
+
+body>section.body>section.index-pie>section:nth-child(1)>section>span[percent="26"]>span:nth-child(1)::after {
+    transform: rotate(calc(3.6deg * 26)) translateZ(0);
+}
+
+body>section.body>section.index-pie>section:nth-child(1)>section>span[percent="27"]>span:nth-child(1)::after {
+    transform: rotate(calc(3.6deg * 27)) translateZ(0);
+}
+
+body>section.body>section.index-pie>section:nth-child(1)>section>span[percent="28"]>span:nth-child(1)::after {
+    transform: rotate(calc(3.6deg * 28)) translateZ(0);
+}
+
+body>section.body>section.index-pie>section:nth-child(1)>section>span[percent="29"]>span:nth-child(1)::after {
+    transform: rotate(calc(3.6deg * 29)) translateZ(0);
+}
+
+body>section.body>section.index-pie>section:nth-child(1)>section>span[percent="30"]>span:nth-child(1)::after {
+    transform: rotate(calc(3.6deg * 30)) translateZ(0);
+}
+
+body>section.body>section.index-pie>section:nth-child(1)>section>span[percent="31"]>span:nth-child(1)::after {
+    transform: rotate(calc(3.6deg * 31)) translateZ(0);
+}
+
+body>section.body>section.index-pie>section:nth-child(1)>section>span[percent="32"]>span:nth-child(1)::after {
+    transform: rotate(calc(3.6deg * 32)) translateZ(0);
+}
+
+body>section.body>section.index-pie>section:nth-child(1)>section>span[percent="33"]>span:nth-child(1)::after {
+    transform: rotate(calc(3.6deg * 33)) translateZ(0);
+}
+
+body>section.body>section.index-pie>section:nth-child(1)>section>span[percent="34"]>span:nth-child(1)::after {
+    transform: rotate(calc(3.6deg * 34)) translateZ(0);
+}
+
+body>section.body>section.index-pie>section:nth-child(1)>section>span[percent="35"]>span:nth-child(1)::after {
+    transform: rotate(calc(3.6deg * 35)) translateZ(0);
+}
+
+body>section.body>section.index-pie>section:nth-child(1)>section>span[percent="36"]>span:nth-child(1)::after {
+    transform: rotate(calc(3.6deg * 36)) translateZ(0);
+}
+
+body>section.body>section.index-pie>section:nth-child(1)>section>span[percent="37"]>span:nth-child(1)::after {
+    transform: rotate(calc(3.6deg * 37)) translateZ(0);
+}
+
+body>section.body>section.index-pie>section:nth-child(1)>section>span[percent="38"]>span:nth-child(1)::after {
+    transform: rotate(calc(3.6deg * 38)) translateZ(0);
+}
+
+body>section.body>section.index-pie>section:nth-child(1)>section>span[percent="39"]>span:nth-child(1)::after {
+    transform: rotate(calc(3.6deg * 39)) translateZ(0);
+}
+
+body>section.body>section.index-pie>section:nth-child(1)>section>span[percent="40"]>span:nth-child(1)::after {
+    transform: rotate(calc(3.6deg * 40)) translateZ(0);
+}
+
+body>section.body>section.index-pie>section:nth-child(1)>section>span[percent="41"]>span:nth-child(1)::after {
+    transform: rotate(calc(3.6deg * 41)) translateZ(0);
+}
+
+body>section.body>section.index-pie>section:nth-child(1)>section>span[percent="42"]>span:nth-child(1)::after {
+    transform: rotate(calc(3.6deg * 42)) translateZ(0);
+}
+
+body>section.body>section.index-pie>section:nth-child(1)>section>span[percent="43"]>span:nth-child(1)::after {
+    transform: rotate(calc(3.6deg * 43)) translateZ(0);
+}
+
+body>section.body>section.index-pie>section:nth-child(1)>section>span[percent="44"]>span:nth-child(1)::after {
+    transform: rotate(calc(3.6deg * 44)) translateZ(0);
+}
+
+body>section.body>section.index-pie>section:nth-child(1)>section>span[percent="45"]>span:nth-child(1)::after {
+    transform: rotate(calc(3.6deg * 45)) translateZ(0);
+}
+
+body>section.body>section.index-pie>section:nth-child(1)>section>span[percent="46"]>span:nth-child(1)::after {
+    transform: rotate(calc(3.6deg * 46)) translateZ(0);
+}
+
+body>section.body>section.index-pie>section:nth-child(1)>section>span[percent="47"]>span:nth-child(1)::after {
+    transform: rotate(calc(3.6deg * 47)) translateZ(0);
+}
+
+body>section.body>section.index-pie>section:nth-child(1)>section>span[percent="48"]>span:nth-child(1)::after {
+    transform: rotate(calc(3.6deg * 48)) translateZ(0);
+}
+
+body>section.body>section.index-pie>section:nth-child(1)>section>span[percent="49"]>span:nth-child(1)::after {
+    transform: rotate(calc(3.6deg * 49)) translateZ(0);
+}
+
+body>section.body>section.index-pie>section:nth-child(1)>section>span[percent="50"]>span:nth-child(1)::after {
+    transform: rotate(calc(3.6deg * 50)) translateZ(0);
+}
+
+body>section.body>section.index-pie>section:nth-child(1)>section>span[percent="51"]>span:nth-child(1)::after {
+    transform: rotate(180deg) translateZ(0);
+}
+
+body>section.body>section.index-pie>section:nth-child(1)>section>span[percent="51"]>span:nth-child(2)::after {
+    transform: rotate(calc(3.6deg * 1)) translateZ(0);
+}
+
+body>section.body>section.index-pie>section:nth-child(1)>section>span[percent="52"]>span:nth-child(1)::after {
+    transform: rotate(180deg) translateZ(0);
+}
+
+body>section.body>section.index-pie>section:nth-child(1)>section>span[percent="52"]>span:nth-child(2)::after {
+    transform: rotate(calc(3.6deg * 2)) translateZ(0);
+}
+
+body>section.body>section.index-pie>section:nth-child(1)>section>span[percent="53"]>span:nth-child(1)::after {
+    transform: rotate(180deg) translateZ(0);
+}
+
+body>section.body>section.index-pie>section:nth-child(1)>section>span[percent="53"]>span:nth-child(2)::after {
+    transform: rotate(calc(3.6deg * 3)) translateZ(0);
+}
+
+body>section.body>section.index-pie>section:nth-child(1)>section>span[percent="54"]>span:nth-child(1)::after {
+    transform: rotate(180deg) translateZ(0);
+}
+
+body>section.body>section.index-pie>section:nth-child(1)>section>span[percent="54"]>span:nth-child(2)::after {
+    transform: rotate(calc(3.6deg * 4)) translateZ(0);
+}
+
+body>section.body>section.index-pie>section:nth-child(1)>section>span[percent="55"]>span:nth-child(1)::after {
+    transform: rotate(180deg) translateZ(0);
+}
+
+body>section.body>section.index-pie>section:nth-child(1)>section>span[percent="55"]>span:nth-child(2)::after {
+    transform: rotate(calc(3.6deg * 5)) translateZ(0);
+}
+
+body>section.body>section.index-pie>section:nth-child(1)>section>span[percent="56"]>span:nth-child(1)::after {
+    transform: rotate(180deg) translateZ(0);
+}
+
+body>section.body>section.index-pie>section:nth-child(1)>section>span[percent="56"]>span:nth-child(2)::after {
+    transform: rotate(calc(3.6deg * 6)) translateZ(0);
+}
+
+body>section.body>section.index-pie>section:nth-child(1)>section>span[percent="57"]>span:nth-child(1)::after {
+    transform: rotate(180deg) translateZ(0);
+}
+
+body>section.body>section.index-pie>section:nth-child(1)>section>span[percent="57"]>span:nth-child(2)::after {
+    transform: rotate(calc(3.6deg * 7)) translateZ(0);
+}
+
+body>section.body>section.index-pie>section:nth-child(1)>section>span[percent="58"]>span:nth-child(1)::after {
+    transform: rotate(180deg) translateZ(0);
+}
+
+body>section.body>section.index-pie>section:nth-child(1)>section>span[percent="58"]>span:nth-child(2)::after {
+    transform: rotate(calc(3.6deg * 8)) translateZ(0);
+}
+
+body>section.body>section.index-pie>section:nth-child(1)>section>span[percent="59"]>span:nth-child(1)::after {
+    transform: rotate(180deg) translateZ(0);
+}
+
+body>section.body>section.index-pie>section:nth-child(1)>section>span[percent="59"]>span:nth-child(2)::after {
+    transform: rotate(calc(3.6deg * 9)) translateZ(0);
+}
+
+body>section.body>section.index-pie>section:nth-child(1)>section>span[percent="60"]>span:nth-child(1)::after {
+    transform: rotate(180deg) translateZ(0);
+}
+
+body>section.body>section.index-pie>section:nth-child(1)>section>span[percent="60"]>span:nth-child(2)::after {
+    transform: rotate(calc(3.6deg * 10)) translateZ(0);
+}
+
+body>section.body>section.index-pie>section:nth-child(1)>section>span[percent="61"]>span:nth-child(1)::after {
+    transform: rotate(180deg) translateZ(0);
+}
+
+body>section.body>section.index-pie>section:nth-child(1)>section>span[percent="61"]>span:nth-child(2)::after {
+    transform: rotate(calc(3.6deg * 11)) translateZ(0);
+}
+
+body>section.body>section.index-pie>section:nth-child(1)>section>span[percent="62"]>span:nth-child(1)::after {
+    transform: rotate(180deg) translateZ(0);
+}
+
+body>section.body>section.index-pie>section:nth-child(1)>section>span[percent="62"]>span:nth-child(2)::after {
+    transform: rotate(calc(3.6deg * 12)) translateZ(0);
+}
+
+body>section.body>section.index-pie>section:nth-child(1)>section>span[percent="63"]>span:nth-child(1)::after {
+    transform: rotate(180deg) translateZ(0);
+}
+
+body>section.body>section.index-pie>section:nth-child(1)>section>span[percent="63"]>span:nth-child(2)::after {
+    transform: rotate(calc(3.6deg * 13)) translateZ(0);
+}
+
+body>section.body>section.index-pie>section:nth-child(1)>section>span[percent="64"]>span:nth-child(1)::after {
+    transform: rotate(180deg) translateZ(0);
+}
+
+body>section.body>section.index-pie>section:nth-child(1)>section>span[percent="64"]>span:nth-child(2)::after {
+    transform: rotate(calc(3.6deg * 14)) translateZ(0);
+}
+
+body>section.body>section.index-pie>section:nth-child(1)>section>span[percent="65"]>span:nth-child(1)::after {
+    transform: rotate(180deg) translateZ(0);
+}
+
+body>section.body>section.index-pie>section:nth-child(1)>section>span[percent="65"]>span:nth-child(2)::after {
+    transform: rotate(calc(3.6deg * 15)) translateZ(0);
+}
+
+body>section.body>section.index-pie>section:nth-child(1)>section>span[percent="66"]>span:nth-child(1)::after {
+    transform: rotate(180deg) translateZ(0);
+}
+
+body>section.body>section.index-pie>section:nth-child(1)>section>span[percent="66"]>span:nth-child(2)::after {
+    transform: rotate(calc(3.6deg * 16)) translateZ(0);
+}
+
+body>section.body>section.index-pie>section:nth-child(1)>section>span[percent="67"]>span:nth-child(1)::after {
+    transform: rotate(180deg) translateZ(0);
+}
+
+body>section.body>section.index-pie>section:nth-child(1)>section>span[percent="67"]>span:nth-child(2)::after {
+    transform: rotate(calc(3.6deg * 17)) translateZ(0);
+}
+
+body>section.body>section.index-pie>section:nth-child(1)>section>span[percent="68"]>span:nth-child(1)::after {
+    transform: rotate(180deg) translateZ(0);
+}
+
+body>section.body>section.index-pie>section:nth-child(1)>section>span[percent="68"]>span:nth-child(2)::after {
+    transform: rotate(calc(3.6deg * 18)) translateZ(0);
+}
+
+body>section.body>section.index-pie>section:nth-child(1)>section>span[percent="69"]>span:nth-child(1)::after {
+    transform: rotate(180deg) translateZ(0);
+}
+
+body>section.body>section.index-pie>section:nth-child(1)>section>span[percent="69"]>span:nth-child(2)::after {
+    transform: rotate(calc(3.6deg * 19)) translateZ(0);
+}
+
+body>section.body>section.index-pie>section:nth-child(1)>section>span[percent="70"]>span:nth-child(1)::after {
+    transform: rotate(180deg) translateZ(0);
+}
+
+body>section.body>section.index-pie>section:nth-child(1)>section>span[percent="70"]>span:nth-child(2)::after {
+    transform: rotate(calc(3.6deg * 20)) translateZ(0);
+}
+
+body>section.body>section.index-pie>section:nth-child(1)>section>span[percent="71"]>span:nth-child(1)::after {
+    transform: rotate(180deg) translateZ(0);
+}
+
+body>section.body>section.index-pie>section:nth-child(1)>section>span[percent="71"]>span:nth-child(2)::after {
+    transform: rotate(calc(3.6deg * 21)) translateZ(0);
+}
+
+body>section.body>section.index-pie>section:nth-child(1)>section>span[percent="72"]>span:nth-child(1)::after {
+    transform: rotate(180deg) translateZ(0);
+}
+
+body>section.body>section.index-pie>section:nth-child(1)>section>span[percent="72"]>span:nth-child(2)::after {
+    transform: rotate(calc(3.6deg * 22)) translateZ(0);
+}
+
+body>section.body>section.index-pie>section:nth-child(1)>section>span[percent="73"]>span:nth-child(1)::after {
+    transform: rotate(180deg) translateZ(0);
+}
+
+body>section.body>section.index-pie>section:nth-child(1)>section>span[percent="73"]>span:nth-child(2)::after {
+    transform: rotate(calc(3.6deg * 23)) translateZ(0);
+}
+
+body>section.body>section.index-pie>section:nth-child(1)>section>span[percent="74"]>span:nth-child(1)::after {
+    transform: rotate(180deg) translateZ(0);
+}
+
+body>section.body>section.index-pie>section:nth-child(1)>section>span[percent="74"]>span:nth-child(2)::after {
+    transform: rotate(calc(3.6deg * 24)) translateZ(0);
+}
+
+body>section.body>section.index-pie>section:nth-child(1)>section>span[percent="75"]>span:nth-child(1)::after {
+    transform: rotate(180deg) translateZ(0);
+}
+
+body>section.body>section.index-pie>section:nth-child(1)>section>span[percent="75"]>span:nth-child(2)::after {
+    transform: rotate(calc(3.6deg * 25)) translateZ(0);
+}
+
+body>section.body>section.index-pie>section:nth-child(1)>section>span[percent="76"]>span:nth-child(1)::after {
+    transform: rotate(180deg) translateZ(0);
+}
+
+body>section.body>section.index-pie>section:nth-child(1)>section>span[percent="76"]>span:nth-child(2)::after {
+    transform: rotate(calc(3.6deg * 26)) translateZ(0);
+}
+
+body>section.body>section.index-pie>section:nth-child(1)>section>span[percent="77"]>span:nth-child(1)::after {
+    transform: rotate(180deg) translateZ(0);
+}
+
+body>section.body>section.index-pie>section:nth-child(1)>section>span[percent="77"]>span:nth-child(2)::after {
+    transform: rotate(calc(3.6deg * 27)) translateZ(0);
+}
+
+body>section.body>section.index-pie>section:nth-child(1)>section>span[percent="78"]>span:nth-child(1)::after {
+    transform: rotate(180deg) translateZ(0);
+}
+
+body>section.body>section.index-pie>section:nth-child(1)>section>span[percent="78"]>span:nth-child(2)::after {
+    transform: rotate(calc(3.6deg * 28)) translateZ(0);
+}
+
+body>section.body>section.index-pie>section:nth-child(1)>section>span[percent="79"]>span:nth-child(1)::after {
+    transform: rotate(180deg) translateZ(0);
+}
+
+body>section.body>section.index-pie>section:nth-child(1)>section>span[percent="79"]>span:nth-child(2)::after {
+    transform: rotate(calc(3.6deg * 29)) translateZ(0);
+}
+
+body>section.body>section.index-pie>section:nth-child(1)>section>span[percent="80"]>span:nth-child(1)::after {
+    transform: rotate(180deg) translateZ(0);
+}
+
+body>section.body>section.index-pie>section:nth-child(1)>section>span[percent="80"]>span:nth-child(2)::after {
+    transform: rotate(calc(3.6deg * 30)) translateZ(0);
+}
+
+body>section.body>section.index-pie>section:nth-child(1)>section>span[percent="81"]>span:nth-child(1)::after {
+    transform: rotate(180deg) translateZ(0);
+}
+
+body>section.body>section.index-pie>section:nth-child(1)>section>span[percent="81"]>span:nth-child(2)::after {
+    transform: rotate(calc(3.6deg * 31)) translateZ(0);
+}
+
+body>section.body>section.index-pie>section:nth-child(1)>section>span[percent="82"]>span:nth-child(1)::after {
+    transform: rotate(180deg) translateZ(0);
+}
+
+body>section.body>section.index-pie>section:nth-child(1)>section>span[percent="82"]>span:nth-child(2)::after {
+    transform: rotate(calc(3.6deg * 32)) translateZ(0);
+}
+
+body>section.body>section.index-pie>section:nth-child(1)>section>span[percent="83"]>span:nth-child(1)::after {
+    transform: rotate(180deg) translateZ(0);
+}
+
+body>section.body>section.index-pie>section:nth-child(1)>section>span[percent="83"]>span:nth-child(2)::after {
+    transform: rotate(calc(3.6deg * 33)) translateZ(0);
+}
+
+body>section.body>section.index-pie>section:nth-child(1)>section>span[percent="84"]>span:nth-child(1)::after {
+    transform: rotate(180deg) translateZ(0);
+}
+
+body>section.body>section.index-pie>section:nth-child(1)>section>span[percent="84"]>span:nth-child(2)::after {
+    transform: rotate(calc(3.6deg * 34)) translateZ(0);
+}
+
+body>section.body>section.index-pie>section:nth-child(1)>section>span[percent="85"]>span:nth-child(1)::after {
+    transform: rotate(180deg) translateZ(0);
+}
+
+body>section.body>section.index-pie>section:nth-child(1)>section>span[percent="85"]>span:nth-child(2)::after {
+    transform: rotate(calc(3.6deg * 35)) translateZ(0);
+}
+
+body>section.body>section.index-pie>section:nth-child(1)>section>span[percent="86"]>span:nth-child(1)::after {
+    transform: rotate(180deg) translateZ(0);
+}
+
+body>section.body>section.index-pie>section:nth-child(1)>section>span[percent="86"]>span:nth-child(2)::after {
+    transform: rotate(calc(3.6deg * 36)) translateZ(0);
+}
+
+body>section.body>section.index-pie>section:nth-child(1)>section>span[percent="87"]>span:nth-child(1)::after {
+    transform: rotate(180deg) translateZ(0);
+}
+
+body>section.body>section.index-pie>section:nth-child(1)>section>span[percent="87"]>span:nth-child(2)::after {
+    transform: rotate(calc(3.6deg * 37)) translateZ(0);
+}
+
+body>section.body>section.index-pie>section:nth-child(1)>section>span[percent="88"]>span:nth-child(1)::after {
+    transform: rotate(180deg) translateZ(0);
+}
+
+body>section.body>section.index-pie>section:nth-child(1)>section>span[percent="88"]>span:nth-child(2)::after {
+    transform: rotate(calc(3.6deg * 38)) translateZ(0);
+}
+
+body>section.body>section.index-pie>section:nth-child(1)>section>span[percent="89"]>span:nth-child(1)::after {
+    transform: rotate(180deg) translateZ(0);
+}
+
+body>section.body>section.index-pie>section:nth-child(1)>section>span[percent="89"]>span:nth-child(2)::after {
+    transform: rotate(calc(3.6deg * 39)) translateZ(0);
+}
+
+body>section.body>section.index-pie>section:nth-child(1)>section>span[percent="90"]>span:nth-child(1)::after {
+    transform: rotate(180deg) translateZ(0);
+}
+
+body>section.body>section.index-pie>section:nth-child(1)>section>span[percent="90"]>span:nth-child(2)::after {
+    transform: rotate(calc(3.6deg * 40)) translateZ(0);
+}
+
+body>section.body>section.index-pie>section:nth-child(1)>section>span[percent="91"]>span:nth-child(1)::after {
+    transform: rotate(180deg) translateZ(0);
+}
+
+body>section.body>section.index-pie>section:nth-child(1)>section>span[percent="91"]>span:nth-child(2)::after {
+    transform: rotate(calc(3.6deg * 41)) translateZ(0);
+}
+
+body>section.body>section.index-pie>section:nth-child(1)>section>span[percent="92"]>span:nth-child(1)::after {
+    transform: rotate(180deg) translateZ(0);
+}
+
+body>section.body>section.index-pie>section:nth-child(1)>section>span[percent="92"]>span:nth-child(2)::after {
+    transform: rotate(calc(3.6deg * 42)) translateZ(0);
+}
+
+body>section.body>section.index-pie>section:nth-child(1)>section>span[percent="93"]>span:nth-child(1)::after {
+    transform: rotate(180deg) translateZ(0);
+}
+
+body>section.body>section.index-pie>section:nth-child(1)>section>span[percent="93"]>span:nth-child(2)::after {
+    transform: rotate(calc(3.6deg * 43)) translateZ(0);
+}
+
+body>section.body>section.index-pie>section:nth-child(1)>section>span[percent="94"]>span:nth-child(1)::after {
+    transform: rotate(180deg) translateZ(0);
+}
+
+body>section.body>section.index-pie>section:nth-child(1)>section>span[percent="94"]>span:nth-child(2)::after {
+    transform: rotate(calc(3.6deg * 44)) translateZ(0);
+}
+
+body>section.body>section.index-pie>section:nth-child(1)>section>span[percent="95"]>span:nth-child(1)::after {
+    transform: rotate(180deg) translateZ(0);
+}
+
+body>section.body>section.index-pie>section:nth-child(1)>section>span[percent="95"]>span:nth-child(2)::after {
+    transform: rotate(calc(3.6deg * 45)) translateZ(0);
+}
+
+body>section.body>section.index-pie>section:nth-child(1)>section>span[percent="96"]>span:nth-child(1)::after {
+    transform: rotate(180deg) translateZ(0);
+}
+
+body>section.body>section.index-pie>section:nth-child(1)>section>span[percent="96"]>span:nth-child(2)::after {
+    transform: rotate(calc(3.6deg * 46)) translateZ(0);
+}
+
+body>section.body>section.index-pie>section:nth-child(1)>section>span[percent="97"]>span:nth-child(1)::after {
+    transform: rotate(180deg) translateZ(0);
+}
+
+body>section.body>section.index-pie>section:nth-child(1)>section>span[percent="97"]>span:nth-child(2)::after {
+    transform: rotate(calc(3.6deg * 47)) translateZ(0);
+}
+
+body>section.body>section.index-pie>section:nth-child(1)>section>span[percent="98"]>span:nth-child(1)::after {
+    transform: rotate(180deg) translateZ(0);
+}
+
+body>section.body>section.index-pie>section:nth-child(1)>section>span[percent="98"]>span:nth-child(2)::after {
+    transform: rotate(calc(3.6deg * 48)) translateZ(0);
+}
+
+body>section.body>section.index-pie>section:nth-child(1)>section>span[percent="99"]>span:nth-child(1)::after {
+    transform: rotate(180deg) translateZ(0);
+}
+
+body>section.body>section.index-pie>section:nth-child(1)>section>span[percent="99"]>span:nth-child(2)::after {
+    transform: rotate(calc(3.6deg * 49)) translateZ(0);
+}
+
+body>section.body>section.index-pie>section:nth-child(1)>section>span[percent="100"]>span:nth-child(1)::after {
+    transform: rotate(180deg) translateZ(0);
+}
+
+body>section.body>section.index-pie>section:nth-child(1)>section>span[percent="100"]>span:nth-child(2)::after {
+    transform: rotate(calc(3.6deg * 50)) translateZ(0);
+}
+
+body>section.body>section.index-pie>section:nth-child(1)>section>span>span:nth-child(1) {
+    position: absolute;
+    display: block;
+    top: -1px;
+    right: -1px;
+    bottom: -1px;
+    width: calc(50% + 1px);
+    height: calc(100% + 2px);
+    transform: translateZ(0);
+    overflow: hidden;
+}
+
+body>section.body>section.index-pie>section:nth-child(1)>section>span>span:nth-child(1)::after {
+    content: "";
+    position: relative;
+    display: block;
+    margin-left: -100%;
+    width: 200%;
+    height: 100%;
+    background-image: linear-gradient(to left, var(--pie-border-default) 50%, transparent 0);
+    transform-origin: center;
+    transform: translateZ(0);
+    border-radius: 50%;
+    animation: circle-show-right 1s linear;
+    -webkit-animation: circle-show-right 1s linear;
+    -moz-animation: circle-show-right 1s linear;
+}
+
+body>section.body>section.index-pie>section:nth-child(1)>section>span>span:nth-child(2) {
+    position: absolute;
+    display: block;
+    top: -1px;
+    left: -1px;
+    bottom: -1px;
+    width: calc(50% + 1px);
+    height: calc(100% + 2px);
+    transform: translateZ(0);
+    overflow: hidden;
+}
+
+body>section.body>section.index-pie>section:nth-child(1)>section>span>span:nth-child(2)::after {
+    content: "";
+    position: relative;
+    display: block;
+    width: 200%;
+    height: 100%;
+    background-image: linear-gradient(to right, var(--pie-border-default) 50%, transparent 0);
+    transform-origin: center;
+    transform: translateZ(0);
+    border-radius: 50%;
+    animation: circle-show-left 1.5s linear;
+    -webkit-animation: circle-show-left 1.5s linear;
+    -moz-animation: circle-show-left 1.5s linear;
+}
+
+@keyframes circle-show-right {
+    0% {
+        transform: rotate(0deg) translateZ(0);
+    }
+}
+
+@-webkit-keyframes circle-show-right {
+    0% {
+        transform: rotate(0deg) translateZ(0);
+    }
+}
+
+@-moz-keyframes circle-show-right {
+    0% {
+        transform: rotate(0deg) translateZ(0);
+    }
+}
+
+@keyframes circle-show-left {
+    0% {
+        transform: rotate(0deg) translateZ(0);
+    }
+
+    67% {
+        transform: rotate(0deg) translateZ(0);
+    }
+}
+
+@-webkit-keyframes circle-show-left {
+    0% {
+        transform: rotate(0deg) translateZ(0);
+    }
+
+    67% {
+        transform: rotate(0deg) translateZ(0);
+    }
+}
+
+@-moz-keyframes circle-show-left {
+    0% {
+        transform: rotate(0deg) translateZ(0);
+    }
+
+    67% {
+        transform: rotate(0deg) translateZ(0);
+    }
+}
+
+body>section.body>section.index-pie>section:nth-child(1)>section>span::after {
+    content: attr(percent) "％";
+    position: absolute;
+    display: block;
+    top: var(--pie-border-width);
+    left: var(--pie-border-width);
+    bottom: var(--pie-border-width);
+    right: var(--pie-border-width);
+    width: calc(var(--pie-width) - var(--pie-border-width) * 2);
+    height: calc(var(--pie-width) - var(--pie-border-width) * 2);
+    line-height: calc(var(--pie-width) - var(--pie-border-width) * 2);
+    font-size: var(--pie-center-size);
+    font-weight: 600;
+    text-align: center;
+    color: var(--pie-center-color);
+    background-color: var(--pie-center-bg);
+    border-radius: 50%;
+}
+
+body>section.body>section.index-calendar {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: start;
+    gap: 0;
+    width: 100%;
+    height: initial;
+    overflow: hidden;
+    border-bottom: 2px solid rgba(0, 0, 0, 0);
+}
+
+body>section.body>section.index-calendar:has(table) {
+    padding-bottom: 1rem;
+    border-bottom: 2px solid #000;
+}
+
+body>section.body>section.index-calendar table {
+    position: relative;
+    width: 100%;
+    text-align: center;
+    animation-name: index-calendar-show;
+    animation-duration: 0.3s;
+}
+
+@keyframes index-calendar-show {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+body>section.body>section.index-calendar table th,
+body>section.body>section.index-calendar table td {
+    position: relative;
+    padding: 0.125rem 0;
+    line-height: 1rem;
+}
+
+body>section.body>section.index-calendar table th>button,
+body>section.body>section.index-calendar table td>button {
+    position: relative;
+    width: 2rem;
+    height: 2rem;
+    line-height: 2rem;
+    border-radius: 1rem;
+    transition: 0.1s;
+}
+
+body>section.body>section.index-calendar table th>button:hover,
+body>section.body>section.index-calendar table td>button:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+    font-weight: 600;
+}
+
+body>section.body>section.index-calendar table th>button.sel,
+body>section.body>section.index-calendar table td>button.sel {
+    font-weight: 600;
+    background-color: var(--num-pad-enter);
+    color: #fff;
+}
+
+body>section.body>section.index-calendar table th>button.unmonth,
+body>section.body>section.index-calendar table td>button.unmonth {
+    color: #ddd;
+}
+
+body>section.body>section.index-list {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: start;
+    gap: 0;
+    margin-top: 1rem;
+    width: 100%;
+    height: initial;
+}
+
+body>section.body>section.index-list>div {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: start;
+    gap: 0;
+    margin-top: 1.5rem;
+    width: calc(100% - 2rem);
+    height: initial;
+    border: 2px solid #000;
+    border-radius: 0.5rem;
+}
+
+body>section.body>section.index-list>div::before {
+    content: attr(date);
+    position: relative;
+    display: block;
+    padding: 0 1rem;
+    width: 100%;
+    line-height: 2.5rem;
+    font-size: 1rem;
+    letter-spacing: 2px;
+    border-bottom: 2px solid #000;
+}
+
+body>section.body>section.index-list>div::after {
+    content: "$" attr(data-value);
+    position: absolute;
+    display: block;
+    top: 0;
+    right: 0;
+    padding: 0 1rem;
+    line-height: 2.5rem;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: red;
+}
+
+body>section.body>section.index-list>div p {
+    position: relative;
+    display: block;
+    width: calc(100% - 2rem);
+    line-height: 2.5rem;
+    font-size: 1rem;
+    letter-spacing: 2px;
+    border-top: 2px solid #ddd;
+}
+
+body>section.body>section.index-list>div p:nth-child(1) {
+    border-top: 2px solid transparent;
+}
+
+body>section.body>section.index-list>div p::after {
+    content: "$" attr(data-value);
+    position: absolute;
+    display: block;
+    top: 0;
+    right: 0;
+    line-height: 2.5rem;
+    font-size: 1.25rem;
+    font-weight: 600;
+    letter-spacing: 0;
+}
+
+body>section.add-item {
+    z-index: 1000;
+    position: fixed;
+    display: block;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+    padding-top: 4rem;
+    width: 100%;
+    max-width: var(--content-max-width);
+    height: 100%;
+    background-color: #fff;
+    transition: 0.3s;
+}
+
+body>section.add-item.show {
+    top: 0;
+}
+
+body>section.add-item>nav {
+    z-index: 1000;
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    align-items: start;
+    gap: 0;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 0 1rem;
+    width: 100%;
+    max-width: var(--content-max-width);
+    height: initial;
+    background-color: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(0.5rem);
+    -webkit-backdrop-filter: blur(0.5rem);
+}
+
+body>section.add-item>nav>button {
+    position: relative;
+    display: block;
+}
+
+body>section.add-item>nav>button * {
+    pointer-events: none;
+}
+
+body>section.add-item>nav>button.show>i {
+    transform: rotate(180deg);
+}
+
+body>section.add-item>nav>button.tab {
+    margin-top: calc(1rem - 1px);
+    font-size: 0;
+    border-radius: 0.5rem;
+    border: 2px solid #000;
+}
+
+body>section.add-item>nav>button.tab[data-value]:not([data-value=""]) span,
+body>section.add-item>nav>button.tab[data-value=income] span {
+    left: 50%;
+    background-color: var(--num-pad-color);
+}
+
+body>section.add-item>nav>button.tab[data-value]:not([data-value=""])::after,
+body>section.add-item>nav>button.tab[data-value=income]::after {
+    color: #fff;
+}
+
+body>section.add-item>nav>button.tab::before {
+    z-index: 1;
+    content: "支出";
+    position: relative;
+    display: inline-block;
+    vertical-align: center;
+    width: 5rem;
+    line-height: 2rem;
+    font-size: 1.25rem;
+    letter-spacing: 2px;
+}
+
+body>section.add-item>nav>button.tab::after {
+    content: "收入";
+    z-index: 1;
+    position: relative;
+    display: inline-block;
+    vertical-align: center;
+    width: 5rem;
+    line-height: 2rem;
+    font-size: 1.25rem;
+    letter-spacing: 2px;
+    transition: 0.3s;
+}
+
+body>section.add-item>nav>button.tab span {
+    z-index: 0;
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    width: 5rem;
+    height: 2rem;
+    border-radius: 0.25rem;
+    background-color: var(--main-color);
+    transition: 0.3s;
+}
+
+body>section.add-item>nav>button>p {
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    line-height: 4rem;
+    font-size: 1.25rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+
+body>section.add-item>nav>button>i {
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    width: 2rem;
+    line-height: 4rem !important;
+    font-size: 1.5rem;
+    text-align: center;
+    transition: 0.3s;
+}
+
+body>section.add-item>nav>button>i:nth-child(2) {
+    font-size: 1.5rem;
+}
+
+body>section.add-item>section:nth-child(2) {
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    align-items: start;
+    gap: 1rem;
+    padding: 1rem 1rem 80vh;
+    width: 100%;
+    height: 100%;
+    border-top: 2px solid #000;
+    overflow: scroll;
+}
+
+body>section.add-item>section:nth-child(2)>button {
+    position: relative;
+    display: block;
+    width: calc((100% - 3rem) / 4);
+    aspect-ratio: 1/1;
+    border-radius: 0.5rem;
+    transition: 0.3s;
+}
+
+body>section.add-item>section:nth-child(2)>button * {
+    pointer-events: none;
+}
+
+body>section.add-item>section:nth-child(2)>button:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+body>section.add-item>section:nth-child(2)>button.sel {
+    background-color: var(--num-pad-enter);
+}
+
+body>section.add-item>section:nth-child(2)>button.sel>p,
+body>section.add-item>section:nth-child(2)>button.sel>i {
+    color: #fff;
+}
+
+body>section.add-item>section:nth-child(2)>button>i {
+    position: relative;
+    display: block;
+    width: 100%;
+    line-height: 2.5rem;
+    font-size: 1.5rem;
+}
+
+body>section.add-item>section:nth-last-child(1) {
+    position: fixed;
+    display: block;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: initial;
+    background-color: #fff;
+}
+
+body>section.add-item>section:nth-last-child(1)>section:nth-child(1) {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: start;
+    gap: 0;
+    border-top: 2px solid #000;
+}
+
+body>section.add-item>section:nth-last-child(1)>section:nth-child(1)>section {
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    width: calc(100% - 2rem);
+}
+
+body>section.add-item>section:nth-last-child(1)>section:nth-child(1)>section:nth-child(1) {
+    height: 4rem;
+}
+
+body>section.add-item>section:nth-last-child(1)>section:nth-child(1)>section:nth-child(1)::after {
+    content: "$ " attr(data-value);
+    position: absolute;
+    top: 0;
+    right: 0;
+    line-height: 4rem;
+    font-size: 2rem;
+    font-weight: 600;
+    text-align: right;
+    background-color: #fff;
+}
+
+body>section.add-item>section:nth-last-child(1)>section:nth-child(1)>section:nth-child(1)>i {
+    position: relative;
+    margin-right: 0.5rem;
+    line-height: 4rem;
+    font-size: 1.5rem;
+}
+
+body>section.add-item>section:nth-last-child(1)>section:nth-child(1)>section:nth-child(1)>input {
+    position: relative;
+    width: 100px;
+    line-height: 4rem;
+    font-size: 1rem;
+    letter-spacing: 1px;
+}
+
+body>section.add-item>section:nth-last-child(1)>section:nth-last-child(1) {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: start;
+    gap: 0;
+    padding: 1rem 0;
+    width: 100%;
+    height: initial;
+    background-color: var(--main-color);
+    border-top: 2px solid #000;
+}
+
+body>section.add-item>section:nth-last-child(1)>section:nth-last-child(1)>section {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    width: calc(100% - 2rem);
+    aspect-ratio: 5/4;
+}
+
+body>section.add-item>section:nth-last-child(1)>section:nth-last-child(1)>section:nth-child(1) {
+    justify-content: space-between;
+    padding: 0 1rem;
+    line-height: 3rem;
+    height: 3rem;
+    background-color: #fff;
+    border: 2px solid #000;
+    border-radius: 1.5rem;
+    gap: 0;
+}
+
+body>section.add-item>section:nth-last-child(1)>section:nth-last-child(1)>section:nth-child(1)>p {
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 0.5rem;
+    line-height: 3rem;
+    font-size: 1.25rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+
+body>section.add-item>section:nth-last-child(1)>section:nth-last-child(1)>section:nth-child(1)>p>i {
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 0.75rem;
+    line-height: 3rem !important;
+}
+
+body>section.add-item>section:nth-last-child(1)>section:nth-last-child(1)>section:nth-child(1)>button {
+    position: relative;
+    display: block;
+}
+
+body>section.add-item>section:nth-last-child(1)>section:nth-last-child(1)>section:nth-child(1)>button>i {
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    width: 2rem;
+    line-height: 3rem !important;
+    font-size: 2rem;
+}
+
+body>section.add-item>section:nth-last-child(1)>section:nth-last-child(1)>section:nth-last-child(1) {
+    justify-content: flex-start;
+    flex-direction: column;
+    margin-top: 1rem;
+    gap: 1rem;
+}
+
+body>section.add-item>section:nth-last-child(1)>section:nth-last-child(1)>section:nth-last-child(1)>button {
+    position: relative;
+    width: calc((100% - 4rem) / 5);
+    aspect-ratio: 1/1;
+    font-size: 1.5rem;
+    background-color: #fff;
+    border-radius: 50%;
+    outline: 2px solid #000;
+}
+
+body>section.add-item>section:nth-last-child(1)>section:nth-last-child(1)>section:nth-last-child(1)>button.col {
+    color: #fff;
+    background-color: var(--num-pad-color);
+}
+
+body>section.add-item>section:nth-last-child(1)>section:nth-last-child(1)>section:nth-last-child(1)>button:nth-last-child(1) {
+    position: absolute;
+    right: 0;
+    bottom: 0.25rem;
+    padding-top: calc((100% - 4rem) / 5 * 2 + 1rem);
+    width: calc((100% - 4rem) / 5);
+    border-radius: 3rem;
+    color: #fff;
+    background-color: var(--num-pad-enter);
+}
+
+body>section.add-item>section:nth-last-child(1)>section:nth-last-child(1)>section:nth-last-child(1)>button::after {
+    content: attr(data-value);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: 600;
+}

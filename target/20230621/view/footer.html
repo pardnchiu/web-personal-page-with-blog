@@ -1,0 +1,33 @@
+<footer id="footer">
+    <section>
+        <p>© 帕登數位科技有限公司 Pardn Ltd</p>
+        <ul>
+            <li :for="item in footer">
+                <a :href="item.href" target="_blank">
+                    <i :class="item.class"></i>
+                </a>
+            </li>
+        </ul>
+    </section>
+</footer>
+<script>
+    const footer = new PD({
+        id: "footer",
+        data: {
+            footer: [
+                {
+                    href: "https://github.com/pardnchiu",
+                    class: "fa-brands fa-github"
+                },
+                {
+                    href: "https://linkedin.com/in/pardnchiu",
+                    class: "fa-brands fa-linkedin-in"
+                },
+                {
+                    href: "mailto:mail@pardn.ltd",
+                    class: "fa-regular fa-envelope"
+                }
+            ]
+        }
+    });
+</script>

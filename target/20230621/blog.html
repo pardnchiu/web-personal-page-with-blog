@@ -1,0 +1,186 @@
+<!-- 
+
+	Copyright 2023 Pardn Ltd 帕登數位科技有限公司.
+	Created by Pardn Chiu 邱敬幃.
+	Email: mail@pardn.ltd
+	
+ -->
+<!DOCTYPE html>
+<html lang="zh-Hans-TW">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+        <meta name="mobile-web-app-capable" content="no">
+        <meta name="apple-mobile-web-app-capable" content="no">
+        <meta name="apple-mobile-web-app-status-bar-style" content="default">
+        <meta name="theme-color" content="#ffffff">
+        <meta name="robots" content="index, follow">
+
+        <title>Personal Page with Blog | 邱敬幃 Pardn Chiu</title>
+        <meta name="title" content="Personal Page with Blog | 邱敬幃 Pardn Chiu">
+        <meta name="description" content="Personal Page with Blog | 帕登數位科技有限公司 Pardn Ltd">
+        <meta name="author" content="邱敬幃 Pardn Chiu">
+        <link rel="author" href="https://pardn.io">
+        <link rel="canonical" href="https://pardnchiu.github.io/web-personal-page-with-blog/">
+        <meta name="referrer" content="no-referrer-when-downgrade">
+        <meta name="copyright" content="© 2023 帕登數位科技有限公司 Pardn Ltd">
+
+        <!-- Open Graph / Facebook -->
+        <meta property="og:title" content="Personal Page with Blog | 邱敬幃 Pardn Chiu">
+        <meta property="og:description" content="Personal Page with Blog | 帕登數位科技有限公司 Pardn Ltd">
+        <meta property="og:image" content="https://repository-images.githubusercontent.com/655982186/b2c801b0-5a3c-4a40-b1a2-31a1c7563aad">
+        <meta property="og:url" content="https://pardnchiu.github.io/web-personal-page-with-blog/">
+        <meta property="og:site_name" content="Pardn Chiu 的 Github Page">
+        <meta property="og:type" content="website">
+        <meta property="og:locale" content="zh_TW">
+
+        <!-- Twitter -->
+        <meta property="twitter:card" content="summary_large_image">
+        <meta property="twitter:title" content="Personal Page with Blog | 邱敬幃 Pardn Chiu">
+        <meta property="twitter:description" content="Personal Page with Blog | 帕登數位科技有限公司 Pardn Ltd">
+        <meta property="twitter:image" content="https://repository-images.githubusercontent.com/655982186/b2c801b0-5a3c-4a40-b1a2-31a1c7563aad">
+        <meta property="twitter:url" content="https://pardnchiu.github.io/web-personal-page-with-blog/">
+        <meta property="twitter:creator" content="@PardnChiu">
+
+        <!-- Google -->
+        <meta name="google-site-verification" content="YQQ2f6AchR8dcb55Az2BYd_mw4TrP0J1RApD-v2v65Y">
+
+        <!-- Preconnects for CDN -->
+        <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+        <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-L5VYEZPVXX"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() { dataLayer.push(arguments); }
+            gtag('js', new Date());
+            gtag('config', 'G-L5VYEZPVXX');
+        </script>
+
+        <!-- Preloads for CDN -->
+        <link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/css/all.min.css" as="style">
+        <link rel="preload" href="https://cdn.jsdelivr.net/gh/pardnchiu/PDRenderKit@1.2.0/dist/PDRenderKit.js" as="script">
+
+        <!-- CDN -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/css/all.min.css">
+        <script src="https://cdn.jsdelivr.net/gh/pardnchiu/PDRenderKit@1.2.0/dist/PDRenderKit.js" copyright="Pardn Ltd"></script>
+
+        <!-- Local -->
+        <link rel="stylesheet" href="./css/index.css">
+        <script src="./js/blog.js" type="module"></script>
+        <!--  -->
+        <style>
+            :root {
+                --width-max: 1024px;
+
+                --col-brand-1: #F5F5F5;
+                --col-brand-2: #C7C7C7;
+                --col-brand-3: #999999;
+                --col-brand-4: #6B6B6B;
+                --col-brand-5: #f1c50e;
+                --col-brand-6: #303030;
+                --col-brand-7: #242424;
+                --col-brand-8: #171717;
+                --col-brand-9: #0A0A0A;
+
+                --gradient-col: linear-gradient(to right bottom, rgb(70, 180, 105), rgb(70, 130, 180), rgb(250, 75, 75));
+            }
+        </style>
+    </head>
+
+    <body id="body">
+        <nav :path="./view/nav.html"></nav>
+        <section id="blog">
+            <section>
+                <section class="bl">
+                    <header>
+                        <img class="lazyload" data-src="https://picsum.photos/256?random=1" alt="">
+                        <strong>Lorem, ipsum.</strong>
+                        <p>Lorem, ipsum.</p>
+                        <section>
+                            <a href="https://github.com/pardnchiu">
+                                <i class="fa-brands fa-github"></i>
+                            </a>
+                            <a href="https://linkedin.com/in/pardnchiu">
+                                <i class="fa-brands fa-linkedin-in"></i>
+                            </a>
+                            <a href="mailto:mail@pardn.ltd">
+                                <i class="fa-regular fa-envelope"></i>
+                            </a>
+                        </section>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore, beatae nulla! Quod?</p>
+                    </header>
+                    <section class="post">
+                        <a :for="e in list_8" href="./blog-content.html">
+                            <strong>Lorem ipsum dolor sit amet consectetur {{ e }}.</strong>
+                            <p>
+                                <time>2022/01/05</time>・<i class="fa-solid fa-eye"></i> 100
+                            </p>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem necessitatibus doloremque saepe nisi minus. Incidunt id ratione eum. Modi nostrum quo ullam repellendus a dolorem voluptatem praesentium corporis ab iusto.</p>
+                        </a>
+                    </section>
+                    <section class="page">
+                        <a href="">上一頁</a>
+                        <a href="">下一頁</a>
+                    </section>
+                </section>
+                <section class="br">
+                    <header>
+                        <img class="lazyload" data-src="https://picsum.photos/256?random=1" alt="">
+                        <strong>Lorem, ipsum.</strong>
+                        <p>Lorem, ipsum.</p>
+                        <section>
+                            <a href="https://github.com/pardnchiu">
+                                <i class="fa-brands fa-github"></i>
+                            </a>
+                            <a href="https://linkedin.com/in/pardnchiu">
+                                <i class="fa-brands fa-linkedin-in"></i>
+                            </a>
+                            <a href="mailto:mail@pardn.ltd">
+                                <i class="fa-regular fa-envelope"></i>
+                            </a>
+                        </section>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore, beatae nulla! Quod?</p>
+                    </header>
+                    <section class="search">
+                        <label>
+                            <input type="text" placeholder="輸入關鍵字">
+                        </label>
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </section>
+                    <section class="post desktop">
+                        <strong>最新文章</strong>
+                        <a :for="e in list_4" href="">
+                            <strong>Lorem ipsum dolor sit amet consectetur.</strong>
+                            <p>
+                                <time>2022/01/05</time>・<i class="fa-solid fa-eye"></i> 100
+                            </p>
+                        </a>
+                        <button>查看全部</button>
+                    </section>
+                    <section class="topic">
+                        <strong>主題</strong>
+                        <a :for="e in list_8" href="">Lorem.</a>
+                    </section>
+                    <section class="tag">
+                        <strong>標籤</strong>
+                        <a :for="e in list_8" href="">Lorem.</a>
+                    </section>
+                </section>
+            </section>
+        </section>
+        <section class="float-bottom">
+            <section class="search">
+                <label>
+                    <input type="text" placeholder="輸入關鍵字">
+                </label>
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </section>
+        </section>
+        <footer :path="./view/footer.html"></footer>
+    </body>
+
+</html>

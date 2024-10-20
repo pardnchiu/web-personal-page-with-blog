@@ -1,0 +1,78 @@
+>header {
+    width: 100%;
+
+    >section {
+        display: flex;
+        margin: 0 auto;
+        padding: 5rem 1rem;
+        width: 100%;
+        max-width: $maxWidth;
+
+        article {
+            display: flex;
+            flex-flow: column;
+            align-items: flex-start;
+
+            h1 {
+                position: relative;
+                padding-right: 0.5rem;
+                max-width: 800px;
+                font-size: 2.5rem;
+                font-weight: 400;
+
+                strong {
+                    position: relative;
+                    font-weight: 700;
+
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        right: -1rem;
+                        bottom: 0.5rem;
+                        width: 0.5rem;
+                        height: 0.5rem;
+                        background-color: red;
+                    }
+                }
+            }
+
+            h2 {
+                position: relative;
+                margin-top: 0.25rem;
+                max-width: 640px;
+                line-height: 2rem;
+                font-family: "Roboto Mono", monospace;
+                font-size: 1.25rem;
+                font-weight: 500;
+            }
+
+            >section {
+                display: flex;
+                flex-flow: row wrap;
+                gap: 1rem;
+                margin-top: 1rem;
+
+                a,
+                button {
+                    position: relative;
+                    display: inline-block;
+                    padding: 0 2rem;
+                    line-height: 3rem;
+                    font-family: "Roboto Mono", monospace;
+                    font-weight: 400;
+                    background-color: #000;
+                    color: #fff;
+                    border-radius: 0.125rem;
+
+                    i {
+                        margin-right: 0.5rem;
+                        line-height: 3rem;
+                        color: #fff;
+                    }
+                }
+
+            }
+        }
+
+    }
+}

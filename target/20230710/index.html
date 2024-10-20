@@ -1,0 +1,145 @@
+<!-- 
+
+	Copyright 2023 Pardn Ltd 帕登國際有限公司.
+	Created by Pardn Chiu 邱敬幃.
+	Email: mail@pardn.ltd
+	
+ -->
+<!DOCTYPE html>
+<html lang="zh-Hans-TW">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+        <meta name="mobile-web-app-capable" content="no">
+        <meta name="apple-mobile-web-app-capable" content="no">
+        <meta name="apple-mobile-web-app-status-bar-style" content="default">
+        <meta name="theme-color" content="#ffffff">
+        <meta name="robots" content="index, follow">
+
+        <title>App Introduction | 邱敬幃 Pardn Chiu</title>
+        <meta name="title" content="App Introduction | 邱敬幃 Pardn Chiu">
+        <meta name="description" content="App Introduction | 帕登數位科技有限公司 Pardn Ltd">
+        <meta name="author" content="邱敬幃 Pardn Chiu">
+        <link rel="author" href="https://pardn.io">
+        <link rel="canonical" href="https://pardnchiu.github.io/web-app-introduction/">
+        <meta name="referrer" content="no-referrer-when-downgrade">
+        <meta name="copyright" content="© 2023 帕登數位科技有限公司 Pardn Ltd">
+
+        <!-- Open Graph / Facebook -->
+        <meta property="og:title" content="App Introduction | 邱敬幃 Pardn Chiu">
+        <meta property="og:description" content="App Introduction | 帕登數位科技有限公司 Pardn Ltd">
+        <meta property="og:image" content="https://repository-images.githubusercontent.com/664371014/12589da6-0767-4a3c-a360-5cf90564df87">
+        <meta property="og:url" content="https://pardnchiu.github.io/web-app-introduction/">
+        <meta property="og:site_name" content="Pardn Chiu 的 Github Page">
+        <meta property="og:type" content="website">
+        <meta property="og:locale" content="zh_TW">
+
+        <!-- Twitter -->
+        <meta property="twitter:card" content="summary_large_image">
+        <meta property="twitter:title" content="App Introduction | 邱敬幃 Pardn Chiu">
+        <meta property="twitter:description" content="App Introduction | 帕登數位科技有限公司 Pardn Ltd">
+        <meta property="twitter:image" content="https://repository-images.githubusercontent.com/664371014/12589da6-0767-4a3c-a360-5cf90564df87">
+        <meta property="twitter:url" content="https://pardnchiu.github.io/web-app-introduction/">
+        <meta property="twitter:creator" content="@PardnChiu">
+
+        <!-- Google -->
+        <meta name="google-site-verification" content="YQQ2f6AchR8dcb55Az2BYd_mw4TrP0J1RApD-v2v65Y">
+
+        <!-- Preconnects for CDN -->
+        <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+        <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-L5VYEZPVXX"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() { dataLayer.push(arguments); }
+            gtag('js', new Date());
+            gtag('config', 'G-L5VYEZPVXX');
+        </script>
+
+        <!-- Preloads for CDN -->
+        <link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/css/all.min.css" as="style">
+        <link rel="preload" href="https://cdn.jsdelivr.net/gh/pardnchiu/PDRenderKit@1.2.0/dist/PDRenderKit.js" as="script">
+
+        <!-- CDN -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/css/all.min.css">
+        <script src="https://cdn.jsdelivr.net/gh/pardnchiu/PDRenderKit@1.2.0/dist/PDRenderKit.js" copyright="Pardn Ltd"></script>
+
+        <!-- Local -->
+        <link rel="stylesheet" href="./css/index.css">
+        <script type="module" src="./js/index.js"></script>
+
+        <!--  -->
+        <style>
+            :root {
+                --width-max: 1280px;
+                --color-bg: #ff00000d;
+                --color-brand: rgba(255, 0, 0, 0.8);
+                --color-hint: rgba(255, 0, 0, 0.2);
+                --color-dark-0: rgba(0, 0, 0, 0.6);
+                --color-dark-1: rgba(0, 0, 0, 0.8);
+                --color-blue-0: rgba(70, 130, 180, 0.6);
+                --color-blue-1: rgba(70, 130, 180, 0.8);
+                --color-purple-0: rgba(128, 0, 128, 0.6);
+                --color-purple-1: rgba(128, 0, 128, 0.8);
+            }
+        </style>
+    </head>
+
+    <body id="app">
+        <!--  -->
+        <section :path="./views/nav.html"></section>
+        <!--  -->
+        <section :if="page == home">
+            <section :path="./views/header.html"></section>
+            <section :path="./views/section-3.html"></section>
+            <section :path="./views/section-4.html"></section>
+            <section :path="./views/section-5.html"></section>
+            <section :path="./views/section-6.html"></section>
+            <section :path="./views/section-7.html"></section>
+            <section :path="./views/section-8.html"></section>
+            <section :path="./views/section-9.html"></section>
+        </section>
+        <!--  -->
+        <section :else-if="page == feature">
+            <section :path="./views/section-3.html"></section>
+            <section :path="./views/section-7.html"></section>
+            <section :path="./views/section-8.html"></section>
+            <section :path="./views/section-9.html"></section>
+        </section>
+        <!--  -->
+        <section :else-if="page == service">
+            <section :path="./views/section-4.html"></section>
+            <section :path="./views/section-5.html"></section>
+            <section :path="./views/section-8.html"></section>
+            <section :path="./views/section-9.html"></section>
+        </section>
+        <!--  -->
+        <section :else-if="page == pricing">
+            <section :path="./views/section-6.html"></section>
+            <section :path="./views/section-8.html"></section>
+            <section :path="./views/section-9.html"></section>
+        </section>
+        <!--  -->
+        <section :else-if="page == blog">
+            <section :path="./views/section-blog.html"></section>
+        </section>
+        <!--  -->
+        <section :else-if="page == article">
+            <section :path="./views/section-article.html"></section>
+        </section>
+        <!--  -->
+        <section :else-if="page == contact">
+            <section :path="./views/section-contact.html"></section>
+        </section>
+        <!--  -->
+        <section :path="./views/footer.html"></section>
+
+        <script type="module">
+        </script>
+    </body>
+
+</html>

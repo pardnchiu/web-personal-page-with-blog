@@ -1,0 +1,208 @@
+>section#section-6 {
+    position: relative;
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow: hidden;
+
+    &::before {
+        content: "";
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: 70%;
+        background: linear-gradient(to right, var(--color-blue-1), var(--color-purple-1), var(--color-brand));
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: 30%;
+        background-color: #fff;
+    }
+
+    >section {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+        gap: 1rem;
+        margin: 0 auto;
+        padding: 5rem 1rem;
+        width: 100%;
+        max-width: var(--width-max);
+
+        h6 {
+            width: 100%;
+            max-width: 40rem;
+            font-size: 2rem;
+            text-align: center;
+            color: #fff;
+        }
+
+        >section {
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+            width: 100%;
+
+            div {
+                position: relative;
+                width: 100%;
+                max-width: 480px;
+
+                @media screen and (min-width: 640px) {
+                    width: calc((100% - 2rem) / 2);
+                }
+
+                @media screen and (min-width: 960px) {
+                    width: calc((100% - 2rem * 2) / 3);
+                }
+
+                &:hover {
+
+                    section {
+                        box-shadow: 0 0.25rem 0.5rem #00000026;
+                    }
+
+                    svg {
+                        right: -1rem;
+                        bottom: -1rem;
+                        opacity: 1;
+                    }
+                }
+
+                section {
+                    position: relative;
+                    z-index: 1;
+                    display: flex;
+                    flex-flow: column;
+                    align-items: center;
+                    background-color: #fff;
+                    padding: 2.5rem;
+                    border-radius: 1rem;
+                    box-shadow: 0 0 0.25rem #0000001a;
+                    transition: 0.4s;
+
+                    b {
+                        font-size: 1.125rem;
+                        color: var(--color-dark-1);
+                    }
+
+                    strong {
+                        margin-top: 0.5rem;
+                        padding-bottom: 2rem;
+                        font-size: 3rem;
+                        color: var(--color-purple-1);
+
+                        &::before {
+                            content: "$";
+                        }
+
+                        &::after {
+                            content: "/month";
+                            margin-left: 0.5rem;
+                            font-size: 1rem;
+                            font-weight: 400;
+                        }
+                    }
+
+                    ul {
+                        position: relative;
+                        display: flex;
+                        flex-flow: column;
+                        align-items: center;
+                        padding-top: 2rem;
+                        width: 100%;
+                        list-style: none;
+
+                        &::before {
+                            content: "";
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            right: 0;
+                            width: 100%;
+                            height: 2px;
+                            background-color: #eee;
+                        }
+
+                        li {
+                            line-height: 2rem;
+                            text-align: center;
+                            font-size: 0.875rem;
+                            color: var(--color-dark-0);
+                        }
+                    }
+
+                    a,
+                    button {
+                        position: relative;
+                        margin-top: 2rem;
+                        padding: 0 2.5rem;
+                        line-height: 3rem;
+                        background-color: var(--color-dark-0);
+                        color: #fff;
+                        border-radius: 0.5rem;
+                        overflow: hidden;
+
+                        &:hover::before {
+                            width: 100%;
+                        }
+
+                        &::before {
+                            content: "";
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            bottom: 0;
+                            width: 0;
+                            height: 100%;
+                            background-color: var(--color-dark-1);
+                            transition: 0.4s;
+                        }
+
+                        &::after {
+                            content: "GET STARTED";
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            bottom: 0;
+                            width: 100%;
+                            line-height: 3rem;
+                            height: 100%;
+                            text-align: center;
+                            color: #fff;
+                        }
+                    }
+                }
+
+                svg {
+                    position: absolute;
+                    z-index: 0;
+                    right: 0;
+                    bottom: 0;
+                    width: 50%;
+                    opacity: 0;
+                    transition: 0.4s;
+
+                    path {
+                        fill: var(--color-dark-0);
+                        opacity: 0.3;
+                    }
+                }
+            }
+        }
+    }
+}

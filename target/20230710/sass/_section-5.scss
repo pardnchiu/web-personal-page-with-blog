@@ -1,0 +1,129 @@
+>section#section-5 {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+
+  &::before {
+    content: "section-5";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    font-size: 0.75rem;
+    color: var(--color-dark-0);
+  }
+
+  >section {
+    display: flex;
+    flex-flow: row wrap;
+    gap: 1rem;
+    margin: 0 auto;
+    padding: 5rem 1rem;
+    width: 100%;
+    max-width: var(--width-max);
+
+    >section {
+      display: flex;
+
+      &:nth-child(1) {
+        flex-flow: column;
+        flex-shrink: 0;
+        gap: 2rem;
+        padding-right: 2rem;
+        width: 100%;
+        max-width: 25rem;
+
+        h6 {
+          width: 100%;
+          font-size: 2rem;
+        }
+
+        p {
+          width: 100%;
+          line-height: 2rem;
+          color: var(--color-dark-0);
+        }
+      }
+
+      &:nth-child(2) {
+        margin-top: 2rem;
+        width: 100%;
+        // overflow: hidden;
+
+        @for $i from 0 through 3 {
+
+          &[index="#{$i}"] {
+
+            img:nth-child(1) {
+              margin-left: calc(-100% * #{$i});
+
+              @media screen and (min-width: 480px) {
+                margin-left: calc(-50% * #{$i - 1});
+              }
+
+              @media screen and (min-width: 640px) {
+                margin-left: calc(-100% / 3 * #{$i - 2});
+              }
+            }
+          }
+        }
+
+        &[index="0"] {
+
+          img:nth-child(1) {
+            margin-left: -100%;
+
+            @media screen and (min-width: 480px) {
+              margin-left: -50%;
+            }
+
+            @media screen and (min-width: 640px) {
+              margin-left: calc(-100% / 3);
+            }
+
+            @media screen and (min-width: 800px) {
+              margin-left: 0;
+            }
+          }
+        }
+
+        &[index="1"] {
+
+          img:nth-child(1) {
+
+            @media screen and (min-width: 640px) {
+              margin-left: calc(-100% / 3);
+            }
+
+            @media screen and (min-width: 800px) {
+              margin-left: 0;
+            }
+          }
+        }
+
+        @media screen and (min-width: 800px) {
+          margin-top: 0;
+          max-width: calc(100% - 26rem);
+        }
+
+        img {
+          flex-shrink: 0;
+          width: 100%;
+          transition: 0.4s;
+
+          @media screen and (min-width: 480px) {
+            width: 50%;
+          }
+
+          @media screen and (min-width: 640px) {
+            width: calc(100% / 3);
+          }
+
+          @media screen and (min-width: 800px) {
+            width: 100%;
+            max-width: 15rem;
+          }
+        }
+      }
+    }
+  }
+}

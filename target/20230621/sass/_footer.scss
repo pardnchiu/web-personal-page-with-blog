@@ -1,0 +1,45 @@
+>footer {
+    width: 100%;
+    background-color: #000;
+
+    section {
+        display: flex;
+        flex-flow: column;
+        gap: $_8;
+        margin: 0 auto;
+        padding: $_16;
+        width: 100%;
+        max-width: $maxWidth;
+
+        p {
+            text-align: center;
+            font-size: $_14;
+            color: #fff;
+        }
+
+        ul {
+            display: flex;
+            justify-content: center;
+            gap: $_8;
+            width: 100%;
+            list-style: none;
+
+            li {
+
+                a {
+                    display: block;
+                    width: $_24;
+                    line-height: $_24;
+                    font-size: $_16;
+                    color: #fff;
+                    transition: 0.2s;
+                    text-align: center;
+
+                    &:hover {
+                        font-size: $_20;
+                    }
+                }
+            }
+        }
+    }
+}

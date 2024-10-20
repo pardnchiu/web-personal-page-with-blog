@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="zh-Hans-TW">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+        <meta name="mobile-web-app-capable" content="no">
+        <meta name="apple-mobile-web-app-capable" content="no">
+        <meta name="apple-mobile-web-app-status-bar-style" content="default">
+        <meta name="theme-color" content="#ffffff">
+        <meta name="robots" content="index, follow">
+
+        <title>Moneybook | 邱敬幃 Pardn Chiu</title>
+        <meta name="title" content="Moneybook | 邱敬幃 Pardn Chiu">
+        <meta name="description" content="Moneybook | 帕登數位科技有限公司 Pardn Ltd">
+        <meta name="author" content="邱敬幃 Pardn Chiu">
+        <link rel="author" href="https://pardn.io">
+        <link rel="canonical" href="https://pardnchiu.github.io/web-moneybook/">
+        <meta name="referrer" content="no-referrer-when-downgrade">
+        <meta name="copyright" content="© 2023 帕登數位科技有限公司 Pardn Ltd">
+
+        <!-- Open Graph / Facebook -->
+        <meta property="og:title" content="Moneybook | 邱敬幃 Pardn Chiu">
+        <meta property="og:description" content="Moneybook | 帕登數位科技有限公司 Pardn Ltd">
+        <meta property="og:image" content="https://repository-images.githubusercontent.com/629413681/f9cf8b23-1b46-4eb1-97e2-f56db4e9c6bf">
+        <meta property="og:url" content="https://pardnchiu.github.io/web-moneybook/">
+        <meta property="og:site_name" content="Pardn Chiu 的 Github Page">
+        <meta property="og:type" content="website">
+        <meta property="og:locale" content="zh_TW">
+
+        <!-- Twitter -->
+        <meta property="twitter:card" content="summary_large_image">
+        <meta property="twitter:title" content="Moneybook | 邱敬幃 Pardn Chiu">
+        <meta property="twitter:description" content="Moneybook | 帕登數位科技有限公司 Pardn Ltd">
+        <meta property="twitter:image" content="https://repository-images.githubusercontent.com/629413681/f9cf8b23-1b46-4eb1-97e2-f56db4e9c6bf">
+        <meta property="twitter:url" content="https://pardnchiu.github.io/web-moneybook/">
+        <meta property="twitter:creator" content="@PardnChiu">
+
+        <!-- Google -->
+        <meta name="google-site-verification" content="YQQ2f6AchR8dcb55Az2BYd_mw4TrP0J1RApD-v2v65Y">
+
+        <!-- Preconnects for CDN -->
+        <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+        <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-L5VYEZPVXX"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() { dataLayer.push(arguments); }
+            gtag('js', new Date());
+            gtag('config', 'G-L5VYEZPVXX');
+        </script>
+
+        <!-- Preloads for CDN -->
+        <link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/css/all.min.css" as="style">
+        <link rel="preload" href="https://cdn.jsdelivr.net/gh/pardnchiu/PDRenderKit@1.2.0/dist/PDRenderKit.js" as="script">
+
+        <!-- CDN -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/css/all.min.css">
+        <script src="https://cdn.jsdelivr.net/gh/pardnchiu/PDRenderKit@1.2.0/dist/PDRenderKit.js" copyright="Pardn Ltd"></script>
+
+        <!-- Local -->
+        <link rel="stylesheet" href="./css/index.css">
+        <script type="module" src="./js/index.js"></script>
+    </head>
+
+    <body id="app">
+        <!--  -->
+        <nav id="nav">
+            <button @click="tabShow">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+            <button id="button-month-selector" @click="selectorShow">
+                <p>{{ year }}年{{ month }}月</p>
+                <i class="fa-solid fa-caret-up"></i>
+            </button>
+            <button @click="changeMode">
+                <i :if="mode == calendar" class="fa-solid fa-chart-pie"></i>
+                <i :else class="fa-regular fa-calendar-days"></i>
+            </button>
+        </nav>
+        <!--  -->
+        <section id="month-selector" class="calendar">
+            <section>
+                <button>
+                    <i class="fa-solid fa-caret-left"></i>
+                </button>
+                <p>{{ year }}</p>
+                <button>
+                    <i class="fa-solid fa-caret-right"></i>
+                </button>
+            </section>
+            <section>
+                <button :for="e in month_total" :class="e.class">{{ e.title }}</button>
+            </section>
+        </section>
+        <!--  -->
+        <button class="add" @click="addShow">
+            <i class="fa-solid fa-plus"></i>
+        </button>
+        <!--  -->
+        <section class="body">
+            <!--  -->
+            <section :if="mode == calendar" class="index-calendar">
+                <table>
+                    <thead>
+                        <tr>
+                            <th :for="e in day_head">{{ e }}</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr :for="week in calendar">
+                            <td :for="day in week" :html="day"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+            <!--  -->
+            <section :else class="index-pie">
+                <section>
+                    <p data-value="0">月支出</p>
+                    <p data-value="0">月收入</p>
+                    <section>
+                        <span percent="65">
+                            <span></span>
+                            <span></span>
+                        </span>
+                    </section>
+                </section>
+            </section>
+            <section class="index-list">
+                <div date="2023/04/18 星期二" data-value="-1360">
+                    <p data-value="-123">線上購物1</p>
+                    <p data-value="-456">線上購物2</p>
+                    <p data-value="-789">線上購物3</p>
+                </div>
+            </section>
+        </section>
+        <!--  -->
+        <section id="app-tab" class="tab">
+            <section>
+                <button @click="tabShow">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </button>
+                <section>
+                    <img src="https://pardn.io/image/head-s.jpg" alt="">
+                    <p>
+                        <b>邱敬幃</b>
+                        <a href="">
+                            <i class="fa-solid fa-envelope"></i>
+                            開啟信箱
+                        </a>
+                    </p>
+                </section>
+                <section>
+                    <a href="https://github.com/pardnchiu/web-template" target="_blank">
+                        <i class="fa-brands fa-github"></i>
+                        Github
+                    </a>
+                    <a href="https://linkedin.com/in/pardnchiu" target="_blank">
+                        <i class="fa-brands fa-linkedin"></i>
+                        Linkedin
+                    </a>
+                    <a href="https://www.facebook.com/chiuchingwei" target="_blank">
+                        <i class="fa-brands fa-facebook"></i>
+                        Facebook
+                    </a>
+                    <a href="https://www.instagram.com/pardnchiu" target="_blank">
+                        <i class="fa-brands fa-instagram"></i>
+                        Instagram
+                    </a>
+                </section>
+                <footer>
+                    <p>© Copyright 2023 Pardn Ltd<br>帕登國際有限公司</p>
+                </footer>
+            </section>
+        </section>
+        <!--  -->
+        <section id="add-item" class="add-item">
+            <nav>
+                <button>
+                    <i class="fa-regular fa-circle-question"></i>
+                </button>
+                <button class="tab" @click="changeIncome">
+                    <span></span>
+                </button>
+                <button @click="addShow">
+                    <i class="fa-regular fa-circle-xmark"></i>
+                </button>
+            </nav>
+            <section id="item-type-list">
+                <button :class="e.class" :for="e in type_list" @click="changeType">
+                    <i :class="e.icon"></i>
+                    <p>{{ e.title }}</p>
+                </button>
+            </section>
+            <section>
+                <section>
+                    <section id="num-input" data-value="0">
+                        <i class="fa-regular fa-keyboard"></i>
+                        <input type="text" placeholder="在此輸入描述">
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <button>
+                            <i class="fa-solid fa-caret-left"></i>
+                        </button>
+                        <p>
+                            <i class="fa-regular fa-calendar-days"></i>
+                            {{ date }}
+                        </p>
+                        <button>
+                            <i class="fa-solid fa-caret-right"></i>
+                        </button>
+                    </section>
+                    <section>
+                        <button data-value="7" @click="numVal"></button>
+                        <button data-value="4" @click="numVal"></button>
+                        <button data-value="1" @click="numVal"></button>
+                        <button data-value="00" @click="numVal"></button>
+                        <button data-value="8" @click="numVal"></button>
+                        <button data-value="5" @click="numVal"></button>
+                        <button data-value="2" @click="numVal"></button>
+                        <button data-value="0" @click="numVal"></button>
+                        <button data-value="9" @click="numVal"></button>
+                        <button data-value="6" @click="numVal"></button>
+                        <button data-value="3" @click="numVal"></button>
+                        <button data-value="." @click="numVal"></button>
+                        <button data-value="÷" @click="numVal"></button>
+                        <button data-value="x" @click="numVal"></button>
+                        <button data-value="+" @click="numVal"></button>
+                        <button data-value="-" @click="numVal"></button>
+                        <button data-value="AC" @click="numVal"></button>
+                        <button data-value="←" @click="numVal"></button>
+                        <button data-value="OK" @click="numVal"></button>
+                    </section>
+                </section>
+            </section>
+        </section>
+    </body>
+
+</html>

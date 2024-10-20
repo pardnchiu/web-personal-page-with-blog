@@ -1,0 +1,30 @@
+<section id="skill">
+    <section>
+        <header>
+            <h6 class="at delay">Lorem ipsum dolor sit.</h6>
+            <p class="at delay">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam eaque perferendis deleniti?</p>
+        </header>
+        <section>
+            <div :for="e in items">
+                <div class="delay" :year="e">
+                    <div></div>
+                    <div></div>
+                </div>
+                <p class="at delay">Text {{ e }}</p>
+            </div>
+        </section>
+    </section>
+</section>
+<script>
+    const section6 = new PD({
+        id: "skill",
+        data: {
+            title: "Skills",
+            content: "The skills I use for development.",
+            items: Array.from({ length: 8 }, (_, i) => i + 1).sort(_ => Math.random() - 0.5)
+        },
+        next: function () {
+            section6.dom.querySelectorAll("*.delay").forEach(e => delay_observer.observe(e));
+        }
+    })
+</script>

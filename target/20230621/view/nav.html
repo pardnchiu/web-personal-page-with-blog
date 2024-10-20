@@ -1,0 +1,15 @@
+<nav id="nav">
+    <section>
+        <a href="./index.html">
+            <strong>Lorem.</strong>
+        </a>
+        <ul id="body-tab">
+            <li :for="e in items">
+                <a :href="e.href">{{ e.name }}</a>
+            </li>
+        </ul>
+        <button @click="tab">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+    </section>
+</nav>
