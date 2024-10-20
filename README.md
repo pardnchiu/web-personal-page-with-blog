@@ -1,7 +1,7 @@
 
 # 統整網站前端範例
 
-![](https://img.shields.io/github/repo-size/pardnchiu/web-personal-page-with-blog?label=size&color=bb4444) ![](https://img.shields.io/github/license/pardnchiu/web-personal-page-with-blog?label=license&color=44bb44) ![](https://img.shields.io/badge/creator-邱敬幃-4444bb)
+![](https://img.shields.io/github/repo-size/pardnchiu/eb-template?label=size&color=bb4444) ![](https://img.shields.io/github/license/pardnchiu/eb-template?label=license&color=44bb44) ![](https://img.shields.io/badge/creator-邱敬幃-4444bb)
 
 1. Moneybook<br>
     製作日期: 2023/04/18
@@ -21,7 +21,7 @@
 
 ### 邱敬幃 Pardn Chiu
 
-<a href="mailto:mail@pardn.ltd">
+<a href="mailto:dev@pardn.io">
   <img src="https://pardn.io/image/mail.svg">
 </a>&nbsp<a href="https://linkedin.com/in/pardnchiu">
   <img src="https://skillicons.dev/icons?i=linkedin">
