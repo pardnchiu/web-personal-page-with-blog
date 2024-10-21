@@ -1,0 +1,133 @@
+section.list-1 {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    padding-top: 2rem;
+    gap: 1.5rem;
+
+    &.rank {
+
+
+        div:nth-child(1)::after {
+            content: "1";
+            position: absolute;
+            top: -1rem;
+            left: 0.25rem;
+            width: 1.5rem;
+            line-height: 1.5rem;
+            height: 1.5rem;
+            text-align: center;
+            font-size: 0.875rem;
+            background: linear-gradient(to top, var(--color-brand-1), var(--color-brand-3));
+            color: #fff;
+            border: 0.125rem solid #fff;
+            border-radius: 50%;
+        }
+
+        @for $i from 2 through 3 {
+
+            div:nth-child(#{$i})::after {
+                content: "#{$i}";
+                position: absolute;
+                top: 0.5rem;
+                left: 0.25rem;
+                width: 1.5rem;
+                line-height: 1.5rem;
+                height: 1.5rem;
+                text-align: center;
+                font-size: 0.875rem;
+                background: linear-gradient(to top, var(--color-brand-1), var(--color-brand-3));
+                color: #fff;
+                border: 0.125rem solid #fff;
+                border-radius: 50%;
+            }
+        }
+    }
+
+    div {
+        position: relative;
+        display: flex;
+        gap: 1.5rem;
+        padding-top: 1.5rem;
+        width: 100%;
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 10rem;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(to right, transparent, #0000001a, #0000001a);
+        }
+
+        &:nth-child(1) {
+            padding-top: 0;
+
+            &::before {
+                opacity: 0;
+            }
+        }
+
+        figure {
+            position: relative;
+            flex-shrink: 0;
+            width: 4rem;
+            height: 4rem;
+            border-radius: 50%;
+            box-shadow: 0 0 0.25rem #0000001a;
+            overflow: hidden;
+
+            &:hover img {
+                transform: scale(105%);
+            }
+
+            img {
+                position: absolute;
+                top: 0;
+                left: 0;
+                bottom: 0;
+                right: 0;
+                width: 100%;
+                height: 100%;
+                transition: 0.3s;
+            }
+        }
+
+        section {
+            display: flex;
+            flex-flow: column;
+            gap: 0.5rem;
+
+            h6 {
+                line-height: 1.5rem;
+                max-height: calc(1.5rem * 2);
+                font-size: 1rem;
+            }
+
+            p {
+                color: var(--color-dark-4);
+                font-size: 0.875rem;
+                font-weight: 300;
+
+                a {
+                    color: inherit;
+                    transition: 0.3s;
+
+                    &:hover {
+                        color: var(--color-brand-2);
+                    }
+                }
+
+                b {
+                    margin: 0 0.25rem;
+                    color: var(--color-brand-2);
+                }
+
+                time {
+                    color: inherit;
+                }
+            }
+        }
+    }
+}

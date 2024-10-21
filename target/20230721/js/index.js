@@ -1,5 +1,6 @@
 (function (_window, _document, _empty, _k, _l, _m, _n, _o, _p, _q, _r, _s, _t, _u, _v, _w, _x, _y, _z, _a, _b, _c, _d, _e, _f, _g, _h, _i, _j) {
-    const sn = 40
+
+    const sn = 39;
     const nav = [_n, _a, _v].$str(_empty);
     const section = [_s, _e, _c, _t, _i, _o, _n].$str(_empty);
     const strong = [_s, _t, _r, _o, _n, _g].$str(_empty);
@@ -30,52 +31,71 @@
     const $content = "Aenean tempor feugiat congue. Curabitur vel arcu tempus, semper mi ut, aliquam felis. In ut quam et velit imperdiet dapibus. Etiam nec purus lacus. Maecenas viverra ornare constius.";
     const $datetime = "2023-07-13";
     const $time = "July 13, 2023";
-    const $user = "Pardn Ltd"
+    const $user = "Pardn Ltd";
+    const $bg = { "background": "url(https://picsum.photos/1920?random=" + Date.now() + ")", "background-color": "#ddd" };
     let _HEADER, _NAV, _RIGHT_TAB, _SECTION_RIGHT, _FOOTER;
 
     _document.addEventListener("DOMContentLoaded", function () {
         _SVGListener();
 
-        _HEADER = (section + "#top-header")._([
-            section._([
+        _HEADER = function (index, subIndex) {
+            return (section + "#top-header")._([
                 section._([
-                    strong._("PARDN LTD")
-                ]),
-                section._([
-                    (ul + ".contact.dark.large")._([
-                        li._([
-                            _a._([
-                                "fa-brands fa-facebook"._fa
-                            ])._open("https://www.facebook.com/chiuchingwei")
-                        ]),
-                        li._([
-                            _a._([
-                                "fa-brands fa-instagram"._fa
-                            ])._open("https://instagram.com/pardnio")
-                        ]),
-                        li._([
-                            _a._([
-                                "fa-brands fa-github"._fa
-                            ])._open("https://github.com/pardnchiu")
-                        ]),
-                        li._([
-                            _a._([
-                                "fa-brands fa-linkedin-in"._fa
-                            ])._open("https://linkedin.com/in/pardnchiu")
-                        ]),
-                        li._([
-                            _a._([
-                                "fa-regular fa-envelope"._fa
-                            ])._open("mailto:mail@pardn.ltd")
+                    section._([
+                        (ul + ".contact.light.large")._([
+                            li._([
+                                _a._([
+                                    "fa-brands fa-facebook"._fa
+                                ])._open("https://www.facebook.com/chiuchingwei")
+                            ]),
+                            li._([
+                                _a._([
+                                    "fa-brands fa-instagram"._fa
+                                ])._open("https://instagram.com/pardnio")
+                            ]),
+                            li._([
+                                _a._([
+                                    "fa-brands fa-github"._fa
+                                ])._open("https://github.com/pardnchiu")
+                            ]),
+                            li._([
+                                _a._([
+                                    "fa-brands fa-linkedin-in"._fa
+                                ])._open("https://linkedin.com/in/pardnchiu")
+                            ]),
+                            li._([
+                                _a._([
+                                    "fa-regular fa-envelope"._fa
+                                ])._open("mailto:mail@pardn.ltd")
+                            ])
                         ])
+                    ]),
+                    section._([
+                        img._("https://pardn.io/image/head.jpg"),
+                        strong._("PARDN LTD"),
+                        _p._("Lorem ipsum dolor sit amet")
+                    ]),
+                    section._([
+                        button._([
+                            "fa-solid fa-magnifying-glass"._fa
+                        ]),
+                        button._([
+                            "fa-solid fa-bars-staggered"._fa
+                        ])._click(() => _RIGHT_TAB(index, subIndex))
                     ])
                 ])
-            ])
-        ]);
+            ]);
+        };
 
         _NAV = function (index, subIndex) {
             return (nav + "#top-nav")._({ percent: 0 }, [
                 section._([
+                    button._([
+                        "fa-solid fa-magnifying-glass"._fa
+                    ]),
+                    button._([
+                        "fa-solid fa-bars-staggered"._fa
+                    ])._click(() => _RIGHT_TAB(index, subIndex)),
                     ul._({ index: index, "sub-index": subIndex }, [
                         li._([
                             "Home",
@@ -87,10 +107,10 @@
                                 li._([
                                     _a._("Personal")._open("https://github.com/pardnchiu/personal-blog")
                                 ]),
+                                li._("Personal Alt")._click(setHome),
                                 li._([
-                                    _a._("Personal Alt")._open("https://pardnchiu.github.io/web-template/target/20230721")
+                                    _a._("Classic")._open("https://github.com/pardnchiu/classic-blog")
                                 ]),
-                                li._("Classic")._click(setHome),
                                 li._([
                                     _a._("Minimal")._open("https://github.com/pardnchiu/minimal-blog")
                                 ])
@@ -117,14 +137,6 @@
                         li._("Author")._click(setAuthor),
                         li._("contact")._click(setContact),
                         li._("404")._click(set404)
-                    ]),
-                    section._([
-                        button._([
-                            "fa-solid fa-magnifying-glass"._fa
-                        ]),
-                        button._([
-                            "fa-solid fa-bars-staggered"._fa
-                        ])._click(() => _RIGHT_TAB(index, subIndex)),
                     ])
                 ])
             ])
@@ -137,10 +149,10 @@
                         button._([
                             "fa-solid fa-xmark"._fa
                         ])._click(function () {
-                            "right-tab".$._class("hide");
+                            "#right-tab".$._class("hide");
                             var timer = setTimeout(() => {
                                 clearTimeout(timer);
-                                "right-tab".$.$rm();
+                                "#right-tab".$.$rm();
                             }, 300);
                         }),
                         ul._({ index: index, "sub-index": subIndex }, [
@@ -152,12 +164,12 @@
                                         _a._("Magazine")._open("https://github.com/pardnchiu/magazine-blog")
                                     ]),
                                     li._([
-                                        _a._("Personal")._open("https://github.com/pardnchiu/personal-blog")
+                                        _a._("Personal")._open("https://github.com/pardnchiu/personal")
                                     ]),
+                                    li._("Personal Alt")._click(setHome),
                                     li._([
-                                        _a._("Personal Alt")._open("https://github.com/pardnchiu/personal-blog-with-cover")
+                                        _a._("Classic")._open("https://pardnchiu.github.io/web-template/target/20230722")
                                     ]),
-                                    li._("Classic")._click(setHome),
                                     li._([
                                         _a._("Minimal")._open("https://github.com/pardnchiu/minimal-blog")
                                     ])
@@ -342,9 +354,10 @@
                 Array.from({ length: 6 }, () => 1)._$((e, i) =>
                     figure._([
                         img._("https://picsum.photos/256?random=" + i)
-                    ])
+                    ])._click(function () {
+                    })
                 )
-            )._open("https://instagram.com/pardnchiu"),
+            )._open("https://instagram.com/pardnio"),
             section._([
                 _p._("© Copyright 2023 帕登國際有限公司"),
                 (ul + ".contact.dark.large")._([
@@ -381,110 +394,45 @@
                     _document.body.scrollTop = 0
                 })
             ])
-        ])
+        ]);
+
+        function openUnsplash() {
+            window.open("https://unsplash.com/photos/yg6v0KoiIcU?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText", "_blank");
+        }
 
         function setHome() {
+            const vw = _document.body.clientWidth + 32;
+            const p1 = Math.floor(vw / 6);
+            const p2 = Math.floor(vw / 6 * 2);
+            const p3 = Math.floor(vw / 6 * 3);
+            const p4 = Math.floor(vw / 6 * 4);
+            const p5 = Math.floor(vw / 6 * 5);
+
             _document.body.scrollTop = 0;
             _document.body.__child([
-                _HEADER,
-                _NAV(0, 3),
+                _HEADER(0, 2),
+                _NAV(0, 2),
                 (section + "#body")._([
-                    (header + "#personal-header")._([
+                    (header + "#default-header.home")._({ style: $bg }, [
                         section._({ index: 0 }, [
-                            section._(
-                                Array.from({ length: 5 }, () => 1)._$((e, i) =>
-                                    figure._([
-                                        img._("https://picsum.photos/1280?random=" + i),
-                                        section._([
-                                            span._("Website"),
-                                            (h4 + ".line.r2")._($title),
-                                            (ul + ".path.light")._([
-                                                li._($user),
-                                                li._([
-                                                    time._({ datetime: $datetime }, $time)
-                                                ])
-                                            ])
-                                        ])
-                                    ])._click(function () {
-                                    })
-                                )
-                            ),
-                            ul._(
-                                Array.from({ length: 5 }, () => 1)._$((e, i) =>
-                                    li._()._click(function () {
-                                        this.$parent(1)._attr({ index: i })
-                                    })
-                                )
-                            ),
-                            button._([
-                                "fa-solid fa-angle-left"._fa
-                            ])._click(function () {
-                                var index = Number(this.$parent(0).$attr("index"));
-                                index -= 1;
-                                if (index < 0) index = 0;
-                                this.$parent(0)._attr({ index: index });
-                            }),
-                            button._([
-                                "fa-solid fa-angle-right"._fa
-                            ])._click(function () {
-                                var index = Number(this.$parent(0).$attr("index"));
-                                var max = this.$parent(0).$child(0).$children().length;
-                                index += 1;
-                                if (index >= max) index = max - 1;
-                                this.$parent(0)._attr({ index: index });
-                            })
-                        ])
-                    ]),
+                            h2._("I'm Pardn Chiu."),
+                            _p._("Lorem ipsum dolor sit amet, consectetur adipiscing elit, Aenean tempor feugiat congue. Curabitur vel arcu tempus, semper mi ut, aliquam felis. In ut quam et velit imperdiet dapibus. Etiam nec purus lacus. Maecenas viverra ornare varius."),
+                            section._([
+                                _a._("GitHub"),
+                                _a._("Email"),
+                            ])
+                        ]),
+                        `<svg width="100%" height="72px" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M -100 36, C ${p1 - 100} 0, ${p2 - 100} 36, ${p2 - 100} 36, C ${p3 - 100} 72, ${p4 - 100} 36, ${p4 - 100} 36, C ${p5 - 100} 0, ${vw - 100} 36, ${vw - 100} 36, L ${vw - 100} 72, L0 72" stroke="none" fill="#ffffff33"/>
+                        <path d="M 150 36, C ${p1 + 150} 0, ${p2 + 150} 36, ${p2 + 150} 36, C ${p3 + 150} 72, ${p4 + 150} 36, ${p4 + 150} 36, C ${p5 + 150} 0, ${vw + 150} 12, ${vw + 150} 12, L ${vw + 150}  72, L0 72" stroke="none" fill="#ffffff33"/>
+                        <path d="M 0 36, C ${p1} 0, ${p2} 36, ${p2} 36, C ${p3} 72, ${p4} 36, ${p4} 36, C ${p5} 0, ${vw} 36, ${vw} 36, L ${vw} 72, L0 72" stroke="none" fill="#ffffff"/>
+                        </svg>`
+                    ])._click(openUnsplash),
                     section._([
                         (section + ".left")._([
                             section._([
-                                (section + ".blog")._([
-                                    section._([
-                                        article._([
-                                            figure._([
-                                                img._("https://picsum.photos/360?random=" + Date.now()),
-                                                span._($heading)
-                                            ])._click(function () {
-                                            }),
-                                            button._([
-                                                "fa-solid fa-up-right-and-down-left-from-center"._fa
-                                            ]),
-                                            section._([
-                                                img._("https://pardn.io/image/head.jpg"),
-                                                ul._([
-                                                    li._([
-                                                        _a._("Pardn Ltd")._open("https://linkedin.com/company/pardnltd")
-                                                    ]),
-                                                    li._([
-                                                        time._({ datetime: "2023-07-13" }, "July 13, 2023")
-                                                    ])
-                                                ])
-                                            ]),
-                                            (h5 + ".line.r2")._($title)._click(function () {
-                                            }),
-                                            (_p + ".line.r3")._($content)
-                                        ])
-                                    ]),
-                                    section._(
-                                        Array.from({ length: 4 }, () => 1)._$((e, i) =>
-                                            _a._([
-                                                figure._([
-                                                    img._("https://picsum.photos/128?random=" + i)
-                                                ]),
-                                                section._([
-                                                    (h6 + ".line.r2")._($title),
-                                                    time._({ datetime: $datetime }, $time)
-                                                ])
-                                            ])._open(e.href)
-                                        )
-                                    )
-                                ])
-                            ]),
-                            section._([
-                                h3._($heading),
-                                (span + ".svg")._({ src: "image/wave.svg" }),
                                 (section + ".grid-1")._(
-                                    Array.from({ length: 4 }, () => 1)._$((e, i) =>
+                                    Array.from({ length: 2 }, () => 1)._$((e, i) =>
                                         figure._([
                                             img._("https://picsum.photos/480?random=" + i),
                                             section._([
@@ -503,6 +451,51 @@
                                 )
                             ]),
                             section._([
+                                h3._($heading),
+                                (span + ".svg")._({ src: "image/wave.svg" }),
+                                (section + ".blog")._([
+                                    section._([
+                                        article._([
+                                            figure._([
+                                                img._("https://picsum.photos/480?random=" + Date.now()),
+                                                span._("Website")
+                                            ])._click(function () {
+                                            }),
+                                            button._([
+                                                "fa-solid fa-up-right-and-down-left-from-center"._fa
+                                            ]),
+                                            section._([
+                                                img._("https://pardn.io/image/head.jpg"),
+                                                ul._([
+                                                    li._([
+                                                        _a._("Pardn Ltd")._open("https://linkedin.com/company/pardnltd")
+                                                    ]),
+                                                    li._([
+                                                        time._({ datetime: "2023-07-13" }, "July 13, 2023")
+                                                    ])
+                                                ])
+                                            ]),
+                                            (h5 + ".line.r2")._(repo[0].title)._click(function () {
+                                            }),
+                                            (_p + ".line.r3")._($content)
+                                        ])
+                                    ]),
+                                    section._(
+                                        Array.from({ length: 4 }, () => 1)._$((e, i) =>
+                                            _a._([
+                                                figure._([
+                                                    img._("https://picsum.photos/128?random=" + i),
+                                                ]),
+                                                section._([
+                                                    (h6 + ".line.r2")._($title),
+                                                    time._({ datetime: $datetime }, $time)
+                                                ])
+                                            ])
+                                        )
+                                    )
+                                ])
+                            ]),
+                            section._([
                                 _p._("- SPONSORED AD -"),
                                 (section + ".ads")._([
                                     _a._([
@@ -513,29 +506,26 @@
                             section._([
                                 h3._($heading),
                                 (span + ".svg")._({ src: "image/wave.svg" }),
-                                (section + ".list-1")._(
-                                    Array.from({ length: 3 }, () => 1)._$((e, i) =>
+                                (section + ".grid-2")._(
+                                    Array.from({ length: 4 }, () => 1)._$((e, i) =>
                                         article._([
-                                            figure._([
-                                                img._("https://picsum.photos/256?random=" + i)
-                                            ]),
+                                            figure._({ tag: "Website" }, [
+                                                img._("https://picsum.photos/480?random=" + i),
+                                            ])._click(function () {
+                                            }),
                                             section._([
                                                 section._([
                                                     img._("https://pardn.io/image/head.jpg"),
                                                     (ul + ".path")._([
-                                                        li._([
-                                                            _a._($user)._open("https://linkedin.com/company/pardnltd")
-                                                        ]),
-                                                        li._("Website"),
+                                                        li._($user),
                                                         li._([
                                                             time._({ datetime: $datetime }, $time)
                                                         ])
-                                                    ])._click(function () {
-                                                    })
+                                                    ])
                                                 ]),
                                                 (h5 + ".line.r2")._($title)._click(function () {
                                                 }),
-                                                (_p + ".line.r2")._($content),
+                                                (_p + ".line.r3")._($content),
                                                 section._([
                                                     (ul + ".share")._([
                                                         li._([
@@ -553,11 +543,27 @@
                                                         li._([
                                                             "fa-regular fa-envelope"._fa
                                                         ])
+                                                    ]),
+                                                    button._([
+                                                        "More",
+                                                        "fa-solid fa-angle-right"._fa
                                                     ])
                                                 ])
                                             ])
                                         ])
-                                    )
+                                    )._([
+                                        ul._({ page: 1 }, [
+                                            li._([
+                                                "fa-solid fa-angle-left"._fa
+                                            ]),
+                                            li._({ txt: 1 }, 1),
+                                            li._({ txt: 2 }, 2),
+                                            li._({ txt: 3 }, 3),
+                                            li._([
+                                                "fa-solid fa-angle-right"._fa
+                                            ])
+                                        ])
+                                    ])
                                 )
                             ])
                         ]),
@@ -573,19 +579,19 @@
         function setList1() {
             _document.body.scrollTop = 0;
             _document.body.__child([
-                _HEADER,
+                _HEADER(1, 0),
                 _NAV(1, 0),
                 (section + "#body")._([
-                    (header + "#default-header")._([
+                    (header + "#default-header")._({ style: $bg }, [
                         section._([
                             h1._($heading),
-                            (ul + ".path.slash")._([
+                            (ul + ".path.light.slash")._([
                                 li._($user),
                                 li._("List"),
                                 li._("List-1")
                             ])
                         ])
-                    ]),
+                    ])._click(openUnsplash),
                     section._([
                         (section + ".left")._([
                             section._([
@@ -593,7 +599,7 @@
                                     Array.from({ length: 8 }, () => 1)._$((e, i) =>
                                         article._([
                                             figure._([
-                                                img._("https://picsum.photos/256?random=" + i)
+                                                img._("https://picsum.photos/256?random=" + i),
                                             ])._click(function () {
                                             }),
                                             section._([
@@ -651,19 +657,19 @@
         function setList2() {
             _document.body.scrollTop = 0;
             _document.body.__child([
-                _HEADER,
+                _HEADER(1, 1),
                 _NAV(1, 1),
                 (section + "#body")._([
-                    (header + "#default-header")._([
+                    (header + "#default-header")._({ style: $bg }, [
                         section._([
                             h1._($heading),
-                            (ul + ".path.slash")._([
+                            (ul + ".path.light.slash")._([
                                 li._($user),
                                 li._("List"),
                                 li._("List-2")
                             ])
                         ])
-                    ]),
+                    ])._click(openUnsplash),
                     section._([
                         (section + ".left")._([
                             section._([
@@ -671,7 +677,7 @@
                                     Array.from({ length: 4 }, () => 1)._$((e, i) =>
                                         article._([
                                             figure._([
-                                                img._("https://picsum.photos/1024?random=" + i)
+                                                img._("https://picsum.photos/1024?random=" + i),
                                             ])._click(function () {
                                             }),
                                             section._([
@@ -749,19 +755,19 @@
         function setGrid1() {
             _document.body.scrollTop = 0;
             _document.body.__child([
-                _HEADER,
+                _HEADER(1, 2),
                 _NAV(1, 2),
                 (section + "#body")._([
-                    (header + "#default-header")._([
+                    (header + "#default-header")._({ style: $bg }, [
                         section._([
                             h1._($heading),
-                            (ul + ".path.slash")._([
+                            (ul + ".path.light.slash")._([
                                 li._($user),
                                 li._("List"),
                                 li._("Grid-1")
                             ])
                         ])
-                    ]),
+                    ])._click(openUnsplash),
                     section._([
                         (section + ".left")._([
                             section._([
@@ -809,19 +815,19 @@
         function setGrid2() {
             _document.body.scrollTop = 0;
             _document.body.__child([
-                _HEADER,
+                _HEADER(1, 3),
                 _NAV(1, 3),
                 (section + "#body")._([
-                    (header + "#default-header")._([
+                    (header + "#default-header")._({ style: $bg }, [
                         section._([
                             h1._($heading),
-                            (ul + ".path.slash")._([
+                            (ul + ".path.light.slash")._([
                                 li._($user),
                                 li._("List"),
                                 li._("Grid-2")
                             ])
                         ])
-                    ]),
+                    ])._click(openUnsplash),
                     section._([
                         (section + ".left")._([
                             section._([
@@ -830,7 +836,8 @@
                                         article._([
                                             figure._({ tag: "Website" }, [
                                                 img._("https://picsum.photos/480?random=" + i)
-                                            ]),
+                                            ])._click(function () {
+                                            }),
                                             section._([
                                                 section._([
                                                     img._("https://pardn.io/image/head.jpg"),
@@ -841,7 +848,8 @@
                                                         ])
                                                     ])
                                                 ]),
-                                                (h5 + ".line.r2")._($title),
+                                                (h5 + ".line.r2")._($title)._click(function () {
+                                                }),
                                                 (_p + ".line.r3")._($content),
                                                 section._([
                                                     (ul + ".share")._([
@@ -867,8 +875,7 @@
                                                     ])
                                                 ])
                                             ])
-                                        ])._click(function () {
-                                        })
+                                        ])
                                     )._([
                                         ul._({ page: 1 }, [
                                             li._([
@@ -895,23 +902,15 @@
         };
 
         function setPost(num) {
-            var isPost1 = num === 1;
+            const isPost1 = num === 1;
             _document.body.scrollTop = 0;
             _document.body.__child([
-                _HEADER,
+                _HEADER(2, isPost1 ? 0 : 1),
                 _NAV(2, isPost1 ? 0 : 1),
                 (section + "#body")._([
-                    isPost1 ? (header + "#post-1-header")._([
-                        section._([
-                            (ul + ".path.slash")._([
-                                li._($user),
-                                li._("Post"),
-                                li._("Post-1")
-                            ])
-                        ])
-                    ]) : (header + "#post-2-header")._([
+                    isPost1 ? (header + "#default-header")._({ style: $bg })._click(openUnsplash) : (header + "#post-header")._([
                         figure._([
-                            img._("https://picsum.photos/480?random=" + Date.now())
+                            img._(repo[0])
                         ]),
                         section._([
                             (ul + ".path.light.slash")._([
@@ -967,12 +966,12 @@
                                     ]) : null,
                                     (section + ".body")._([
                                         isPost1 ? figure._([
-                                            img._("https://picsum.photos/480?random=" + Date.now())
+                                            img._(repo[0].src)
                                         ]) : null,
                                         _p._(`Curabitur efficitur lectus suscipit dignissim hendrerit. Pellentesque quis consequat metus. Donec vel ante et dolor mollis commodo. Phasellus lectus sapien, accumsan ut diam eget, sagittis feugiat ipsum. Cras tristique commodo tellus scelerisque congue. <a href="">Suspendisse potenti</a>. Fusce eu nisl in felis tincidunt placerat. Nullam eu interdum ligula. Morbi sapien magna, iaculis eget velit et, iaculis suscipit ligula. Maecenas laoreet eleifend justo, nec interdum augue convallis id.`),
                                         _p._(`Duis ornare, eros a sollicitudin pulvinar, magna purus suscipit quam, id condimentum tellus arcu sit amet nisl. Fusce rhoncus nisi eu lacinia placerat. Sed aliquam orci a eros viverra, ac egestas lectus pellentesque. Morbi sed fermentum mi, <mark>molestie fringilla erat</mark>. Sed ut tellus gravida, fermentum ex ultricies, condimentum libero. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Sed feugiat nulla sed sem auctor ullamcorper.`),
                                         figure._([
-                                            img._("https://picsum.photos/480?random=" + Date.now()),
+                                            img._(repo[0].src),
                                             figcaption._($title)
                                         ]),
                                         _p._("Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Morbi dictum massa ex, ac feugiat augue gravida vel. Nullam ullamcorper iaculis mauris nec dictum. Nam ac eros metus. Sed quam ligula, mattis et neque at, varius malesuada sapien."),
@@ -1134,9 +1133,10 @@
         function setAuthor() {
             _document.body.scrollTop = 0;
             _document.body.__child([
-                _HEADER,
+                _HEADER(3, 0),
                 _NAV(3, 0),
                 (section + "#body")._([
+                    (header + "#default-header")._({ style: $bg })._click(openUnsplash),
                     (header + "#user-header")._([
                         section._([
                             img._("https://pardn.io/image/head.jpg"),
@@ -1181,7 +1181,8 @@
                                         article._([
                                             figure._({ tag: "Website" }, [
                                                 img._("https://picsum.photos/480?random=" + i)
-                                            ]),
+                                            ])._click(function () {
+                                            }),
                                             section._([
                                                 section._([
                                                     img._("https://pardn.io/image/head.jpg"),
@@ -1192,7 +1193,8 @@
                                                         ])
                                                     ])
                                                 ]),
-                                                (h5 + ".line.r2")._(e.title),
+                                                (h5 + ".line.r2")._($title)._click(function () {
+                                                }),
                                                 (_p + ".line.r3")._($content),
                                                 section._([
                                                     (ul + ".share")._([
@@ -1218,8 +1220,7 @@
                                                     ])
                                                 ])
                                             ])
-                                        ])._click(function () {
-                                        })
+                                        ])
                                     )._([
                                         ul._({ page: 1 }, [
                                             li._([
@@ -1248,18 +1249,18 @@
         function setContact() {
             _document.body.scrollTop = 0;
             _document.body.__child([
-                _HEADER,
+                _HEADER(4, 0),
                 _NAV(4, 0),
                 (section + "#body")._([
-                    (header + "#default-header")._([
+                    (header + "#default-header")._({ style: $bg }, [
                         section._([
                             h1._($heading),
-                            (ul + ".path.slash")._([
+                            (ul + ".path.light.slash")._([
                                 li._($user),
                                 li._("Contact")
                             ])
                         ])
-                    ]),
+                    ])._click(openUnsplash),
                     section._([
                         (section + ".full")._([
                             section._([
@@ -1330,9 +1331,10 @@
         function set404() {
             _document.body.scrollTop = 0;
             _document.body.__child([
-                _HEADER,
+                _HEADER(5, 0),
                 _NAV(5, 0),
                 (section + "#body")._([
+                    (header + "#default-header")._({ style: $bg }),
                     section._([
                         (section + ".error")._([
                             h1._("404 Not Found"),
@@ -1343,7 +1345,7 @@
                             ])._click(setHome)
                         ])
                     ]),
-                ]),
+                ])._click(openUnsplash),
                 _FOOTER
             ]);
 
@@ -1352,20 +1354,27 @@
 
         function done() {
 
-            if ("section-right".$) {
-                var vh = _document.body.clientHeight;
-                var rightH = "section-right".$.clientHeight;
-                "section-right".$._style({
+            if ("#section-right".$) {
+                const vh = _document.body.clientHeight;
+                const rightH = "#section-right".$.clientHeight;
+                "#section-right".$._style({
                     top: (vh < rightH ? vh - rightH : "112") + "px"
                 });
             };
 
             _document.body.addEventListener("scroll", function () {
-                var maxY = this.scrollHeight - this.clientHeight;
-                var offsetY = this.scrollTop;
-                console.log(this)
-                offsetY > "top-header".$.clientHeight ? "top-nav".$._class("show") : "top-nav".$.class_("show");
-                "top-nav".$._attr({
+                const maxY = this.scrollHeight - this.clientHeight;
+                const offsetY = this.scrollTop;
+                const isHome = "#default-header".$.$$class("home");
+                const isPost = "#post-header".$;
+                // var isMin = !"default-header".$children().length;
+                // console.log(offsetY, "default-header".$().clientHeight - 136)
+                if (isPost) {
+                    offsetY > "#post-header".$.clientHeight - 80 ? "#top-nav".$._class("show") : "#top-nav".$.class_("show");
+                } else {
+                    offsetY > "#default-header".$.clientHeight - (isHome ? 136 : 80) ? "#top-nav".$._class("show") : "#top-nav".$.class_("show");
+                };
+                "#top-nav".$._attr({
                     percent: Math.round(offsetY / maxY * 1000)
                 })
             });
@@ -1373,10 +1382,9 @@
 
         setHome();
 
-        var timer = setTimeout(function () {
-            clearTimeout(timer);
-
+        setTimeout(function () {
             _document.body.class_("ft");
         }, 500);
     });
 }(window, document, "", _0_, _1_, _2_, _3_, _4_, _5_, _6_, _7_, _8_, _9_, __0, __1, __2, __3, __4, __5, _0, _1, _2, _3, _4, _5, _6, _7, _8, _9));
+
