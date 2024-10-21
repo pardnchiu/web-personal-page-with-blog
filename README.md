@@ -5,8 +5,10 @@
 
 ![](https://img.shields.io/github/repo-size/pardnchiu/web-template?label=size&color=bb4444) ![](https://img.shields.io/github/license/pardnchiu/web-template?label=license&color=44bb44) ![](https://img.shields.io/badge/creator-邱敬幃-4444bb)
 
-內容包含一般 HTML 渲染、純 JS 渲染、以及 [PDRenderKit](https://github.com/pardnchiu/PDRenderKit) 渲染<br>
-範例應該是不會再做修改了，後續會直接導入 [website-builder](https://github.com/pardnchiu/website-builder) 做範例
+這些範例的代碼隨著輕量化框架 [PDRenderKit](https://github.com/pardnchiu/PDRenderKit)(原 PDExtension) 的發展而有所不同<br>
+包含了 HTML 渲染，到純 JS 渲染，再到目前的框架模式渲染。<br>
+原本打算花時間全部改寫為 PDRenderKit 渲染，但在過程中又開啟了 [Website Builder](https://github.com/pardnchiu/website-builder) 專案<br>
+因此決定範例改為導入 Website Builder 裡，不會再針對現有的項目進行修改。
 
 | 項目 | 項目 |
 | - | - |
