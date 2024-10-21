@@ -1,0 +1,188 @@
+// 內容
+>div:nth-child(3) {
+  position: relative;
+  width: 100%;
+  height: initial;
+
+  // 按鈕
+  >ul:nth-child(1) {
+    position: relative;
+    padding: 0.875rem;
+    width: 100%;
+    height: initial;
+
+    >li {
+      position: relative;
+      display: inline-block;
+      vertical-align: top;
+      margin-right: 1rem;
+      width: initial;
+      height: initial;
+      cursor: pointer;
+
+      @media (hover: hover) and (pointer: fine) {
+        &:hover {
+          opacity: 0.5;
+        }
+      }
+
+      >i {
+        position: relative;
+        width: 25px;
+        line-height: 25px !important;
+        height: 25px;
+        font-size: 1.5rem;
+        text-align: center;
+      }
+
+    }
+  }
+
+  // 收藏
+  >button:nth-child(2) {
+    position: absolute;
+    top: 0.875rem;
+    right: 0.875rem;
+    width: initial;
+    height: initial;
+    cursor: pointer;
+
+    @media (hover: hover) and (pointer: fine) {
+      &:hover {
+        opacity: 0.5;
+      }
+    }
+
+    >i {
+      position: relative;
+      width: 25px;
+      line-height: 25px !important;
+      height: 25px;
+      font-size: 1.5rem;
+      text-align: center;
+    }
+  }
+
+  // 讚數
+  >strong:nth-child(3) {
+    position: relative;
+    display: block;
+    margin-left: 0.875rem;
+    margin-bottom: 0.5rem;
+    width: calc(100% - 0.875rem * 2);
+    font-size: 1rem;
+    font-weight: bolder;
+    cursor: pointer;
+  }
+
+  // 內容
+  >p:nth-child(4) {
+    position: relative;
+    margin-left: 0.875rem;
+    margin-bottom: 0.75rem;
+    width: calc(100% - 0.875rem * 2);
+    font-size: 0.875rem;
+    letter-spacing: 0.5px;
+
+    >a {
+      position: relative;
+      margin-right: 0.5rem;
+      color: steelblue;
+      cursor: pointer;
+
+      &::before {
+        content: "#";
+      }
+
+      &:nth-child(1) {
+        font-weight: bolder;
+        color: #000;
+
+        &::before {
+          content: "";
+        }
+      }
+    }
+  }
+
+  // 留言
+  >button:nth-child(5) {
+    position: relative;
+    margin-left: 0.875rem;
+    margin-bottom: 0.75rem;
+    width: calc(100% - 0.875rem * 2);
+    font-size: 1rem;
+    text-align: left;
+    color: var(--col-text-lighter);
+  }
+
+  // 日期
+  >p:nth-child(6) {
+    position: relative;
+    margin-left: 0.875rem;
+    padding-bottom: 0.75rem;
+    width: calc(100% - 0.875rem * 2);
+    font-size: 0.75rem;
+    color: var(--col-text-lighter);
+  }
+
+  // 底部
+  >div {
+    position: relative;
+    display: none;
+    padding: 0.875rem;
+    width: 100%;
+    height: initial;
+    border-top: 1px solid var(--col-border);
+
+    @media screen and (min-width: 735px) {
+      display: block;
+    }
+
+    >button:nth-child(1) {
+      position: relative;
+      display: inline-block;
+      vertical-align: top;
+      margin-right: 1rem;
+      width: initial;
+      height: initial;
+      @media (hover: hover) and (pointer: fine) {
+        &:hover {
+          opacity: 0.5;
+        }
+      }
+
+      >i {
+        position: relative;
+        display: block;
+        width: 25px;
+        line-height: 25px !important;
+        height: 25px;
+        font-size: 1.5rem;
+        text-align: center;
+      }
+    }
+
+    >input {
+      position: relative;
+      display: inline-block;
+      vertical-align: top;
+      width: calc(100% - 25px - 1rem);
+      line-height: 25px !important;
+      height: 25px;
+      font-size: 0.875rem;
+    }
+
+    >button:nth-last-child(1) {
+      position: absolute;
+      top: 0.875rem;
+      right: 1rem;
+      line-height: 25px !important;
+      height: 25px;
+      font-size: 0.875rem;
+      color: steelblue;
+      opacity: 0.5;
+      cursor: pointer;
+    }
+  }
+}

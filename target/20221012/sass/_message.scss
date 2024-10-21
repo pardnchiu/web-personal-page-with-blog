@@ -1,0 +1,447 @@
+>section[pg="message"] {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  font-size: 0;
+  overflow-x: hidden;
+  overflow-y: scroll;
+
+  @media screen and (min-width: 750px) {
+    width: calc(100% - 1.25rem * 2);
+  }
+
+  @media screen and (min-width: 785px) {
+    left: calc(72px / 2 + 50%);
+    width: calc(100% - 72px - 1.25rem * 2);
+  }
+
+  @media screen and (min-width: 1112px) {
+    max-width: 935px;
+  }
+
+  @media screen and (min-width: 1280px) {
+    left: calc(248px / 2 + 50%);
+  }
+
+  >div {
+    position: relative;
+    margin: 1.5rem 0;
+    width: 100%;
+    height: calc(100% - 1.5rem * 2);
+    background-color: #fff;
+    border: 1px solid var(--col-border);
+    border-radius: 0.25rem;
+
+    >nav {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 60px;
+      border-bottom: 1px solid var(--col-border);
+
+      >div {
+        position: absolute;
+        top: 0;
+        height: 60px;
+
+        &:nth-child(1) {
+          left: 0;
+          width: 340px;
+          border-right: 1px solid var(--col-border);
+
+          >button {
+            position: absolute;
+            width: initial;
+            top: 0;
+            height: 60px;
+            font-size: 0;
+            color: #000;
+
+            &:nth-child(1) {
+              left: 50%;
+              transform: translateX(-50%);
+
+              >i {
+                font-size: 1rem;
+                transform: rotate(90deg);
+              }
+            }
+
+            &:nth-last-child(1) {
+              right: 1rem;
+
+              >i {
+                font-size: 1.5rem;
+              }
+            }
+
+            >b {
+              position: relative;
+              display: inline-block;
+              vertical-align: top;
+              margin-right: 0.5rem;
+              line-height: 60px;
+              height: 60px;
+              font-size: 1rem;
+            }
+
+            >i {
+              position: relative;
+              display: inline-block;
+              vertical-align: top;
+              line-height: 60px;
+              height: 60px;
+              text-align: center;
+            }
+          }
+        }
+
+        &:nth-last-child(1) {
+          right: 0;
+          width: calc(100% - 340px);
+
+          >div {
+            position: absolute;
+            width: initial;
+            top: 0;
+            left: 1.5rem;
+            height: 60px;
+            font-size: 0;
+
+            >a {
+              position: relative;
+              display: inline-block;
+              vertical-align: top;
+              width: initial;
+              line-height: 60px;
+              height: 60px;
+              font-size: 1rem;
+              font-weight: bolder;
+              color: #000;
+              cursor: pointer;
+
+              &:nth-child(1) {
+                margin-right: 0.75rem;
+              }
+
+              >img {
+                position: relative;
+                display: block;
+                margin-top: calc((60px - 24px) / 2);
+                width: 24px;
+                height: 24px;
+                border: 1px solid var(--col-border);
+                border-radius: 50%;
+              }
+            }
+          }
+
+          >button {
+            position: absolute;
+            width: initial;
+            top: 0;
+            right: 1.5rem;
+            height: 60px;
+            font-size: 0;
+            color: #000;
+
+            >b {
+              position: relative;
+              display: inline-block;
+              vertical-align: top;
+              margin-right: 0.5rem;
+              line-height: 60px;
+              height: 60px;
+              font-size: 1rem;
+            }
+
+            >i {
+              position: relative;
+              display: inline-block;
+              vertical-align: top;
+              line-height: 60px;
+              height: 60px;
+              font-size: 1.5rem;
+              text-align: center;
+            }
+          }
+        }
+      }
+    }
+
+    >div {
+      position: absolute;
+      top: 60px;
+      left: 0;
+      width: 100%;
+      height: calc(100% - 60px);
+      border-bottom: 1px solid var(--col-border);
+
+      >div {
+        position: absolute;
+        top: 0;
+        height: 100%;
+
+        &:nth-child(1) {
+          left: 0;
+          width: 340px;
+          border-right: 1px solid var(--col-border);
+
+          >p {
+            position: relative;
+            margin-top: 1rem;
+            margin-left: 1.5rem;
+            margin-bottom: 0.5rem;
+            line-height: 1.5rem;
+            height: 1.5rem;
+            font-size: 1rem;
+            font-weight: bolder;
+          }
+
+          >button {
+            position: absolute;
+            top: 1rem;
+            right: 1.5rem;
+            line-height: 1.5rem;
+            height: 1.5rem;
+            font-size: 0.875rem;
+            font-weight: bolder;
+            color: steelblue;
+          }
+
+          >ul {
+            position: relative;
+            padding-bottom: 3rem;
+            width: 100%;
+            height: initial;
+            max-height: calc(100% - 1.5rem * 2);
+            overflow: scroll;
+
+            >li {
+              position: relative;
+              width: 100%;
+              height: initial;
+
+              >button {
+                position: relative;
+                padding: 0.5rem 1.5rem;
+                width: 100%;
+                height: initial;
+                font-size: 0;
+
+                &.sel {
+                  background-color: rgba(0, 0, 0, 0.05);
+                }
+
+                @media (hover: hover) and (pointer: fine) {
+                  &:hover {
+                    background-color: rgba(0, 0, 0, 0.05);
+                  }
+                }
+
+                >img {
+                  position: relative;
+                  display: inline-block;
+                  vertical-align: top;
+                  width: 50px;
+                  height: 50px;
+                  border: 1px solid var(--col-border);
+                  border-radius: 50%;
+                }
+
+                >p {
+                  position: relative;
+                  display: inline-block;
+                  vertical-align: top;
+                  margin-top: calc(25px - 20px);
+                  margin-left: 0.5rem;
+                  width: calc(100% - 50px - 0.5rem);
+                  line-height: 20px;
+                  max-height: 40px;
+                  font-size: 0.875rem;
+                  color: var(--col-text-lighter);
+                  text-align: left;
+                  overflow: hidden;
+
+                  >a {
+                    color: #000;
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        &:nth-last-child(1) {
+          right: 0;
+          width: calc(100% - 340px);
+
+          >ul:nth-child(1) {
+            position: absolute;
+            padding: 0.5rem 0;
+            top: 0;
+            left: 0;
+            bottom: 80px;
+            right: 0;
+            width: 100%;
+            overflow: scroll;
+
+            >li {
+              position: relative;
+              padding: 0.75rem 0;
+              width: 100%;
+              height: initial;
+              font-size: 0;
+
+              &.from {
+                text-align: right;
+
+                >a {
+                  left: unset;
+                  right: 1.5rem;
+                }
+
+                >div {
+                  margin-left: unset;
+                  margin-right: calc(25px + 1.5rem + 0.5rem);
+                  border: 1px solid rgba(0, 0, 0, 0.05);
+                  background-color: rgba(0, 0, 0, 0.05);
+                }
+              }
+
+              >a {
+                position: absolute;
+                left: 1.5rem;
+                bottom: 0.75rem;
+                width: initial;
+                height: initial;
+
+                >img {
+                  object-fit: cover;
+                  position: relative;
+                  width: 1.5rem;
+                  height: 1.5rem;
+                  border-radius: 0.75rem;
+                  border: 1px solid var(--col-border);
+                }
+              }
+
+              >div {
+                position: relative;
+                display: inline-block;
+                vertical-align: bottom;
+                margin-left: calc(25px + 1.5rem + 0.5rem);
+                width: initial;
+                max-width: 60%;
+                height: initial;
+                border-radius: 1rem;
+                border: 1px solid var(--col-border);
+                overflow: hidden;
+
+                >p {
+                  padding: 0.5rem 1rem;
+                  position: relative;
+                  display: block;
+                  font-size: 1rem;
+                  text-align: left;
+                }
+
+                >img {
+                  position: relative;
+                  display: block;
+                  width: 100%;
+                  height: auto;
+                }
+              }
+            }
+          }
+
+          >div:nth-last-child(1) {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            padding: 1.25rem 1.5rem;
+            width: 100%;
+            height: initial;
+            background-color: #fff;
+
+            // 可變高度輸入框
+            >div {
+              position: relative;
+              padding: calc((40px - 1.5rem) / 2) 0;
+              width: 100%;
+              height: initial;
+              border-radius: 20px;
+              border: 1px solid var(--col-border);
+
+              >textarea {
+                position: relative;
+                display: block;
+                padding-top: 2px;
+                padding-left: calc(40px + 0.75rem * 2);
+                padding-right: calc((40px * 2 + 0.5rem * 2));
+                width: 100%;
+                font-size: 1rem;
+                height: 1.5rem;
+                min-height: 1.5rem;
+                max-height: calc(1.5rem * 8);
+                background-color: #fff;
+
+                &:focus {
+                  padding-right: calc(40px + 0.5rem * 2);
+                }
+              }
+
+              >button {
+                z-index: 1;
+                position: absolute;
+                top: 0;
+                width: 40px;
+                height: 40px;
+                font-size: 1.5rem;
+                color: #000;
+
+                &:nth-child(2) {
+                  left: 0.75rem;
+                }
+
+                &:nth-child(3) {
+                  display: none;
+                  right: 0.75rem;
+                  font-size: 1rem;
+                  color: steelblue;
+                }
+
+                &:nth-last-child(1) {
+                  right: 0.5rem;
+                }
+
+                &:nth-last-child(2) {
+                  right: calc(40px + 0.5rem * 2);
+                }
+
+                >i {
+                  position: absolute;
+                  top: 0;
+                  left: 0;
+                  bottom: 0;
+                  right: 0;
+                  width: 100%;
+                  line-height: 40px;
+                  height: 100%;
+                  text-align: center;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
