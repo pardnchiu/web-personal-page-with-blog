@@ -1,0 +1,314 @@
+<!-- 
+  
+	Copyright 2023 Pardn Ltd 帕登國際有限公司.
+	Created by Pardn Chiu 邱敬幃.
+	Email: mail@pardn.ltd
+
+ -->
+<!DOCTYPE html>
+<html lang="zh-Hans-TW">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+        <meta name="mobile-web-app-capable" content="no">
+        <meta name="apple-mobile-web-app-capable" content="no">
+        <meta name="apple-mobile-web-app-status-bar-style" content="default">
+        <meta name="theme-color" content="#ffffff">
+        <meta name="robots" content="index follow">
+        <!--  -->
+        <title>Restaurant Introduction Page | 邱敬幃 Pardn Chiu | GitHub.io</title>
+        <meta name="title" content="Restaurant Introduction Page | 邱敬幃 Pardn Chiu | GitHub.io">
+        <meta name="description" content="餐廳介紹頁面實作範例 | 帕登數位科技有限公司">
+        <!-- -->
+        <meta name="author" content="邱敬幃 Pardn Chiu">
+        <link rel="author" href="https://pardn.io">
+        <link rel="canonical" href="https://pardnchiu.github.io/restaurant-introduction-page/">
+        <meta name="referrer" content="unsafe-url">
+        <meta name="copyright" content="© 2023 帕登數位科技有限公司 Pardn Ltd">
+        <!-- Facebook -->
+        <meta property="og:title" content="Restaurant Introduction Page | 邱敬幃 Pardn Chiu | GitHub.io">
+        <meta property="og:description" content="餐廳介紹頁面實作範例 | 帕登數位科技有限公司">
+        <meta property="og:image" content="https://pardn.io/image/repo/restaurant-introduction-page.jpg">
+        <meta property="og:url" content="https://pardnchiu.github.io/restaurant-introduction-page/">
+        <meta property="og:site_name" content="Pardn Chiu 的 Github Page">
+        <meta property="og:type" content="website">
+        <!-- Twitter -->
+        <meta property="twitter:title" content="Restaurant Introduction Page | 邱敬幃 Pardn Chiu | GitHub.io">
+        <meta property="twitter:description" content="餐廳介紹頁面實作範例 | 帕登數位科技有限公司">
+        <meta property="twitter:image" content="https://pardnchiu.github.io//image/repo/restaurant-introduction-page.jpg">
+        <meta property="twitter:url" content="https://pardnchiu.github.io/restaurant-introduction-page/">
+        <!-- Google -->
+        <meta name="google-site-verification" content="YQQ2f6AchR8dcb55Az2BYd_mw4TrP0J1RApD-v2v65Y">
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-L5VYEZPVXX"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() { dataLayer.push(arguments); }
+            gtag('js', new Date());
+            gtag('config', 'G-L5VYEZPVXX');
+        </script>
+        <!-- Preloads for CDN -->
+        <link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/css/all.min.css" as="style">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/css/all.min.css">
+        <!--  -->
+        <link rel="stylesheet" href="./css/index.css">
+        <!--  -->
+        <script src="https://cdn.jsdelivr.net/gh/pardnchiu/PDRenderKit@1.0.0/dist/PDRenderKit.js" copyright="Pardn Ltd"></script>
+        <script src="./js/index.js" defer></script>
+    </head>
+
+    <body>
+
+        <nav>
+            <section>
+                <h6 style="position: relative;">耕園<b>7293</b><span style="position: absolute; left: 1px; bottom: -24px; width: 100%; font-size: 12px; font-weight: 400; color: #777; letter-spacing: 1px; white-space: nowrap;">推薦一下朋友的餐廳</span></h6>
+                <ul id="view-tab" sel="0">
+                    <li>關於耕園</li>
+                    <li>熱門介紹</li>
+                    <li>店長推薦</li>
+                    <li>聯絡我們</li>
+                </ul>
+                <button id="button-tab">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </section>
+        </nav>
+
+        <section>
+            <section class="top">
+                <section>
+                    <h1>
+                        <b>素食</b>
+                        也能吃得精彩
+                    </h1>
+                    <p>健康綠生活<br>
+                        以全新的方式提供素食的早午餐美食<br>
+                        改變以往對於素食的傳統?</p>
+                    <button onclick="window.open('https://ubereats.app.link/V22g35mu3zb')">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        前往點餐
+                    </button>
+                </section>
+                <section>
+                    <img src="./image/g-burger.jpg" alt="">
+                    <span></span>
+                </section>
+                <section>
+                    <div>
+                        <img src="./image/top/塔塔鮮蝦堡.jpg" alt="">
+                        <img src="./image/top/泰式打拋豬蓋飯.jpg" alt="">
+                        <img src="./image/top/帕瑪森.jpg" alt="">
+                        <img src="./image/top/薯餅雞腿堡.jpg" alt="">
+                        <img src="./image/top/麵.jpg" alt="">
+                    </div>
+                    <div>
+                        <img src="./image/top/泰式打拋豬蓋飯.jpg" alt="">
+                        <img src="./image/top/帕瑪森.jpg" alt="">
+                        <img src="./image/top/薯餅雞腿堡.jpg" alt="">
+                        <img src="./image/top/麵.jpg" alt="">
+                        <img src="./image/top/塔塔鮮蝦堡.jpg" alt="">
+                    </div>
+                    <div>
+                        <img src="./image/top/帕瑪森.jpg" alt="">
+                        <img src="./image/top/薯餅雞腿堡.jpg" alt="">
+                        <img src="./image/top/麵.jpg" alt="">
+                        <img src="./image/top/塔塔鮮蝦堡.jpg" alt="">
+                        <img src="./image/top/泰式打拋豬蓋飯.jpg" alt="">
+                    </div>
+                    <div>
+                        <img src="./image/top/薯餅雞腿堡.jpg" alt="">
+                        <img src="./image/top/麵.jpg" alt="">
+                        <img src="./image/top/塔塔鮮蝦堡.jpg" alt="">
+                        <img src="./image/top/泰式打拋豬蓋飯.jpg" alt="">
+                        <img src="./image/top/帕瑪森.jpg" alt="">
+                    </div>
+                </section>
+            </section>
+        </section>
+
+        <section style="background-color: #000;">
+            <img src="./image/Group 3.jpg" alt="">
+            <section class="hot">
+                <div>
+                    <h6>塔塔鮮蝦堡</h6>
+                    <p>酸酸甜甜鹹鹹的塔塔醬<br>
+                        配上炸的金黃酥脆的黃金蝦<br>
+                        炎熱酷暑吃下準開胃</p>
+                    <button onclick="window.open('https://www.instagram.com/p/BrjrwCGnFVW/')">LEARN MORE</button>
+                </div>
+                <div>
+                    <h6>胡麻豬排堡</h6>
+                    <p>研磨而成的芝麻醬調配成胡麻醬<br>
+                        濃濃芝麻香配上酥脆豬排<br>
+                        香味四溢 吃完一定滿足您的味蕾</p>
+                    <button onclick="window.open('https://www.instagram.com/p/BrhC8m7H9Yr/')">LEARN MORE</button>
+                </div>
+                <div>
+                    <h6>泰式打拋豬蓋飯</h6>
+                    <p>香而不膩口的擬豬肉<br>
+                        微辣的口感炒上爆香過的九層塔<br>
+                        擠上一點檸檬 讓味道更有層次</p>
+                    <button onclick="window.open('https://www.instagram.com/p/CBmWWcZDN0v/')">LEARN MORE</button>
+                </div>
+                <div>
+                    <h6>鹹蛋黃花枝堡</h6>
+                    <p>自製濃郁的鹹蛋黃醬<br>
+                        配上清爽優格醬還有多汁又脆的新鮮牛番茄<br>
+                        只要NT.75元 學生價才68元</p>
+                    <button onclick="window.open('https://www.instagram.com/p/CpWLuM3PsLZ/')">LEARN MORE</button>
+                </div>
+                <div>
+                    <h6>辣拌麵</h6>
+                    <p>韓式泡菜加清爽小黃瓜<br>
+                        配上一顆半熟蛋口感更滑順<br>
+                        是好多大學生的愛</p>
+                    <button>LEARN MORE</button>
+                </div>
+                <div>
+                    <h6>麻婆豆腐蛋包飯</h6>
+                    <p>麻婆豆腐不再是季節限定囉<br>
+                        看照片就知道⋯超多豆腐的<br>
+                        鋪上一層奶油蛋 還不吃爆</p>
+                    <button onclick="window.open('https://www.instagram.com/p/BoS69k0F44I/')">LEARN MORE</button>
+                </div>
+            </section>
+        </section>
+
+        <section>
+            <section class="menu">
+                <section>
+                    <h6>店長推薦</h6>
+                    <p>好吃的東西不解釋太多，把它點下去就對了。</p>
+                </section>
+                <div>
+                    <img src="./image/menu/泰式酸辣雞腿堡.JPG" alt="">
+                    <div>
+                        <h6>泰式酸辣雞腿堡</h6>
+                        <p>$55</p>
+                        <button onclick="window.open('https://ubereats.app.link/V22g35mu3zb')">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                            前往點餐
+                        </button>
+                    </div>
+                </div>
+                <div>
+                    <img src="./image/menu/薯餅雞腿堡.jpg" alt="">
+                    <div>
+                        <h6>薯餅雞腿堡</h6>
+                        <p>$83</p>
+                        <button onclick="window.open('https://ubereats.app.link/V22g35mu3zb')">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                            前往點餐
+                        </button>
+                    </div>
+                </div>
+                <div>
+                    <img src="./image/menu/黑胡椒牛排堡.jpg" alt="">
+                    <div>
+                        <h6>黑胡椒牛排堡</h6>
+                        <p>$65</p>
+                        <button onclick="window.open('https://ubereats.app.link/V22g35mu3zb')">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                            前往點餐
+                        </button>
+                    </div>
+                </div>
+                <div>
+                    <img src="./image/menu/鹹蛋黃花枝堡.jpg" alt="">
+                    <div>
+                        <h6>鹹蛋黃花枝堡</h6>
+                        <p>$75</p>
+                        <button onclick="window.open('https://ubereats.app.link/V22g35mu3zb')">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                            前往點餐
+                        </button>
+                    </div>
+                </div>
+                <div>
+                    <img src="./image/menu/花生熔岩雙牛堡.jpg" alt="">
+                    <div>
+                        <h6>花生熔岩雙牛堡</h6>
+                        <p>$85</p>
+                        <button onclick="window.open('https://ubereats.app.link/V22g35mu3zb')">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                            前往點餐
+                        </button>
+                    </div>
+                </div>
+                <div>
+                    <img src="./image/menu/胡麻豬排堡.JPG" alt="">
+                    <div>
+                        <h6>胡麻豬排堡</h6>
+                        <p>$65</p>
+                        <button onclick="window.open('https://ubereats.app.link/V22g35mu3zb')">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                            前往點餐
+                        </button>
+                    </div>
+                </div>
+                <div>
+                    <img src="./image/menu/麻婆豆腐蛋包飯.JPG" alt="">
+                    <div>
+                        <h6>麻婆豆腐蛋包飯</h6>
+                        <p>$80</p>
+                        <button onclick="window.open('https://ubereats.app.link/V22g35mu3zb')">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                            前往點餐
+                        </button>
+                    </div>
+                </div>
+                <div>
+                    <img src="./image/menu/泰式打拋豬蓋飯.JPG" alt="">
+                    <div>
+                        <h6>泰式打拋豬蓋飯</h6>
+                        <p>$80</p>
+                        <button onclick="window.open('https://ubereats.app.link/V22g35mu3zb', 'blank')">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                            前往點餐
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </section>
+
+        <section style="background-color: #000;">
+            <section class="contact">
+                <section>
+                    <img src="./image/contact.jpg" alt="">
+                </section>
+                <section>
+                    <h6>最新資訊</h6>
+                    <p>追蹤耕園7293與G-Burger的最新消息</p>
+                    <label for="">
+                        <input type="text" placeholder="輸入您的Email">
+                        <button>SUBMIT</button>
+                    </label>
+                    <section>
+                        <h6>LOCATION</h6>
+                        <p>大同總店</p>
+                        <a href="https://www.google.com/maps/place/700台南市中西區大同路一段42號" target="blank">
+                            <i class="fa-solid fa-location-dot"></i>
+                            台南市中西區大同路一段42號
+                        </a>
+                    </section>
+                    <section>
+                        <h6>FOLLOW US</h6>
+                        <a href="tel:+886983166305" target="blank">
+                            <i class="fa-solid fa-square-phone"></i>
+                        </a>
+                        <a href="https://www.facebook.com/Gengyuan7293" target="blank">
+                            <i class="fa-brands fa-facebook"></i>
+                        </a>
+                        <a href="https://www.instagram.com/gengyuan_7293" target="blank">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                    </section>
+                </section>
+            </section>
+        </section>
+
+    </body>
+
+</html>

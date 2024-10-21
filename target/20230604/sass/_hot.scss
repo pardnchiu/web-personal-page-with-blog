@@ -1,0 +1,84 @@
+&.hot {
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 1.5rem;
+  padding: 0 1rem 4rem;
+  width: 100%;
+
+  >div {
+    padding: 1.5rem;
+    width: 100%;
+    background-color: rgba(255,255,255,0.1);
+    backdrop-filter: blur(1rem);
+    -webkit-backdrop-filter: blur(1rem);
+    border-radius: 0.125rem;
+    transition: 0.3s;
+
+    @media screen and (min-width: 480px) {
+      width: calc((100% - 1.5rem * 1) / 2);
+    }
+
+    @media screen and (min-width: 800px) {
+      width: calc((100% - 1.5rem * 2) / 3);
+    }
+
+    &:nth-child(1)>h6::before {
+      content: "01";
+    }
+
+    &:nth-child(2)>h6::before {
+      content: "02";
+    }
+
+    &:nth-child(3)>h6::before {
+      content: "03";
+    }
+
+    &:nth-child(4)>h6::before {
+      content: "04";
+    }
+
+    &:nth-child(5)>h6::before {
+      content: "05";
+    }
+
+    &:nth-child(6)>h6::before {
+      content: "06";
+    }
+
+    >h6 {
+      color: #fff;
+      font-weight: 400;
+      letter-spacing: 1px;
+
+      &::before {
+        display: inline-block;
+        vertical-align: middle;
+        margin: 0 1rem 0 0;
+        width: 4rem;
+        line-height: 4rem;
+        height: 4rem;
+        text-align: center;
+        font-size: 2.25rem;
+        font-weight: 400;
+        background-color: var(--col-sys);
+        border-radius: 50%;
+      }
+    } 
+
+    >p {
+      margin: 1rem 0 0;
+      font-size: 0.75rem;
+      font-style: italic;
+      letter-spacing: 2px;
+      color: #fff;
+    }
+
+    >button {
+      margin: 1.5rem 0 0;
+      font-size: 0.875rem;
+      color: #fff;
+      border-bottom: 2px solid #fff;
+    }
+  }
+}
