@@ -1,0 +1,113 @@
+&:nth-child(2) {
+    width: 100%;
+
+    >section {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 2rem;
+        margin-top: 4rem;
+        width: 100%;
+        transition: 0.5s;
+
+        @media screen and (min-width: 1024px) {
+            gap: 4rem;
+            align-items: center;
+        }
+
+        >img {
+            object-fit: cover;
+            width: 15rem;
+            height: 15rem;
+            border-radius: 4rem;
+            transition: 0.5s;
+
+            @media screen and (min-width: 960px) {
+                width: 20rem;
+                height: 20rem;
+            }
+
+            @media screen and (min-width: 1024px) {
+                width: 30rem;
+                height: 30rem;
+            }
+        }
+
+        >section {
+            width: 100%;
+            max-width: 480px;
+            transition: 0.5s;
+
+            @media screen and (min-width: 640px) {
+                width: calc(100% - 15rem - 2rem);
+            }
+
+            @media screen and (min-width: 960px) {
+                width: calc(100% - 20rem - 2rem);
+            }
+
+            @media screen and (min-width: 1024px) {
+                width: calc(100% - 30rem - 4rem);
+            }
+
+            ul {
+                display: flex;
+                flex-flow: row wrap;
+                justify-content: center;
+                align-items: stretch;
+                gap: 1rem;
+                width: 100%;
+
+                li {
+                    display: flex;
+                    flex-flow: column;
+                    justify-content: flex-start;
+                    align-items: center;
+                    gap: 1rem;
+                    padding: 2rem 1rem;
+                    width: 100%;
+                    text-align: center;
+                    border-radius: 2rem;
+                    background-color: #fff;
+                    box-shadow: 0 0 0.25rem #0000001a;
+                    transition: 0.5s;
+
+                    @media screen and (min-width: 800px) {
+                        padding: 3rem 1rem;
+                        width: calc((100% - 1rem * 2) / 3);
+                    }
+
+                    i {
+                        font-size: 2.5rem;
+                        color: var(--col-brand-5);
+                    }
+
+                    h6 {
+                        font-size: 1.25rem;
+                        color: var(--col-brand-4);
+                    }
+
+                    p {
+                        color: var(--col-brand-3);
+                    }
+                }
+            }
+
+            >p {
+                margin-top: 2rem;
+                font-size: 1.25rem;
+                color: var(--col-brand-3);
+            }
+
+            button {
+                margin-top: 2rem;
+                padding: 1rem 3rem;
+                font-size: 1.5rem;
+                background-color: var(--col-brand-5);
+                color: #fff;
+                border-radius: 1rem;
+            }
+        }
+    }
+}

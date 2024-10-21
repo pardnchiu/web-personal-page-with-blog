@@ -1,0 +1,39 @@
+>footer {
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0 0 0.25rem #0000001a;
+
+    section {
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+        padding: 3rem 1rem;
+        width: 100%;
+        max-width: var(--width-max);
+
+        h6 {
+            font-size: 2rem;
+            color: var(--col-brand-5);
+        }
+
+        ul {
+            display: flex;
+            gap: 1rem;
+            margin-top: 0.75rem;
+
+            li {
+
+                i {
+                    font-size: 1.5rem;
+                    color: var(--col-brand-5);
+                }
+            }
+        }
+
+        p {
+            margin-top: 2rem;
+        }
+    }
+}

@@ -1,0 +1,52 @@
+&:nth-child(4) {
+    width: 100%;
+
+    >section {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+        align-items: stretch;
+        gap: 2rem;
+        margin-top: 4rem;
+        width: 100%;
+
+        >section {
+            display: flex;
+            flex-flow: column;
+            gap: 2rem;
+            align-items: flex-start;
+            padding: 2rem;
+            width: 100%;
+            max-width: 480px;
+            text-align: left;
+            border-radius: 2rem;
+            background-color: #fff;
+            box-shadow: 0 0 0.25rem #0000001a;
+
+            @media screen and (min-width: 800px) {
+                width: calc((100% - 2rem * 2) / 3);
+            }
+
+            >i {
+                font-size: 3rem;
+                color: var(--col-brand-9);
+            }
+            
+            h6 {
+                font-size: 1.75rem;
+                color: var(--col-brand-5);
+            }
+
+            button {
+                font-size: 1.25rem;
+                color: var(--col-brand-3);
+
+                i {
+                    margin-left: 0.5rem;
+                    font-size: 1rem;
+                    color: var(--col-brand-3);
+                }
+            }
+        }
+    }
+}

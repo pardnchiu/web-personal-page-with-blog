@@ -1,0 +1,148 @@
+&:nth-child(7) {
+    width: 100%;
+
+    >section {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+        align-items: flex-start;
+        margin-top: 4rem;
+        width: 100%;
+
+        >section {
+            display: flex;
+            flex-flow: column;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem;
+            padding: 2rem 0;
+
+            @media screen and (min-width: 800px) {
+                align-items: flex-start;
+            }
+
+            &:nth-child(1) {
+                width: 100%;
+                max-width: 480px;
+
+                @media screen and (min-width: 800px) {
+                    padding-right: 1rem;
+                    width: 40%;
+                    max-width: unset;
+                }
+
+                @media screen and (min-width: 1024px) {
+                    padding-right: 2rem;
+                }
+            }
+
+            &:nth-child(2) {
+                width: 100%;
+                max-width: 480px;
+
+                @media screen and (min-width: 800px) {
+                    padding-left: 1rem;
+                    width: 60%;
+                    max-width: unset;
+                }
+
+                @media screen and (min-width: 1024px) {
+                    padding-left: 2rem;
+                }
+            }
+
+            >h6 {
+                width: 100%;
+                text-align: center;
+                font-size: 1.75rem;
+                font-weight: 500;
+                color: var(--col-brand-5);
+            }
+
+            >div {
+                display: flex;
+                flex-flow: column;
+                align-items: center;
+                justify-content: center;
+                padding: 2rem;
+                width: 100%;
+                border-radius: 2rem;
+                background-color: #fff;
+                box-shadow: 0 0 0.25rem #0000001a;
+
+                >i {
+                    font-size: 2.5rem;
+                    color: var(--col-brand-5);
+                }
+
+                >h6 {
+                    margin-top: 1rem;
+                    font-size: 1.25rem;
+                    color: var(--col-brand-5);
+                }
+
+                >p {
+                    font-size: 1.25rem;
+                    color: var(--col-brand-3);
+                }
+
+                >button {
+                    margin-top: 1rem;
+                    font-size: 1.25rem;
+                    color: var(--col-brand-3);
+
+                    i {
+                        margin-left: 0.25rem;
+                        font-size: 1.25rem;
+                        color: var(--col-brand-3);
+                    }
+                }
+            }
+
+            >label {
+                position: relative;
+                width: 100%;
+
+                input {
+                    padding: 2rem;
+                    width: 100%;
+                    line-height: 2rem;
+                    font-size: 1.25rem;
+                    border: 0.125rem solid var(--col-brand-3);
+                    border-radius: 1rem;
+                }
+
+                textarea {
+                    padding: 2rem;
+                    width: 100%;
+                    line-height: 2rem;
+                    height: 14rem;
+                    font-size: 1.25rem;
+                    resize: none;
+                    border: 0.125rem solid var(--col-brand-3);
+                    border-radius: 1rem;
+                }
+
+                &::after {
+                    content: attr(key);
+                    position: absolute;
+                    top: -1rem;
+                    left: 1.5rem;
+                    padding: 0 0.5rem;
+                    line-height: 2rem;
+                    font-size: 1.125rem;
+                    background-color: var(--col-brand-1);
+                    color: var(--col-brand-3);
+                }
+            }
+
+            >button {
+                padding: 1rem 3rem;
+                font-size: 1.5rem;
+                background-color: var(--col-brand-5);
+                color: #fff;
+                border-radius: 1rem;
+            }
+        }
+    }
+}

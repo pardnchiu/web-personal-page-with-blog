@@ -1,0 +1,180 @@
+&:nth-child(5) {
+    width: 100%;
+
+    >section {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+        gap: 4rem 0;
+        margin-top: 4rem;
+        width: 100%;
+
+        &[show="0"]>ul:nth-child(2) {
+            max-width: 720px;
+            max-height: 100%;
+            opacity: 1;
+        }
+
+        &[show="1"]>ul:nth-child(3) {
+            max-width: 720px;
+            max-height: 100%;
+            opacity: 1;
+        }
+
+        >ul:nth-child(1) {
+            display: flex;
+            flex-flow: row;
+            justify-content: center;
+            gap: 4rem;
+            width: 100%;
+
+            li {
+                cursor: pointer;
+
+                i {
+                    margin-right: 0.5rem;
+                    font-size: 2rem;
+                    color: var(--col-brand-5);
+                }
+
+                b {
+                    font-size: 2rem;
+                    font-weight: 500;
+                    color: var(--col-brand-5);
+                }
+            }
+        }
+
+        >ul:nth-child(2),
+        >ul:nth-child(3) {
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: center;
+            width: 100%;
+            max-width: 0;
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+
+            li {
+                position: relative;
+                padding-bottom: 2rem;
+                width: 100%;
+                max-width: 480px;
+
+                @media screen and (min-width: 800px) {
+                    width: 50%;
+                }
+
+                &:nth-last-child(1) {
+                    padding-bottom: 0;
+                }
+
+                &:nth-child(2n - 1) {
+                    padding-left: 3rem;
+
+                    @media screen and (min-width: 800px) {
+                        margin-right: 50%;
+                        padding-right: 3rem;
+                        padding-left: unset;;
+                    }
+
+                    &::before {
+                        content: "";
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 1.25rem;
+                        height: 1.25rem;
+                        background-color: var(--col-brand-3);
+                        border-radius: 50%;
+
+                        @media screen and (min-width: 800px) {
+                            left: unset;
+                            right: -0.625rem;
+                        }
+                    }
+
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        top: 0;
+                        left: 0.5rem;
+                        bottom: 0;
+                        width: 0.25rem;
+                        background-color: var(--col-brand-3);
+
+                        @media screen and (min-width: 800px) {
+                            left: unset;
+                            right: -0.125rem;
+                        }
+                    }
+                }
+
+                &:nth-child(2n) {
+                    margin-left: 0;
+                    padding-left: 3rem;
+
+                    @media screen and (min-width: 800px) {
+                        margin-left: 50%;
+                    }
+
+                    &::before {
+                        content: "";
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 1.25rem;
+                        height: 1.25rem;
+                        background-color: var(--col-brand-3);
+                        border-radius: 50%;
+
+                        @media screen and (min-width: 800px) {
+                            left: -0.625rem;
+                        }
+                    }
+
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        top: 0;
+                        left: 0.5rem;
+                        bottom: 0;
+                        width: 0.25rem;
+                        background-color: var(--col-brand-3);
+
+                        @media screen and (min-width: 800px) {
+                            left: -0.125rem;
+                        }
+                    }
+                }
+
+                h6 {
+                    font-size: 1.75rem;
+                    font-weight: 500;
+                    color: var(--col-brand-5);
+                }
+
+                b {
+                    margin-top: 1rem;
+                    font-size: 1.25rem;
+                    font-weight: 400;
+                    color: var(--col-brand-3);
+
+                    i {
+                        margin-right: 0.5rem;
+                        font-size: 1.25rem;
+                        color: var(--col-brand-3);
+                    }
+                }
+
+                p {
+                    margin-top: 2rem;
+                    font-size: 1.25rem;
+                    font-style: normal;
+                    color: var(--col-brand-3);
+                }
+            }
+        }
+    }
+}
