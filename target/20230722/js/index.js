@@ -82,7 +82,7 @@
                             "fa-solid fa-angle-down"._fa,
                             ul._({ row: 5 }, [
                                 li._([
-                                    _a._("Magazine")._open("https://github.com/pardnchiu/magazine-blog")
+                                    _a._("Magazine")._open("https://pardnchiu.github.io/web-template/target/20230719")
                                 ]),
                                 li._([
                                     _a._("Personal")._open("https://pardnchiu.github.io/web-template/target/20230720")
@@ -92,7 +92,7 @@
                                 ]),
                                 li._("Classic")._click(setHome),
                                 li._([
-                                    _a._("Minimal")._open("https://github.com/pardnchiu/minimal-blog")
+                                    _a._("Minimal")._open("https://pardnchiu.github.io/web-template/target/20230723")
                                 ])
                             ])
                         ]),
@@ -149,17 +149,17 @@
                                 "fa-solid fa-angle-down"._fa,
                                 ul._({ row: 5 }, [
                                     li._([
-                                        _a._("Magazine")._open("https://github.com/pardnchiu/magazine-blog")
+                                        _a._("Magazine")._open("https://pardnchiu.github.io/web-template/target/20230719")
                                     ]),
                                     li._([
-                                        _a._("Personal")._open("https://github.com/pardnchiu/personal-blog")
+                                        _a._("Personal")._open("https://pardnchiu.github.io/web-template/target/20230720")
                                     ]),
                                     li._([
-                                        _a._("Personal Alt")._open("https://github.com/pardnchiu/personal-blog-with-cover")
+                                        _a._("Personal Alt")._open("https://pardnchiu.github.io/web-template/target/20230721")
                                     ]),
                                     li._("Classic")._click(setHome),
                                     li._([
-                                        _a._("Minimal")._open("https://github.com/pardnchiu/minimal-blog")
+                                        _a._("Minimal")._open("https://pardnchiu.github.io/web-template/target/20230723")
                                     ])
                                 ])
                             ])._click(function () {

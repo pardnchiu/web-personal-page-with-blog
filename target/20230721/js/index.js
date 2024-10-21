@@ -102,17 +102,17 @@
                             "fa-solid fa-angle-down"._fa,
                             ul._({ row: 5 }, [
                                 li._([
-                                    _a._("Magazine")._open("https://github.com/pardnchiu/magazine-blog")
+                                    _a._("Magazine")._open("https://pardnchiu.github.io/web-template/target/20230719")
                                 ]),
                                 li._([
-                                    _a._("Personal")._open("https://github.com/pardnchiu/personal-blog")
+                                    _a._("Personal")._open("https://pardnchiu.github.io/web-template/target/20230720")
                                 ]),
                                 li._("Personal Alt")._click(setHome),
                                 li._([
-                                    _a._("Classic")._open("https://github.com/pardnchiu/classic-blog")
+                                    _a._("Classic")._open("https://pardnchiu.github.io/web-template/target/20230722")
                                 ]),
                                 li._([
-                                    _a._("Minimal")._open("https://github.com/pardnchiu/minimal-blog")
+                                    _a._("Minimal")._open("https://pardnchiu.github.io/web-template/target/20230723")
                                 ])
                             ])
                         ]),
@@ -161,7 +161,7 @@
                                 "fa-solid fa-angle-down"._fa,
                                 ul._({ row: 5 }, [
                                     li._([
-                                        _a._("Magazine")._open("https://github.com/pardnchiu/magazine-blog")
+                                        _a._("Magazine")._open("https://pardnchiu.github.io/web-template/target/20230719")
                                     ]),
                                     li._([
                                         _a._("Personal")._open("https://pardnchiu.github.io/web-template/target/20230720")
@@ -171,7 +171,7 @@
                                         _a._("Classic")._open("https://pardnchiu.github.io/web-template/target/20230722")
                                     ]),
                                     li._([
-                                        _a._("Minimal")._open("https://github.com/pardnchiu/minimal-blog")
+                                        _a._("Minimal")._open("https://pardnchiu.github.io/web-template/target/20230723")
                                     ])
                                 ])
                             ])._click(function () {
@@ -396,10 +396,6 @@
             ])
         ]);
 
-        function openUnsplash() {
-            window.open("https://unsplash.com/photos/yg6v0KoiIcU?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText", "_blank");
-        }
-
         function setHome() {
             const vw = _document.body.clientWidth + 32;
             const p1 = Math.floor(vw / 6);
@@ -427,7 +423,7 @@
                         <path d="M 150 36, C ${p1 + 150} 0, ${p2 + 150} 36, ${p2 + 150} 36, C ${p3 + 150} 72, ${p4 + 150} 36, ${p4 + 150} 36, C ${p5 + 150} 0, ${vw + 150} 12, ${vw + 150} 12, L ${vw + 150}  72, L0 72" stroke="none" fill="#ffffff33"/>
                         <path d="M 0 36, C ${p1} 0, ${p2} 36, ${p2} 36, C ${p3} 72, ${p4} 36, ${p4} 36, C ${p5} 0, ${vw} 36, ${vw} 36, L ${vw} 72, L0 72" stroke="none" fill="#ffffff"/>
                         </svg>`
-                    ])._click(openUnsplash),
+                    ]),
                     section._([
                         (section + ".left")._([
                             section._([
@@ -591,7 +587,7 @@
                                 li._("List-1")
                             ])
                         ])
-                    ])._click(openUnsplash),
+                    ]),
                     section._([
                         (section + ".left")._([
                             section._([
@@ -669,7 +665,7 @@
                                 li._("List-2")
                             ])
                         ])
-                    ])._click(openUnsplash),
+                    ]),
                     section._([
                         (section + ".left")._([
                             section._([
@@ -767,7 +763,7 @@
                                 li._("Grid-1")
                             ])
                         ])
-                    ])._click(openUnsplash),
+                    ]),
                     section._([
                         (section + ".left")._([
                             section._([
@@ -827,7 +823,7 @@
                                 li._("Grid-2")
                             ])
                         ])
-                    ])._click(openUnsplash),
+                    ]),
                     section._([
                         (section + ".left")._([
                             section._([
@@ -908,7 +904,7 @@
                 _HEADER(2, isPost1 ? 0 : 1),
                 _NAV(2, isPost1 ? 0 : 1),
                 (section + "#body")._([
-                    isPost1 ? (header + "#default-header")._({ style: $bg })._click(openUnsplash) : (header + "#post-header")._([
+                    isPost1 ? (header + "#default-header")._({ style: $bg }) : (header + "#post-header")._([
                         figure._([
                             img._(repo[0])
                         ]),
@@ -1136,7 +1132,7 @@
                 _HEADER(3, 0),
                 _NAV(3, 0),
                 (section + "#body")._([
-                    (header + "#default-header")._({ style: $bg })._click(openUnsplash),
+                    (header + "#default-header")._({ style: $bg }),
                     (header + "#user-header")._([
                         section._([
                             img._("https://pardn.io/image/head.jpg"),
@@ -1260,7 +1256,7 @@
                                 li._("Contact")
                             ])
                         ])
-                    ])._click(openUnsplash),
+                    ]),
                     section._([
                         (section + ".full")._([
                             section._([
@@ -1345,7 +1341,7 @@
                             ])._click(setHome)
                         ])
                     ]),
-                ])._click(openUnsplash),
+                ]),
                 _FOOTER
             ]);
 
