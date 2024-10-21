@@ -1,0 +1,201 @@
+section#section-right {
+    display: flex;
+    align-items: center;
+    flex-flow: column;
+    gap: 3rem;
+    padding: 1rem;
+    width: 100%;
+    max-width: var(--width-max);
+    transition: 0.4s;
+
+    @media screen and (min-width: 640px) {
+        padding: 2rem;
+    }
+
+    @media screen and (min-width: 800px) {
+        padding: 3rem;
+        height: 100%;
+        overflow: hidden scroll;
+    }
+
+    ul.page {
+        display: flex;
+        flex-shrink: 0;
+        gap: 0.75rem;
+        list-style: none;
+
+        li {
+            position: relative;
+            display: flex;
+            align-items: center;
+            padding: 0 0.5rem;
+            line-height: 2rem;
+            font-weight: 500;
+            background-color: var(--color-dark-1);
+            color: #fff;
+            border-radius: 0.125rem;
+            transition: 0.4s;
+            cursor: pointer;
+
+            &:hover::before {
+                width: 100%;
+            }
+
+            &::before {
+                content: "";
+                position: absolute;
+                z-index: 0;
+                top: 0;
+                left: 0;
+                bottom: 0;
+                width: 0;
+                background-color: var(--color-dark-2);
+                transition: 0.4s;
+            }
+
+            i,
+            p {
+                position: relative;
+                z-index: 1;
+                color: inherit;
+            }
+        }
+    }
+
+    section.button {
+        display: flex;
+        flex-shrink: 0;
+        width: 100%;
+
+        a,
+        button {
+            position: relative;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0 1rem;
+            line-height: 2.5rem;
+            background-color: var(--color-dark-1);
+            color: #fff;
+            border-radius: 0.125rem;
+            overflow: hidden;
+
+            &:hover::before {
+                width: 100%;
+            }
+
+            &::before {
+                content: "";
+                position: absolute;
+                z-index: 0;
+                top: 0;
+                left: 0;
+                bottom: 0;
+                width: 0;
+                background-color: var(--color-dark-2);
+                transition: 0.4s;
+            }
+
+            i,
+            p {
+                position: relative;
+                z-index: 1;
+                color: inherit;
+            }
+        }
+    }
+
+    @import "./list";
+    @import "./article";
+
+    section.contact {
+        display: flex;
+        align-items: flex-start;
+        flex-flow: column;
+        flex-shrink: 0;
+        padding: 2rem 2rem 3rem;
+        width: 100%;
+        background-color: #fff;
+        border: 1px solid #0000001a;
+        border-radius: 0.125rem;
+        transition: 0.4s;
+        overflow: hidden;
+
+        h1 {
+            font-size: 1.75rem;
+            font-weight: 500;
+        }
+
+        p {
+            margin-top: 1rem;
+            line-height: 1.625rem;
+            font-size: 0.875rem;
+            color: var(--color-dark-3);
+        }
+
+        label {
+            margin-top: 1.5rem;
+            width: 100%;
+
+            input {
+                margin-top: 0.5rem;
+                padding: 0 0.75rem;
+                width: 100%;
+                line-height: 2rem;
+                font-size: 0.875rem;
+                border: 1px solid #0000001a;
+                border-radius: 0.125rem;
+            }
+
+            textarea {
+                margin-top: 0.5rem;
+                padding: 0 0.75rem;
+                width: 100%;
+                line-height: 2rem;
+                height: 16rem;
+                font-size: 0.875rem;
+                border: 1px solid #0000001a;
+                border-radius: 0.125rem;
+            }
+        }
+
+        button {
+            position: relative;
+            margin-top: 1.625rem;
+            padding: 0 1rem;
+            line-height: 2.5rem;
+            background-color: var(--color-dark-1);
+            color: #fff;
+            border-radius: 0.125rem;
+            overflow: hidden;
+
+            &:hover::before {
+                width: 100%;
+            }
+
+            &::before {
+                content: "";
+                position: absolute;
+                z-index: 0;
+                top: 0;
+                left: 0;
+                bottom: 0;
+                width: 0;
+                background-color: var(--color-dark-2);
+                transition: 0.4s;
+            }
+
+            &::after {
+                content: attr(txt);
+                position: absolute;
+                z-index: 1;
+                top: 0;
+                left: 0;
+                bottom: 0;
+                width: 100%;
+                line-height: 2.5rem;
+                color: #fff;
+            }
+        }
+    }
+}
