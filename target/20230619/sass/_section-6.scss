@@ -1,0 +1,125 @@
+>section:nth-child(6) {
+    width: 100%;
+    background-color: var(--col-brand-5);
+
+    >section {
+        position: relative;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+        gap: 6rem;
+        margin: 0 auto;
+        padding: 5rem 1rem;
+        width: 100%;
+        max-width: var(--width-max);
+
+        header {
+
+            // &.delay {
+            // 	h6 {
+            // 		top: 5rem;
+            // 		opacity: 0;
+            // 	}
+            // }
+
+            h6 {
+                position: relative;
+                top: 0;
+                font-size: 3rem;
+                font-weight: 900;
+                text-align: center;
+                opacity: 1;
+                transition: 1s ease-out;
+            }
+        }
+
+        section {
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: center;
+            gap: 2rem;
+            width: 100%;
+
+            &.delay {
+
+                article {
+                    opacity: 0.5;
+
+                    &:nth-child(1) {
+                        left: -100%;
+                    }
+
+                    &:nth-child(2) {
+                        top: 100%;
+                    }
+
+                    &:nth-child(3) {
+                        left: 200%;
+                    }
+                }
+            }
+
+            article {
+                position: relative;
+                top: 0;
+                left: 0;
+                right: 0;
+                display: flex;
+                flex-flow: column;
+                align-items: center;
+                gap: 1rem;
+                padding-bottom: 2rem;
+                width: 100%;
+                background-color: #fff;
+                border-radius: 1rem;
+                box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.15);
+                opacity: 1;
+                transition: 1s;
+
+                @media screen and (min-width: 640px) {
+                    width: calc((100% - 2rem) / 2);
+                }
+
+                @media screen and (min-width: 1024px) {
+                    width: calc((100% - 2rem * 2) / 3);
+                }
+
+                &:hover {
+                    box-shadow: 0 0.25rem 1rem rgba(0, 0, 0, 0.5);
+                }
+
+                figure {
+                    position: relative;
+
+                    img {
+                        width: 100%;
+                        aspect-ratio: 4 / 3;
+                        border-radius: 1rem 1rem 0 0;
+                    }
+                }
+
+                h6 {
+                    padding: 0 1rem;
+                    text-align: center;
+                    font-size: 1.5rem;
+                }
+
+                p {
+                    padding: 0 1rem;
+                    line-height: 1.75rem;
+                    text-align: center;
+                }
+
+                a,
+                button {
+                    border-bottom: 0.125rem solid #ddd;
+                    transition: 0.5s;
+
+                    &:hover {
+                        border-bottom: 0.125rem solid var(--col-brand-5);
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,38 @@
+<section id="child5">
+    <section class="delay">
+        <section class="delay">
+            <article :for="item in items">
+                <i :class="item.fa"></i>
+                <p>{{ item.content }}</p>
+            </article>
+        </section>
+        <figure class="delay">
+            <img :src="src" :alt="">
+            <a class="hint" :href="freepik">{{ freepik_hint }}</a>
+        </figure>
+    </section>
+</section>
+<script>
+    const child5 = new PD({
+        id: "child5",
+        data: {
+            src: "./image/bodybuilder-training-arm-with-resistance-band.jpg",
+            freepik: "https://www.freepik.com/free-photo/bodybuilder-training-arm-with-resistance-band_8794638.htm#query=fitness&position=29&from_view=search&track=sph#position=29&query=fitness",
+            freepik_hint: "Image by serhii_bobyk",
+            items: [
+                {
+                    fa: "fa-regular fa-circle-check",
+                    content: "Ut egestas metus ac faucibus tincidunt. Sed aliquam urna velit, sed commodo purus hendrerit sit amet. In ac mi condimentum, gravida sapien dapibus, hendrerit tellus. Ut at ligula velit."
+                },
+                {
+                    fa: "fa-regular fa-circle-check",
+                    content: "Integer a ex dui. Nam bibendum iaculis est. Quisque suscipit dolor sit amet risus malesuada ultricies. Ut dapibus sed diam ut vulputate. Sed tempor lacus id cursus pulvinar."
+                },
+                {
+                    fa: "fa-regular fa-circle-check",
+                    content: "Curabitur sed tempor purus. Aenean rhoncus lectus et lobortis faucibus. Donec lorem magna, ultricies semper efficitur eget, consectetur eget sem. Morbi eu eros egestas."
+                },
+            ]
+        }
+    })
+</script>

@@ -1,0 +1,160 @@
+>section:nth-child(4) {
+    width: 100%;
+    background-color: #332E29;
+
+    >section {
+        position: relative;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 1rem;
+        margin: 0 auto;
+        padding: 5rem 1rem 10rem;
+        width: 100%;
+        max-width: var(--width-max);
+        transition: 0.5s;
+
+        @media screen and (min-width: 640px) {
+            gap: 6rem;
+        }
+
+        figure {
+            position: relative;
+            transition: 0.5s;
+            
+            &.delay {
+
+                &:nth-child(2)>img {
+                    left: -100%;
+                    opacity: 0;
+                }
+
+                &:nth-child(3)>img {
+                    left: 200%;
+                    opacity: 0;
+                }
+
+                &:nth-child(4)>img {
+                    left: -100%;
+                    opacity: 0;
+                }
+
+                &:nth-child(5)>img {
+                    left: 200%;
+                    opacity: 0;
+                }
+            }
+
+            &:nth-child(2),
+            &:nth-child(3),
+            &:nth-child(4),
+            &:nth-child(5) {
+                width: calc((100% - 1rem) / 2);
+            }
+
+            @media screen and (min-width: 640px) {
+                &:nth-child(2) {
+                    margin-top: 2rem;
+                    width: calc(45% - 3rem);
+                    aspect-ratio: 1 / 1;
+                }
+    
+                &:nth-child(3) {
+                    width: calc(55% - 3rem);
+                    aspect-ratio: 5 / 4;
+                }
+    
+                &:nth-child(4) {
+                    margin-top: 2rem;
+                    width: calc(55% - 3rem);
+                    aspect-ratio: 5 / 4;
+                }
+    
+                &:nth-child(5) {
+                    width: calc(45% - 3rem);
+                    aspect-ratio: 1 / 1;
+                }
+            }
+
+            img {
+                position: relative;
+                top: 0;
+                left: 0;
+                right: 0;
+                width: 100%;
+                height: 100%;
+                border-radius: 2rem;
+                opacity: 1;
+                transition: 1s ease-out;
+            }
+        }
+
+        >section {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            align-content: center;
+            padding: 2rem;
+            width: 100%;
+            max-width: 480px;
+            background-color: var(--col-brand-5);
+            border-radius: 2rem;
+            transition: 0.5s;
+
+            @media screen and (min-width: 640px) {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                aspect-ratio: 1 / 1;
+                transform: translate(-50%, -50%);
+                border-radius: 50%;
+            }
+
+            section {
+                display: flex;
+                justify-content: center;
+                flex-flow: row wrap;
+                gap: 1rem;
+                text-align: center;
+                transition: 1s;
+
+                &.delay {
+                    transform: scale(50%);
+                    opacity: 0.5;
+                }
+
+                h6 {
+                    margin-top: 2.25rem;
+                    line-height: 2.25rem;
+                    width: 100%;
+                    font-size: 2rem;
+                }
+
+                a,
+                button {
+                    position: relative;
+                    top: 0;
+                    display: inline-block;
+                    margin-top: 2rem;
+                    padding: 0 2rem;
+                    line-height: 3.5rem;
+                    font-size: 1.125rem;
+                    letter-spacing: 2px;
+                    background-color: #000;
+                    color: #fff;
+                    border-radius: 1.75rem;
+                    opacity: 1;
+                    transition: 1.5s ease-out;
+
+					i {
+						margin-right: 0.5rem;
+						color: #fff;
+					}
+                }
+            }
+        }
+    }
+}

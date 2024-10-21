@@ -1,0 +1,110 @@
+>section:nth-child(5) {
+    width: 100%;
+    background: linear-gradient(to bottom, #332E29 0% 30%, #E5E5E5 30% 100%);
+
+    >section {
+        position: relative;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: flex-start;
+        align-items: flex-start;
+        gap: 6rem;
+        margin: 0 auto;
+        padding: 5rem 1rem;
+        width: 100%;
+        max-width: var(--width-max);
+
+        &.delay::before {
+            right: -20%;
+            opacity: 0;
+        }
+
+        &::before {
+            content: "";
+            position: absolute;
+            z-index: 0;
+            top: 2rem;
+            right: 1rem;
+            width: 34%;
+            aspect-ratio: 10 / 16;
+            background-color: var(--col-brand-5);
+            border-radius: 2rem;
+            transition: 1s ease-out;
+            transition-delay: 0.5s;
+        }
+
+        >section {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            flex-flow: column;
+            gap: 1.5rem;
+            left: 0;
+            margin-top: 0;
+            width: 100%;
+            max-width: 480px;
+            transition: 1.5s ease-out;
+            transition: 0.5s;
+
+            @media screen and (min-width: 640px) {
+                margin-top: 7rem;
+            }
+
+            &.delay {
+                left: -20%;
+                opacity: 0;
+            }
+
+            article {
+                display: flex;
+                padding: 2rem;
+                background-color: #fff;
+                border-radius: 2rem;
+                box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.25);
+
+                i {
+                    margin-right: 2rem;
+                    font-size: 4rem;
+                    color: var(--col-brand-5);
+                }
+
+                p {
+                    line-height: 1.75rem;
+                    letter-spacing: 1px;
+                }
+            }
+        }
+
+        figure {
+            position: relative;
+            z-index: 1;
+            width: 100%;
+            aspect-ratio: 16 / 10;
+            transition: 1s ease-out;
+            opacity: 1;
+
+            @media screen and (min-width: 640px) {
+                position: absolute;
+                top: 5rem;
+                left: 20%;
+                width: 70%;
+            }
+
+            &.delay {
+                left: -15rem;
+                opacity: 0;
+            }
+
+            img {
+                position: absolute;
+                top: 0;
+                left: 0;
+                bottom: 0;
+                right: 0;
+                width: 100%;
+                height: 100%;
+                border-radius: 2rem;
+            }
+        }
+    }
+}

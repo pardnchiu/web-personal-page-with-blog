@@ -1,0 +1,28 @@
+<section id="child7">
+    <section>
+        <figure class="delay">
+            <img :src="src" alt="">
+            <a class="hint" :href="freepik">{{ freepik_hint }}</a>
+        </figure>
+        <h6 class="delay">{{ heading }}</h6>
+        <b class="delay">{{ hint }}</b>
+        <p class="delay">{{ content }}</p>
+        <a class="delay" href="mailto:mail@pardn.ltd">
+            <i class="fa-regular fa-envelope"></i>
+            CONTACT US
+        </a>
+    </section>
+</section>
+<script>
+    const child7 = new PD({
+        id: "child7",
+        data: {
+            src: "./image/woman-with-visible-abs-doing-fitness.jpg",
+            freepik: "https://www.freepik.com/free-photo/woman-with-visible-abs-doing-fitness_44591787.htm#query=fitness&position=28&from_view=search&track=sph",
+            freepik_hint: "Image by Freepik",
+            heading: "Vivamus at consectetur libero, vel scelerisque risus.",
+            hint: "Interdum et malesuada fames ac ante ipsum primis in faucibus. Mauris consectetur vestibulum turpis eget posuere.",
+            content: "Suspendisse ligula enim, faucibus quis suscipit eleifend, volutpat vel libero. Morbi nunc nibh, facilisis quis diam ut, viverra mattis neque. Proin eleifend, mi vitae ultrices molestie, sem nisl pellentesque est, quis pulvinar diam orci eu libero."
+        }
+    });
+</script>

@@ -1,0 +1,44 @@
+<section id="child3">
+    <section>
+        <header class="delay">
+            <h6>{{ title }}</h6>
+        </header>
+        <section class="delay">
+            <article :for="(row, i) in target">
+                <i :class="row.fa"></i>
+                <h6>{{ row.title }}</h6>
+                <p>{{ row.content }}</p>
+            </article>
+        </section>
+        <div class="delay" style="background-image: url('image/image\ 1.png');">
+            <a class="hint" :href="freepik" target="_blank">{{ freepik_hint }}</a>
+        </div>
+    </section>
+</section>
+<script>
+    const child3 = new PD({
+        id: "child3",
+        data: {
+            freepik: "https://www.freepik.com/free-photo/yoga-woman-pretty-brunette-active-wear-doing-yoga-white-surface_16491500.htm#from_view=detail_alsolike",
+            freepik_hint: "Image by diana.grytsku",
+            title: "Phasellus et accumsan dolor.",
+            target: [
+                {
+                    fa: "fa-solid fa-dumbbell",
+                    title: "Pellentesque sapien metus.",
+                    content: "Vulputate nec convallis sit amet, sodales vel dui. Sed nec bibendum augue, ac tempor sem. Vivamus sit amet leo consequat dolor ultrices mattis vel at dui."
+                },
+                {
+                    fa: "fa-solid fa-person-biking",
+                    title: "Nunc interdum massa.",
+                    content: "Aenean vel quam et nulla porta laoreet ultricies vel nibh. Morbi congue, ligula sit amet egestas suscipit, urna lacus maximus sapien, et pellentesque augue elit eu nibh."
+                },
+                {
+                    fa: "fa-solid fa-dumbbell",
+                    title: "Dignissim lacus ac.",
+                    content: "Maecenas finibus orci mattis venenatis vulputate. malesuada est. Curabitur ac risus sed diam facilisis pulvinar. Vivamus sed convallis elit."
+                }
+            ]
+        }
+    });
+</script>

@@ -1,0 +1,161 @@
+>section:nth-child(9) {
+    width: 100%;
+
+    >section {
+        position: relative;
+        display: flex;
+        flex-flow: row wrap;
+        align-items: center;
+        margin: 0 auto;
+        padding: 10rem 1rem 5rem;
+        gap: 4rem;
+        width: 100%;
+        max-width: var(--width-max);
+
+        >section {
+            position: relative;
+            left: 0;
+            display: flex;
+            flex-flow: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+            gap: 2rem;
+            width: 100%;
+            transition: 1s;
+
+            @media screen and (min-width: 800px) {
+                width: calc((100% - 4rem) / 2);
+            }
+
+            &.delay {
+
+                &:nth-child(1) {
+                    left: -15rem;
+                }
+
+                &:nth-child(2) {
+                    left: 30%;
+                }
+            }
+
+            figure img {
+                width: 100%;
+                aspect-ratio: 16 / 10;
+                border-radius: 2rem;
+                box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.25);
+
+                @media screen and (min-width: 800px) {
+                    aspect-ratio: 1 / 1;
+                }
+            }
+
+            h6 {
+                position: relative;
+                top: 0;
+                text-align: center;
+                font-size: 3rem;
+                font-weight: 900;
+                opacity: 1;
+                transition: 1s ease-out;
+            }
+
+            label {
+                width: 100%;
+
+                input {
+                    padding: 1rem;
+                    width: 100%;
+                    line-height: 2rem;
+                    border-bottom: 0.125rem solid #000;
+                }
+
+                textarea {
+                    padding: 1rem;
+                    width: 100%;
+                    line-height: 2rem;
+                    height: 12rem;
+                    border-bottom: 0.125rem solid #000;
+                }
+            }
+
+            >a,
+            >button {
+                position: relative;
+                top: 0;
+                display: inline-block;
+                padding: 0 2rem;
+                line-height: 3.5rem;
+                font-size: 1.125rem;
+                letter-spacing: 2px;
+                background-color: #000;
+                color: #fff;
+                border-radius: 1.75rem;
+                opacity: 1;
+                transition: 1.5s ease-out;
+
+                i {
+                    margin-right: 0.5rem;
+                    color: #fff;
+                }
+            }
+        }
+
+        ul {
+            display: flex;
+            flex-flow: row wrap;
+            gap: 2rem;
+            width: 100%;
+
+            li {
+                position: relative;
+                left: 0;
+                display: flex;
+                flex-flow: column;
+                gap: 1rem;
+                padding: 2rem;
+                width: 100%;
+                background-color: var(--col-brand-5);
+                border-radius: 1rem;
+                opacity: 1;
+                transition: 1s;
+
+                @media screen and (min-width: 800px) {
+                    width: calc((100% - 2rem) / 2);
+                }
+
+                @media screen and (min-width: 800px) {
+                    width: calc((100% - 2rem * 2) / 3);
+                }
+
+                &.delay {
+
+                    &:nth-child(1) {
+                        left: 6rem;
+                        opacity: 0;
+                    }
+
+                    &:nth-child(2) {
+                        left: 10rem;
+                        opacity: 0;
+                    }
+
+                    &:nth-child(3) {
+                        left: 14rem;
+                        opacity: 0;
+                    }
+                }
+
+                section {
+                    display: flex;
+                    gap: 0.5rem;
+
+                    i,
+                    h6 {
+                        line-height: 2rem;
+                        font-size: 1.25rem;
+                    }
+                }
+            }
+        }
+    }
+}

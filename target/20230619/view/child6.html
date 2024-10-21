@@ -1,0 +1,49 @@
+<section id="child6">
+    <section>
+        <header>
+            <h6>{{ heading }}</h6>
+        </header>
+        <section class="delay">
+            <article :for="item in items">
+                <figure>
+                    <img :src="item.src" alt="">
+                    <a class="hint" :href="item.freepik">{{ item.freepik_hint }}</a>
+                </figure>
+                <h6>{{ item.title }}</h6>
+                <p>{{ item.content }}</p>
+                <a :href="item.href">LEARN MORE</a>
+            </article>
+        </section>
+    </section>
+</section>
+<script>
+    const child6 = new PD({
+        id: "child6",
+        data: {
+            heading: "Suscipit tellus vel, ultricies massa.",
+            items: [
+                {
+                    src: "./image/full-shot-couple-doing-workout-exercises-2.jpg",
+                    freepik: "https://www.freepik.com/free-photo/full-shot-couple-doing-workout-exercises_44998593.htm#query=full-shot-couple-doing-workout&position=4&from_view=search&track=sph",
+                    freepik_hint: "Image by Freepik",
+                    title: "Duis id mollis sem.",
+                    content: "Sodales nisi. Aliquam sed nulla ultricies, dictum lorem at, mattis eros."
+                },
+                {
+                    src: "./image/full-shot-couple-doing-workout-exercises.jpg",
+                    freepik: "https://www.freepik.com/free-photo/full-shot-couple-doing-workout-exercises_44998587.htm#page=3&query=sport&position=7&from_view=search&track=sph",
+                    freepik_hint: "Image by Freepik",
+                    title: "Aliquam vitae orci.",
+                    content: "Donec eget metus eget est venenatis auctor. Integer ac ullamcorper augue."
+                },
+                {
+                    src: "./image/people-doing-indoor-cycling.jpg",
+                    freepik: "https://www.freepik.com/free-photo/people-doing-indoor-cycling_22631964.htm#query=people-doing-indoor&position=4&from_view=search&track=sph",
+                    freepik_hint: "Image by Freepik",
+                    title: "Euismod tellus non.",
+                    content: "Maecenas sed est dignissim tellus suscipit scelerisque sed quis augue."
+                }
+            ]
+        }
+    })
+</script>

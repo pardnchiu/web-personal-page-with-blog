@@ -471,7 +471,7 @@
                                                     ])
                                                 ])
                                             ]),
-                                            (h5 + ".line.r2")._(repo[0].title)._click(function () {
+                                            (h5 + ".line.r2")._($title)._click(function () {
                                             }),
                                             (_p + ".line.r3")._($content)
                                         ])
@@ -906,7 +906,7 @@
                 (section + "#body")._([
                     isPost1 ? (header + "#default-header")._({ style: $bg }) : (header + "#post-header")._([
                         figure._([
-                            img._(repo[0])
+                            img._("https://picsum.photos/480?random=" + Date.now())
                         ]),
                         section._([
                             (ul + ".path.light.slash")._([
@@ -962,12 +962,12 @@
                                     ]) : null,
                                     (section + ".body")._([
                                         isPost1 ? figure._([
-                                            img._(repo[0].src)
+                                            img._("https://picsum.photos/480?random=" + Date.now())
                                         ]) : null,
                                         _p._(`Curabitur efficitur lectus suscipit dignissim hendrerit. Pellentesque quis consequat metus. Donec vel ante et dolor mollis commodo. Phasellus lectus sapien, accumsan ut diam eget, sagittis feugiat ipsum. Cras tristique commodo tellus scelerisque congue. <a href="">Suspendisse potenti</a>. Fusce eu nisl in felis tincidunt placerat. Nullam eu interdum ligula. Morbi sapien magna, iaculis eget velit et, iaculis suscipit ligula. Maecenas laoreet eleifend justo, nec interdum augue convallis id.`),
                                         _p._(`Duis ornare, eros a sollicitudin pulvinar, magna purus suscipit quam, id condimentum tellus arcu sit amet nisl. Fusce rhoncus nisi eu lacinia placerat. Sed aliquam orci a eros viverra, ac egestas lectus pellentesque. Morbi sed fermentum mi, <mark>molestie fringilla erat</mark>. Sed ut tellus gravida, fermentum ex ultricies, condimentum libero. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Sed feugiat nulla sed sem auctor ullamcorper.`),
                                         figure._([
-                                            img._(repo[0].src),
+                                            img._("https://picsum.photos/480?random=" + Date.now()),
                                             figcaption._($title)
                                         ]),
                                         _p._("Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Morbi dictum massa ex, ac feugiat augue gravida vel. Nullam ullamcorper iaculis mauris nec dictum. Nam ac eros metus. Sed quam ligula, mattis et neque at, varius malesuada sapien."),

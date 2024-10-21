@@ -1,0 +1,74 @@
+<section id="child9">
+    <section>
+        <section class="delay">
+            <h6>Contact Us</h6>
+            <label>NAME
+                <input placeholder="Enter your name" :model="name">
+            </label>
+            <label>EMAIL
+                <input placeholder="Enter email address" :model="email">
+            </label>
+            <label>MESSAGE
+                <textarea :model="message"></textarea>
+            </label>
+            <button @click="send">
+                <i class="fa-regular fa-paper-plane"></i>
+                SUBMIT
+            </button>
+        </section>
+        <section class="delay">
+            <figure>
+                <img :src="src" alt="">
+                <a class="hint" href="freepik">{{ freepik_hint }}</a>
+            </figure>
+        </section>
+        <ul>
+
+            <li :for="item in items" class="delay">
+                <section>
+                    <i class="item.fa"></i>
+                    <h6>{{ item.title }}</h6>
+                </section>
+                <p :html="item.html"></p>
+            </li>
+        </ul>
+    </section>
+</section>
+<script>
+    const child9 = new PD({
+        id: "child9",
+        data: {
+            name: "",
+            email: "",
+            message: "",
+            src: "./image/full-shot-couple-doing-workout-exercises-2.jpg",
+            freepik: "https://www.freepik.com/free-photo/full-shot-couple-doing-workout-exercises_44998593.htm#query=full-shot-couple-doing-workout&position=4&from_view=search&track=sph",
+            freepik_hint: "Image by Freepik",
+            items: [
+                {
+                    fa: "fa-solid fa-phone",
+                    title: "CALL US",
+                    html: "(+886) 987-654-321"
+                },
+                {
+                    fa: "fa-solid fa-location-dot",
+                    title: "LOCATION",
+                    html: "(231) 新北市新店區中央路153號"
+                },
+                {
+                    fa: "fa-solid fa-clock",
+                    title: "HOURS",
+                    html: "Mon - Fri: 09:00 - 18:00<br>Sat, Sun: 09:00 - 12:00"
+                }
+            ]
+        },
+        event: {
+            send: function () {
+                alert(`你所輸入的資料：
+名稱：${child9.data.name}
+信箱${child9.data.email}
+訊息：${child9.data.message}`)
+            }
+        }
+    });
+</script>

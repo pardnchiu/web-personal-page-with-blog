@@ -1,0 +1,55 @@
+<section id="child8">
+    <section>
+        <header>
+            <h6>{{ heading }}</h6>
+            <P>{{ content }}</P>
+        </header>
+        <section>
+            <figure :for="item in items" class="delay">
+                <img :src="item.src" alt="">
+                <a class="hint" href="item.freepik">{{ item.freepik_hint }}</a>
+            </figure>
+        </section>
+    </section>
+</section>
+<script>
+    const child8 = new PD({
+        id: "child8",
+        data: {
+            heading: "Donec tempus auctor neque a ullamcorper.",
+            content: "Morbi vulputate sit amet augue non porttitor. Vestibulum porttitor, dolor sed luctus tempus, mauris mi pharetra mi, vitae dictum eros nunc quis odio. Maecenas sodales vehicula elit, non dictum metus vestibulum varius.",
+            items: [
+                {
+                    src: "./image/bodybuilder-training-arm-with-resistance-band.jpg",
+                    freepik: "https://www.freepik.com/free-photo/bodybuilder-training-arm-with-resistance-band_8794638.htm#query=fitness&position=29&from_view=search&track=sph#position=29&query=fitness",
+                    freepik_hint: "Image by serhii_bobyk"
+                },
+                {
+                    src: "./image/full-shot-couple-doing-workout-exercises-2.jpg",
+                    freepik: "https://www.freepik.com/free-photo/full-shot-couple-doing-workout-exercises_44998593.htm#query=full-shot-couple-doing-workout&position=4&from_view=search&track=sph",
+                    freepik_hint: "Image by Freepik"
+                },
+                {
+                    src: "./image/full-shot-couple-doing-workout-exercises.jpg",
+                    freepik: "https://www.freepik.com/free-photo/full-shot-couple-doing-workout-exercises_44998587.htm#page=3&query=sport&position=7&from_view=search&track=sph",
+                    freepik_hint: "Image by Freepik"
+                },
+                {
+                    src: "./image/people-doing-indoor-cycling.jpg",
+                    freepik: "https://www.freepik.com/free-photo/people-doing-indoor-cycling_22631964.htm#query=people-doing-indoor&position=4&from_view=search&track=sph",
+                    freepik_hint: "Image by Freepik"
+                },
+                {
+                    src: "./image/woman-with-visible-abs-doing-fitness.jpg",
+                    freepik: "https://www.freepik.com/free-photo/woman-with-visible-abs-doing-fitness_44591787.htm#query=fitness&position=28&from_view=search&track=sph",
+                    freepik_hint: "Image by Freepik"
+                },
+                {
+                    src: "./image/young-fitness-man-studio.jpg",
+                    freepik: "https://www.freepik.com/free-photo/young-fitness-man-studio_8990574.htm#query=fitness&position=2&from_view=search&track=sph",
+                    freepik_hint: "Image by serhii_bobyk"
+                }
+            ]
+        }
+    })
+</script>

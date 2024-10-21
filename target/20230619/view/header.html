@@ -1,0 +1,36 @@
+<header id="header" style="background-image: url('image/full-shot-couple-doing-workout-exercises.jpg');">
+    <section>
+        <article class="delay">
+            <h1>{{ title }}</h1>
+            <b>{{ content }}</b>
+            <a :for="item in contact" :href="item.href">
+                <i :class="item.fa"></i>
+                {{ item.title }}
+            </a>
+        </article>
+    </section>
+    <a class="hint" :href="freepik" target="_blank">{{ freepik_hint }}</a>
+</header>
+<script>
+    const header = new PD({
+        id: "header",
+        data: {
+            title: "LOREM IPSUM DOLOR SET AMET, CONSECTETUR ADIPISCING ELIT.",
+            content: "In feugiat orci eu dignissim euismod. Proin id arcu lorem. Vestibulum eu placerat ante. Aliquam ut elit id nibh ullamcorper luctus. Nunc semper est quis tempus sollicitudin. Nullam consequat nunc dignissim pretium dignissim.",
+            freepik: "https://www.freepik.com/free-photo/full-shot-couple-doing-workout-exercises_44998587.htm#page=3&query=sport&position=7&from_view=search&track=sph",
+            freepik_hint: "Image by Freepik",
+            contact: [
+                {
+                    href: "https://github.com/pardnchiu/web-gym-introduction",
+                    fa: "fa-brands fa-github",
+                    title: "GitHub"
+                },
+                {
+                    href: "https://linkedin.com/in/pardnchiu",
+                    fa: "fa-brands fa-linkedin-in",
+                    title: "Linkedin"
+                }
+            ]
+        }
+    });
+</script>
