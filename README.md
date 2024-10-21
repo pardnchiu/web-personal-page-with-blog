@@ -10,9 +10,9 @@
 | - | - |
 | Social Networking<br>製作日期: 2023/07/30 | Minimal Blog<br>製作日期: 2023/07/23 |
 | [![](./image/20230730.jpg)](https://pardnchiu.github.io/web-template/target/20230730) | [![](./image/20230723.jpg)](https://pardnchiu.github.io/web-template/target/20230723) |
-| Classic Blog<br>製作日期: 2023/07/22 | Personal Blog with Cover<br>製作日期: 2023/07/21 |
+| Classic Blog<br>製作日期: 2023/07/22 | Personal Blog with Cover<br>製作日期: 2023/07/21 | |
 | [![](./image/20230722.jpg)](https://pardnchiu.github.io/web-template/target/20230722) | [![](./image/20230721.jpg)](https://pardnchiu.github.io/web-template/target/20230721) |
-| Personal Blog<br>製作日期: 2023/07/20 | Magazine Blog<br>製作日期: 2023/07/19<br>最後更新: 2024/08/08
+| Personal Blog<br>製作日期: 2023/07/20 | Magazine Blog<br>製作日期: 2023/07/19<br>最後更新: 2024/08/08 |
 | [![](./image/20230720.jpg)](https://pardnchiu.github.io/web-template/target/20230720) | [![](./image/20230719.jpg)](https://pardnchiu.github.io/web-template/target/20230719) |
 | App Introduction<br>製作日期: 2023/07/10 |  Personal Page With Blog<br>製作日期: 2023/06/21 |
 | [![](./image/20230710.jpg)](https://pardnchiu.github.io/web-template/target/20230710) |  [![](./image/20230621.jpg)](https://pardnchiu.github.io/web-template/target/20230621) | 
@@ -20,8 +20,8 @@
 | [![](./image/20230619.jpg)](https://pardnchiu.github.io/web-template/target/20230619) | [![](./image/20230613.jpg)](https://pardnchiu.github.io/web-template/target/20230613) |
 | Restaurant Introduction<br>製作日期: 2023/06/04 | Moneybook<br>製作日期: 2023/04/18 |
 | [![](./image/20230604.jpg)](https://pardnchiu.github.io/web-template/target/20230604) | [![](./image/20230418.jpg)](https://pardnchiu.github.io/web-template/target/20230418) |
-| Instagram 202210<br>製作日期: 2022/10/12 | |
-| [![](./image/20221012.jpg)](https://pardnchiu.github.io/web-template/target/20221012) |  |
+| Personal Introduction<br>製作日期: 2023/02/20 | Instagram (202210)<br>製作日期: 2022/10/12 |
+| [![](./image/20230220.jpg)](https://pardnchiu.github.io/web-template/target/20230220) | [![](./image/20221012.jpg)](https://pardnchiu.github.io/web-template/target/20221012) |
 
 ## Creator
 

@@ -1,0 +1,201 @@
+>div.home {
+    z-index: 1;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: calc(100% - 2rem);
+
+    @media screen and (min-width: 1024px) {
+        width: 50%;
+    }
+
+    >p:nth-child(1) {
+        position: relative;
+        display: block;
+        font-size: 1.5rem;
+        font-weight: 500;
+        letter-spacing: 0.25rem;
+        color: var(--clr-txt);
+        transition: 0.3s;
+
+        @media screen and (min-width: 1024px) {
+            font-size: 2rem;
+
+            &::after {
+                width: 2.25rem;
+            }
+        }
+
+        &::after {
+            position: absolute;
+            content: "";
+            margin-left: 0.25rem;
+            height: 0.25rem;
+            width: 1.75rem;
+            bottom: 0.5rem;
+            background-color: var(--clr-grad-end);
+        }
+    }
+
+    >h1 {
+        position: relative;
+        display: inline-block;
+        vertical-align: bottom;
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: var(--clr-txt);
+        transition: 0.3s;
+
+        @media screen and (min-width: 1024px) {
+            font-size: var(--size-heading);
+
+            &::after {
+                height: calc(var(--size-heading) + 1.5rem);
+            }
+        }
+
+        &::after {
+            content: "";
+            position: relative;
+            display: inline-block;
+            vertical-align: bottom;
+            margin-left: 0.75rem;
+            font-size: 4rem;
+            width: 0.75rem;
+            background-color: var(--clr-txt);
+            animation: animate-fake-input 1s linear infinite;
+        }
+
+        @keyframes animate-fake-input {
+            50% {
+                opacity: 0;
+            }
+        }
+
+        >b {
+            position: relative;
+            margin-left: 0.75rem;
+            color: var(--clr-main);
+        }
+    }
+
+    >p {
+        position: relative;
+        display: inline-block;
+        margin-top: 1rem;
+        width: 90%;
+        font-size: 1.125rem;
+        font-weight: 400;
+        letter-spacing: 0.125rem;
+        color: var(--clr-txt);
+        transition: 0.3s;
+
+        @media screen and (min-width: 1024px) {
+            font-size: 1.25rem;
+        }
+    }
+
+    >div {
+        position: relative;
+        display: inline-block;
+        vertical-align: top;
+        margin-top: 2.5rem;
+        margin-left: 50%;
+        transform: translateX(-50%);
+        margin-right: -50%;
+        width: initial;
+        height: initial;
+        font-size: 0;
+
+        @media screen and (min-width: 480px) {
+            margin-left: 4rem;
+            transform: unset;
+            margin-right: unset;
+        }
+
+        >a,
+        >button {
+            position: relative;
+            display: inline-block;
+            vertical-align: top;
+            margin-right: 2rem;
+            padding: 0 1.5rem;
+            width: initial;
+            line-height: 2.25rem;
+            height: 2.25rem;
+            font-size: 1.125rem;
+            font-weight: 500;
+            letter-spacing: 0.25rem;
+            color: #fff;
+            background-color: rgba(0, 0, 0, 0.5);
+            box-shadow: 0.5rem 1rem 0.5rem rgba(0, 0, 0, 0.4);
+            border-radius: 0.25rem;
+            -webkit-backdrop-filter: blur(1rem);
+            backdrop-filter: blur(1rem);
+            transition: 0.3s;
+
+            &:nth-last-child(1) {
+                margin-right: 0;
+            }
+
+            &:hover {
+                background-color: rgba(0, 0, 0, 0.7);
+            }
+
+            >i {
+                margin-left: 0.5rem;
+                color: var(--clr-bg);
+            }
+        }
+    }
+}
+
+>svg {
+    position: absolute;
+    display: block;
+    top: 15%;
+    right: -100%;
+    width: 60%;
+    max-width: calc(1440px * 0.6);
+    height: auto;
+    transition: 0.3s;
+
+    @media screen and (min-width: 800px) {
+        right: -30%;
+        animation: animate-user-bg-tablet 4s linear infinite;
+    }
+
+    @media screen and (min-width: 1024px) {
+        right: -10%;
+        animation: animate-user-bg 4s linear infinite;
+    }
+
+    @keyframes animate-user-bg-tablet {
+        50% {
+            right: calc(-30% - 1vh);
+        }
+    }
+
+    @keyframes animate-user-bg {
+        50% {
+            right: calc(-10% - 1vh);
+        }
+    }
+}
+
+>img {
+    object-fit: contain;
+    position: absolute;
+    display: block;
+    right: 0;
+    bottom: -100%;
+    width: 50%;
+    height: auto;
+    max-height: calc(100vh - 4rem);
+    transition: 0.3s;
+    overflow: visible;
+
+    @media screen and (min-width: 1024px) {
+        bottom: 0;
+    }
+}
