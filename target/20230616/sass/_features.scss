@@ -1,0 +1,98 @@
+>section:nth-child(2) {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    padding: 5rem 0;
+    width: 100%;
+    max-width: var(--width-max);
+    border-bottom: 1px solid #0000000d;
+
+    >b {
+        font-weight: 400;
+        letter-spacing: 2px;
+        color: red;
+    }
+
+    >h6 {
+        margin-top: 0.5rem;
+        font-size: 3rem;
+        letter-spacing: 1px;
+    }
+
+    ul {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+        gap: 2rem;
+        margin-top: 4rem;
+        width: 100%;
+
+        li {
+            display: flex;
+            flex-flow: column;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 2rem;
+            width: 100%;
+            max-width: 480px;
+            background: linear-gradient(to right bottom, #ECF0F3, #ffffffff);
+            border-radius: 0.5rem;
+            box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.1);
+
+            @media screen and (min-width: 1024px) {
+                width: calc((100% - 2rem * 2) / 3);
+            }
+
+            &:hover {
+                padding: 2rem;
+
+                i:nth-last-child(1) {
+                    margin-top: 2rem;
+                    line-height: 2rem;
+                    opacity: 1;
+                }
+            }
+
+            i {
+                &:nth-child(1) {
+                    font-size: 3.5rem;
+                    background: var(--gradient-col);
+                    background-size: 400%;
+                    background-clip: text;
+                    -webkit-background-clip: text;
+                    color: transparent;
+                    animation: bg-move 3s linear infinite;
+                }
+
+                &:nth-last-child(1) {
+                    margin-top: 4rem;
+                    line-height: 0;
+                    font-size: 1.5rem;
+                    opacity: 0;
+                }
+            }
+
+            h6 {
+                margin-top: 1.5rem;
+                width: 100%;
+                font-size: 1.5rem;
+                font-weight: 500;
+                letter-spacing: 1px;
+                background: var(--gradient-col);
+                background-size: 400%;
+                background-clip: text;
+                -webkit-background-clip: text;
+                color: transparent;
+                animation: bg-move 3s linear infinite;
+            }
+
+            p {
+                margin-top: 1rem;
+                line-height: 2rem;
+                letter-spacing: 1px;
+            }
+        }
+    }
+}

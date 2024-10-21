@@ -1,0 +1,28 @@
+<section>
+    <header>
+        <p>VISIT MY PORTFOLIO AND KEEP YOUR FEEDBACK</p>
+        <h6>My Portfolio</h6>
+    </header>
+    <section id="body-portfolio" filter-index="0">
+        <ul>
+            <li>ALL</li>
+            <li>WEB</li>
+            <li>iOS</li>
+        </ul>
+        <a :for="item in albums" :filter-key="item.tag" :href="item.href" target="_blank">
+            <figure>
+                <img :src="item.src" :alt="item.name">
+                <figcaption>{{ item.name }}</figcaption>
+            </figure>
+        </a>
+    </section>
+</section>
+
+<!-- <script>
+    const portfolio = new PD({
+        id: "body-portfolio",
+        data: {
+            albums: ary
+        }
+    })
+</script> -->

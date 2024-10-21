@@ -128,7 +128,7 @@
                             li._([
                                 _a._([
                                     "fa-regular fa-envelope"._fa
-                                ])._open("mailto:mail@pardn.ltd")
+                                ])._open("mailto:dev@pardn.io")
                             ])
                         ])
                     ])
@@ -170,7 +170,7 @@
                     li._([
                         _a._([
                             "fa-regular fa-envelope"._fa
-                        ])._open("mailto:mail@pardn.ltd")
+                        ])._open("mailto:dev@pardn.io")
                     ])
                 ]),
                 button._([
@@ -195,7 +195,7 @@
                                         img._("https://pardn.io/image/head.jpg"),
                                         (ul + ".path")._([
                                             li._([
-                                                _a._("Pardn Ltd")._open("mailto:mail@pardn.ltd")
+                                                _a._("Pardn Ltd")._open("mailto:dev@pardn.io")
                                             ]),
                                             li._([
                                                 time._({ datetime: "2023-07-13" }, "July 13, 2023")
@@ -278,7 +278,7 @@
                                         img._("https://pardn.io/image/head.jpg"),
                                         (ul + ".path")._([
                                             li._([
-                                                _a._($user)._open("mailto:mail@pardn.ltd")
+                                                _a._($user)._open("mailto:dev@pardn.io")
                                             ]),
                                             li._("Website"),
                                             li._([
@@ -370,7 +370,7 @@
                                 img._("https://pardn.io/image/head.jpg"),
                                 (ul + ".path.light")._([
                                     li._([
-                                        _a._($user)._open("mailto:mail@pardn.ltd")
+                                        _a._($user)._open("mailto:dev@pardn.io")
                                     ]),
                                     li._("Website"),
                                     li._([
@@ -394,7 +394,7 @@
                                     img._("https://pardn.io/image/head.jpg"),
                                     (ul + ".path")._([
                                         li._([
-                                            _a._($user)._open("mailto:mail@pardn.ltd")
+                                            _a._($user)._open("mailto:dev@pardn.io")
                                         ]),
                                         li._("Website"),
                                         li._([
@@ -505,7 +505,7 @@
                                         li._([
                                             _a._([
                                                 "fa-regular fa-envelope"._fa
-                                            ])._open("mailto:mail@pardn.ltd")
+                                            ])._open("mailto:dev@pardn.io")
                                         ])
                                     ]),
                                 ])
@@ -602,7 +602,7 @@
                                         section._([
                                             _b._("Email"),
                                             _p._([
-                                                _a._("mail@pardn.ltd")._open("mailto:mail@pardn.ltd")
+                                                _a._("dev@pardn.io")._open("mailto:dev@pardn.io")
                                             ])
                                         ])
                                     ]),

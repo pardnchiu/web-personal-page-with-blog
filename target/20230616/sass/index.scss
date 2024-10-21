@@ -1,0 +1,141 @@
+@import url("./fontawesome/css/all.min.css");
+
+:root {
+	--safe-top: env(safe-area-inset-top);
+	--safe-left: env(safe-area-inset-left);
+	--safe-bottom: env(safe-area-inset-bottom);
+	--safe-right: env(safe-area-inset-right);
+
+	--width-max: 1024px;
+	--bgcolor: #ECF0F3;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	font-size: 1em;
+	font-family: 'Noto Sans TC', sans-serif;
+	letter-spacing: 0;
+	border: none;
+	outline: none;
+	background-color: transparent;
+	color: #000;
+	word-wrap: break-word;
+	text-decoration: none;
+	list-style: none;
+	box-sizing: border-box;
+	-ms-overflow-style: none;
+	scrollbar-width: none;
+
+	touch-action: manipulation;
+
+	&::-webkit-scrollbar {
+		display: none;
+	}
+
+	-webkit-touch-callout: inherit;
+	-webkit-user-select: inherit;
+	-khtml-user-select: inherit;
+	-moz-user-select: inherit;
+	-ms-user-select: inherit;
+	user-select: inherit;
+
+	[user-select="false"],
+	[user-select="0"] {
+		-webkit-touch-callout: none;
+		-webkit-user-select: none;
+		-khtml-user-select: none;
+		-moz-user-select: none;
+		-ms-user-select: none;
+		user-select: none;
+	}
+
+	[user-select="true"],
+	[user-select="1"] {
+		-webkit-touch-callout: initial;
+		-webkit-user-select: initial;
+		-khtml-user-select: initial;
+		-moz-user-select: initial;
+		-ms-user-select: initial;
+		user-select: initial;
+	}
+}
+
+img {
+	object-fit: cover;
+
+	&[data-src] {
+		content: url("data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==");
+		background: linear-gradient(to right, #EEF0F3, #E0E2E8, #EEF0F3);
+	}
+}
+
+a[href]:not([href=""]),
+button {
+	cursor: pointer;
+}
+
+textarea {
+	resize: none;
+}
+
+html {
+	position: fixed;
+	display: block;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+
+body {
+	position: relative;
+	display: block;
+	width: 100%;
+	height: 100%;
+	background-color: var(--bgcolor);
+	overflow: hidden scroll;
+}
+
+@import "./left-tab";
+
+#body {
+	display: flex;
+	flex-flow: column;
+	padding: 0 1rem;
+	width: 100%;
+	transition: 0.5s;
+
+    @media screen and (min-width: 480px) {
+		padding: 0 2rem;
+    }
+
+    @media screen and (min-width: 800px) {
+		padding: 0 2rem 0 20rem;
+    }
+
+	@import "./home";
+	@import "./features";
+	@import "./portfolio";
+	@import "./resume";
+	@import "./pricing";
+	@import "./contact";
+
+	>footer {
+		padding: 5rem 0;
+		width: 100%;
+
+		p {
+			text-align: center;
+			letter-spacing: 1px;
+		}
+	}
+}
+
+@import "./animation/bg-move";
+
+#copy {
+	position: absolute;
+	top: -100vh;
+	left: -100vw;
+	opacity: 0;
+}

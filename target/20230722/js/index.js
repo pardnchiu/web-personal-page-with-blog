@@ -66,7 +66,7 @@
                         li._([
                             _a._([
                                 "fa-regular fa-envelope"._fa
-                            ])._open("mailto:mail@pardn.ltd")
+                            ])._open("mailto:dev@pardn.io")
                         ])
                     ])
                 ])
@@ -215,7 +215,7 @@
                             li._([
                                 _a._([
                                     "fa-regular fa-envelope"._fa
-                                ])._open("mailto:mail@pardn.ltd")
+                                ])._open("mailto:dev@pardn.io")
                             ])
                         ])
                     ])
@@ -275,7 +275,7 @@
                         li._([
                             _a._([
                                 "fa-regular fa-envelope"._fa
-                            ])._open("mailto:mail@pardn.ltd")
+                            ])._open("mailto:dev@pardn.io")
                         ])
                     ])
                 ]),
@@ -371,7 +371,7 @@
                     li._([
                         _a._([
                             "fa-regular fa-envelope"._fa
-                        ])._open("mailto:mail@pardn.ltd")
+                        ])._open("mailto:dev@pardn.io")
                     ])
                 ]),
                 button._([
@@ -1061,7 +1061,7 @@
                                                 li._([
                                                     _a._([
                                                         "fa-regular fa-envelope"._fa
-                                                    ])._open("mailto:mail@pardn.ltd")
+                                                    ])._open("mailto:dev@pardn.io")
                                                 ])
                                             ]),
                                         ])
@@ -1167,7 +1167,7 @@
                                     li._([
                                         _a._([
                                             "fa-regular fa-envelope"._fa
-                                        ])._open("mailto:mail@pardn.ltd")
+                                        ])._open("mailto:dev@pardn.io")
                                     ])
                                 ]),
                             ])
@@ -1278,7 +1278,7 @@
                                         section._([
                                             _b._("Email"),
                                             _p._([
-                                                _a._("mail@pardn.ltd")._open("mailto:mail@pardn.ltd")
+                                                _a._("dev@pardn.io")._open("mailto:dev@pardn.io")
                                             ])
                                         ])
                                     ]),

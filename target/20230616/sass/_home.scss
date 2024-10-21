@@ -1,0 +1,66 @@
+>header {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    padding: 5rem 0;
+    width: 100%;
+    max-width: var(--width-max);
+    border-bottom: 1px solid #0000000d;
+
+    >a {
+        padding: 0.5rem;
+        width: 20rem;
+        height: 20rem;
+        background: var(--gradient-col);
+        background-size: 400%;
+        border-radius: 50%;
+        box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.1);
+        animation: bg-move 3s linear infinite;
+
+        >img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+        }
+    }
+
+    h1 {
+        margin-top: 2rem;
+        font-size: 3rem;
+        letter-spacing: 1px;
+    }
+
+    h2 {
+        margin-top: 1rem;
+        font-size: 2rem;
+        font-weight: 300;
+        letter-spacing: 1px;
+
+        strong {
+            position: relative;
+            font-weight: 300;
+            color: red;
+        }
+    }
+
+    >section {
+        display: flex;
+        gap: 2rem;
+        margin-top: 2rem;
+
+        a,
+        button {
+            padding: 1rem 2rem;
+            letter-spacing: 1px;
+            background: linear-gradient(to right bottom, #ECF0F3, #ffffffff);
+            border-radius: 0.5rem;
+            box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.1);
+
+            i {
+                margin-right: 0.5rem;
+            }
+        }
+    }
+}

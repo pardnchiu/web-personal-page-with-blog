@@ -1,0 +1,182 @@
+<!-- 
+
+	Copyright 2023 Pardn Ltd 帕登國際有限公司.
+	Created by Pardn Chiu 邱敬幃.
+	Email: dev@pardn.io
+	
+ -->
+<!DOCTYPE html>
+<html lang="zh-Hans-TW">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+        <meta name="mobile-web-app-capable" content="no">
+        <meta name="apple-mobile-web-app-capable" content="no">
+        <meta name="apple-mobile-web-app-status-bar-style" content="default">
+        <meta name="theme-color" content="#ffffff">
+        <meta name="robots" content="index follow">
+        <!--  -->
+        <title>My Profile Page | 邱敬幃 Pardn Chiu | GitHub.io</title>
+        <meta name="title" content="My Profile Page | 邱敬幃 Pardn Chiu | GitHub.io">
+        <meta name="description" content="我的個人資料頁實作範例 | 帕登數位科技有限公司">
+        <!-- -->
+        <meta name="author" content="邱敬幃 Pardn Chiu">
+        <link rel="author" href="https://pardn.io">
+        <link rel="canonical" href="https://pardnchiu.github.io/my-prrofile-page/">
+        <meta name="referrer" content="unsafe-url">
+        <meta name="copyright" content="© 2023 帕登數位科技有限公司 Pardn Ltd">
+        <!-- Facebook -->
+        <meta property="og:title" content="My Profile Page | 邱敬幃 Pardn Chiu | GitHub.io">
+        <meta property="og:description" content="我的個人資料頁實作範例 | 帕登數位科技有限公司">
+        <meta property="og:image" content="https://pardn.io/image/repo/my-prrofile-page.jpg">
+        <meta property="og:url" content="https://pardnchiu.github.io/my-prrofile-page/">
+        <meta property="og:site_name" content="Pardn Chiu 的 Github Page">
+        <meta property="og:type" content="website">
+        <!-- Twitter -->
+        <meta property="twitter:title" content="My Profile Page | 邱敬幃 Pardn Chiu | GitHub.io">
+        <meta property="twitter:description" content="我的個人資料頁實作範例 | 帕登數位科技有限公司">
+        <meta property="twitter:image" content="https://pardnchiu.github.io//image/repo/my-prrofile-page.jpg">
+        <meta property="twitter:url" content="https://pardnchiu.github.io/my-prrofile-page/">
+        <!-- Google -->
+        <meta name="google-site-verification" content="YQQ2f6AchR8dcb55Az2BYd_mw4TrP0J1RApD-v2v65Y">
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-L5VYEZPVXX"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() { dataLayer.push(arguments); }
+            gtag('js', new Date());
+            gtag('config', 'G-L5VYEZPVXX');
+        </script>
+        <!-- Preloads for CDN -->
+        <link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/css/all.min.css" as="style">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/css/all.min.css">
+        <!--  -->
+        <link rel="stylesheet" href="css/index.css">
+        <!--  -->
+        <script src="https://pardnchiu.github.io/js/repo.js"></script>
+        <script src="https://cdn.jsdelivr.net/gh/pardnchiu/PDRenderKit@1.0.0/dist/PDRenderKit.js" copyright="Pardn Ltd"></script>
+        <!--  -->
+        <style>
+            :root {
+                --width-max: 1280px;
+
+                --col-brand-1: #F5F5F5;
+                --col-brand-2: #C7C7C7;
+                --col-brand-3: #999999;
+                --col-brand-4: #6B6B6B;
+                --col-brand-5: #3D3D3D;
+                --col-brand-6: #303030;
+                --col-brand-7: #242424;
+                --col-brand-8: #171717;
+                --col-brand-9: #0A0A0A;
+
+                --gradient-col: linear-gradient(to right bottom, rgb(70, 180, 105), rgb(70, 130, 180), rgb(250, 75, 75));
+            }
+        </style>
+    </head>
+
+    <body id="page">
+
+        <section :path="view/left-tab.html"></section>
+
+        <section id="body">
+            <section :path="view/home.html"></section>
+            <section :path="view/features.html"></section>
+            <section :path="view/portfolio.html"></section>
+            <section :path="view/resume.html"></section>
+            <section :path="view/pricing.html"></section>
+            <section :path="view/contact.html"></section>
+            <footer>
+                <p>(c) 帕登國際有限公司 Pardn Ltd</p>
+            </footer>
+        </section>
+
+        <script>
+            const sn = 31;
+            const ary = repo;
+            ary.forEach(e => e.tag = e.tag === "iOS" ? 2 : 1);
+
+            document.addEventListener("DOMContentLoaded", _ => {
+                const page = new PD({
+                    id: "page",
+                    data: {
+                        albums: Array.from({ length: 20}, (e, i) => {
+                            return {
+                                sn: i,
+                                href: "",
+                                src: "https://picsum.photos/640?random=" + Math.random(),
+                                title: "Lorem ipsum dolor sit amet consectetur.",
+                                tag: Math.random() > 0.5 ? 2 : 1
+                            }
+                        })
+                    },
+                    next: function () {
+
+                        "#body-portfolio".$.$child(0).$childAll.forEach((e, i) => {
+                            e._click(function () {
+                                this.$parent(1)._attr({
+                                    "filter-index": i
+                                })
+                            });
+                        });
+
+                        "#body-resume".$.$child(0).$childAll.forEach((e, i) => {
+                            e._click(function () {
+                                this.$parent(1)._attr({
+                                    "filter-index": i
+                                })
+                            });
+                        });
+
+                        "#body-pricing".$.$child(0).$childAll.forEach((e, i) => {
+                            e._click(function () {
+                                this.$parent(1)._attr({
+                                    "filter-index": i
+                                })
+                            });
+                        });
+
+                        function offsetY(index) {
+                            var y = 0;
+                            if (index === 0) return y;
+                            for (let i = 0; i < index; i++) {
+                                y += "#body".$.$child(i).clientHeight;
+                            };
+                            return y;
+                        };
+
+                        "#body-tab".$.$childAll.forEach((e, i) => {
+                            e._click(function () {
+                                document.body.scrollTop = offsetY(i);
+                            });
+                        });
+
+                        document.body.addEventListener("scroll", function () {
+                            var st = this.scrollTop;
+                            var vh = document.body.clientHeight;
+
+                            if (st > offsetY(6) - vh / 3) {
+                                "#body-tab".$._attr({ index: 6 });
+                            } else if (st > offsetY(5) - vh / 3) {
+                                "#body-tab".$._attr({ index: 5 });
+                            } else if (st > offsetY(4) - vh / 3) {
+                                "#body-tab".$._attr({ index: 4 });
+                            } else if (st > offsetY(3) - vh / 3) {
+                                "#body-tab".$._attr({ index: 3 });
+                            } else if (st > offsetY(2) - vh / 3) {
+                                "#body-tab".$._attr({ index: 2 });
+                            } else if (st > offsetY(1) - vh / 3) {
+                                "#body-tab".$._attr({ index: 1 });
+                            } else {
+                                "#body-tab".$._attr({ index: 0 });
+                            };
+                        });
+                    }
+                })
+            })
+        </script>
+    </body>
+
+</html>

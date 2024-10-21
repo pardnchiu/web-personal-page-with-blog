@@ -304,7 +304,7 @@
                             div._([
                                 "i.fa-solid.fa-envelope"._(),
                                 h6._("Email"),
-                                p._("mail@pardn.ltd"),
+                                p._("dev@pardn.io"),
                                 button._([
                                     "Open",
                                     "i.fa-solid.fa-arrow-right"._()
@@ -353,7 +353,7 @@
                         li._([
                             a._({ target: "_blank" }, [
                                 "i.fa-regular.fa-envelope"._()
-                            ])._go("mailto:mail@pardn.ltd")
+                            ])._go("mailto:dev@pardn.io")
                         ])
                     ]),
                     p._("(c) Copyright Pardn Ltd 帕登國際有限公司")
