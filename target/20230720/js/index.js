@@ -105,10 +105,10 @@
                                 ]),
                                 li._("Personal")._click(setHome),
                                 li._([
-                                    _a._("Personal Alt")._open("https://github.com/pardnchiu/personal-blog-with-cover")
+                                    _a._("Personal Alt")._open("https://pardnchiu.github.io/web-template/target/20230721")
                                 ]),
                                 li._([
-                                    _a._("Classic")._open("https://github.com/pardnchiu/classic-blog")
+                                    _a._("Classic")._open("https://pardnchiu.github.io/web-template/target/20230722")
                                 ]),
                                 li._([
                                     _a._("Minimal")._open("https://github.com/pardnchiu/minimal-blog")

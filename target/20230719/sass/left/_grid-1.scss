@@ -1,0 +1,170 @@
+>section.grid-1 {
+    display: flex;
+    flex-flow: column;
+    gap: 2rem;
+    margin-top: 2rem;
+    width: 100%;
+
+    &:nth-child(1) {
+        margin-top: 0;
+    }
+
+    @media screen and (min-width: 640px) {
+        flex-flow: row wrap;
+    }
+
+    figure {
+        position: relative;
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        border-radius: 0.5rem;
+        transition: 0.3s;
+        overflow: hidden;
+        cursor: pointer;
+
+        @media screen and (min-width: 640px) {
+            width: calc((100% - 2rem) / 2);
+            aspect-ratio: 4 / 3 !important;
+        }
+
+        &::before {
+            content: "";
+            position: absolute;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #00000080;
+            backdrop-filter: blur(0.25rem);
+            -webkit-backdrop-filter: blur(0.25rem);
+        }
+
+        &:hover img {
+            transform: scale(105%);
+        }
+
+        img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            transition: 0.3s;
+        }
+
+        section {
+            position: absolute;
+            display: flex;
+            flex-flow: column;
+            align-items: flex-start;
+            z-index: 1;
+            left: 1rem;
+            bottom: 1rem;
+            right: 1rem;
+            transition: 0.3s;
+
+            @media screen and (min-width: 640px) {
+                left: 1.5rem;
+                bottom: 1.5rem;
+                right: 1.5rem;
+            }
+
+            span {
+                padding: 0 0.75rem;
+                line-height: 1.5rem;
+                font-style: normal;
+                font-size: 0.75rem;
+                font-weight: 300;
+                background: linear-gradient(to right, var(--color-brand-1), var(--color-brand-3));
+                color: #FFF;
+                border-radius: 0.75rem;
+            }
+
+            h4 {
+                margin: 0.75rem 0 0.5rem;
+                width: 100%;
+                max-width: 50rem;
+                line-height: 1.875rem;
+                max-height: calc(1.875rem * 2);
+                font-size: 1.375rem;
+                color: #fff;
+                filter: drop-shadow(0 0 0.25rem #00000066);
+                -webkit-filter: drop-shadow(0 0 0.25rem #00000066);
+            }
+        }
+    }
+
+    >ul {
+        display: flex;
+        justify-content: center;
+        gap: 0.5rem;
+        width: 100%;
+        list-style: none;
+
+        @for $i from 1 through 100 {
+
+            &[page="#{$i}"] li[txt="#{$i}"] {
+                border: 1px solid transparent;
+
+                &::before,
+                &::after {
+                    opacity: 1;
+                }
+            }
+        }
+
+        li {
+            position: relative;
+            width: 2.5rem;
+            line-height: 2.25rem;
+            height: 2.5rem;
+            color: var(--color-dark-4);
+            text-align: center;
+            font-size: 0.875rem;
+            font-weight: 300;
+            border: 1px solid #0000001a;
+            border-radius: 50%;
+            cursor: pointer;
+
+            &::before {
+                content: "";
+                position: absolute;
+                z-index: 0;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(to bottom, var(--color-brand-3), var(--color-brand-1));
+                border-radius: 50%;
+                opacity: 0;
+                transition: 0.3s;
+            }
+
+            &::after {
+                content: attr(txt);
+                position: absolute;
+                z-index: 1;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                width: 100%;
+                height: 100%;
+                color: #fff;
+                opacity: 0;
+                transition: 0.3s;
+            }
+
+            i {
+                color: inherit;
+            }
+        }
+    }
+}

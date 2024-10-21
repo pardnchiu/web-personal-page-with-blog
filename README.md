@@ -1,5 +1,5 @@
 
-# 統整網站前端範例
+# 網站前端範例合輯
 
 ![](https://img.shields.io/github/repo-size/pardnchiu/web-template?label=size&color=bb4444) ![](https://img.shields.io/github/license/pardnchiu/web-template?label=license&color=44bb44) ![](https://img.shields.io/badge/creator-邱敬幃-4444bb)
 
@@ -7,10 +7,12 @@
 | - | - |
 | Classic Blog<br>製作日期: 2023/07/22| Personal Blog with Cover<br>製作日期: 2023/07/21 |
 | [![](./image/20230722.jpg)](https://pardnchiu.github.io/web-template/target/20230722) | [![](./image/20230721.jpg)](https://pardnchiu.github.io/web-template/target/20230721) |
-| Personal Blog<br>製作日期: 2023/07/20 | App Introduction<br>製作日期: 2023/07/10 | 
-| [![](./image/20230720.jpg)](https://pardnchiu.github.io/web-template/target/20230720) | [![](./image/20230710.jpg)](https://pardnchiu.github.io/web-template/target/20230710) | 
-| Personal Page With Blog<br>製作日期: 2023/06/21 | Moneybook<br>製作日期: 2023/04/18 |
-| [![](./image/20230621.jpg)](https://pardnchiu.github.io/web-template/target/20230621) | [![](./image/20230418.jpg)](https://pardnchiu.github.io/web-template/target/20230418) | 
+| Personal Blog<br>製作日期: 2023/07/20 | Magazine Blog<br>製作日期: 2023/07/19<br>最後更新: 2024/08/08
+| [![](./image/20230720.jpg)](https://pardnchiu.github.io/web-template/target/20230720) | [![](./image/20230719.jpg)](https://pardnchiu.github.io/web-template/target/20230719) |
+| App Introduction<br>製作日期: 2023/07/10 |  Personal Page With Blog<br>製作日期: 2023/06/21 |
+| [![](./image/20230710.jpg)](https://pardnchiu.github.io/web-template/target/20230710) |  [![](./image/20230621.jpg)](https://pardnchiu.github.io/web-template/target/20230621) | 
+|  Moneybook<br>製作日期: 2023/04/18 | |
+| [![](./image/20230418.jpg)](https://pardnchiu.github.io/web-template/target/20230418) | 
 
 ## Creator
 

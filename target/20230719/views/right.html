@@ -1,0 +1,174 @@
+<section id="section-right" class="right">
+    <section :if="page === home">
+        <section class="button" index="0">
+            <button txt="Popular">Popular</button>
+            <button txt="Recent">Recent</button>
+        </section>
+        <section class="list-1">
+            <div>
+                <figure>
+                    <img class="lazyload" data-src="https://picsum.photos/256.webp?random=1" alt="">
+                </figure>
+                <section>
+                    <h6 class="line r2">Lorem ipsum dolor sit.</h6>
+                    <p>
+                        <time datetime="2024-08-01">2024/08/01</time>
+                    </p>
+                </section>
+            </div>
+            <div>
+                <figure>
+                    <img class="lazyload" data-src="https://picsum.photos/256.webp?random=1" alt="">
+                </figure>
+                <section>
+                    <h6 class="line r2">Lorem ipsum dolor sit.</h6>
+                    <p>
+                        <time datetime="2024-08-01">2024/08/01</time>
+                    </p>
+                </section>
+            </div>
+            <div>
+                <figure>
+                    <img class="lazyload" data-src="https://picsum.photos/256.webp?random=1" alt="">
+                </figure>
+                <section>
+                    <h6 class="line r2">Lorem ipsum dolor sit.</h6>
+                    <p>
+                        <time datetime="2024-08-01">2024/08/01</time>
+                    </p>
+                </section>
+            </div>
+            <div>
+                <figure>
+                    <img class="lazyload" data-src="https://picsum.photos/256.webp?random=1" alt="">
+                </figure>
+                <section>
+                    <h6 class="line r2">Lorem ipsum dolor sit.</h6>
+                    <p>
+                        <time datetime="2024-08-01">2024/08/01</time>
+                    </p>
+                </section>
+            </div>
+        </section>
+    </section>
+    <!--  -->
+    <section :bg-image="url(./image/eath.svg)">
+        <h2>About</h2>
+        <span class="svg" src="./image/wave.svg"></span>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit doloribus deserunt, voluptate quaerat dolorum soluta eligendi.</p>
+        <ul class="contact dark">
+            <li>
+                <a href="">
+                    <a href="https://www.facebook.com/chiuchingwei/" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <a href="https://instagram.com/pardnchiu" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <a href="https://github.com/pardnchiu" target="_blank"><i class="fa-brands fa-github"></i></a>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <a href="https://linkedin.com/in/pardnchiu" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <a href="mailto:mail@pardn.ltd" target="_blank"><i class="fa-regular fa-envelope"></i></a>
+                </a>
+            </li>
+        </ul>
+    </section>
+    <!--  -->
+    <section>
+        <h3>Popular Posts</h3>
+        <span class="svg" src="./image/wave.svg"></span>
+        <section class="list-1 rank">
+            <div :for="e in item_3">
+                <figure>
+                    <img class="lazyload" data-src="https://picsum.photos/256.webp?random=1" alt="">
+                </figure>
+                <section>
+                    <h6 class="line r2">Lorem ipsum dolor sit amet consectetur adipisicing elit.</h6>
+                    <p>
+                        <time datetime="2024-08-01">2024/08/01</time>
+                    </p>
+                </section>
+            </div>
+        </section>
+    </section>
+    <!--  -->
+    <section>
+        <h3>Explore Topics</h3>
+        <span class="svg" src="./image/wave.svg"></span>
+        <ul class="topic">
+            <li>
+                <p>
+                    <i class="fa-solid fa-angle-right"></i>
+                    Lorem.
+                </p>
+                <p>(1)</p>
+            </li>
+            <li>
+                <p>
+                    <i class="fa-solid fa-angle-right"></i>
+                    Lorem.
+                </p>
+                <p>(1)</p>
+            </li>
+            <li>
+                <p>
+                    <i class="fa-solid fa-angle-right"></i>
+                    Lorem.
+                </p>
+                <p>(1)</p>
+            </li>
+            <li>
+                <p>
+                    <i class="fa-solid fa-angle-right"></i>
+                    Lorem.
+                </p>
+                <p>(1)</p>
+            </li>
+            <li>
+                <p>
+                    <i class="fa-solid fa-angle-right"></i>
+                    Lorem.
+                </p>
+                <p>(1)</p>
+            </li>
+        </ul>
+    </section>
+    <!--  -->
+    <section>
+        <h3>Newsletter</h3>
+        <span class="svg" src="./image/wave.svg"></span>
+        <b>Join other subscribers!</b>
+        <input type="text" placeholder="Email address.">
+        <button>Sign Up</button>
+        <em>
+            By signing up, you agree to our,
+            <a href="">Privacy Policy</a>
+        </em>
+    </section>
+    <!--  -->
+    <section>
+        <h3>Hot Tags</h3>
+        <span class="svg" src="./image/wave.svg"></span>
+        <ul class="tag">
+            <li>Lorem.</li>
+            <li>Lorem.</li>
+            <li>Lorem.</li>
+            <li>Lorem.</li>
+            <li>Lorem.</li>
+            <li>Lorem.</li>
+            <li>Lorem.</li>
+            <li>Lorem.</li>
+        </ul>
+    </section>
+</section>

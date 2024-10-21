@@ -1,0 +1,221 @@
+#top-nav {
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    background-color: #FFF;
+    box-shadow: 0 0 0.25rem transparent;
+    transition: 0.3s;
+
+    &.show {
+        box-shadow: 0 0 0.25rem #0000001a;
+
+        >section {
+            height: 5rem;
+        }
+    }
+
+    @for $i from 0 through 1000 {
+
+        &[percent="#{$i}"]::before {
+            width: calc(#{$i} * 0.1%);
+        }
+    }
+
+    @for $i from -1 through -100 {
+
+        &[percent="#{$i}"]::before {
+            width: 0;
+        }
+    }
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background: linear-gradient(to right, var(--color-brand-1), var(--color-brand-3));
+    }
+
+    >section {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0 auto;
+        padding: 0 1rem;
+        width: 100%;
+        max-width: var(--width-max);
+        height: 7rem;
+        transition: 0.3s;
+
+        >section {
+            display: flex;
+            align-items: center;
+
+            &:nth-child(1) {
+                gap: 3rem;
+            }
+
+            &:nth-last-child(1) {
+                gap: 2rem;
+            }
+
+            >section {
+                display: flex;
+                align-items: center;
+                gap: 1rem;
+            }
+
+            strong {
+                position: relative;
+                font-size: 1.5rem;
+                color: var(--color-dark-9);
+
+                &::after {
+                    content: "";
+                    position: absolute;
+                    bottom: 0.375rem;
+                    right: -0.75rem;
+                    width: 0.375rem;
+                    height: 0.375rem;
+                    border-radius: 50%;
+                    background-color: var(--color-brand-2);
+                }
+            }
+
+            button {
+                width: 2.25rem;
+                line-height: 2.25rem;
+                height: 2.25rem;
+                background: linear-gradient(to top, var(--color-brand-1), var(--color-brand-3));
+                color: #FFF;
+                border-radius: 50%;
+
+                i {
+                    font-size: 1.125rem;
+                    color: inherit;
+                }
+            }
+
+            >ul {
+                display: flex;
+                align-items: center;
+                list-style: none;
+                width: 0;
+                opacity: 0;
+                transition: 0.3s opacity;
+                overflow: hidden;
+
+                @media screen and (min-width: 1024px) {
+                    width: 100%;
+                    opacity: 1;
+                    overflow: visible;
+                }
+
+                @for $i from 0 through 10 {
+
+                    &[index="#{$i}"]>li:nth-child(#{$i + 1}) {
+                        background: linear-gradient(to right, var(--color-brand-1), var(--color-brand-3));
+                        color: #FFF;
+                    }
+
+                    @for $j from 0 through 10 {
+                        &[index="#{$i}"][sub-index="#{$j}"]>li:nth-child(#{$i + 1})>ul>li:nth-child(#{$j + 1}) {
+                            color: var(--color-brand-2);
+                        }
+                    }
+                }
+
+                >li {
+                    position: relative;
+                    padding: 0 1.25rem;
+                    line-height: 2.25rem;
+                    border-radius: 1.125rem;
+                    font-size: 0.875rem;
+                    font-weight: 300;
+                    letter-spacing: 0.5px;
+                    color: var(--color-dark-5);
+                    cursor: pointer;
+                    transition: 0.3s;
+
+                    &:hover {
+                        color: var(--color-dark-7);
+
+                        ul {
+                            opacity: 1;
+                            overflow: visible;
+
+                            @for $i from 1 through 8 {
+
+                                &[row="#{$i}"] {
+                                    max-height: calc(3rem * #{$i});
+                                }
+                            }
+
+                            li {
+                                opacity: 1;
+                            }
+                        }
+                    }
+
+                    a {
+                        color: inherit;
+                    }
+
+                    i {
+                        margin-left: 0.25rem;
+                        font-size: 0.75rem;
+                        color: inherit;
+                    }
+
+                    ul {
+                        position: absolute;
+                        z-index: 1;
+                        top: 2.25rem;
+                        left: 0;
+                        padding: 0 1.25rem;
+                        min-width: 15rem;
+                        max-height: 0;
+                        background-color: #FFF;
+                        list-style: none;
+                        box-shadow: 0 -0.125rem 0.75rem #0000001a;
+                        border-radius: 0.5rem;
+                        opacity: 0;
+                        transition: 0.3s;
+                        overflow: hidden;
+
+                        &::before {
+                            content: "";
+                            position: absolute;
+                            top: -0.5rem;
+                            border-bottom: 0.5rem solid #fff;
+                            border-left: 0.5rem solid transparent;
+                            border-right: 0.5rem solid transparent;
+                        }
+
+                        li {
+                            line-height: 3rem;
+                            font-weight: 300;
+                            letter-spacing: 0.5px;
+                            color: var(--color-dark-5);
+                            border-bottom: 1px solid var(--color-dark-1);
+                            opacity: 0;
+                            transition: 0.3s;
+
+                            &:nth-last-child(1) {
+                                border-bottom: 1px solid transparent;
+                            }
+
+                            &:hover {
+                                padding-left: 0.375rem;
+                                color: var(--color-brand-2);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

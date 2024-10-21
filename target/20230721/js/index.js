@@ -164,7 +164,7 @@
                                         _a._("Magazine")._open("https://github.com/pardnchiu/magazine-blog")
                                     ]),
                                     li._([
-                                        _a._("Personal")._open("https://github.com/pardnchiu/personal")
+                                        _a._("Personal")._open("https://pardnchiu.github.io/web-template/target/20230720")
                                     ]),
                                     li._("Personal Alt")._click(setHome),
                                     li._([

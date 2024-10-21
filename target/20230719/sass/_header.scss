@@ -1,0 +1,176 @@
+header {
+    position: relative;
+
+    &#default-header {
+        margin-bottom: 4rem;
+        background-color: #FFEDE8;
+
+        section {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            flex-flow: column;
+            align-items: center;
+            margin: 0 auto;
+            padding: 3rem 1rem;
+            width: 100%;
+            max-width: var(--width-max);
+
+            h1 {
+                font-size: 1.75rem;
+                color: var(--color-dark-8);
+            }
+        }
+    }
+
+    &#user-header {
+        margin-bottom: 4rem;
+
+        >section {
+            display: flex;
+            gap: 2rem;
+            margin: 0 auto;
+            padding: 2rem;
+            width: calc(100% - 2rem);
+            max-width: calc(var(--width-max) - 2rem);
+            background-color: #FFEDE8;
+            border-radius: 0.5rem;
+
+            img {
+                width: 6rem;
+                height: 6rem;
+                border-radius: 50%;
+            }
+
+            section {
+                display: flex;
+                flex-flow: column;
+                gap: 0.75rem;
+
+                h1 {
+                    font-size: 1.75rem;
+                    color: var(--color-dark-8);
+                }
+
+                p {
+                    line-height: 1.75rem;
+                    font-size: 0.875rem;
+                    color: var(--color-dark-4);
+                }
+            }
+        }
+
+    }
+
+    &#post-1-header {
+
+        section {
+            display: flex;
+            flex-flow: column;
+            align-items: flex-start;
+            margin: 0 auto;
+            padding: 0 1rem;
+            margin: 0 auto;
+            width: 100%;
+            max-width: 42rem;
+            transition: 0.3s;
+
+            @media screen and (min-width: 1024px) {
+                max-width: var(--width-max);
+            }
+        }
+    }
+
+    &#post-2-header {
+        margin-bottom: 4rem;
+        margin: 0 auto 2rem;
+        width: 100%;
+        aspect-ratio: 1 / 1;
+        transition: 0.3s;
+
+        @media screen and (min-width: 640px) {
+            aspect-ratio: 3 / 2;
+        }
+
+        @media screen and (min-width: 1024px) {
+            aspect-ratio: 3 / 1;
+        }
+
+        figure {
+            position: absolute;
+            z-index: 0;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+
+            &::before {
+                content: "";
+                position: absolute;
+                z-index: 1;
+                top: 0;
+                left: 0;
+                bottom: 0;
+                right: 0;
+                width: 100%;
+                height: 100%;
+                background-color: #00000080;
+                backdrop-filter: blur(0.25rem);
+                -webkit-backdrop-filter: blur(0.25rem);
+            }
+
+            img {
+                position: absolute;
+                z-index: 0;
+                top: 0;
+                left: 0;
+                bottom: 0;
+                right: 0;
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        >section {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 1;
+            display: flex;
+            flex-flow: column;
+            align-items: flex-start;
+            margin: 0 auto;
+            padding: 3rem 1rem;
+            width: 100%;
+            max-width: var(--width-max);
+
+            h1 {
+                margin-top: 1rem;
+                max-width: 50rem;
+                font-size: 2rem;
+                color: var(--color-light-8);
+
+                @media screen and (min-width: 640px) {
+                    font-size: 2.5rem;
+                }
+            }
+
+            section {
+                display: flex;
+                align-items: center;
+                gap: 1rem;
+                margin-top: 1rem;
+                width: 100%;
+
+                img {
+                    width: 2rem;
+                    height: 2rem;
+                    border-radius: 50%;
+                }
+            }
+        }
+    }
+}

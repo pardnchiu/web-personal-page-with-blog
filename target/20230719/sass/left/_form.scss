@@ -1,0 +1,60 @@
+>section.form {
+    display: flex;
+    flex-flow: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+    margin-top: 2rem;
+    padding: 2rem;
+    border: 1px solid #0000001a;
+    border-radius: 0.5rem;
+
+    i {
+        font-size: 0.875rem;
+        font-weight: 300;
+        color: var(--color-dark-4);
+    }
+
+    label {
+        display: flex;
+        flex-flow: column;
+        align-items: flex-start;
+        width: 100%;
+        font-size: 0.875rem;
+        color: var(--color-dark-4);
+
+        input,
+        textarea {
+            margin-top: 0.5rem;
+            width: 100%;
+            border: 1px solid #0000001a;
+            border-radius: 1rem;
+        }
+
+        input {
+            padding: 0 1rem;
+            line-height: 2rem;
+        }
+
+        textarea {
+            padding: 0.5rem 1rem;
+            line-height: 1.5rem;
+            height: calc(1.5rem * 6 + 1rem);
+        }
+    }
+
+    button {
+        padding: 0 2rem;
+        line-height: 2.75rem;
+        font-size: 0.875rem;
+        font-weight: 300;
+        background: linear-gradient(to right, var(--color-brand-1), var(--color-brand-3), var(--color-brand-1));
+        background-size: 200%;
+        color: #fff;
+        border-radius: 1.375rem;
+        transition: 0.3s;
+
+        &:hover {
+            background-position: 100%;
+        }
+    }
+}

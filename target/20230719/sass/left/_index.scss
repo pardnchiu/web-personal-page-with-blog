@@ -1,0 +1,43 @@
+&.left {
+    gap: 4rem;
+    width: 100%;
+    max-width: 40rem;
+    transition: 0.3s;
+    
+    @media screen and (min-width: 1024px) {
+        width: calc(100% - 22rem);
+        max-width: unset;
+    }
+
+    @media screen and (min-width: 1140px) {
+        width: calc(100% - 27rem);
+    }
+
+    @import "./topest";
+    
+
+    >section {
+        width: 100%;
+
+        >h3 {
+            font-size: 1.5rem;
+            color: var(--color-dark-8);
+        }
+
+        >p {
+            font-size: 0.75rem;
+            text-align: center;
+            color: var(--color-dark-4);
+        }
+
+        @import "./blog";
+        @import "./grid-1";
+        @import "./grid-2";
+        @import "./list-1";
+        @import "./list-2";
+        @import "./post";
+        @import "./comment";
+        @import "./form";
+        @import "./ads";
+    }
+}

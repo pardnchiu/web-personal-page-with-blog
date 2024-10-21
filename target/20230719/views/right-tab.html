@@ -1,0 +1,96 @@
+<section id="right-tab" style="display: none;">
+    <section>
+        <button @click="rightTab">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+        <ul :index="nav.index" :sub-index="nav.subIndex">
+            <li>
+                Home
+                <i class="fa-solid fa-angle-down"></i>
+                <ul class="show" row="5">
+                    <li>
+                        <a href="?page=home">Magazine</a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/pardnchiu/personal-blog" target="_blank">Personal</a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/pardnchiu/personal-blog-with-cover" target="_blank">Personal Alt</a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/pardnchiu/classic-blog" target="_blank">Classic</a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/pardnchiu/minimal-blog" target="_blank">Minimal</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                List
+                <i class="fa-solid fa-angle-down"></i>
+                <ul class="show" row="4">
+                    <li>
+                        <a href="?page=list-1">List 1</a>
+                    </li>
+                    <li>
+                        <a href="?page=list-2">List 2</a>
+                    </li>
+                    <li>
+                        <a href="?page=grid-1">Grid 1</a>
+                    </li>
+                    <li>
+                        <a href="?page=grid-2">Grid 2</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                Post
+                <i class="fa-solid fa-angle-down"></i>
+                <ul class="show" row="2">
+                    <li>
+                        <a href="?page=post-1">Post 1</a>
+                    </li>
+                    <li>
+                        <a href="?page=post-2">Post 2</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="?page=author">Author</a>
+            </li>
+            <li>
+                <a href="?page=contact">Contact</a>
+            </li>
+            <li>
+                <a href="?page=404">404</a>
+            </li>
+        </ul>
+        <ul class="contact dark large">
+            <li>
+                <a href="">
+                    <a href="https://www.facebook.com/chiuchingwei/" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <a href="https://instagram.com/pardnchiu" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <a href="https://github.com/pardnchiu" target="_blank"><i class="fa-brands fa-github"></i></a>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <a href="https://linkedin.com/in/pardnchiu" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <a href="mailto:mail@pardn.ltd" target="_blank"><i class="fa-regular fa-envelope"></i></a>
+                </a>
+            </li>
+        </ul>
+    </section>
+</section>

@@ -1,0 +1,120 @@
+&.right {
+    position: sticky;
+    flex-shrink: 0;
+    gap: 2rem;
+    width: 100%;
+    max-width: 40rem;
+    transition: 0.3s;
+    
+    @media screen and (min-width: 1024px) {
+        width: 20rem;
+    }
+
+    @media screen and (min-width: 1140px) {
+        width: 25rem;
+    }
+
+    >section {
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+        padding: 2rem 1.5rem;
+        width: 100%;
+        border: 1px solid #0000001a;
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        border-radius: 0.5rem;
+
+        >h3 {
+            font-size: 1.375rem;
+            color: var(--color-dark-8);
+        }
+
+        >svg {
+            margin-top: 1rem;
+        }
+
+        >p {
+            margin-top: 1.5rem;
+            padding: 0 1rem;
+            line-height: 1.75rem;
+            font-size: 0.875rem;
+            text-align: center;
+            color: var(--color-dark-6);
+        }
+
+        >b,
+        >strong {
+            margin-top: 1.5rem;
+            padding: 0 1rem;
+            line-height: 1.75rem;
+            font-size: 0.875rem;
+            text-align: center;
+            color: var(--color-dark-8);
+        }
+
+        >i,
+        >em {
+            margin-top: 0.75rem;
+            padding: 0 1rem;
+            line-height: 1.75rem;
+            font-style: normal;
+            font-size: 0.75rem;
+            font-weight: 300;
+            text-align: center;
+            color: var(--color-dark-4);
+
+            a {
+                color: var(--color-brand-2);
+            }
+        }
+
+        >input {
+            margin: 1rem auto 0;
+            padding: 0 1rem;
+            width: 100%;
+            line-height: 3rem;
+            text-align: center;
+            font-size: 0.875rem;
+            font-weight: 300;
+            border: 1px solid #0000001a;
+            border-radius: 1.5rem;
+            transition: 0.3s;
+
+            &:focus {
+                border: 1px solid var(--color-brand-2);
+            }
+        }
+
+        >button {
+            margin: 1rem auto 0;
+            width: 100%;
+            line-height: 3rem;
+            font-weight: 300;
+            font-size: 0.875rem;
+            background: linear-gradient(to right, var(--color-brand-1), var(--color-brand-3), var(--color-brand-1));
+            background-size: 200%;
+            color: #fff;
+            border-radius: 1.5rem;
+            transition: 0.3s;
+
+            &:hover {
+                background-position: 100%;
+            }
+
+        }
+
+        @import "./button";
+        @import "./list";
+        @import "./topic";
+
+        ul.contact {
+            padding-top: 2rem;
+        }
+
+        ul.tag {
+            margin-top: 2rem;
+        }
+    }
+}
