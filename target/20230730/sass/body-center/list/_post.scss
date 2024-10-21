@@ -1,0 +1,280 @@
+>div.post {
+    display: flex;
+    flex-flow: column;
+    padding: 1rem;
+    width: 100%;
+    background-color: #fff;
+    border-radius: 0.5rem;
+    box-shadow: 0 0 0.125rem #0000000d;
+
+    @import "./heading";
+    @import "./button";
+
+    >section:nth-child(2) {
+        display: flex;
+        flex-flow: column;
+        align-items: flex-start;
+        width: 100%;
+
+        p {
+            display: -webkit-box;
+            margin-top: 1rem;
+            max-width: 40rem;
+            line-height: 1.375rem;
+            max-height: calc(1.375rem * 8);
+            text-overflow: ellipsis;
+            line-clamp: 8;
+            -webkit-line-clamp: 8;
+            -webkit-box-orient: vertical;
+            font-size: 0.875rem;
+            overflow: hidden;
+        }
+
+        button {
+            display: -webkit-box;
+            margin-top: 0.5rem;
+            max-width: 40rem;
+            line-height: 1.375rem;
+            max-height: 1.375rem;
+            text-overflow: ellipsis;
+            line-clamp: 1;
+            -webkit-line-clamp: 1;
+            -webkit-box-orient: vertical;
+            font-size: 0.875rem;
+            color: var(--col-brand-hint-5);
+            overflow: hidden;
+
+        }
+    }
+
+    >section:nth-child(3) {
+        display: flex;
+        flex-flow: column;
+        margin: 0.75rem 0;
+        width: 100%;
+        aspect-ratio: 4 / 3;
+        background-color: #000;
+        border-radius: 1rem;
+        box-shadow: 0 0 0.125rem #0000000d;
+        overflow: hidden;
+
+        &[num="0"] {
+            margin-top: 0.75rem;
+            width: 0;
+            opacity: 0;
+        }
+
+        &[num="1"] {
+            background-color: var(--col-brand-1);
+
+            >section:nth-child(1) {
+                aspect-ratio: 4 / 3;
+
+                img {
+                    object-fit: cover;
+                }
+            }
+
+            >section:nth-child(2) {
+                width: 0;
+            }
+        }
+
+        >section:nth-child(1) {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 16 / 9;
+
+            @media screen and (min-width: 640px) {
+                aspect-ratio: 16 / 10;
+            }
+
+            img {
+                position: absolute;
+                z-index: 0;
+                top: 0;
+                left: 0;
+                bottom: 0;
+                right: 0;
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+            }
+
+            >button {
+                position: absolute;
+                z-index: 2;
+                right: 0.5rem;
+                bottom: 0.5rem;
+                background-color: #0000008c;
+                border-radius: 50%;
+                transition: 0.2s;
+    
+                &:hover i {
+                    font-size: 1.25rem;
+                }
+    
+                i {
+                    width: 2rem;
+                    line-height: 2rem;
+                    text-align: center;
+                    color: #fff;
+                }
+            }
+
+            div {
+                position: absolute;
+                z-index: 1;
+                top: 0;
+                bottom: 0;
+                width: clamp(4rem, 30%, 10rem);
+                height: 100%;
+                transition: 0.4s;
+
+                &:nth-last-child(2) {
+                    left: 0;
+                    text-align: left;
+
+                    &:hover button {
+                        left: 1rem;
+                        opacity: 1;
+                    }
+
+                    button {
+                        left: -3.5rem;
+                    }
+                }
+
+                &:nth-last-child(1) {
+                    right: 0;
+                    text-align: right;
+
+                    &:hover button {
+                        right: 1rem;
+                        opacity: 1;
+                    }
+
+                    button {
+                        right: -3.5rem;
+                    }
+                }
+
+                >button {
+                    position: absolute;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    background-color: #0000008c;
+                    border-radius: 50%;
+                    opacity: 0;
+                    transition: 0.4s;
+
+                    &:hover i {
+                        font-size: 1.25rem;
+                    }
+
+                    i {
+                        width: 2rem;
+                        line-height: 2rem;
+                        text-align: center;
+                        color: #fff;
+                    }
+                }
+            }
+        }
+
+        // Sub List
+        >section:nth-child(2) {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 16 / 3;
+            border-top: 0.5px solid #000;
+            overflow: hidden;
+
+            @media screen and (min-width: 640px) {
+                aspect-ratio: 16 / 2;
+            }
+
+            &[scroll="1"] section {
+                justify-content: flex-start;
+            }
+
+            @for $i from 0 through 9 {
+
+                &[index="#{$i}"] section figure:nth-child(#{$i + 1}) img {
+                    opacity: 1;
+                }
+            }
+
+            section {
+                display: flex;
+                justify-content: center;
+                gap: 0.5px;
+                height: 100%;
+                overflow: scroll;
+
+                figure {
+                    position: relative;
+                    flex-shrink: 0;
+                    height: 100%;
+                    aspect-ratio: 1 / 1;
+                    overflow: hidden;
+
+                    img {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        bottom: 0;
+                        right: 0;
+                        width: 100%;
+                        height: 100%;
+                        opacity: 0.5;
+                        transition: 0.4s;
+                        cursor: pointer;
+
+                        &:hover {
+                            transform: scale(110%);
+                            opacity: 0.75;
+                        }
+                    }
+                }
+            }
+
+            >button {
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                width: 1rem;
+                height: 100%;
+                background-color: #0000008c;
+                transition: 0.4s;
+    
+                &:hover {
+                    width: 1.5rem;
+    
+                    i {
+                        font-size: 1.25rem;
+                    }
+                }
+    
+                &:nth-last-child(2) {
+                    left: 0;
+                }
+    
+                &:nth-last-child(1) {
+                    right: 0;
+                }
+    
+                i {
+                    position: absolute;
+                    top: 50%;
+                    left: 0;
+                    transform: translateY(-50%);
+                    width: inherit;
+                    text-align: center;
+                    color: #fff;
+                    transition: 0.2s;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,57 @@
+>section:nth-last-child(1) {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+
+    div,
+    button {
+        display: flex;
+        align-items: center;
+        gap: 0.25rem;
+
+        p,
+        i {
+            line-height: 1.375rem;
+            height: 1.375rem;
+            text-align: center;
+            font-size: 1em;
+            color: inherit;
+        }
+
+        i {
+            flex-shrink: 0;
+            width: 1.5rem;
+            transition: 0.2s;
+        }
+
+        p {
+            white-space: nowrap;
+        }
+    }
+
+    >button {
+        max-width: 1.5rem;
+        overflow: hidden;
+        transition: 0.4s;
+
+        &:hover {
+            max-width: 3.5rem;
+
+            i {
+                font-size: 1.125rem;
+            }
+
+            p {
+                margin-left: 0;
+                opacity: 1;
+            }
+        }
+
+        p {
+            margin-left: -0.25rem;
+            opacity: 1;
+            transition: 0.4s;
+            overflow: hidden;
+        }
+    }
+}

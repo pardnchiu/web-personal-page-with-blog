@@ -1,0 +1,198 @@
+section.pop {
+    position: fixed;
+    display: block;
+    z-index: 10000;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    transition: 0.4s ;
+
+    &.hide {
+        opacity: 0;
+
+        >section {
+            top: 100%;
+        }
+    }
+
+    &.no-bg::before {
+        opacity: 0;
+    }
+
+    &::before {
+        content: "";
+        position: absolute;
+        z-index: 0;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #0000000d;
+        backdrop-filter: blur(1rem);
+        -webkit-backdrop-filter: blur(1rem);
+    }
+
+    >section {
+        position: relative;
+        top: 0;
+        z-index: 1;
+        margin: 0 auto;
+        padding: 0 2rem;
+        width: 100%;
+        max-width: 1440px;
+        height: 100%;
+        opacity: 1;
+        transition: 0.4s ;
+        animation: pop-body 0.4s ;
+        -webkit-animation: pop-body 0.4s ;
+        -moz-animation: pop-body 0.4s ;
+
+        &.full {
+            padding: 0;
+            max-width: 100%;
+
+            &.hide>section>section.left.photo {
+    
+                >section:nth-child(1) {
+                    width: 100%;
+                }
+                
+                >section:nth-child(2) {
+                    width: 0;
+                    opacity: 0;
+                }
+            }
+            
+            >section>section.left.photo {
+                flex-flow: row;
+                
+                >section:nth-child(1) {
+                    width: calc(100% - 6rem);
+                    height: 100%;
+    
+                    button {
+                        max-width: 100%;
+                        opacity: 1;
+                    }
+                }
+                
+                >section:nth-child(2) {
+                    width: 6rem;
+                    height: 100%;
+    
+                    section {
+    
+                        &[scroll="1"] section {
+                            justify-content: unset;
+                        }
+                        
+                        flex-flow: column;
+                        justify-content: unset;
+                    }
+    
+                    button {
+                        width: 0;
+                        height: 0;
+                        opacity: 0;
+                    }
+                }
+            }
+
+            >section>section.right {
+                padding: 0;
+                width: 0;
+                opacity: 0;
+                overflow: hidden;
+            }
+
+            >button {
+                width: 0;
+                opacity: 0;
+                overflow: hidden;
+            }
+        }
+
+        >section {
+            display: flex;
+            margin: 0 auto;
+            width: 100%;
+            height: 100%;
+            background-color: #fff;
+            box-shadow: 0 0 0.125rem #0000000d;
+
+            // 左側
+            @import "./single/left";
+
+            // 右側
+            @import "./single/right";
+        }
+
+        >button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            transition: 0.4s ;
+
+            &:nth-last-child(2) {
+                left: 0.5rem;
+            }
+
+            &:nth-last-child(1) {
+                right: 0.5rem;
+            }
+
+            &:hover i {
+                font-size: 2rem;
+            }
+
+            i {
+                font-size: 1.5rem;
+                transition: 0.2s;
+            }
+        }
+    }
+}
+
+@keyframes pop-bg {
+    0% {
+        opacity: 0;
+    }
+}
+
+@-webkit-keyframes pop-bg {
+    0% {
+        opacity: 0;
+    }
+}
+
+@-moz-keyframes pop-bg {
+    0% {
+        opacity: 0;
+    }
+}
+
+@keyframes pop-body {
+    0% {
+        top: 100%;
+        opacity: 50%;
+    }
+}
+
+@-webkit-keyframes pop-body {
+    0% {
+        top: 100%;
+        opacity: 50%;
+    }
+}
+
+@-moz-keyframes pop-body {
+    0% {
+        top: 100%;
+        opacity: 50%;
+    }
+}

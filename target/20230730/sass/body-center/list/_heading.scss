@@ -1,0 +1,110 @@
+>section:nth-child(1) {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    // 頭像
+    img {
+        width: 2rem;
+        height: 2rem;
+        border-radius: 50%;
+        box-shadow: 0 0 0.125rem #0000000d;
+        transition: 0.4s;
+        cursor: pointer;
+
+        &:hover {
+            width: 2.5rem;
+            height: 2.5rem;
+        }
+    }
+
+    section {
+        display: flex;
+        flex-flow: column;
+        gap: 0.125rem;
+        cursor: pointer;
+
+        // 標題
+        h6 {
+            display: -webkit-box;
+            width: 100%;
+            line-height: 1.625rem;
+            max-height: calc(1.625rem * 2);
+            text-overflow: ellipsis;
+            line-clamp: 2;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            font-size: 1.125rem;
+            font-weight: 500;
+            overflow: hidden;
+        }
+
+        // 名稱
+        strong {
+            display: -webkit-box;
+            width: 100%;
+            line-height: 1.5rem;
+            max-height: calc(1.5rem * 2);
+            text-overflow: ellipsis;
+            line-clamp: 2;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            font-size: 1rem;
+            font-weight: 500;
+            overflow: hidden;
+        }
+
+        // 報價 (用於 自我介紹 GRID)
+        b {
+            display: -webkit-box;
+            margin-top: 0.5rem;
+            width: 100%;
+            line-height: 1.75rem;
+            max-height: calc(1.75rem * 2);
+            text-overflow: ellipsis;
+            line-clamp: 2;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            font-size: 1.25rem;
+            font-weight: 500;
+            color: var(--col-brand-hint-7);
+            overflow: hidden;
+        }
+
+        // 日期
+        p {
+            display: -webkit-box;
+            width: 100%;
+            line-height: 1.25rem;
+            max-height: 1.25rem;
+            text-overflow: ellipsis;
+            line-clamp: 1;
+            -webkit-line-clamp: 1;
+            -webkit-box-orient: vertical;
+            font-size: 0.75rem;
+            font-weight: 400;
+            color: var(--col-brand-hint-5);
+            overflow: hidden;
+
+            time {
+                color: inherit;
+
+                &:hover {
+
+                    &::after {
+                        max-width: 100%;
+                    }
+                }
+
+                &::after {
+                    content: "-" attr(datetime)"";
+                    display: inline-block;
+                    vertical-align: top;
+                    max-width: 0;
+                    overflow: hidden;
+                    transition: 0.4s;
+                }
+            }
+        }
+    }
+}

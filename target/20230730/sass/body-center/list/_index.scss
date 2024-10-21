@@ -1,0 +1,14 @@
+section.list {
+    display: flex;
+    flex-flow: row wrap;
+    gap: 1.5rem;
+    padding: 0 0.125rem 5rem;
+    width: 100%;
+
+    @import "./album";
+    @import "./album-grid";
+    @import "./service";
+    @import "./service-grid";
+    @import "./post";
+    @import "./case";
+}

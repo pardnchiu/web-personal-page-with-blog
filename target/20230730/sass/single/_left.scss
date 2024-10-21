@@ -1,0 +1,431 @@
+>section.left {
+    display: flex;
+    flex-flow: column;
+    gap: 1.5rem;
+    padding: 1.5rem;
+    width: 100%;
+    height: 100%;
+    overflow: hidden scroll;
+
+    &:not(&.photo) {
+
+        // 標題 日期 按鈕
+        >section:nth-child(1) {
+            display: flex;
+            flex-flow: column;
+            gap: 0.5rem;
+            width: 100%;
+
+            // 標題
+            h1 {
+                display: -webkit-box;
+                width: 100%;
+                line-height: 2.5rem;
+                max-height: calc(2.5rem * 2);
+                text-overflow: ellipsis;
+                line-clamp: 2;
+                -webkit-line-clamp: 2;
+                -webkit-box-orient: vertical;
+                font-size: 2rem;
+                font-weight: 500;
+                overflow: hidden;
+            }
+
+
+            // 日期
+            >p {
+                display: -webkit-box;
+                width: 100%;
+                line-height: 1.375rem;
+                max-height: 1.375rem;
+                text-overflow: ellipsis;
+                line-clamp: 1;
+                -webkit-line-clamp: 1;
+                -webkit-box-orient: vertical;
+                font-size: 0.875rem;
+                font-weight: 400;
+                color: var(--col-brand-hint-5);
+                overflow: hidden;
+
+                a,
+                button {
+                    color: inherit;
+                }
+
+                time {
+                    color: inherit;
+
+                    &:hover {
+
+                        &::after {
+                            max-width: 100%;
+                        }
+                    }
+
+                    &::after {
+                        content: "(" attr(datetime) ")";
+                        display: inline-block;
+                        vertical-align: top;
+                        max-width: 0;
+                        overflow: hidden;
+                        transition: 0.4s;
+                    }
+                }
+            }
+
+            // 按鈕
+            section {
+                display: flex;
+                align-items: center;
+                gap: 0.75rem;
+
+                div,
+                button {
+                    display: flex;
+                    align-items: center;
+                    gap: 0.25rem;
+
+                    p,
+                    i {
+                        line-height: 1.5rem;
+                        height: 1.5rem;
+                        text-align: center;
+                        color: inherit;
+                    }
+
+                    i {
+                        width: 1.5rem;
+                        transition: 0.2s;
+                    }
+
+                    p {
+                        white-space: nowrap;
+                    }
+                }
+
+                button {
+                    max-width: 1.5rem;
+                    overflow: hidden;
+                    transition: 0.4s;
+
+                    &:hover {
+                        max-width: 100%;
+
+                        i {
+                            font-size: 1.25rem;
+                        }
+
+                        p {
+                            margin-left: 0;
+                            max-width: 100%;
+                            opacity: 1;
+                        }
+                    }
+
+                    p {
+                        margin-left: -0.125rem;
+                        max-width: 0;
+                        opacity: 0;
+                        transition: 0.4s;
+                        overflow: hidden;
+                    }
+                }
+            }
+        }
+
+        // 內文 標籤
+        >section:nth-child(2) {
+            display: flex;
+            flex-flow: column;
+            gap: 0.75rem;
+            padding: 0 0.125rem;
+            width: 100%;
+
+            // 內文
+            p {
+                line-height: 2rem;
+            }
+
+            // 標籤
+            ul {
+                display: flex;
+                flex-flow: row wrap;
+                gap: 0.5rem;
+                width: 100%;
+
+                li {
+                    padding: 0 0.5rem;
+                    line-height: 1.5rem;
+                    font-size: 0.75rem;
+                    background-color: var(--col-brand-1);
+                    border-radius: 0.75rem;
+                    transition: 0.4s;
+                    cursor: pointer;
+
+                    &:hover {
+                        background-color: var(--col-brand-hint-2);
+                    }
+                }
+            }
+        }
+
+        // 子內容
+        >section:nth-child(3) {
+            display: flex;
+            flex-flow: row wrap;
+            gap: 0.5rem;
+            width: 100%;
+
+            figure {
+                position: relative;
+                width: calc((100% - 0.5rem * 3) / 4);
+                aspect-ratio: 1 / 1;
+                border-radius: 0.5rem;
+                box-shadow: 0 0 0.125rem #0000000d;
+                overflow: hidden;
+                cursor: pointer;
+
+                &:hover img {
+                    transform: scale(110%);
+                }
+
+                img {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    bottom: 0;
+                    right: 0;
+                    width: 100%;
+                    height: 100%;
+                    transition: 0.4s;
+                }
+            }
+        }
+    }
+
+    // 圖片展示
+    &.photo {
+        gap: 0;
+        padding: 0;
+        background-color: #000;
+        overflow: hidden;
+
+        // Main Viewer
+        >section:nth-child(1) {
+            position: relative;
+            width: 100%;
+            height: calc(100% - 6rem);
+            overflow: hidden;
+            transition: width 0.4s;
+
+            img {
+                position: absolute;
+                z-index: 0;
+                top: 0;
+                left: 0;
+                bottom: 0;
+                right: 0;
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+            }
+
+            section {
+                position: absolute;
+                z-index: 2;
+                display: flex;
+                gap: 0.5rem;
+                right: 1rem;
+                bottom: 1rem;
+                background-color: #0000008c;
+                border-radius: 2rem;
+
+                button {
+                    max-width: 0;
+                    opacity: 0;
+                    overflow: hidden;
+                    transition: 0.4s;
+
+                    &:nth-child(1) {
+                        max-width: 100%;
+                        opacity: 1;
+                    }
+
+                    &:hover i {
+                        font-size: 1.25rem;
+                    }
+
+                    i {
+                        width: 2rem;
+                        line-height: 2rem;
+                        text-align: center;
+                        color: #fff;
+                        transition: 0.2s;
+                    }
+                }
+            }
+
+            div {
+                position: absolute;
+                z-index: 1;
+                top: 0;
+                bottom: 0;
+                width: clamp(4rem, 30%, 10rem);
+                height: 100%;
+                transition: 0.4s;
+
+                &:nth-last-child(2) {
+                    left: 0;
+                    text-align: left;
+
+                    &:hover button {
+                        left: 1rem;
+                        opacity: 1;
+                    }
+
+                    button {
+                        left: -3.5rem;
+                    }
+                }
+
+                &:nth-last-child(1) {
+                    right: 0;
+                    text-align: right;
+
+                    &:hover button {
+                        right: 1rem;
+                        opacity: 1;
+                    }
+
+                    button {
+                        right: -3.5rem;
+                    }
+                }
+
+                >button {
+                    position: absolute;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    background-color: #0000008c;
+                    border-radius: 50%;
+                    opacity: 0;
+                    transition: 0.4s;
+
+                    &:hover i {
+                        font-size: 1.25rem;
+                    }
+
+                    i {
+                        width: 2rem;
+                        line-height: 2rem;
+                        text-align: center;
+                        color: #fff;
+                    }
+                }
+            }
+        }
+
+        // Sub List
+        >section:nth-child(2) {
+            position: relative;
+            width: 100%;
+            height: 6rem;
+            transition: 0.4s;
+
+            &[scroll="1"] section {
+                justify-content: flex-start;
+            }
+
+            @for $i from 0 through 9 {
+
+                &[index="#{$i}"] section figure:nth-child(#{$i + 1}) img {
+                    opacity: 1;
+                }
+            }
+
+            // Photo List
+            section {
+                display: flex;
+                justify-content: center;
+                gap: 0.5px;
+                width: 100%;
+                height: 6rem;
+                border-top: 1px solid #000;
+                overflow: scroll hidden;
+
+                figure {
+                    position: relative;
+                    flex-shrink: 0;
+                    width: 6rem;
+                    height: 6rem;
+                    overflow: hidden;
+                    cursor: pointer;
+
+                    &:hover img {
+                        transform: scale(110%);
+                        opacity: 0.75;
+                    }
+
+                    img {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        bottom: 0;
+                        right: 0;
+                        width: 100%;
+                        height: 100%;
+                        transition: 0.4s;
+                        opacity: 0.5;
+                    }
+
+                    figcaption {
+                        position: absolute;
+                        width: 0;
+                        height: 0;
+                        opacity: 0;
+                        overflow: hidden;
+                    }
+                }
+            }
+
+            // Page Button
+            button {
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                width: 1rem;
+                height: 100%;
+                background-color: #0000008c;
+                overflow: hidden;
+                transition: 0.4s;
+
+                &:hover {
+                    width: 1.5rem;
+
+                    i {
+                        font-size: 1.25rem;
+                    }
+                }
+
+                &:nth-last-child(2) {
+                    left: 0;
+                }
+
+                &:nth-last-child(1) {
+                    right: 0;
+                }
+
+                i {
+                    position: absolute;
+                    top: 50%;
+                    left: 0;
+                    transform: translateY(-50%);
+                    width: inherit;
+                    text-align: center;
+                    color: #fff;
+                    transition: 0.2s;
+                }
+            }
+        }
+    }
+}

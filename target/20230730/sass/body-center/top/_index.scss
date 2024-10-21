@@ -1,0 +1,108 @@
+section.top {
+    display: flex;
+    flex-flow: column;
+    width: 100%;
+    gap: 1rem;
+
+    @for $i from 0 through 5 {
+
+        &[index="#{$i}"] {
+
+            >section:nth-child(1) div:nth-child(1) {
+                margin-left: calc(#{$i * -100%} - #{$i * 0.5rem}) !important;
+                transition: 0.4s;
+            }
+
+            >section:nth-last-child(1) ul li:nth-child(#{$i + 1}) {
+                width: 1rem;
+                background-color: var(--col-brand-5);
+            }
+        }
+    }
+
+    >section:nth-child(1) {
+        display: flex;
+        padding: 0.125rem;
+        width: 100%;
+        gap: 0.5rem;
+        overflow: hidden;
+
+        @import "./user";
+        @import "./album";
+        @import "./service";
+        @import "../list/case";
+
+        >div.case {
+            flex-shrink: 0;
+            margin-top: 0;
+            border-radius: 1rem;
+
+            @media screen and (min-width: 640px) {
+                width: calc((100% - 0.5rem) / 2);
+            }
+
+            >section:nth-child(1) {
+
+                section {
+
+                    h6 {
+                        line-height: 1.5rem;
+                        max-height: calc(1.5rem * 2);
+                        font-size: 1rem;
+                    }
+
+                    b {
+                        line-height: 1.625rem;
+                        max-height: calc(1.625rem * 2);
+                        font-size: 1.125rem;
+                    }
+                }
+            }
+        }
+    }
+
+    >section:nth-last-child(1) {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 0.5rem;
+        width: 100%;
+
+        ul {
+            display: flex;
+            gap: 0.5rem;
+
+            li {
+                width: 0.5rem;
+                height: 0.25rem;
+                background-color: var(--col-brand-hint-2);
+                border-radius: 0.125rem;
+                transition: 0.4s;
+            }
+        }
+
+        a,
+        button {
+            width: 1rem;
+
+            &:nth-child(1) {
+                text-align: left;
+            }
+
+            &:nth-last-child(1) {
+                text-align: right;
+            }
+
+            &:hover i {
+                font-size: 1.125rem;
+                color: var(--col-brand-hint-9);
+            }
+
+            i {
+                font-size: 1rem;
+                color: var(--col-brand-hint-2);
+                transition: 0.2s;
+            }
+        }
+    }
+}

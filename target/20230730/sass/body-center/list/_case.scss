@@ -1,0 +1,21 @@
+>strong {
+    margin-bottom: 0.5rem;
+    font-weight: 400;
+    color: var(--col-brand-hint-5);
+}
+
+>div.case {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-top: calc(-1.5rem + 1px);
+    padding: 1rem;
+    width: 100%;
+    background-color: #fff;
+    border-radius: 0.125rem;
+    box-shadow: 0 0 0.125rem #0000000d;
+
+    @import "./heading";
+    @import "./button";
+}

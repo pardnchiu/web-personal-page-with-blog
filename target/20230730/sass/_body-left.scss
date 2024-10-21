@@ -1,0 +1,261 @@
+>section.left {
+    display: flex;
+    flex-flow: column;
+    flex-shrink: 0;
+    gap: 1.5rem;
+    top: calc(4rem + 1.5rem);
+    margin-right: -1.5rem;
+    width: 0;
+    opacity: 0;
+    transition: 0.4s;
+
+    &.mobile,
+    &.notify {
+        margin-right: 0;
+        padding: 0.125rem;
+        width: 4rem;
+        opacity: 1;
+
+        button.head {
+            justify-content: center;
+            gap: 0;
+            padding: 0;
+            background-color: #ffffff00;
+            box-shadow: 0 0 0.125rem #00000000;
+
+            section {
+                max-width: 0;
+                max-height: 0;
+                opacity: 0;
+            }
+        }
+
+        ul.tab {
+
+            @for $i from 0 through 9 {
+
+                &[index="#{$i}"] li:nth-child(#{$i + 1}) {
+                    padding-left: calc(0.5rem - 3px) !important;
+                    ;
+                }
+            }
+
+            li {
+                padding: 0.5rem;
+            }
+        }
+
+        button.add {
+            margin-left: calc(0.25rem + 0.125rem / 2);
+            max-width: 3rem;
+
+            p {
+                margin-left: -0.5rem;
+                max-width: 0;
+                opacity: 0;
+            }
+        }
+    }
+
+    @media screen and (min-width: 480px) {
+        position: sticky;
+        margin-right: 0;
+        padding: 0.125rem;
+        width: 4rem;
+        opacity: 1;
+    }
+
+    @media screen and (min-width: 1280px) {
+        width: 17rem;
+    }
+
+    button.head {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 0;
+        padding: 0;
+        background-color: #ffffff00;
+        border-radius: 1rem;
+        box-shadow: 0 0 0.125rem #00000000;
+        transition: 0.4s;
+
+        @media screen and (min-width: 1280px) {
+            justify-content: flex-start;
+            gap: 1rem;
+            padding: 1rem;
+            background-color: #fff;
+            box-shadow: 0 0 0.125rem #0000000d;
+        }
+
+        img {
+            width: 2.75rem;
+            height: 2.75rem;
+            border-radius: 50%;
+            box-shadow: 0 0 0.125rem #0000000d;
+        }
+
+        section {
+            display: flex;
+            flex-flow: column;
+            align-items: flex-start;
+            max-width: 0;
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+
+            @media screen and (min-width: 1280px) {
+                max-width: 100%;
+                max-height: 100%;
+                opacity: 1;
+            }
+
+            h6 {
+                font-size: 1rem;
+                font-weight: 500;
+            }
+
+            p {
+                font-size: 0.75rem;
+                color: darkgray;
+            }
+        }
+    }
+
+    ul.tab {
+        display: flex;
+        flex-flow: column;
+        background-color: #fff;
+        border-radius: 1rem;
+        overflow: hidden;
+        box-shadow: 0 0 0.125rem #0000000d;
+
+        @for $i from 0 through 9 {
+
+            &[index="#{$i}"] li:nth-child(#{$i + 1}) {
+                padding-left: calc(0.5rem - 3px);
+                border-left: 3px solid var(--col-brand-5);
+
+                @media screen and (min-width: 1280px) {
+                    padding-left: calc(1rem - 3px);
+                }
+
+                a,
+                button {
+                    background-color: var(--col-brand-1);
+
+                    svg {
+                        fill: var(--col-brand-5);
+                        opacity: 1;
+                    }
+
+                    h6 {
+                        font-weight: 700;
+                        color: var(--col-brand-5);
+                    }
+                }
+            }
+        }
+
+        li {
+            padding: 0.5rem;
+            width: 100%;
+            border-left: 0px solid transparent;
+            transition: 0.4s;
+
+            &:hover {
+
+                a,
+                button {
+                    background-color: var(--col-brand-1);
+                }
+            }
+
+            @media screen and (min-width: 1280px) {
+                padding: 1rem;
+            }
+
+            a,
+            button {
+                display: flex;
+                align-items: center;
+                gap: 0;
+                width: 100%;
+                border-radius: 0.5rem;
+                transition: 0.4s;
+
+                @media screen and (min-width: 1280px) {
+                    gap: 1rem;
+                }
+
+                svg {
+                    flex-shrink: 0;
+                    width: 2.75rem;
+                    height: 1rem;
+                    fill: var(--col-brand-hint-7);
+
+                    path {
+                        clip-rule: evenodd;
+                        fill-rule: evenodd;
+                    }
+                }
+
+                h6 {
+                    max-width: 0;
+                    padding: calc(1.75rem / 2) 0;
+                    font-size: 1rem;
+                    font-weight: 500;
+                    white-space: nowrap;
+                    color: #000;
+                    opacity: 0;
+                    overflow: hidden;
+
+                    @media screen and (min-width: 1280px) {
+                        max-width: 100%;
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+    }
+
+    button.add {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0 1rem;
+        margin-left: calc(0.25rem + 0.125rem / 2);
+        max-width: 3rem;
+        background-color: var(--col-brand-5);
+        border-radius: 1.5rem;
+        box-shadow: 0 0 0.125rem #0000000d;
+        transition: 0.4s;
+
+        @media screen and (min-width: 1280px) {
+            margin-left: 0;
+            max-width: 100%;
+        }
+
+        i {
+            line-height: 3rem;
+            height: 3rem;
+            color: #fff;
+        }
+
+        p {
+            margin-left: -0.5rem;
+            max-width: 0;
+            line-height: 3rem;
+            height: 3rem;
+            color: #fff;
+            opacity: 0;
+
+            @media screen and (min-width: 1280px) {
+                margin-left: 0;
+                max-width: 100%;
+                opacity: 1;
+            }
+        }
+    }
+}

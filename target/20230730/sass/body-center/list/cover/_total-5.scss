@@ -1,0 +1,54 @@
+&[total="5"] {
+
+    img:nth-child(1) {
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: unset;
+        width: 50%;
+        height: 100%;
+    }
+
+    img:nth-child(2) {
+        top: 0;
+        left: unset;
+        bottom: unset;
+        right: 25%;
+        width: 25%;
+        height: 50%;
+    }
+
+    img:nth-child(3) {
+        top: 0;
+        left: unset;
+        bottom: unset;
+        right: 0;
+        width: 25%;
+        height: 50%;
+    }
+
+    img:nth-child(4) {
+        top: unset;
+        left: unset;
+        bottom: 0;
+        right: 25%;
+        width: 25%;
+        height: 50%;
+    }
+
+    img:nth-child(5) {
+        top: unset;
+        left: unset;
+        bottom: 0;
+        right: 0;
+        width: 25%;
+        height: 50%;
+    }
+
+    img:nth-child(6),
+    img:nth-child(7) {
+        width: 0;
+        height: 0;
+        opacity: 0;
+    }
+}

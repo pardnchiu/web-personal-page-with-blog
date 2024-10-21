@@ -5,8 +5,8 @@
 
 | 項目 | 項目 |
 | - | - |
-| | Minimal Blog<br>製作日期: 2023/07/23 |
-| | [![](./image/20230723.jpg)](https://pardnchiu.github.io/web-template/target/20230723) |
+| Social Networking<br>製作日期: 2023/07/30 | Minimal Blog<br>製作日期: 2023/07/23 |
+| [![](./image/20230730.jpg)](https://pardnchiu.github.io/web-template/target/20230730) | [![](./image/20230723.jpg)](https://pardnchiu.github.io/web-template/target/20230723) |
 | Classic Blog<br>製作日期: 2023/07/22 | Personal Blog with Cover<br>製作日期: 2023/07/21 |
 | [![](./image/20230722.jpg)](https://pardnchiu.github.io/web-template/target/20230722) | [![](./image/20230721.jpg)](https://pardnchiu.github.io/web-template/target/20230721) |
 | Personal Blog<br>製作日期: 2023/07/20 | Magazine Blog<br>製作日期: 2023/07/19<br>最後更新: 2024/08/08

@@ -1,0 +1,146 @@
+>div.album {
+    display: flex;
+    flex-flow: column;
+    gap: 0.75rem;
+    width: 100%;
+
+    @import "./heading";
+    @import "./button";
+
+    // 封面
+    >section:nth-child(2) {
+        position: relative;
+        width: 100%;
+        aspect-ratio: 16 / 10;
+        background-color: var(--col-brand-hint-1);
+        border-radius: 1rem;
+        overflow: hidden;
+        cursor: pointer;
+
+        &:hover {
+
+            &::before,
+            p {
+                opacity: 1;
+            }
+        }
+
+        &::before {
+            content: "";
+            position: absolute;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #0000008c;
+            backdrop-filter: blur(1rem);
+            -webkit-backdrop-filter: blur(1rem);
+            transition: 0.4s;
+            opacity: 0;
+        }
+
+        @import "./cover/total-1";
+        @import "./cover/total-2";
+        @import "./cover/total-3";
+        @import "./cover/total-4";
+        @import "./cover/total-5";
+        @import "./cover/total-6";
+
+        img {
+            position: absolute;
+            padding: 1px;
+            width: 0;
+            height: 0;
+            opacity: 0;
+
+            &:nth-child(1) {
+                top: 0;
+                left: 0;
+                bottom: 0;
+                width: 50%;
+                height: 60%;
+                opacity: 1;
+            }
+
+            &:nth-child(2) {
+                left: 0;
+                bottom: 0;
+                width: 25%;
+                height: 40%;
+                opacity: 1;
+            }
+
+            &:nth-child(3) {
+                left: 25%;
+                bottom: 0;
+                width: 25%;
+                height: 40%;
+                opacity: 1;
+            }
+
+            &:nth-child(4) {
+                top: 0;
+                right: 25%;
+                width: 25%;
+                height: 50%;
+                opacity: 1;
+            }
+
+            &:nth-child(5) {
+                top: 0;
+                right: 0;
+                width: 25%;
+                height: 50%;
+                opacity: 1;
+            }
+
+            &:nth-child(6) {
+                bottom: 0;
+                right: 25%;
+                width: 25%;
+                height: 50%;
+                opacity: 1;
+            }
+
+            &:nth-child(7) {
+                bottom: 0;
+                right: 0;
+                width: 25%;
+                height: 50%;
+                opacity: 1;
+            }
+        }
+
+        p {
+            position: absolute;
+            z-index: 1;
+            display: -webkit-box;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 0 1rem;
+            width: 100%;
+            max-width: 40rem;
+            line-height: 1.375rem;
+            max-height: calc(1.375rem * 5);
+            text-overflow: ellipsis;
+            line-clamp: 5;
+            -webkit-line-clamp: 5;
+            -webkit-box-orient: vertical;
+            font-size: 0.875rem;
+            color: #fff;
+            overflow: hidden;
+            opacity: 0;
+            transition: 0.4s;
+
+            @media screen and (min-width: 800px) {
+                line-height: 1.5rem;
+                max-height: calc(1.5rem * 5);
+                font-size: 1rem;
+            }
+        }
+    }
+}

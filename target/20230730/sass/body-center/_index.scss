@@ -1,0 +1,27 @@
+>section.center {
+    display: flex;
+    flex-flow: column;
+    flex-shrink: 1;
+    gap: 1.5rem;
+    width: 100%;
+    overflow: visible scroll;
+
+    &:not(&.single) {
+        @import "./top";
+        @import "./button";
+        @import "./list";
+    }
+
+    &.single {
+        background-color: #fff;
+        border-radius: 1rem;
+        box-shadow: 0 0 0.125rem #0000000d;
+
+        @import "../single/left";
+
+        >section.left.photo>section:nth-child(1) { 
+            height: unset;
+            aspect-ratio: 4 / 3;
+        }
+    }
+}
