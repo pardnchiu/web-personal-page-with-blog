@@ -1,0 +1,62 @@
+>section:nth-child(3) {
+    position: relative;
+    display: flex;
+    flex-flow: column;
+    gap: $_64;
+    padding: $_128 $_16;
+    background-color: #fff;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    >section {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+        margin: 0 auto;
+        gap: $_48 $_24;
+        width: 100%;
+        max-width: 1280px;
+
+        div,
+        a {
+            display: flex;
+            flex-flow: column;
+            align-items: center;
+            color: #fff;
+
+            //RWD
+            width: calc((100% - $_24 * 1) / 2);
+
+            @media screen and (min-width: $_1024) {
+                width: calc((100% - $_24 * 3) / 4);
+            }
+
+            img,
+            i {
+                margin-bottom: $_16;
+                width: $_128;
+                height: $_128;
+                line-height: $_128;
+                text-align: center;
+                font-size: $_64;
+                background-color: #00000080;
+                border-radius: 10%;
+                transition: 0.3s;
+
+                &:hover {
+                    font-size: $_56;
+                }
+            }
+
+            p,
+            strong {
+                color: inherit;
+            }
+
+            strong {
+                font-size: $_24;
+            }
+        }
+    }
+}

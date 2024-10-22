@@ -1,0 +1,122 @@
+>section:nth-child(5) {
+    position: relative;
+    display: flex;
+    flex-flow: column;
+    gap: $_64;
+    padding: $_128 $_16;
+    background-color: #fff;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    span {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #00000080;
+        backdrop-filter: blur(0.25rem);
+        -webkit-backdrop-filter: blur(0.25rem);
+    }
+
+    >section {
+        display: flex;
+        margin: 0 auto;
+        width: 100%;
+        max-width: 1280px;
+
+        &.header {
+            flex-flow: column;
+            justify-content: center;
+            align-items: center;
+            gap: $_4;
+
+            >p {
+                font-size: $_16;
+                color: #fff;
+            }
+
+            >strong {
+                font-size: $_28;
+                color: #fff;
+            }
+        }
+
+        &.list {
+            flex-flow: row wrap;
+            gap: $_24;
+
+            article {
+                display: flex;
+                flex-flow: column;
+                justify-content: center;
+                align-items: center;
+                gap: $_16;
+                padding: $_8 $_16 $_24;
+                background-color: #00000080;
+                border-radius: $_16;
+                backdrop-filter: blur(1rem);
+                -webkit-backdrop-filter: blur(1rem);
+
+                //RWD
+                width: 100%;
+                transition: 0.3s;
+
+                @media screen and (min-width: $_480) {
+                    width: calc((100% - $_24 * 1) / 2);
+                }
+
+                @media screen and (min-width: $_1024) {
+                    width: calc((100% - $_24 * 3) / 4);
+                }
+
+                img,
+                >i {
+                    position: relative;
+                    width: $_80;
+                    height: $_80;
+                    line-height: $_80;
+                    text-align: center;
+                    font-size: $_40;
+                    color: #ddd;
+                }
+
+                strong {
+                    font-size: $_20;
+                    color: #fff;
+                }
+
+                p {
+                    line-height: $_28;
+                    text-align: center;
+                    color: #ddd;
+                }
+
+                a {
+                    display: flex;
+                    align-items: center;
+                    gap: $_6;
+                    margin-top: $_8;
+                    padding: 0 $_16;
+                    line-height: $_40;
+                    font-size: $_14;
+                    color: #fff;
+                    border: 1px solid #fff;
+                    border-radius: $_8;
+                    transition: 0.3s;
+
+                    @media (hover: hover) and (pointer: fine) {
+
+                        &:hover {
+                            background-color: #fff;
+                            color: #000;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

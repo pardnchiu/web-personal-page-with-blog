@@ -8,7 +8,8 @@
 這些範例的代碼包含了 HTML 渲染，純 JS 渲染<br>
 隨著 2023/09 開始 [PDRenderKit](https://github.com/pardnchiu/PDRenderKit) (原 PDExtension) 的「輕量化框架」功能開發，有修改幾個項目來測試與完善框架<br>
 原本打算花時間全部改寫為 PDRenderKit 渲染，但在過程中又開啟了 [Website Builder](https://github.com/pardnchiu/website-builder) 項目<br>
-因此決定範例改為導入 Website Builder 裡，不會再針對現有的項目進行修改
+因此決定範例改為導入 Website Builder 裡，不會再針對現有的項目進行修改<br>
+如果你喜歡這個項目，可以給個 Star 讓我知道
 
 | 項目 |  |
 | - | - |
@@ -21,7 +22,7 @@
 | [![](./image/20230712.jpg)](https://pardnchiu.github.io/web-template/target/20230712) | [![](./image/20230710.jpg)](https://pardnchiu.github.io/web-template/target/20230710) |
 | Simplify Blog<br>製作日期: 2023/07/12 | App Introduction<br>製作日期: 2023/07/10 |
 |  [![](./image/20230621.jpg)](https://pardnchiu.github.io/web-template/target/20230621) |  [![](./image/20230619.jpg)](https://pardnchiu.github.io/web-template/target/20230619) |
-| Personal Page With Blog<br>製作日期: 2023/06/21 | Gym Introducing<br>製作日期: 2023/06/19 |
+| Personal Page With Blog<br>製作日期: 2023/06/21 | Gym Introducing<br>製作日期: 2023/06/19<br>最後更新: 2024/08/03 |
 | [![](./image/20230616.jpg)](https://pardnchiu.github.io/web-template/target/20230616) | [![](./image/20230613.jpg)](https://pardnchiu.github.io/web-template/target/20230613) |
 | Personal Profile<br>製作日期: 2023/06/16 | About Me Page<br>製作日期: 2023/06/13 |
 | [![](./image/personal-info-20230610.jpg)](https://pardnchiu.github.io/web-template/target/personal-info-20230610) | [![](./image/20230604.jpg)](https://pardnchiu.github.io/web-template/target/20230604) |
@@ -30,8 +31,8 @@
 | Personal Profile<br>製作日期: 2023/05/12 | Moneybook<br>製作日期: 2023/04/18 |
 | [![](./image/personal-portfolio-20230226.jpg)](https://pardnchiu.github.io/web-template/target/personal-portfolio-20230226) | [![](./image/personal-introduction-20230220.jpg)](https://pardnchiu.github.io/web-template/target/personal-introduction-20230220) |
 | Personal Portfolio<br>製作日期: 2023/02/26 | Personal Introduction<br>製作日期: 2023/02/20 |
-| [![](./image/instagram-20221012.jpg)](https://pardnchiu.github.io/web-template/target/instagram-20221012) |
-| Instagram<br>製作日期: 2022/10/12 |
+| [![](./image/instagram-20221012.jpg)](https://pardnchiu.github.io/web-template/target/instagram-20221012) | [![](./image/corp-introduction-20220903.jpg)](https://pardnchiu.github.io/web-template/target/corp-introduction-20220903) |
+| Instagram<br>製作日期: 2022/10/12 | Corp Introduction<br>製作日期: 2022/09/03<br>最後更新: 2024/08/03 |
 
 ## Creator
 
