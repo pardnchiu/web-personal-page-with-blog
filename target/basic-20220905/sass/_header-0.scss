@@ -1,0 +1,249 @@
+>header {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: initial;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #00000080;
+        backdrop-filter: blur(0.25rem);
+        -webkit-backdrop-filter: blur(0.25rem);
+    }
+
+    nav {
+        z-index: 1000;
+        position: sticky;
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: $_64;
+        background-color: #00000000;
+        border-bottom: 1px solid #ffffff80;
+        transition: 0.3s;
+
+        &.show {
+            background-color: #00000080;
+            backdrop-filter: blur(1rem);
+            -webkit-backdrop-filter: blur(1rem);
+        }
+
+        >section {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 0 auto;
+            padding: 0 $_16;
+            width: 100%;
+            max-width: 1280px;
+            height: 100%;
+
+            >section {
+                display: flex;
+                align-items: center;
+                gap: $_24;
+
+                strong {
+                    font-size: $_28;
+                    color: #fff;
+                }
+
+                >ul {
+                    display: flex;
+                    list-style: none;
+
+                    //MOBILE
+                    @media screen and (max-width: 639.99px) {
+                        z-index: 1;
+                        position: fixed;
+                        flex-flow: column;
+                        align-items: flex-start;
+                        top: 0;
+                        bottom: 0;
+                        padding: $_24;
+                        width: 100vw;
+                        max-width: $_360;
+                        height: 100vh;
+                        background-color: #000000b1;
+
+                        //SHOW
+                        right: -$_360;
+                        backdrop-filter: blur(0);
+                        -webkit-backdrop-filter: blur(0);
+                        transition: 0.3s;
+
+                        &.show {
+                            right: 0;
+                            backdrop-filter: blur(1rem);
+                            -webkit-backdrop-filter: blur(1rem);
+                        }
+
+                        >li {
+                            line-height: $_44;
+                            color: #fff;
+
+                            ul {
+                                padding: 0 $_24;
+
+                                li {
+                                    line-height: $_44;
+                                    color: #fff;
+                                }
+                            }
+                        }
+                    }
+
+                    //DESKTOP
+                    @media screen and (min-width: $_640) {
+                        position: relative;
+                        align-items: center;
+                        gap: $_24;
+                        width: initial;
+                        height: 100%;
+
+                        >li {
+                            position: relative;
+                            color: #fff;
+                            height: 100%;
+
+                            &:hover ul {
+                                padding: $_44 + $_16 $_16 $_16;
+                                max-height: 50vh;
+                                opacity: 1;
+                            }
+
+                            ul {
+                                position: absolute;
+                                display: flex;
+                                flex-flow: column;
+                                top: 0;
+                                right: -$_16;
+                                width: $_160;
+                                background-image: linear-gradient(to bottom, transparent 0 44px, #00000080 44px 100%);
+                                border-radius: 0 0 $_16 $_16;
+                                overflow: hidden;
+
+                                //HOVER
+                                padding: 0 $_16;
+                                max-height: 0;
+                                opacity: 0;
+                                backdrop-filter: blur(0);
+                                -webkit-backdrop-filter: blur(0);
+                                transition: 0.3s;
+
+                                &:hover {
+                                    padding: $_44 + $_16 $_16 $_16;
+                                    max-height: 50vh;
+                                    opacity: 1;
+                                }
+
+                                >li {
+                                    line-height: $_40;
+                                    color: #fff;
+                                }
+                            }
+                        }
+                    }
+
+                    button {
+                        position: absolute;
+                        bottom: $_24;
+                        width: calc(100% - $_24 * 2);
+                        line-height: $_40;
+                        color: #fff;
+                        border: 1px solid #fff;
+                        border-radius: $_8;
+
+                        @media screen and (min-width: $_640) {
+                            display: none;
+                        }
+                    }
+                }
+
+                button.tab-show {
+                    color: #fff;
+                    overflow: hidden;
+
+                    transition: 0.3s;
+
+                    @media screen and (min-width: $_640) {
+                        margin-right: -$_24;
+                        width: 0;
+                    }
+
+                    i {
+                        font-size: $_24;
+                        pointer-events: none;
+                    }
+                }
+            }
+        }
+    }
+
+    article {
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+        margin: 0 auto;
+        padding: $_128 $_16 $_160;
+        width: 100%;
+        max-width: $_1024;
+
+        h1 {
+            text-align: center;
+            font-size: $_40;
+            color: #fff;
+        }
+
+        strong {
+            text-align: center;
+            font-size: $_20;
+            color: #fff;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: underline;
+        }
+
+        p {
+            margin-top: $_32;
+            line-height: $_28;
+            max-width: $_512;
+            text-align: center;
+            color: #fff;
+        }
+
+        >section {
+            display: flex;
+            gap: $_24;
+            margin-top: $_44;
+
+            a,
+            button {
+                display: flex;
+                align-items: center;
+                gap: $_12;
+                padding: 0 $_16;
+                line-height: $_40;
+                text-decoration: none;
+                color: #fff;
+                border: 1px solid #fff;
+                border-radius: $_8;
+                backdrop-filter: blur(1rem);
+                -webkit-backdrop-filter: blur(1rem);
+            }
+        }
+    }
+}

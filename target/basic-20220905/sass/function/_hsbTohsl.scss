@@ -1,0 +1,25 @@
+// 這段代碼是用於將HSB顏色值轉換為HSLA顏色值的Sass函數，其中包括一個處理透明度的函數和一個不處理透明度的函數。該代碼的功能是將HSB顏色值轉換為HSLA顏色值，以便在CSS
+@function hsba($hue, $saturation, $brightness, $alpha: 1) {
+    $x: (200 - $saturation) * $brightness * 0.01;
+    $l: round($x * 0.5) * 0.01;
+
+    @if ($x ==0 or $x ==200) {
+        @return hsla($hue, 0%, percentage($l), $alpha);
+    }
+
+    @else {
+        @if ($x <=100) {
+            $s: round(calc($saturation * $brightness / $x)) * 0.01;
+            @return hsla($hue, percentage($s), percentage($l), $alpha);
+        }
+
+        @else {
+            $s: round(calc($saturation * $brightness / (200 - $x))) * 0.01;
+            @return hsla($hue, percentage($s), percentage($l), $alpha);
+        }
+    }
+}
+
+@function hsb($hue, $saturation, $brightness) {
+    @return hsba($hue, $saturation, $brightness, 1);
+}

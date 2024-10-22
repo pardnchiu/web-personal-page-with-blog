@@ -1,0 +1,137 @@
+@import "./init";
+
+html {
+    position: fixed;
+    display: block;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+body {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+    overflow: hidden scroll;
+
+
+
+    @import "./header-0";
+    @import "./section-1";
+
+    section[sn=e2s2] {
+        position: relative;
+        display: block;
+        background-color: #fff;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        padding: $_128 $_16;
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #00000080;
+            backdrop-filter: blur(0.25rem);
+            -webkit-backdrop-filter: blur(0.25rem);
+        }
+
+        >section {
+            display: flex;
+            flex-flow: column;
+            gap: $_64;
+            margin: 0 auto;
+            padding: $_48;
+            width: 100%;
+            max-width: 1280px;
+            width: calc(100% - $_32);
+            background-color: #fff;
+            border-radius: $_16;
+
+            >section.header {
+                display: flex;
+                flex-flow: column;
+                align-items: center;
+
+                strong {
+                    text-align: center;
+                    font-size: $_28;
+                }
+
+                p {
+                    text-align: center;
+                }
+            }
+
+            >section.body {
+                display: flex;
+                align-items: center;
+
+                >section {
+                    display: flex;
+                    flex-flow: column;
+                    align-items: flex-start;
+                    gap: $_32;
+
+                    &:nth-child(1) {
+                        width: calc(100% - 480px);
+                    }
+
+                    &:nth-child(2) {
+                        width: 480px;
+                        height: auto;
+                    }
+
+                    >a,
+                    >div {
+                        display: flex;
+                        gap: $_24;
+
+                        &:hover>i {
+                            background-color: $brand5;
+                            color: #fff;
+                        }
+
+                        >i {
+                            flex-shrink: 0;
+                            width: $_80;
+                            height: $_80;
+                            line-height: $_80;
+                            text-align: center;
+                            font-size: $_24;
+                            background-color: $brand1;
+                            color: $brand5;
+                            border-radius: 50%;
+                            transition: 0.3s;
+                        }
+
+                        >section {
+                            display: flex;
+                            flex-flow: column;
+                            justify-content: center;
+                            gap: $_4;
+
+                            strong {
+                                font-size: $_20;
+                            }
+                        }
+                    }
+
+                    >img {
+                        width: 100%;
+                        height: auto;
+                        border: 1px solid #0000000d;
+                        border-radius: $_8;
+                    }
+                }
+            }
+        }
+    }
+}

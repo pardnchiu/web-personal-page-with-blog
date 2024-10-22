@@ -31,8 +31,10 @@
 | Personal Profile<br>製作日期: 2023/05/12 | Moneybook<br>製作日期: 2023/04/18 |
 | [![](./image/personal-portfolio-20230226.jpg)](https://pardnchiu.github.io/web-template/target/personal-portfolio-20230226) | [![](./image/personal-introduction-20230220.jpg)](https://pardnchiu.github.io/web-template/target/personal-introduction-20230220) |
 | Personal Portfolio<br>製作日期: 2023/02/26 | Personal Introduction<br>製作日期: 2023/02/20 |
-| [![](./image/instagram-20221012.jpg)](https://pardnchiu.github.io/web-template/target/instagram-20221012) | [![](./image/corp-introduction-20220903.jpg)](https://pardnchiu.github.io/web-template/target/corp-introduction-20220903) |
-| Instagram<br>製作日期: 2022/10/12 | Corp Introduction<br>製作日期: 2022/09/03<br>最後更新: 2024/08/03 |
+| [![](./image/instagram-20221012.jpg)](https://pardnchiu.github.io/web-template/target/instagram-20221012) | [![](./image/basic-20220905.jpg)](https://pardnchiu.github.io/web-template/target/basic-20220905) |
+| Instagram<br>製作日期: 2022/10/12 | Basic<br>製作日期: 2022/09/05 |
+| [![](./image/basic-20220903.jpg)](https://pardnchiu.github.io/web-template/target/basic-20220903) |
+| Basic<br>製作日期: 2022/09/03<br>最後更新: 2024/08/03 |
 
 ## Creator
 

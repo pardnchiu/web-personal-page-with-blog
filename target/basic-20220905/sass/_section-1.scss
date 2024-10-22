@@ -1,0 +1,99 @@
+>section:nth-child(2) {
+    position: relative;
+    display: block;
+    background-color: #fff;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    &::before {
+        z-index: 1;
+        content: "";
+        position: absolute;
+        left: 0;
+        top: calc(1px - $_64);
+        right: 0;
+        width: 100%;
+        height: $_64;
+        background-image: radial-gradient(ellipse at center top, transparent 0, transparent calc(71% - 1px), #fff 71%, #fff);
+    }
+
+    &::after {
+        z-index: 1;
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: calc(1px - $_64);
+        right: 0;
+        width: 100%;
+        height: $_64;
+        background-image: radial-gradient(ellipse at center top, #fff 0, #fff calc(71% - 1px), transparent 71%, transparent);
+    }
+
+    >section {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+        gap: $_24;
+        margin: 0 auto;
+        padding: $_80 $_16 $_48;
+        width: 100%;
+        max-width: 1280px;
+
+        >article {
+            display: flex;
+            flex-flow: column;
+            align-items: center;
+            gap: $_16;
+            padding: $_16;
+            border-radius: $_8;
+
+            //RWD
+            width: 100%;
+            transition: 0.3s;
+
+            @media screen and (min-width: $_480) {
+                width: calc((100% - $_24 * 1) / 2);
+            }
+
+            @media screen and (min-width: $_800) {
+                width: calc((100% - $_24 * 2) / 3);
+            }
+
+            //HOVER
+            top: 0;
+            box-shadow: 0 0 0 #00000000;
+
+            &:hover {
+                top: -2px;
+                box-shadow: 0 4px 8px #0000001a;
+            }
+
+            >a {
+                display: flex;
+                flex-flow: column;
+                align-items: center;
+                gap: $_16;
+            }
+
+            img,
+            i {
+                width: $_40;
+                height: $_40;
+                line-height: $_40;
+                font-size: $_40;
+                text-align: center;
+            }
+
+            strong {
+                font-size: $_24;
+                text-align: center;
+            }
+
+            p {
+                line-height: $_28;
+                text-align: center;
+            }
+        }
+    }
+}
