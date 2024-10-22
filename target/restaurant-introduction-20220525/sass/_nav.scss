@@ -1,0 +1,383 @@
+
+#nav {
+  position: fixed;
+  z-index: 1000;
+  top: 1.5rem;
+  left: 3rem;
+  right: 3rem;
+  width: calc(100% - 6rem);
+  height: 5.5rem;
+  background-color: #fff;
+  border-radius: 0.5rem;
+  -moz-box-shadow: 0 0 8px rgba(0, 0, 0, 0.1), 0 0 16px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, 0.1), 0 0 16px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1), 0 0 16px rgba(0, 0, 0, 0.1);
+  /* 置頂 */
+  &.toppest {
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    border-radius: 0;
+    animation: nav-topppest 0.3s;
+    -webkit-animation: nav-topppest 0.3s;
+  }
+  /* 浮動 */
+  &.float {
+    top: 1.5rem;
+    left: 3rem;
+    right: 3rem;
+    width: calc(100% - 6rem);
+    border-radius: 0.5rem;
+    animation: nav-float 0.3s;
+    -webkit-animation: nav-float 0.3s;
+  }
+  > section {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: var(--width-max);
+    height: 100%;
+    > ul {
+      position: relative;
+      padding: 0 1rem;
+      height: 5.5rem;
+      font-size: 0;
+      &.left {
+        float: left;
+        > li {
+          &:nth-child(1) {
+            display: none;
+          }
+        }
+      }
+      &.right {
+        float: right;
+      }
+      > li.tab {
+        position: relative;
+        display: inline-block;
+        vertical-align: top;
+        margin: 1rem;
+        width: initial;
+        height: initial;
+        > a {
+          position: relative;
+          display: block;
+          width: initial;
+          height: 3.5rem;
+          > p {
+            position: relative;
+            display: block;
+            line-height: 1.5rem;
+            font-size: 1.125rem;
+            text-align: center;
+            color: var(--color-system);
+            > strong {
+              position: relative;
+              display: block;
+              line-height: 2rem;
+              text-align: center;
+              color: #505050;
+            }
+          }
+        }
+      }
+      > li.icon {
+        position: relative;
+        display: inline-block;
+        vertical-align: top;
+        margin: 1.25rem 0.5rem;
+        width: initial;
+        height: initial;
+        > div,
+        > a {
+          position: relative;
+          display: block;
+          padding: 0 1rem;
+          width: initial;
+          height: initial;
+          font-size: 0;
+          border-radius: 0.5rem;
+          background-color: var(--color-system-light);
+          font-size: 0rem;
+          > img {
+            position: relative;
+            display: inline-block;
+            vertical-align: top;
+          }
+          > i {
+            position: relative;
+            display: inline-block;
+            vertical-align: top;
+            width: initial;
+            height: 3rem;
+            line-height: 3rem;
+            font-size: 1.25rem;
+            text-align: center;
+            color: #fff;
+            object-fit: cover;
+          }
+          > p {
+            position: relative;
+            display: inline-block;
+            vertical-align: top;
+            padding-left: 0.5rem;
+            width: initial;
+            height: 3rem;
+            line-height: 3rem;
+            font-size: 1rem;
+            color: #fff;
+          }
+        }
+        &.notxt {
+          > div,
+          > a {
+            padding: 0;
+            > img {
+              width: 3rem;
+              height: 3rem;
+            }
+            > i {
+              width: 3rem;
+              height: 3rem;
+              line-height: 3rem;
+              font-size: 1.75rem;
+            }
+          }
+        }
+        &:nth-last-child(1),
+        &:nth-last-child(2) {
+          > a {
+            background-color: var(--color-system);
+          }
+        }
+      }
+    }
+  }
+  /* 平板介面 */
+  @media screen and (max-width: 1023px) {
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    border-radius: 0;
+    background-color: var(--color-system);
+    &.toppest,
+    &.float {
+      top: 0;
+      left: 0;
+      right: 0;
+      width: 100%;
+      border-radius: 0;
+      animation: unset;
+      -webkit-animation: unset;
+    }
+    > section {
+      > ul {
+        > li.tab {
+          > a {
+            > p {
+              color: #fff;
+              > strong {
+                color: #fff;
+              }
+            }
+          }
+        }
+        > li.icon {
+          > div,
+          > a {
+            padding: 0;
+            background-color: transparent;
+            > img {
+              width: 3rem;
+              height: 3rem;
+            }
+            > i {
+              width: 3rem;
+              height: 3rem;
+              line-height: 3rem;
+              font-size: 1.5rem;
+            }
+            > p {
+              display: none;
+            }
+          }
+          &:nth-last-child(1),
+          &:nth-last-child(2) {
+            > a {
+              background-color: transparent;
+            }
+          }
+        }
+      }
+    }
+  }
+  /* 手機介面 */
+  @media screen and (max-width: 799px) {
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 4.5rem;
+    border-radius: 0;
+    &.toppest,
+    &.float {
+      top: 0;
+      left: 0;
+      right: 0;
+      width: 100%;
+      border-radius: 0;
+      animation: unset;
+      -webkit-animation: unset;
+    }
+    > section {
+      > ul {
+        padding: 0;
+        > li.icon {
+          margin: 0.75rem 0.5rem;
+        }
+      }
+      > ul.left {
+        > li.tab {
+          display: none;
+        }
+        > li.icon {
+          margin: 0.75rem 0.5rem;
+          display: inline-block;
+        }
+        &.show {
+          height: 100vh;
+          background-color: var(--color-system-dark);
+          animation: nav-list-show 0.5s;
+          -webkit-animation: nav-list-show 0.5s;
+          > li.tab {
+            display: block;
+            margin-top: 2rem;
+            padding-right: 5rem;
+            > a {
+              > p {
+                padding-left: 3rem;
+                text-align: left;
+              }
+              > i {
+                position: relative;
+                float: left;
+                width: 2rem;
+                line-height: 3.5rem;
+                font-size: 1.5rem;
+                text-align: center;
+                color: #fff;
+              }
+            }
+          }
+          > li.icon {
+            display: inline-block;
+          }
+        }
+        &.hide {
+          animation: nav-list-hide 0.5s;
+          -webkit-animation: nav-list-hide 0.5s;
+        }
+      }
+    }
+  }
+}
+@keyframes nav-topppest {
+  from { 
+    top: 1.5rem;
+    left: 3rem;
+    right: 3rem;
+    width: calc(100% - 5.5rem);
+    border-radius: 0.5rem;
+  }
+  to { 
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    border-radius: 0;
+  }
+}
+@-webkit-keyframes nav-topppest {
+  from { 
+    top: 1.5rem;
+    left: 3rem;
+    right: 3rem;
+    width: calc(100% - 6rem);
+    border-radius: 0.5rem;
+  }
+  to { 
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    border-radius: 0;
+  }
+}
+@keyframes nav-float {
+  from { 
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    border-radius: 0;
+  }
+  to { 
+    top: 1.5rem;
+    left: 3rem;
+    right: 3rem;
+    width: calc(100% - 6rem);
+    border-radius: 0.5rem;
+  }
+}
+@-webkit-keyframes nav-float {
+  from { 
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    border-radius: 0;
+  }
+  to { 
+    top: 1.5rem;
+    left: 3rem;
+    right: 3rem;
+    width: calc(100% - 6rem);
+    border-radius: 0.5rem;
+  }
+}
+@keyframes nav-list-show {
+  from { 
+    margin-left: -100%;
+  }
+  to { 
+    margin-left: 0;
+  }
+}
+@-webkit-keyframes nav-list-show {
+  from { 
+    margin-left: -100%;
+  }
+  to { 
+    margin-left: 0;
+  }
+}
+@keyframes nav-list-hide {
+  from { 
+    margin-left: 0;
+  }
+  to { 
+    margin-left: -100%;
+  }
+}
+@-webkit-keyframes nav-list-hide {
+  from { 
+    margin-left: 0;
+  }
+  to { 
+    margin-left: -100%;
+  }
+}

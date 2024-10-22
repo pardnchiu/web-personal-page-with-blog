@@ -9,6 +9,8 @@
 隨著 2023/09 開始 [PDRenderKit](https://github.com/pardnchiu/PDRenderKit) (原 PDExtension) 的「輕量化框架」功能開發，有修改幾個項目來測試與完善框架<br>
 原本打算花時間全部改寫為 PDRenderKit 渲染，但在過程中又開啟了 [Website Builder](https://github.com/pardnchiu/website-builder) 項目<br>
 因此決定範例改為導入 Website Builder 裡，不會再針對現有的項目進行修改<br>
+
+內容授權皆從 GPL3.0 改爲 MIT<br>
 如果對你有一點幫助，可以給個 Star 讓我知道
 
 - #### Social Networking
@@ -80,13 +82,16 @@
 - #### Instagram
     製作日期: 2022/10/12
     [![](./image/instagram-20221012.jpg)](https://pardnchiu.github.io/web-template/target/instagram-20221012)
+- #### Restaurant Introduction 
+    製作日期: 2022/05/25
+    [![](./image/restaurant-introduction-20220525.jpg)](https://pardnchiu.github.io/web-template/target/restaurant-introduction-20220525)
 - #### Basic
-    製作日期: 2022/09/05
-    [![](./image/basic-20220905.jpg)](https://pardnchiu.github.io/web-template/target/basic-20220905)
+    製作日期: 2022/04/09
+    [![](./image/basic-20220409.jpg)](https://pardnchiu.github.io/web-template/target/basic-20220409)
 - #### Basic
-    製作日期: 2022/09/03｜<mark>最後更新: 2024/08/03</mark>
-    [![](./image/basic-20220903.jpg)](https://pardnchiu.github.io/web-template/target/basic-20220903) 
-
+    製作日期: 2022/04/08｜<mark>最後更新: 2024/08/03</mark>
+    [![](./image/basic-20220408.jpg)](https://pardnchiu.github.io/web-template/target/basic-20220408) 
+ 
 ## Creator
 
 <img src="https://avatars.githubusercontent.com/u/25631760" align="left" style="float: left; margin-right: 0.5rem; width: 96px; height: 96px;" />
