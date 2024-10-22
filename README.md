@@ -9,32 +9,77 @@
 隨著 2023/09 開始 [PDRenderKit](https://github.com/pardnchiu/PDRenderKit) (原 PDExtension) 的「輕量化框架」功能開發，有修改幾個項目來測試與完善框架<br>
 原本打算花時間全部改寫為 PDRenderKit 渲染，但在過程中又開啟了 [Website Builder](https://github.com/pardnchiu/website-builder) 項目<br>
 因此決定範例改為導入 Website Builder 裡，不會再針對現有的項目進行修改<br>
-如果你喜歡這個項目，可以給個 Star 讓我知道
+如果對你有一點幫助，可以給個 Star 讓我知道
 
-| 項目 |  |
-| - | - |
-| [![](./image/20230730.jpg)](https://pardnchiu.github.io/web-template/target/20230730) | [![](./image/20230723.jpg)](https://pardnchiu.github.io/web-template/target/20230723) |
-| Social Networking<br>製作日期: 2023/07/30 | Minimal Blog<br>製作日期: 2023/07/23 |
-| [![](./image/20230722.jpg)](https://pardnchiu.github.io/web-template/target/20230722) | [![](./image/20230721.jpg)](https://pardnchiu.github.io/web-template/target/20230721) |
-| Classic Blog<br>製作日期: 2023/07/22 | Personal Blog with Cover<br>製作日期: 2023/07/21 | |
-| [![](./image/20230720.jpg)](https://pardnchiu.github.io/web-template/target/20230720) | [![](./image/20230719.jpg)](https://pardnchiu.github.io/web-template/target/20230719) |
-| Personal Blog<br>製作日期: 2023/07/20 | Magazine Blog<br>製作日期: 2023/07/19<br>最後更新: 2024/08/08 |
-| [![](./image/20230712.jpg)](https://pardnchiu.github.io/web-template/target/20230712) | [![](./image/20230710.jpg)](https://pardnchiu.github.io/web-template/target/20230710) |
-| Simplify Blog<br>製作日期: 2023/07/12 | App Introduction<br>製作日期: 2023/07/10 |
-|  [![](./image/20230621.jpg)](https://pardnchiu.github.io/web-template/target/20230621) |  [![](./image/20230619.jpg)](https://pardnchiu.github.io/web-template/target/20230619) |
-| Personal Page With Blog<br>製作日期: 2023/06/21 | Gym Introducing<br>製作日期: 2023/06/19<br>最後更新: 2024/08/03 |
-| [![](./image/20230616.jpg)](https://pardnchiu.github.io/web-template/target/20230616) | [![](./image/20230613.jpg)](https://pardnchiu.github.io/web-template/target/20230613) |
-| Personal Profile<br>製作日期: 2023/06/16 | About Me Page<br>製作日期: 2023/06/13 |
-| [![](./image/personal-info-20230610.jpg)](https://pardnchiu.github.io/web-template/target/personal-info-20230610) | [![](./image/service-introduction-20230605.jpg)](https://pardnchiu.github.io/web-template/target/service-introduction-20230605) |
-| Presonal Info<br>製作日期: 2023/06/10 | Service Introduction<br>製作日期: 2023/06/05 |
-| [![](./image/20230604.jpg)](https://pardnchiu.github.io/web-template/target/20230604) | [![](./image/personal-profile-20230512.jpg)](https://pardnchiu.github.io/web-template/target/personal-profile-20230512) |
-| Restaurant Introduction<br>製作日期: 2023/06/04 | Personal Profile<br>製作日期: 2023/05/12 |
-| [![](./image/20230418.jpg)](https://pardnchiu.github.io/web-template/target/20230418) | [![](./image/personal-portfolio-20230226.jpg)](https://pardnchiu.github.io/web-template/target/personal-portfolio-20230226) |
-| Moneybook<br>製作日期: 2023/04/18 | Personal Portfolio<br>製作日期: 2023/02/26 |
-| [![](./image/personal-introduction-20230220.jpg)](https://pardnchiu.github.io/web-template/target/personal-introduction-20230220) | [![](./image/instagram-20221012.jpg)](https://pardnchiu.github.io/web-template/target/instagram-20221012) |
-| Personal Introduction<br>製作日期: 2023/02/20 | Instagram<br>製作日期: 2022/10/12 |
-| [![](./image/basic-20220905.jpg)](https://pardnchiu.github.io/web-template/target/basic-20220905) | [![](./image/basic-20220903.jpg)](https://pardnchiu.github.io/web-template/target/basic-20220903) |
-| Basic<br>製作日期: 2022/09/05 | Basic<br>製作日期: 2022/09/03<br>最後更新: 2024/08/03 |
+- #### Social Networking
+    製作日期: 2023/07/30
+    [![](./image/20230730.jpg)](https://pardnchiu.github.io/web-template/target/20230730)
+- #### Minimal Blog
+    製作日期: 2023/07/23
+    [![](./image/20230723.jpg)](https://pardnchiu.github.io/web-template/target/20230723)
+- #### Classic Blog
+    製作日期: 2023/07/22
+    [![](./image/20230722.jpg)](https://pardnchiu.github.io/web-template/target/20230722)
+- #### Personal Blog with Cover
+    製作日期: 2023/07/21
+    [![](./image/20230721.jpg)](https://pardnchiu.github.io/web-template/target/20230721)
+- #### Personal Blog
+    製作日期: 2023/07/20
+    [![](./image/20230720.jpg)](https://pardnchiu.github.io/web-template/target/20230720)
+- #### Magazine Blog
+    製作日期: 2023/07/19｜<mark>最後更新: 2024/08/08</mark>
+    [![](./image/20230719.jpg)](https://pardnchiu.github.io/web-template/target/20230719)
+- #### Simplify Blog
+    製作日期: 2023/07/12
+    [![](./image/20230712.jpg)](https://pardnchiu.github.io/web-template/target/20230712)
+- #### App Introduction
+    製作日期: 2023/07/10
+    [![](./image/20230710.jpg)](https://pardnchiu.github.io/web-template/target/20230710)
+- #### Personal Page With Blog
+    製作日期: 2023/06/21
+    [![](./image/20230621.jpg)](https://pardnchiu.github.io/web-template/target/20230621)
+- #### Gym Introducing
+    製作日期: 2023/06/19｜<mark>最後更新: 2024/08/03</mark>
+    [![](./image/20230619.jpg)](https://pardnchiu.github.io/web-template/target/20230619)
+- #### Personal Profile
+    製作日期: 2023/06/16
+    [![](./image/20230616.jpg)](https://pardnchiu.github.io/web-template/target/20230616)
+- #### About Me Page
+    製作日期: 2023/06/13
+    [![](./image/20230613.jpg)](https://pardnchiu.github.io/web-template/target/20230613)
+- #### Presonal Info
+    製作日期: 2023/06/10
+    [![](./image/personal-info-20230610.jpg)](https://pardnchiu.github.io/web-template/target/personal-info-20230610)
+- #### Personal Page
+    製作日期: 2023/06/10
+    [![](./image/personal-page-20230607.jpg)](https://pardnchiu.github.io/web-template/target/personal-page-20230607)
+- #### Service Introduction
+    製作日期: 2023/06/05
+    [![](./image/service-introduction-20230605.jpg)](https://pardnchiu.github.io/web-template/target/service-introduction-20230605)
+- #### Restaurant Introduction
+    製作日期: 2023/06/04
+    [![](./image/20230604.jpg)](https://pardnchiu.github.io/web-template/target/20230604)
+- #### Personal Profile
+    製作日期: 2023/05/12
+    [![](./image/personal-profile-20230512.jpg)](https://pardnchiu.github.io/web-template/target/personal-profile-20230512)
+- #### Moneybook
+    製作日期: 2023/04/18
+    [![](./image/20230418.jpg)](https://pardnchiu.github.io/web-template/target/20230418)
+- #### Personal Portfolio
+    製作日期: 2023/02/26
+    [![](./image/personal-portfolio-20230226.jpg)](https://pardnchiu.github.io/web-template/target/personal-portfolio-20230226)
+- #### Personal Introduction
+    製作日期: 2023/02/20
+    [![](./image/personal-introduction-20230220.jpg)](https://pardnchiu.github.io/web-template/target/personal-introduction-20230220)
+- #### Instagram
+    製作日期: 2022/10/12
+    [![](./image/instagram-20221012.jpg)](https://pardnchiu.github.io/web-template/target/instagram-20221012)
+- #### Basic
+    製作日期: 2022/09/05
+    [![](./image/basic-20220905.jpg)](https://pardnchiu.github.io/web-template/target/basic-20220905)
+- #### Basic
+    製作日期: 2022/09/03｜<mark>最後更新: 2024/08/03</mark>
+    [![](./image/basic-20220903.jpg)](https://pardnchiu.github.io/web-template/target/basic-20220903) 
 
 ## Creator
 

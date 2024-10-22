@@ -1,0 +1,854 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-size: 1em;
+    font-family: "Noto Sans TC", sans-serif;
+    letter-spacing: 0;
+    border: none;
+    outline: none;
+    background-color: rgba(0, 0, 0, 0);
+    color: #000;
+    word-wrap: break-word;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    touch-action: manipulation;
+    -webkit-touch-callout: inherit;
+    -webkit-user-select: inherit;
+    -khtml-user-select: inherit;
+    -moz-user-select: inherit;
+    -ms-user-select: inherit;
+    user-select: inherit
+}
+
+*::-webkit-scrollbar {
+    display: none
+}
+
+*.no-animate {
+    transition: none
+}
+
+*.no-animate * {
+    transition: none
+}
+
+img {
+    object-fit: cover
+}
+
+img[data-src] {
+    content: url("data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==");
+    background: linear-gradient(to right, #EEF0F3, #E0E2E8, #EEF0F3)
+}
+
+a[href]:not([href=""]) {
+    cursor: pointer
+}
+
+button {
+    cursor: pointer
+}
+
+html {
+    position: fixed;
+    display: block;
+    width: 100%;
+    height: 100%;
+    overflow: hidden
+}
+
+*[select=false],
+*[select="0"] {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none
+}
+
+*[select=true],
+*[select="1"] {
+    -webkit-touch-callout: initial;
+    -webkit-user-select: initial;
+    -khtml-user-select: initial;
+    -moz-user-select: initial;
+    -ms-user-select: initial;
+    user-select: initial
+}
+
+.firstload * {
+    transition: none !important;
+    -webkit-transition: none !important;
+    -moz-transition: none !important;
+    -ms-transition: none !important;
+    -o-transition: none !important
+}
+
+body {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: var(--global-bg-col);
+    overflow: hidden scroll
+}
+
+body>nav {
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 6rem;
+    background-color: #fff
+}
+
+body>nav>section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    padding: 0 1rem;
+    width: 100%;
+    height: 6rem;
+    max-width: var(--width-max)
+}
+
+body>nav>section h6 {
+    font-size: 1.5rem
+}
+
+body>nav>section h6 b {
+    color: var(--col-brand)
+}
+
+body>nav>section button {
+    position: absolute;
+    z-index: 10000;
+    right: 1rem;
+    line-height: 2rem;
+    height: 2rem;
+    font-size: 1.5rem;
+    transition: .5s
+}
+
+@media screen and (min-width: 800px) {
+    body>nav>section button {
+        right: -2rem
+    }
+}
+
+body>nav>section ul {
+    display: flex;
+    justify-content: flex-end;
+    gap: 2rem;
+    max-width: 0;
+    opacity: 0;
+    transition: .5s;
+    overflow: hidden
+}
+
+@media screen and (min-width: 800px) {
+    body>nav>section ul {
+        position: relative;
+        max-width: 100%;
+        opacity: 1
+    }
+}
+
+body>nav>section ul li {
+    position: relative;
+    line-height: 2.5rem;
+    font-weight: 500
+}
+
+body>nav>section ul li::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: rgba(0, 0, 0, 0);
+    transition: .5s
+}
+
+body>nav>section ul li.sel {
+    font-weight: 600;
+    color: var(--col-brand)
+}
+
+body>nav>section ul li.sel::after {
+    background-color: var(--col-brand)
+}
+
+body>header {
+    padding-top: 6rem
+}
+
+body>header>section {
+    display: flex;
+    gap: 5rem;
+    margin: 0 auto;
+    padding: 5rem 1rem;
+    width: 100%;
+    max-width: var(--width-max)
+}
+
+body>header>section>section {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    gap: 2rem;
+    padding: 1rem 0 1rem;
+    background-color: rgba(255, 255, 255, .8);
+    backdrop-filter: blur(1rem);
+    -webkit-backdrop-filter: blur(1rem);
+    transition: .5s
+}
+
+body>header>section>section h6 {
+    margin-bottom: -2rem;
+    width: 100%;
+    font-size: 2rem;
+    white-space: nowrap;
+    overflow: hidden
+}
+
+body>header>section>section h6 b {
+    font-weight: 400;
+    letter-spacing: -0.25rem
+}
+
+body>header>section>section h1 {
+    margin-bottom: -1rem;
+    width: 100%;
+    font-size: 3rem
+}
+
+body>header>section>section h1 b {
+    background: linear-gradient(to right bottom, var(--col-brand-darker-more), var(--col-brand));
+    background-size: 300%;
+    background-position: 0 0;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: rgba(0, 0, 0, 0);
+    animation: linear-move 2s linear infinite;
+    transition: .5s
+}
+
+body>header>section>section h2 {
+    width: 100%;
+    font-size: 1.5rem;
+    color: var(--col-brand-darkest)
+}
+
+body>header>section>section a,
+body>header>section>section button {
+    padding: 1rem 2rem;
+    font-weight: 500;
+    border-radius: .5rem;
+    border: 2px solid var(--col-brand)
+}
+
+body>header>section>section a.col,
+body>header>section>section button.col {
+    background: linear-gradient(to right, var(--col-brand-darker-more), var(--col-brand));
+    color: #fff;
+    background-size: 200%;
+    background-position: 0 0;
+    animation: linear-move 3s linear infinite;
+    border: 0px solid var(--col-brand)
+}
+
+body>header>section>section a i,
+body>header>section>section button i {
+    margin-right: .5rem;
+    color: inherit
+}
+
+body>header>section>img {
+    margin-left: -5rem;
+    width: 0;
+    opacity: 0;
+    transition: .5s
+}
+
+@media screen and (min-width: 800px) {
+    body>header>section>img {
+        margin-left: 0;
+        width: 40%;
+        border-radius: 2rem;
+        opacity: 1
+    }
+}
+
+body>footer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 2rem 1rem;
+    background-color: var(--col-brand-darkest)
+}
+
+body>footer>p {
+    width: 100%;
+    text-align: center;
+    color: #fff
+}
+
+body>footer>ul {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    width: 100%
+}
+
+body>footer>ul>li {
+    cursor: pointer
+}
+
+body>footer>ul>li>a>i {
+    font-size: 1.25rem;
+    color: #fff
+}
+
+body>section>section {
+    display: flex;
+    margin: 0 auto;
+    padding: 5rem 1rem;
+    width: 100%;
+    max-width: var(--width-max);
+    overflow: visible
+}
+
+body>section>section[num="0"] {
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 5rem
+}
+
+body>section>section[num="0"]>img {
+    width: 60%;
+    border-radius: 50% 1rem 1rem 50%;
+    box-shadow: 2rem 2.5rem 0 var(--col-brand-lighter-more);
+    transition: .5s
+}
+
+@media screen and (min-width: 640px) {
+    body>section>section[num="0"]>img {
+        width: 40%
+    }
+}
+
+body>section>section[num="0"]>section {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    gap: 2rem;
+    width: 100%;
+    transition: .5s
+}
+
+@media screen and (min-width: 640px) {
+    body>section>section[num="0"]>section {
+        width: calc(60% - 5rem)
+    }
+}
+
+body>section>section[num="0"]>section h6 {
+    width: 100%;
+    font-size: 3rem
+}
+
+body>section>section[num="0"]>section p {
+    width: 100%;
+    color: var(--col-brand-darkest)
+}
+
+body>section>section[num="0"]>section a,
+body>section>section[num="0"]>section button {
+    padding: 1rem 2rem;
+    font-weight: 500;
+    border-radius: .5rem
+}
+
+body>section>section[num="0"]>section a.col,
+body>section>section[num="0"]>section button.col {
+    background: linear-gradient(to right, var(--col-brand-darker-more), var(--col-brand));
+    color: #fff;
+    background-size: 200%;
+    background-position: 0 0;
+    animation: linear-move 3s linear infinite
+}
+
+body>section>section[num="0"]>section a i,
+body>section>section[num="0"]>section button i {
+    margin-right: .5rem;
+    color: inherit
+}
+
+body>section>section[num="1"] {
+    flex-wrap: wrap;
+    gap: 2rem;
+    transition: .5s
+}
+
+@media screen and (min-width: 1024px) {
+    body>section>section[num="1"] {
+        gap: 5rem 2rem
+    }
+}
+
+body>section>section[num="1"]>section {
+    padding: 0 15%;
+    width: 100%
+}
+
+body>section>section[num="1"]>section>h6 {
+    font-size: 2rem;
+    text-align: center
+}
+
+body>section>section[num="1"]>section>p {
+    margin-top: 1.5rem;
+    text-align: center;
+    letter-spacing: 1px;
+    color: var(--col-brand-darkest)
+}
+
+body>section>section[num="1"]>div {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    padding: 3rem 2rem;
+    width: 100%;
+    background-color: var(--col-brand-lightest);
+    border-radius: 1.5rem;
+    transition: .5s
+}
+
+@media screen and (min-width: 640px) {
+    body>section>section[num="1"]>div {
+        width: calc((100% - 2rem)/2)
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    body>section>section[num="1"]>div {
+        width: calc((100% - 6rem)/4)
+    }
+}
+
+body>section>section[num="1"]>div i {
+    width: 100%;
+    font-size: 3rem;
+    text-align: center;
+    background: linear-gradient(to right bottom, var(--col-brand-darker-more), var(--col-brand));
+    background-size: 300%;
+    background-position: 0 0;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: rgba(0, 0, 0, 0);
+    animation: linear-move 2s linear infinite
+}
+
+body>section>section[num="1"]>div h6 {
+    width: 100%;
+    text-align: center;
+    font-size: 1.25rem;
+    background: linear-gradient(to right top, var(--col-brand-darker-more), var(--col-brand));
+    background-clip: text;
+    background-size: 300%;
+    background-position: 0 0;
+    -webkit-background-clip: text;
+    color: rgba(0, 0, 0, 0);
+    animation: linear-move 2s linear infinite
+}
+
+body>section>section[num="1"]>div p {
+    width: 100%;
+    text-align: center
+}
+
+body>section>section[num="2"] {
+    position: relative;
+    flex-wrap: wrap;
+    gap: 2rem
+}
+
+@media screen and (min-width: 640px) {
+    body>section>section[num="2"] {
+        gap: 4rem
+    }
+}
+
+body>section>section[num="2"]>ul {
+    display: flex;
+    width: 100%
+}
+
+body>section>section[num="2"]>ul:nth-child(2) {
+    gap: 3rem
+}
+
+body>section>section[num="2"]>ul:nth-child(2) li {
+    font-weight: 500;
+    font-size: 1.25rem
+}
+
+body>section>section[num="2"]>ul:nth-child(2) li.sel {
+    color: var(--col-brand)
+}
+
+body>section>section[num="2"]>ul:nth-child(4) {
+    justify-content: center;
+    align-items: center;
+    gap: 1rem
+}
+
+body>section>section[num="2"]>ul:nth-child(4) li {
+    width: .5rem;
+    height: .5rem;
+    background-color: var(--col-brand-lightest);
+    border-radius: 50%
+}
+
+body>section>section[num="2"]>ul:nth-child(4) li.sel {
+    width: .75rem;
+    height: .75rem;
+    background-color: var(--col-brand)
+}
+
+body>section>section[num="2"]>section {
+    width: 100%
+}
+
+@media screen and (min-width: 640px) {
+    body>section>section[num="2"]>section:nth-child(1) {
+        padding-right: 30%
+    }
+}
+
+body>section>section[num="2"]>section:nth-child(3) {
+    display: flex;
+    flex-flow: column wrap;
+    align-content: flex-start;
+    gap: .5rem;
+    width: 100%;
+    height: calc((100vw - .5rem)/2/3*4 + (100vw - .5rem)/2 + .5rem);
+    max-height: calc((1280px - .5rem)/2/3*4 + (1280px - .5rem)/2 + .5rem);
+    overflow: scroll hidden
+}
+
+@media screen and (min-width: 640px) {
+    body>section>section[num="2"]>section:nth-child(3) {
+        height: calc((100vw - 1rem)/3/3*4 + (100vw - 1rem)/3 + .5rem);
+        max-height: calc((1280px - 1rem)/3/3*4 + (1280px - 1rem)/3 + .5rem)
+    }
+}
+
+@media screen and (min-width: 800px) {
+    body>section>section[num="2"]>section:nth-child(3) {
+        height: calc((100vw - 1.5rem)/4/3*4 + (100vw - 1.5rem)/4 + .5rem);
+        max-height: calc((1280px - 1.5rem)/4/3*4 + (1280px - 1.5rem)/4 + .5rem)
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    body>section>section[num="2"]>section:nth-child(3) {
+        height: calc((100vw - 2rem)/5/3*4 + (100vw - 2rem)/5 + .5rem);
+        max-height: calc((1280px - 2rem)/5/3*4 + (1280px - 2rem)/5 + .5rem)
+    }
+}
+
+body>section>section[num="2"]>section>h6 {
+    font-size: 2rem
+}
+
+body>section>section[num="2"]>section>p {
+    margin-top: 1.5rem;
+    letter-spacing: 1px
+}
+
+body>section>section[num="2"]>section>a,
+body>section>section[num="2"]>section>div {
+    width: calc((100% - .5rem)/2);
+    transition: .5s
+}
+
+@media screen and (min-width: 640px) {
+
+    body>section>section[num="2"]>section>a,
+    body>section>section[num="2"]>section>div {
+        width: calc((100% - 1rem)/3)
+    }
+}
+
+@media screen and (min-width: 800px) {
+
+    body>section>section[num="2"]>section>a,
+    body>section>section[num="2"]>section>div {
+        width: calc((100% - 1.5rem)/4)
+    }
+}
+
+@media screen and (min-width: 1024px) {
+
+    body>section>section[num="2"]>section>a,
+    body>section>section[num="2"]>section>div {
+        width: calc((100% - 2rem)/5)
+    }
+}
+
+body>section>section[num="2"]>section>a:nth-child(4n)>img,
+body>section>section[num="2"]>section>a:nth-child(4n+1)>img,
+body>section>section[num="2"]>section>div:nth-child(4n)>img,
+body>section>section[num="2"]>section>div:nth-child(4n+1)>img {
+    aspect-ratio: 3/4
+}
+
+body>section>section[num="2"]>section>a:nth-child(4n-1)>img,
+body>section>section[num="2"]>section>a:nth-child(4n-2)>img,
+body>section>section[num="2"]>section>div:nth-child(4n-1)>img,
+body>section>section[num="2"]>section>div:nth-child(4n-2)>img {
+    aspect-ratio: 1/1
+}
+
+body>section>section[num="2"]>section>a img,
+body>section>section[num="2"]>section>div img {
+    width: 100%;
+    object-fit: cover;
+    border-radius: .5rem
+}
+
+body>section>section[num="3"] {
+    flex-wrap: wrap;
+    gap: 2rem
+}
+
+@media screen and (min-width: 640px) {
+    body>section>section[num="3"] {
+        gap: 4rem
+    }
+}
+
+body>section>section[num="3"]>ul {
+    display: flex;
+    width: 100%
+}
+
+body>section>section[num="3"]>ul:nth-child(3) {
+    justify-content: center;
+    align-items: center;
+    gap: 1rem
+}
+
+body>section>section[num="3"]>ul:nth-child(3) li {
+    width: .5rem;
+    height: .5rem;
+    background-color: var(--col-brand-lightest);
+    border-radius: 50%
+}
+
+body>section>section[num="3"]>ul:nth-child(3) li.sel {
+    width: .75rem;
+    height: .75rem;
+    background-color: var(--col-brand)
+}
+
+body>section>section[num="3"]>section {
+    width: 100%
+}
+
+body>section>section[num="3"]>section:nth-child(1) {
+    padding: 0 15%
+}
+
+body>section>section[num="3"]>section:nth-child(1)>h6 {
+    font-size: 2rem;
+    text-align: center
+}
+
+body>section>section[num="3"]>section:nth-child(1)>p {
+    margin-top: 1.5rem;
+    text-align: center;
+    letter-spacing: 1px
+}
+
+body>section>section[num="3"]>section:nth-child(2) {
+    display: flex;
+    flex-flow: column wrap;
+    gap: 2rem;
+    height: 19rem;
+    overflow: scroll;
+    filter: drop-shadow(0 0.25rem 0.5rem rgba(0, 0, 0, 0.1));
+    -webkit-filter: drop-shadow(0 0.25rem 0.5rem rgba(0, 0, 0, 0.1))
+}
+
+@media screen and (min-width: 1024px) {
+    body>section>section[num="3"]>section:nth-child(2) {
+        height: 8.5rem
+    }
+}
+
+body>section>section[num="3"]>section:nth-child(2)>div {
+    display: flex;
+    align-items: flex-start;
+    gap: 2rem;
+    padding: 1.5rem;
+    width: 100%;
+    background-color: #fff;
+    border-radius: .25rem;
+    transition: .5s
+}
+
+@media screen and (min-width: 640px) {
+    body>section>section[num="3"]>section:nth-child(2)>div {
+        align-items: center
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    body>section>section[num="3"]>section:nth-child(2)>div {
+        width: calc((100% - 2rem)/2)
+    }
+}
+
+body>section>section[num="3"]>section:nth-child(2)>div>img {
+    flex-shrink: 0;
+    object-fit: cover;
+    width: 3rem;
+    height: 3rem;
+    border-radius: .25rem;
+    transition: .5s
+}
+
+@media screen and (min-width: 644px) {
+    body>section>section[num="3"]>section:nth-child(2)>div>img {
+        width: 5rem;
+        height: 5rem
+    }
+}
+
+body>section>section[num="3"]>section:nth-child(2)>div>section>h6 {
+    width: 100%;
+    line-height: 1.125rem;
+    font-size: 1.125rem
+}
+
+body>section>section[num="3"]>section:nth-child(2)>div>section>p {
+    margin-top: .5rem;
+    width: 100%;
+    line-height: 1.25rem;
+    height: 3.75rem;
+    font-size: .875rem;
+    overflow: hidden
+}
+
+body>section>section[num="4"]>section {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    padding: 5rem 1rem;
+    width: 100%;
+    background: linear-gradient(to right bottom, var(--col-brand-darker), var(--col-brand));
+    border-radius: .25rem
+}
+
+body>section>section[num="4"]>section::before {
+    content: "";
+    position: absolute;
+    z-index: 0;
+    top: 2.5rem;
+    left: 20%;
+    width: 2rem;
+    height: 3rem;
+    border-radius: 50%;
+    background-color: var(--col-brand-lighter-more)
+}
+
+body>section>section[num="4"]>section::after {
+    content: "";
+    position: absolute;
+    z-index: 0;
+    top: 2.5rem;
+    left: calc(20% + 2.5rem);
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    background-color: #fff
+}
+
+body>section>section[num="4"]>section>h6 {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    text-align: center;
+    font-size: 1.5rem;
+    color: #fff
+}
+
+body>section>section[num="4"]>section>p {
+    width: 100%;
+    text-align: center;
+    color: #fff
+}
+
+body>section>section[num="4"]>section>label {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 1rem;
+    width: 100%;
+    max-width: 640px
+}
+
+@media screen and (min-width: 640px) {
+    body>section>section[num="4"]>section>label {
+        flex-wrap: nowrap
+    }
+}
+
+body>section>section[num="4"]>section>label>input {
+    padding: 0 1rem;
+    width: 100%;
+    line-height: 3rem;
+    border: 1px solid #fff;
+    border-radius: .25rem
+}
+
+body>section>section[num="4"]>section>label>button {
+    padding: 0 2rem;
+    line-height: 3rem;
+    background-color: #fff;
+    border-radius: .25rem
+}
+
+@keyframes linear-move {
+    0% {
+        background-position: 0%
+    }
+
+    50% {
+        background-position: 100%
+    }
+
+    100% {
+        background-position: 0%
+    }
+}
+
+#copy {
+    position: absolute;
+    top: -100vh;
+    left: -100vw;
+    opacity: 0
+}

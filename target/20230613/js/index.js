@@ -20,7 +20,7 @@
         const footer = "footer";
         const albums = Array.from({ length: 20 }, (v, i) => {
             return {
-                sn: 42,
+                sn: i,
                 href: "",
                 src: "https://picsum.photos/256?random=" + i,
                 title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
