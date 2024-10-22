@@ -1,0 +1,18 @@
+>footer {
+  padding: 2rem 0;
+  background-color: var(--col-brand-dark);
+
+  >section {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    width: 100%;
+    max-width: var(--width-max);
+    
+    p {
+      color: #fff;
+      font-size: 0.875rem;
+      letter-spacing: 1px;
+    }
+  }
+}

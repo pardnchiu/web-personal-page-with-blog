@@ -1,0 +1,108 @@
+>section[num="1"] {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 3rem;
+  margin: 0 auto;
+  padding: 5rem 1rem;
+  width: 100%;
+  max-width: 800px;
+
+  >section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 560px;
+    transition: 0.5s;
+
+    @media screen and (min-width: 800px) {
+      margin: 0;
+      width: calc((100% - 3rem) / 2);
+    }
+
+    >h6 {
+      width: 100%;
+      line-height: 4rem;
+      font-size: 3rem;
+      letter-spacing: 1px;
+      color: #fff;
+    }
+
+    >a,
+    >button {
+      margin-top: 3rem;
+      padding: 0 2rem;
+      line-height: 3rem;
+      letter-spacing: 1px;
+      background-color: var(--col-brand);
+      color: #fff;
+      border-radius: 1.5rem;
+      transition: 0.5s;
+
+      @media screen and (min-width: 800px) {
+        margin-top: 4rem;
+      }
+
+      i {
+        margin-right: 0.5rem;
+        color: #fff;
+      }
+    }
+
+    >div {
+      display: flex;
+      flex-wrap: wrap;
+      align-content: flex-start;
+      margin-top: 3rem;
+      padding: 2rem;
+      width: 100%;
+      text-align: center;
+      border-radius: 1.5rem;
+      transition: 0.5s;
+
+      @media screen and (min-width: 800px) {
+        margin-top: 10rem;
+      }
+
+      >h6 {
+        width: 100%;
+        font-size: 1.5rem;
+        letter-spacing: 1px;
+        color: #fff;
+      }
+
+      >p {
+        color: #fff;
+        margin-top: 1.5rem;
+        width: 100%;
+        letter-spacing: 1px;
+      }
+    }
+
+    >img {
+      object-fit: cover;
+      height: 0;
+      aspect-ratio: 1 / 2;
+      transition: 0.5s;
+
+      @media screen and (min-width: 800px) {
+        height: 40rem;
+        border-radius: 1rem 20rem 20rem 1rem;
+      }
+    }
+
+    >p {
+      margin-top: 2rem;
+      color: #fff;
+      letter-spacing: 1px;
+      transition: 0.5s;
+
+      @media screen and (min-width: 800px) {
+        margin-top: 5rem;
+      }
+    }
+  }
+}

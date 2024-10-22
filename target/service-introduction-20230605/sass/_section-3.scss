@@ -1,0 +1,57 @@
+>section[num="3"] {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 3rem;
+  margin: 0 auto;
+  padding: 5rem 1rem;
+  width: 100%;
+  max-width: 800px;
+
+  >img {
+    object-fit: cover;
+    margin-right: -3rem;
+    height: 0;
+    aspect-ratio: 1 / 2;
+    transition: 0.5s;
+    
+    @media screen and (min-width: 800px) {
+      margin-right: 0;
+      height: 40rem;
+      border-radius: 20rem 1rem 1rem 20rem;
+    }
+  }
+
+  >section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+
+    >h6 {
+      width: 100%;
+      line-height: 3rem;
+      font-size: 2.5rem;
+    }
+
+    >a,
+    >button {
+      margin-top: 4rem;
+      padding: 0 2rem;
+      line-height: 3rem;
+      letter-spacing: 1px;
+      background-color: var(--col-brand);
+      color: #fff;
+      border-radius: 1.5rem;
+
+      i {
+        margin-right: 0.5rem;
+        color: #fff;
+      }
+    }
+
+    >p {
+      margin-top: 3rem;
+      letter-spacing: 1px;
+    }
+  }
+}

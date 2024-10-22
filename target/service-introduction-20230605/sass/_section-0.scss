@@ -1,0 +1,110 @@
+>section[num="0"] {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 3rem;
+  margin: 0 auto;
+  padding: 5rem 1rem;
+  width: 100%;
+  max-width: var(--width-max);
+
+  >img {
+    object-fit: cover;
+    margin-right: -3rem;
+    height: 0;
+    transition: 0.5s;
+
+    @media screen and (min-width: 800px) {
+      margin-right: 0;
+      height: 28rem;
+      aspect-ratio: 1 / 2;
+      border-radius: 14rem 0.75rem 0.75rem 14rem;
+    }
+  }
+
+  >section {
+    display: flex;
+    align-content: flex-start;
+    flex-wrap: wrap;
+    flex-grow: 1;
+    gap: 2rem;
+
+    >section {
+      display: flex;
+      flex-wrap: wrap;
+      width: 100%;
+      gap: 3rem;
+
+      >div {
+        display: flex;
+        flex-wrap: wrap;
+        align-content: flex-start;
+        width: 100%;
+        overflow: hidden;
+        transition: 0.5s;
+
+        @media screen and (min-width: 640px) {
+          width: calc((100% - 3rem) / 2);
+        }
+
+        &.mobile {
+          margin-right: 0;
+          width: 100%;
+
+          @media screen and (min-width: 640px) {
+            margin-right: -3rem;
+            width: 0;
+            max-height: 0;
+          }
+        }
+
+        &.tablet {
+          margin-right: -3rem;
+          width: 0;
+          max-height: 0;
+
+          @media screen and (min-width: 640px) {
+            margin-right: 0;
+            width: calc((100% - 3rem) / 2);
+            max-height: unset;
+          }
+        }
+
+        &.bottom {
+          align-content: flex-end;
+        }
+
+        &.col {
+          padding: 2rem;
+          text-align: center;
+          border-radius: 1.5rem;
+
+          >h6 {
+            width: 100%;
+            font-size: 1.5rem;
+            letter-spacing: 1px;
+            color: #fff;
+          }
+
+          >p {
+            color: #fff;
+            margin-top: 1.5rem;
+          }
+        }
+
+        >p {
+          width: 100%;
+          letter-spacing: 1px;
+        }
+
+        >a,
+        >button {
+          margin-top: 1.5rem;
+          letter-spacing: 1px;
+          font-weight: 500;
+          border-bottom: 1px solid var(--col-brand);
+        }
+      }
+    }
+  }
+}

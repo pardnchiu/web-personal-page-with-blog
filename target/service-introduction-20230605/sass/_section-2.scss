@@ -1,0 +1,105 @@
+>section[num="2"] {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  margin: 0 auto;
+  padding: 5rem 1rem;
+  width: 100%;
+  max-width: var(--width-max);
+
+  >section {
+    padding: 0 20%;
+    width: 100%;
+
+    >h6 {
+      width: 100%;
+      text-align: center;
+      font-size: 2.5rem;
+      color: #fff;
+      filter: drop-shadow(0 0.125rem 0.25rem rgba(0, 0, 0, 0.5));
+      -webkit-filter: drop-shadow(0 0.125rem 0.25rem rgba(0, 0, 0, 0.5));
+    }
+
+    >p {
+      width: 100%;
+      text-align: center;
+      color: #fff;
+      filter: drop-shadow(0 0.125rem 0.25rem rgba(0, 0, 0, 0.5));
+      -webkit-filter: drop-shadow(0 0.125rem 0.25rem rgba(0, 0, 0, 0.5));
+    }
+  }
+
+  >div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    padding: 2rem 1rem;
+    width: 100%;
+    background-color: #fff;
+    border-radius: 2rem;
+
+    transition: 0.5s;
+    @media screen and (min-width: 800px) {
+      width: calc((100% - 2rem) / 2);
+    }
+
+    @media screen and (min-width: 800px) {
+      width: calc((100% - 2rem * 3) / 4);
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+      
+      &:hover {
+        background-color: var(--col-brand);
+
+        * {
+          color: #fff;
+        }
+
+        >i {
+          background-color: var(--col-brand-dark);
+        }
+
+        button {
+          border-bottom: 1px solid #fff;
+        }
+      }
+    }
+
+    >i {
+      width: 6rem;
+      line-height: 6rem;
+      height: 6rem;
+      text-align: center;
+      font-size: 3rem;
+      background-color: var(--col-brand);
+      border-radius: 50%;
+      color: #fff;
+      transition: 0.5s;
+    }
+
+    h6, p {
+      width: 100%;
+      text-align: center;
+      letter-spacing: 1px;
+      transition: 0.5s;
+    }
+
+    h6 {
+      font-size: 1.25rem;
+    }
+
+    a,
+    button {
+      font-size: 0.875rem;
+      font-weight: 500;
+      letter-spacing: 1px;
+      border-bottom: 1px solid var(--col-brand);
+      transition: 0.5s;
+    }
+  }
+}

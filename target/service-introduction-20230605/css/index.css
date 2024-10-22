@@ -1,0 +1,1053 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-size: 1em;
+    font-family: "Noto Sans TC", sans-serif;
+    letter-spacing: 0;
+    border: none;
+    outline: none;
+    background-color: rgba(0, 0, 0, 0);
+    color: #000;
+    word-wrap: break-word;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    touch-action: manipulation;
+    -webkit-touch-callout: inherit;
+    -webkit-user-select: inherit;
+    -khtml-user-select: inherit;
+    -moz-user-select: inherit;
+    -ms-user-select: inherit;
+    user-select: inherit
+}
+
+*::-webkit-scrollbar {
+    display: none
+}
+
+*.no-animate {
+    transition: none
+}
+
+*.no-animate * {
+    transition: none
+}
+
+img {
+    object-fit: cover
+}
+
+img[data-src] {
+    content: url("data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==");
+    background: linear-gradient(to right, #EEF0F3, #E0E2E8, #EEF0F3)
+}
+
+a[href]:not([href=""]) {
+    cursor: pointer
+}
+
+button {
+    cursor: pointer
+}
+
+html {
+    position: fixed;
+    display: block;
+    width: 100%;
+    height: 100%;
+    overflow: hidden
+}
+
+*[select=false],
+*[select="0"] {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none
+}
+
+*[select=true],
+*[select="1"] {
+    -webkit-touch-callout: initial;
+    -webkit-user-select: initial;
+    -khtml-user-select: initial;
+    -moz-user-select: initial;
+    -ms-user-select: initial;
+    user-select: initial
+}
+
+.firstload * {
+    transition: none !important;
+    -webkit-transition: none !important;
+    -moz-transition: none !important;
+    -ms-transition: none !important;
+    -o-transition: none !important
+}
+
+body {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: var(--global-bg-col);
+    overflow: hidden scroll
+}
+
+body>nav {
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5rem;
+    background-color: #fff
+}
+
+body>nav section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    padding: 0 1rem;
+    width: 100%;
+    max-width: var(--width-max);
+    height: 5rem
+}
+
+body>nav section h6 {
+    line-height: 5rem;
+    font-size: 1.5rem;
+    font-weight: 500;
+    letter-spacing: 1px
+}
+
+body>nav section h6 b {
+    color: var(--col-brand)
+}
+
+body>nav section button {
+    position: absolute;
+    z-index: 10000;
+    right: 1rem;
+    line-height: 2rem;
+    height: 2rem;
+    font-size: 1.5rem;
+    transition: .5s
+}
+
+@media screen and (min-width: 800px) {
+    body>nav section button {
+        right: -2rem
+    }
+}
+
+body>nav section ul {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1.5rem;
+    max-width: 0;
+    opacity: .5;
+    transition: .3s;
+    overflow: hidden;
+    cursor: pointer
+}
+
+body>nav section ul.show {
+    z-index: 10000;
+    position: fixed;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: flex-start;
+    top: 0;
+    left: 0;
+    padding-top: 5rem;
+    width: 100vw;
+    max-width: unset;
+    height: 100vh;
+    opacity: 1;
+    overflow: visible;
+    background-color: rgba(255, 255, 255, .95)
+}
+
+@media screen and (min-width: 800px) {
+    body>nav section ul {
+        position: relative;
+        max-width: 100%;
+        opacity: 1;
+        overflow: visible
+    }
+
+    body>nav section ul.show {
+        position: relative;
+        flex-wrap: nowrap;
+        justify-content: flex-end;
+        align-content: unset;
+        top: unset;
+        left: unset;
+        padding-top: 0;
+        width: initial;
+        max-width: 100%;
+        height: initial;
+        opacity: 1;
+        overflow: visible
+    }
+}
+
+body>nav section ul[sel="0"]>li:nth-child(1) {
+    font-weight: 500
+}
+
+body>nav section ul[sel="0"]>li:nth-child(1):after {
+    width: calc(100% - 2rem);
+    opacity: 1
+}
+
+body>nav section ul[sel="1"]>li:nth-child(2) {
+    font-weight: 500
+}
+
+body>nav section ul[sel="1"]>li:nth-child(2):after {
+    width: calc(100% - 2rem);
+    opacity: 1
+}
+
+body>nav section ul[sel="2"]>li:nth-child(3) {
+    font-weight: 500
+}
+
+body>nav section ul[sel="2"]>li:nth-child(3):after {
+    width: calc(100% - 2rem);
+    opacity: 1
+}
+
+body>nav section ul[sel="3"]>li:nth-child(4) {
+    font-weight: 500
+}
+
+body>nav section ul[sel="3"]>li:nth-child(4):after {
+    width: calc(100% - 2rem);
+    opacity: 1
+}
+
+body>nav section ul[sel="4"]>li:nth-child(5) {
+    font-weight: 500
+}
+
+body>nav section ul[sel="4"]>li:nth-child(5):after {
+    width: calc(100% - 2rem);
+    opacity: 1
+}
+
+body>nav section ul[sel="5"]>li:nth-child(6) {
+    font-weight: 500
+}
+
+body>nav section ul[sel="5"]>li:nth-child(6):after {
+    width: calc(100% - 2rem);
+    opacity: 1
+}
+
+body>nav section ul[sel="6"]>li:nth-child(7) {
+    font-weight: 500
+}
+
+body>nav section ul[sel="6"]>li:nth-child(7):after {
+    width: calc(100% - 2rem);
+    opacity: 1
+}
+
+body>nav section ul[sel="7"]>li:nth-child(8) {
+    font-weight: 500
+}
+
+body>nav section ul[sel="7"]>li:nth-child(8):after {
+    width: calc(100% - 2rem);
+    opacity: 1
+}
+
+body>nav section ul[sel="8"]>li:nth-child(9) {
+    font-weight: 500
+}
+
+body>nav section ul[sel="8"]>li:nth-child(9):after {
+    width: calc(100% - 2rem);
+    opacity: 1
+}
+
+body>nav section ul[sel="9"]>li:nth-child(10) {
+    font-weight: 500
+}
+
+body>nav section ul[sel="9"]>li:nth-child(10):after {
+    width: calc(100% - 2rem);
+    opacity: 1
+}
+
+body>nav section ul li {
+    position: relative;
+    width: 60%;
+    text-align: center;
+    font-size: .875rem;
+    letter-spacing: .5px;
+    color: #666;
+    transition: .3s;
+    white-space: nowrap
+}
+
+@media screen and (min-width: 800px) {
+    body>nav section ul li {
+        width: initial
+    }
+}
+
+body>nav section ul li::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -0.75rem;
+    transform: translateX(-50%);
+    width: .25rem;
+    height: .25rem;
+    border-radius: .125rem;
+    opacity: 0;
+    transition: .3s
+}
+
+@media screen and (min-width: 800px) {
+    body>nav section ul li::after {
+        background-color: var(--col-brand)
+    }
+}
+
+body>header {
+    position: relative;
+    padding: 5rem 0 0;
+    background-size: cover;
+    background-position: top;
+    background-image: url(https://picsum.photos/1024?random=1)
+}
+
+body>header::after {
+    content: "";
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, .2)
+}
+
+body>header>section {
+    position: relative;
+    z-index: 1;
+    margin: 0 auto;
+    padding: 8rem 1rem;
+    width: 100%;
+    max-width: var(--width-max)
+}
+
+body>header>section>section {
+    margin: 0 auto;
+    padding: 3rem 1.5rem;
+    width: 100%;
+    max-width: 560px;
+    background-color: #fff;
+    border-radius: 2rem;
+    box-shadow: .125rem .125rem .5rem rgba(0, 0, 0, .1);
+    transition: .5s
+}
+
+@media screen and (min-width: 800px) {
+    body>header>section>section {
+        margin: 0;
+        width: 50%
+    }
+}
+
+body>header>section>section h1 {
+    font-size: 2.5rem
+}
+
+body>header>section>section p {
+    margin: 1.5rem 0 0;
+    letter-spacing: 1px
+}
+
+body>header>section>section>a {
+    display: inline-block;
+    vertical-align: top;
+    margin: 2rem 0 0;
+    padding: 0 2rem;
+    line-height: 3rem;
+    letter-spacing: 1px;
+    background-color: var(--col-brand);
+    color: #fff;
+    border-radius: 1.5rem
+}
+
+body>header>section>section>a i {
+    margin-right: .5rem;
+    color: #fff
+}
+
+body>footer {
+    padding: 2rem 0;
+    background-color: var(--col-brand-dark)
+}
+
+body>footer>section {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    width: 100%;
+    max-width: var(--width-max)
+}
+
+body>footer>section p {
+    color: #fff;
+    font-size: .875rem;
+    letter-spacing: 1px
+}
+
+body>section {
+    position: relative;
+    width: 100%;
+    background-size: cover;
+    background-position: top
+}
+
+body>section:nth-child(4) {
+    background-color: var(--col-brand-dark)
+}
+
+body>section:nth-child(5) {
+    background-image: url(https://picsum.photos/1024?random=5)
+}
+
+body>section:nth-child(5)::after {
+    content: "";
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, .5);
+    backdrop-filter: blur(0.5rem);
+    -webkit-backdrop-filter: blur(0.5rem)
+}
+
+body>section:nth-child(7) {
+    background-image: url(https://picsum.photos/1024?random=6)
+}
+
+body>section:nth-child(7)::after {
+    content: "";
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, .5);
+    backdrop-filter: blur(0.5rem);
+    -webkit-backdrop-filter: blur(0.5rem)
+}
+
+body>section>section[num="0"] {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 3rem;
+    margin: 0 auto;
+    padding: 5rem 1rem;
+    width: 100%;
+    max-width: var(--width-max)
+}
+
+body>section>section[num="0"]>img {
+    object-fit: cover;
+    margin-right: -3rem;
+    height: 0;
+    transition: .5s
+}
+
+@media screen and (min-width: 800px) {
+    body>section>section[num="0"]>img {
+        margin-right: 0;
+        height: 28rem;
+        aspect-ratio: 1/2;
+        border-radius: 14rem .75rem .75rem 14rem
+    }
+}
+
+body>section>section[num="0"]>section {
+    display: flex;
+    align-content: flex-start;
+    flex-wrap: wrap;
+    flex-grow: 1;
+    gap: 2rem
+}
+
+body>section>section[num="0"]>section>section {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 3rem
+}
+
+body>section>section[num="0"]>section>section>div {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    width: 100%;
+    overflow: hidden;
+    transition: .5s
+}
+
+@media screen and (min-width: 640px) {
+    body>section>section[num="0"]>section>section>div {
+        width: calc((100% - 3rem)/2)
+    }
+}
+
+body>section>section[num="0"]>section>section>div.mobile {
+    margin-right: 0;
+    width: 100%
+}
+
+@media screen and (min-width: 640px) {
+    body>section>section[num="0"]>section>section>div.mobile {
+        margin-right: -3rem;
+        width: 0;
+        max-height: 0
+    }
+}
+
+body>section>section[num="0"]>section>section>div.tablet {
+    margin-right: -3rem;
+    width: 0;
+    max-height: 0
+}
+
+@media screen and (min-width: 640px) {
+    body>section>section[num="0"]>section>section>div.tablet {
+        margin-right: 0;
+        width: calc((100% - 3rem)/2);
+        max-height: unset
+    }
+}
+
+body>section>section[num="0"]>section>section>div.bottom {
+    align-content: flex-end
+}
+
+body>section>section[num="0"]>section>section>div.col {
+    padding: 2rem;
+    text-align: center;
+    border-radius: 1.5rem
+}
+
+body>section>section[num="0"]>section>section>div.col>h6 {
+    width: 100%;
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+    color: #fff
+}
+
+body>section>section[num="0"]>section>section>div.col>p {
+    color: #fff;
+    margin-top: 1.5rem
+}
+
+body>section>section[num="0"]>section>section>div>p {
+    width: 100%;
+    letter-spacing: 1px
+}
+
+body>section>section[num="0"]>section>section>div>a,
+body>section>section[num="0"]>section>section>div>button {
+    margin-top: 1.5rem;
+    letter-spacing: 1px;
+    font-weight: 500;
+    border-bottom: 1px solid var(--col-brand)
+}
+
+body>section>section[num="1"] {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 3rem;
+    margin: 0 auto;
+    padding: 5rem 1rem;
+    width: 100%;
+    max-width: 800px
+}
+
+body>section>section[num="1"]>section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 560px;
+    transition: .5s
+}
+
+@media screen and (min-width: 800px) {
+    body>section>section[num="1"]>section {
+        margin: 0;
+        width: calc((100% - 3rem)/2)
+    }
+}
+
+body>section>section[num="1"]>section>h6 {
+    width: 100%;
+    line-height: 4rem;
+    font-size: 3rem;
+    letter-spacing: 1px;
+    color: #fff
+}
+
+body>section>section[num="1"]>section>a,
+body>section>section[num="1"]>section>button {
+    margin-top: 3rem;
+    padding: 0 2rem;
+    line-height: 3rem;
+    letter-spacing: 1px;
+    background-color: var(--col-brand);
+    color: #fff;
+    border-radius: 1.5rem;
+    transition: .5s
+}
+
+@media screen and (min-width: 800px) {
+
+    body>section>section[num="1"]>section>a,
+    body>section>section[num="1"]>section>button {
+        margin-top: 4rem
+    }
+}
+
+body>section>section[num="1"]>section>a i,
+body>section>section[num="1"]>section>button i {
+    margin-right: .5rem;
+    color: #fff
+}
+
+body>section>section[num="1"]>section>div {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    margin-top: 3rem;
+    padding: 2rem;
+    width: 100%;
+    text-align: center;
+    border-radius: 1.5rem;
+    transition: .5s
+}
+
+@media screen and (min-width: 800px) {
+    body>section>section[num="1"]>section>div {
+        margin-top: 10rem
+    }
+}
+
+body>section>section[num="1"]>section>div>h6 {
+    width: 100%;
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+    color: #fff
+}
+
+body>section>section[num="1"]>section>div>p {
+    color: #fff;
+    margin-top: 1.5rem;
+    width: 100%;
+    letter-spacing: 1px
+}
+
+body>section>section[num="1"]>section>img {
+    object-fit: cover;
+    height: 0;
+    aspect-ratio: 1/2;
+    transition: .5s
+}
+
+@media screen and (min-width: 800px) {
+    body>section>section[num="1"]>section>img {
+        height: 40rem;
+        border-radius: 1rem 20rem 20rem 1rem
+    }
+}
+
+body>section>section[num="1"]>section>p {
+    margin-top: 2rem;
+    color: #fff;
+    letter-spacing: 1px;
+    transition: .5s
+}
+
+@media screen and (min-width: 800px) {
+    body>section>section[num="1"]>section>p {
+        margin-top: 5rem
+    }
+}
+
+body>section>section[num="2"] {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    margin: 0 auto;
+    padding: 5rem 1rem;
+    width: 100%;
+    max-width: var(--width-max)
+}
+
+body>section>section[num="2"]>section {
+    padding: 0 20%;
+    width: 100%
+}
+
+body>section>section[num="2"]>section>h6 {
+    width: 100%;
+    text-align: center;
+    font-size: 2.5rem;
+    color: #fff;
+    filter: drop-shadow(0 0.125rem 0.25rem rgba(0, 0, 0, 0.5));
+    -webkit-filter: drop-shadow(0 0.125rem 0.25rem rgba(0, 0, 0, 0.5))
+}
+
+body>section>section[num="2"]>section>p {
+    width: 100%;
+    text-align: center;
+    color: #fff;
+    filter: drop-shadow(0 0.125rem 0.25rem rgba(0, 0, 0, 0.5));
+    -webkit-filter: drop-shadow(0 0.125rem 0.25rem rgba(0, 0, 0, 0.5))
+}
+
+body>section>section[num="2"]>div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    padding: 2rem 1rem;
+    width: 100%;
+    background-color: #fff;
+    border-radius: 2rem;
+    transition: .5s
+}
+
+@media screen and (min-width: 800px) {
+    body>section>section[num="2"]>div {
+        width: calc((100% - 2rem)/2)
+    }
+}
+
+@media screen and (min-width: 800px) {
+    body>section>section[num="2"]>div {
+        width: calc((100% - 6rem)/4)
+    }
+}
+
+@media(hover: hover)and (pointer: fine) {
+    body>section>section[num="2"]>div:hover {
+        background-color: var(--col-brand)
+    }
+
+    body>section>section[num="2"]>div:hover * {
+        color: #fff
+    }
+
+    body>section>section[num="2"]>div:hover>i {
+        background-color: var(--col-brand-dark)
+    }
+
+    body>section>section[num="2"]>div:hover button {
+        border-bottom: 1px solid #fff
+    }
+}
+
+body>section>section[num="2"]>div>i {
+    width: 6rem;
+    line-height: 6rem;
+    height: 6rem;
+    text-align: center;
+    font-size: 3rem;
+    background-color: var(--col-brand);
+    border-radius: 50%;
+    color: #fff;
+    transition: .5s
+}
+
+body>section>section[num="2"]>div h6,
+body>section>section[num="2"]>div p {
+    width: 100%;
+    text-align: center;
+    letter-spacing: 1px;
+    transition: .5s
+}
+
+body>section>section[num="2"]>div h6 {
+    font-size: 1.25rem
+}
+
+body>section>section[num="2"]>div a,
+body>section>section[num="2"]>div button {
+    font-size: .875rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    border-bottom: 1px solid var(--col-brand);
+    transition: .5s
+}
+
+body>section>section[num="3"] {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 3rem;
+    margin: 0 auto;
+    padding: 5rem 1rem;
+    width: 100%;
+    max-width: 800px
+}
+
+body>section>section[num="3"]>img {
+    object-fit: cover;
+    margin-right: -3rem;
+    height: 0;
+    aspect-ratio: 1/2;
+    transition: .5s
+}
+
+@media screen and (min-width: 800px) {
+    body>section>section[num="3"]>img {
+        margin-right: 0;
+        height: 40rem;
+        border-radius: 20rem 1rem 1rem 20rem
+    }
+}
+
+body>section>section[num="3"]>section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start
+}
+
+body>section>section[num="3"]>section>h6 {
+    width: 100%;
+    line-height: 3rem;
+    font-size: 2.5rem
+}
+
+body>section>section[num="3"]>section>a,
+body>section>section[num="3"]>section>button {
+    margin-top: 4rem;
+    padding: 0 2rem;
+    line-height: 3rem;
+    letter-spacing: 1px;
+    background-color: var(--col-brand);
+    color: #fff;
+    border-radius: 1.5rem
+}
+
+body>section>section[num="3"]>section>a i,
+body>section>section[num="3"]>section>button i {
+    margin-right: .5rem;
+    color: #fff
+}
+
+body>section>section[num="3"]>section>p {
+    margin-top: 3rem;
+    letter-spacing: 1px
+}
+
+body>section>section[num="4"] {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    padding: 3rem 1rem;
+    width: 100%;
+    max-width: var(--width-max)
+}
+
+body>section>section[num="4"]>section {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    box-shadow: .125rem .125rem .5rem rgba(0, 0, 0, .1)
+}
+
+body>section>section[num="4"]>section>section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: flex-start;
+    padding: 3rem 2rem;
+    width: 100%
+}
+
+body>section>section[num="4"]>section>section:nth-child(1) {
+    background-color: #fff;
+    border-radius: 2rem 2rem 0 0;
+    gap: 2rem
+}
+
+@media screen and (min-width: 800px) {
+    body>section>section[num="4"]>section>section:nth-child(1) {
+        width: 60%;
+        border-radius: 2rem 0 0 2rem
+    }
+}
+
+body>section>section[num="4"]>section>section:nth-child(2) {
+    background-color: var(--col-brand);
+    border-radius: 0 0 2rem 2rem
+}
+
+@media screen and (min-width: 800px) {
+    body>section>section[num="4"]>section>section:nth-child(2) {
+        width: 40%;
+        border-radius: 0 2rem 2rem 0
+    }
+}
+
+body>section>section[num="4"]>section>section>* {
+    width: 100%
+}
+
+body>section>section[num="4"]>section>section>h6 {
+    text-align: center;
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+    color: var(--col-brand)
+}
+
+body>section>section[num="4"]>section>section>label {
+    letter-spacing: 1px
+}
+
+body>section>section[num="4"]>section>section>label>input,
+body>section>section[num="4"]>section>section>label>textarea {
+    width: 100%;
+    line-height: 2.5rem;
+    resize: none;
+    letter-spacing: 1px;
+    border-bottom: 1px solid var(--col-brand-light);
+    transition: .3s
+}
+
+body>section>section[num="4"]>section>section>label>input:focus,
+body>section>section[num="4"]>section>section>label>textarea:focus {
+    border-bottom: 1px solid var(--col-brand)
+}
+
+body>section>section[num="4"]>section>section>label>textarea {
+    height: 12.5rem
+}
+
+body>section>section[num="4"]>section>section>button {
+    line-height: 3rem;
+    background-color: var(--col-brand);
+    color: #fff;
+    border-radius: 1.5rem
+}
+
+body>section>section[num="4"]>section>section>section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    align-content: flex-start;
+    padding-top: 2rem;
+    width: 100%
+}
+
+body>section>section[num="4"]>section>section>section:nth-child(1) {
+    padding-top: 0
+}
+
+body>section>section[num="4"]>section>section>section:nth-child(2) {
+    padding-top: 2rem
+}
+
+@media screen and (min-width: 480px) {
+    body>section>section[num="4"]>section>section>section {
+        width: 50%
+    }
+
+    body>section>section[num="4"]>section>section>section:nth-child(2) {
+        padding-top: 0
+    }
+}
+
+@media screen and (min-width: 800px) {
+    body>section>section[num="4"]>section>section>section {
+        width: 100%
+    }
+
+    body>section>section[num="4"]>section>section>section:nth-child(2) {
+        padding-top: 2rem
+    }
+}
+
+body>section>section[num="4"]>section>section>section>h6 {
+    margin-bottom: .5rem;
+    width: 100%;
+    text-align: center;
+    color: #fff
+}
+
+body>section>section[num="4"]>section>section>section>ul {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+    width: 100%;
+    gap: 1rem
+}
+
+body>section>section[num="4"]>section>section>section>ul li i {
+    font-size: 1.25rem;
+    color: #fff
+}
+
+body>section>section[num="4"]>section>section>section>a {
+    margin-top: .5rem;
+    width: 100%;
+    text-align: center;
+    font-size: .875rem;
+    letter-spacing: 1px;
+    color: #fff
+}
+
+body>section>section[num="4"]>section>section>section>a i {
+    font-size: 1rem;
+    color: #fff
+}
+
+body>section>section[num="4"]>section>section>section>p {
+    margin-top: .5rem;
+    width: 100%;
+    text-align: center;
+    font-size: .875rem;
+    letter-spacing: 1px;
+    color: #fff
+}
+
+#copy {
+    position: absolute;
+    top: -100vh;
+    left: -100vw;
+    opacity: 0
+}
