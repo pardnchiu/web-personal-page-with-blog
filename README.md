@@ -71,8 +71,11 @@
     製作日期: 2023/03/14
     [![](./image/store-page-20230314.jpg)](https://pardnchiu.github.io/web-template/target/store-page-20230314)
 - #### Gallery Page
+    製作日期: 2023/03/09
+    [![](./image/gallery-page-20230309.jpg)](https://pardnchiu.github.io/web-template/target/gallery-page-20230309)
+- #### Service Info
     製作日期: 2023/03/01
-    [![](./image/gallery-page-20230301.jpg)](https://pardnchiu.github.io/web-template/target/gallery-page-20230301)
+    [![](./image/service-info-20230301.jpg)](https://pardnchiu.github.io/web-template/target/service-info-20230301)
 - #### Personal Portfolio
     製作日期: 2023/02/26
     [![](./image/personal-portfolio-20230226.jpg)](https://pardnchiu.github.io/web-template/target/personal-portfolio-20230226)
@@ -82,7 +85,7 @@
 - #### Instagram
     製作日期: 2022/10/12
     [![](./image/instagram-20221012.jpg)](https://pardnchiu.github.io/web-template/target/instagram-20221012)
-- #### Restaurant Introduction 
+- #### Restaurant Introduction
     製作日期: 2022/05/25
     [![](./image/restaurant-introduction-20220525.jpg)](https://pardnchiu.github.io/web-template/target/restaurant-introduction-20220525)
 - #### Basic

@@ -37,7 +37,7 @@
                     ])._open("https://www.instagram.com/pardnio"),
                     _a._([
                         "fa-brands fa-github"._fa
-                    ])._open("https://github.com/pardnchiu/simplify-blog"),
+                    ])._open("https://github.com/pardnchiu/web-template"),
                     _a._([
                         "fa-brands fa-linkedin-in"._fa
                     ])._open("https://linkedin.com/in/pardnchiu"),

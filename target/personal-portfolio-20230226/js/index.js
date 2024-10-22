@@ -57,7 +57,7 @@ var webConfig;
                 button: {
                     text: "查看原碼",
                     icon: "fa-solid fa-code",
-                    href: "https://github.com/pardnchiu/my-portfolio-page"
+                    href: "https://github.com/pardnchiu/web-template"
                 },
                 contact: {
                     phone: null,

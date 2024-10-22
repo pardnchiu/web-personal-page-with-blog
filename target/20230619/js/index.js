@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", _ => {
             navTarget: ["HOME", "CHILD", "CHILD", "CHILD", "CHILD", "CHILD", "CHILD", "CHILD"],
             footerTarget: [
                 {
-                    href: "https://github.com/pardnchiu/website-template-25",
+                    href: "https://github.com/pardnchiu/web-template",
                     fa: "fa-brands fa-github"
                 },
                 {
