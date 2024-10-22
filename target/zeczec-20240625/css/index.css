@@ -1,0 +1,2368 @@
+﻿* {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    font-size: 1em;
+    font-family: "Noto Sans TC", sans-serif;
+    letter-spacing: 0;
+    border: none;
+    outline: none;
+    background-color: rgba(0, 0, 0, 0);
+    color: #000;
+    word-wrap: anywhere;
+    box-sizing: border-box;
+    -webkit-overflow-scrolling: touch;
+    touch-action: manipulation;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    -webkit-touch-callout: inherit;
+    -webkit-user-select: inherit;
+    -khtml-user-select: inherit;
+    -moz-user-select: inherit;
+    -ms-user-select: inherit;
+    user-select: inherit
+}
+
+*::-webkit-scrollbar {
+    display: none
+}
+
+* [can-select=false],
+* [can-select="0"],
+* .ban-select {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none
+}
+
+* [can-select=true],
+* [can-select="1"],
+* .can-select {
+    -webkit-touch-callout: initial;
+    -webkit-user-select: initial;
+    -khtml-user-select: initial;
+    -moz-user-select: initial;
+    -ms-user-select: initial;
+    user-select: initial
+}
+
+*::before,
+*::after {
+    box-sizing: border-box
+}
+
+img {
+    content: url("data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==");
+    object-fit: cover
+}
+
+img[src]:not([src=""]) {
+    content: unset
+}
+
+input,
+textarea,
+select {
+    resize: none
+}
+
+a[href]:not([href=""]),
+button {
+    cursor: pointer
+}
+
+button * {
+    pointer-events: none
+}
+
+span,
+b,
+strong,
+i,
+em,
+time {
+    line-height: inherit;
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    letter-spacing: 1px;
+    text-align: left;
+    color: #000;
+    box-sizing: border-box
+}
+
+html {
+    position: fixed;
+    display: block;
+    width: 100%;
+    height: 100%;
+    overflow: hidden
+}
+
+body {
+    position: relative;
+    display: flex;
+    flex-flow: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+    height: 100%;
+    overflow: hidden scroll
+}
+
+@media screen and (max-width: 1279.99px) {
+    
+    body::after {
+        content: "未調整RWD，只適配1280以上觀看";
+        z-index: 1000;
+        position: fixed;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        padding: 0 1rem;
+        background-color: #00000080;
+        color: #fff;
+        backdrop-filter: blur(1rem);
+        -webkit-backdrop-filter: blur(1rem);
+    }
+}
+
+body>nav.body-nav {
+    z-index: 100;
+    position: sticky;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    padding: 0.75rem 0;
+    width: 100%;
+    height: 3.25rem;
+    background-color: #fff;
+    box-shadow: 0 0 .5rem rgba(0, 0, 0, .0509803922)
+}
+
+body>nav.body-nav>section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0;
+    width: 100%;
+    max-width: 71.25rem;
+    height: 100%
+}
+
+body>nav.body-nav>section>section {
+    display: flex;
+    align-items: center
+}
+
+body>nav.body-nav>section>section.left {
+    justify-content: flex-start
+}
+
+body>nav.body-nav>section>section.left>section {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem
+}
+
+body>nav.body-nav>section>section.left>section a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    font-size: .875rem;
+    color: #444;
+    transition: .3s
+}
+
+body>nav.body-nav>section>section.left>section a.sel {
+    font-weight: 700
+}
+
+@media(hover: hover) {
+    body>nav.body-nav>section>section.left>section a:hover {
+        color: #4682b4
+    }
+}
+
+body>nav.body-nav>section>section.right {
+    justify-content: flex-end
+}
+
+body>nav.body-nav>section>section.right>section {
+    display: flex;
+    align-items: center;
+    gap: .25rem
+}
+
+body>nav.body-nav>section>section.right>section a {
+    padding: 0 .5rem;
+    line-height: 2rem;
+    text-decoration: none;
+    font-size: .875rem;
+    font-weight: 600;
+    color: #444;
+    transition: .3s;
+    background-color: #f4f4f5;
+    border-radius: .125rem
+}
+
+body>nav.body-nav>section>section.right>section a:last-child {
+    color: #4682b4;
+    letter-spacing: -0.25px
+}
+
+body>nav.body-nav>section>section svg.logo {
+    width: 1.75rem;
+    height: 1.75rem;
+    fill: #444
+}
+
+body>nav.body-nav>section>section svg.logo path {
+    fill: inherit
+}
+
+@media(hover: hover) {
+    body>nav.body-nav>section>section svg.logo:hover {
+        animation: nav-logo 3s linear infinite
+    }
+}
+
+@keyframes nav-logo {
+    0% {
+        transform: rotate(0);
+        fill: 444
+    }
+
+    20% {
+        fill: red
+    }
+
+    40% {
+        fill: purple
+    }
+
+    60% {
+        fill: blue
+    }
+
+    80% {
+        fill: green
+    }
+
+    100% {
+        transform: rotate(360deg);
+        fill: #444
+    }
+}
+
+body>nav.body-nav>section>section svg.logo-text {
+    margin-left: .75rem;
+    width: auto;
+    height: 1.25rem
+}
+
+body>nav.body-nav>section>section svg.logo-text path {
+    fill: #444
+}
+
+body>nav.body-nav>section>section span {
+    margin: 0 1.75rem;
+    width: 1px;
+    height: 1.5rem;
+    background-color: #ddd
+}
+
+body>header.home {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: 1.125rem;
+    width: 100%
+}
+
+body>header.home>a {
+    position: relative;
+    display: flex;
+    width: 100%;
+    max-width: 71.25rem;
+    background-color: #fff;
+    border-radius: .375rem;
+    overflow: hidden;
+    box-shadow: 0 .25rem .5rem rgba(0, 0, 0, .2039215686)
+}
+
+@media(hover: hover) {
+    body>header.home>a:hover>figcaption>img {
+        transform: scale(110%)
+    }
+}
+
+@media screen and (min-width: 71.25rem) {
+    body>header.home>a {
+        padding-top: 44.53125rem
+    }
+}
+
+body>header.home>a>figcaption {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: calc(100% - 4rem);
+    overflow: hidden
+}
+
+body>header.home>a>figcaption>img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #aaa;
+    transition: .3s
+}
+
+body>header.home>a>section {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 0 1.5rem;
+    width: 100%;
+    height: 4rem;
+    background-color: #000
+}
+
+body>header.home>a>section::before {
+    content: attr(data-text);
+    position: absolute;
+    top: -1.125rem;
+    left: 1.5rem;
+    padding: 0 1rem;
+    line-height: 2rem;
+    font-size: .875rem;
+    background-color: #000;
+    color: #fff;
+    border-radius: .25rem .25rem 0 0
+}
+
+body>header.home>a>section strong {
+    line-height: 2rem;
+    text-overflow: ellipsis;
+    font-size: 1.25rem;
+    white-space: nowrap;
+    color: #fff;
+    overflow: hidden
+}
+
+body>header.home>a>section>section {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-shrink: 0;
+    gap: 1rem
+}
+
+body>header.home>a>section>section span {
+    flex-shrink: 0;
+    color: #fff
+}
+
+body>header.home>a>section>section span:last-child {
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: -0.25px
+}
+
+body>section.home-1 {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: 2rem;
+    width: 100%
+}
+
+body>section.home-1>section {
+    display: flex;
+    flex-flow: row wrap;
+    gap: 1.75rem;
+    width: 100%;
+    max-width: 71.25rem
+}
+
+body>section.home-1>section>a {
+    display: flex;
+    align-items: center;
+    width: calc((100% - 1.75rem)/2);
+    height: 9rem;
+    text-decoration: none;
+    background-color: #fff;
+    border-radius: .25rem;
+    overflow: hidden;
+    transition: .3s
+}
+
+@media(hover: hover) {
+    body>section.home-1>section>a:hover {
+        top: -1px;
+        box-shadow: 0 .25rem .5rem rgba(0, 0, 0, .1019607843)
+    }
+}
+
+body>section.home-1>section>a>img {
+    flex-shrink: 0;
+    height: 100%;
+    aspect-ratio: 16/9;
+    background-color: #aaa
+}
+
+body>section.home-1>section>a>section {
+    display: flex;
+    flex-flow: column;
+    gap: 2.5rem;
+    padding: 0 1rem;
+    width: 100%
+}
+
+body>section.home-1>section>a>section>strong {
+    display: -webkit-box;
+    max-height: 3rem;
+    line-height: 1.5rem;
+    overflow: hidden
+}
+
+body>section.home-1>section>a>section>section {
+    display: flex;
+    justify-content: space-between
+}
+
+body>section.home-1>section>a>section>section span:first-child {
+    font-weight: 700;
+    letter-spacing: -0.25px
+}
+
+body>section.home-1>section>a>section>section span:last-child {
+    padding: 0 .375rem;
+    line-height: 1.25rem;
+    font-size: .75rem;
+    border-radius: .125rem;
+    background-color: #dee9e8
+}
+
+body>section.home-2 {
+    display: flex;
+    justify-content: center;
+    padding: 4rem 0 0;
+    width: 100%
+}
+
+body>section.home-2>section {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2.75rem;
+    padding: 1.5rem 0;
+    width: 100%;
+    max-width: 71.25rem;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd
+}
+
+body>section.home-2>section::before {
+    content: "探索專案類別";
+    position: absolute;
+    top: -0.5rem;
+    padding: 0 .5rem;
+    font-size: .75rem;
+    background-color: #f1f2ef;
+    color: #888;
+    letter-spacing: 2px
+}
+
+body>section.home-2>section a {
+    text-decoration: none;
+    font-size: .875rem;
+    color: #444;
+    transition: .3s
+}
+
+@media(hover: hover) {
+    body>section.home-2>section a:hover {
+        color: green
+    }
+}
+
+body>section.home-3 {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 2rem;
+    width: 100%;
+    border-bottom: 1px solid #ddd
+}
+
+body>section.home-3>section {
+    display: flex;
+    flex-flow: row wrap;
+    gap: 1.75rem;
+    width: 100%;
+    max-width: 71.25rem
+}
+
+body>section.home-3>section>section {
+    display: flex;
+    align-items: center;
+    width: 100%
+}
+
+body>section.home-3>section>section.filter {
+    justify-content: space-between
+}
+
+body>section.home-3>section>section.filter>section {
+    display: flex;
+    align-items: center;
+    gap: 1rem
+}
+
+body>section.home-3>section>section.filter>section.left details[open] summary i {
+    transform: rotate(90deg)
+}
+
+body>section.home-3>section>section.filter>section.left details section {
+    left: 0
+}
+
+body>section.home-3>section>section.filter>section.right details section {
+    right: 0
+}
+
+body>section.home-3>section>section.filter>section label {
+    display: flex;
+    align-items: center;
+    gap: .75rem;
+    padding: 0 .75rem;
+    width: 16rem;
+    height: 2.5rem;
+    border-radius: .25rem;
+    background-color: #fff
+}
+
+body>section.home-3>section>section.filter>section label i {
+    flex-shrink: 0;
+    flex-grow: 0;
+    font-size: .75rem
+}
+
+body>section.home-3>section>section.filter>section label input {
+    flex-grow: 1;
+    line-height: 2.5rem
+}
+
+body>section.home-3>section>section.filter>section details {
+    position: relative
+}
+
+body>section.home-3>section>section.filter>section details summary {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    padding: 0 .5rem;
+    height: 2.5rem;
+    line-height: 2.5rem;
+    list-style-type: none;
+    background-color: #fff;
+    border-radius: .25rem;
+    cursor: pointer;
+    transition: .3s
+}
+
+body>section.home-3>section>section.filter>section details summary::-webkit-details-marker {
+    display: none
+}
+
+@media(hover: hover) {
+    body>section.home-3>section>section.filter>section details summary:hover {
+        background-color: rgba(0, 0, 0, .0509803922)
+    }
+}
+
+body>section.home-3>section>section.filter>section details summary i {
+    font-size: .75rem;
+    transition: .3s
+}
+
+body>section.home-3>section>section.filter>section details section {
+    z-index: 10;
+    position: absolute;
+    top: 2.75rem;
+    display: flex;
+    flex-flow: column;
+    padding: 0;
+    width: 8rem;
+    max-height: 16rem;
+    background-color: #fff;
+    border-radius: .25rem;
+    overflow: hidden scroll;
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .2039215686);
+    overflow: hidden scroll
+}
+
+body>section.home-3>section>section.filter>section details section>a {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    margin: .25rem;
+    padding: 0 .5rem;
+    height: 2.5rem;
+    line-height: 2.5rem;
+    text-decoration: none;
+    font-size: .875rem;
+    color: #444;
+    border-radius: .25rem
+}
+
+body>section.home-3>section>section.filter>section details section>a::after {
+    content: "";
+    position: absolute;
+    bottom: -0.25rem;
+    width: calc(100% - 1rem);
+    height: 1px;
+    background-color: rgba(0, 0, 0, .0509803922)
+}
+
+body>section.home-3>section>section.filter>section details section>a.sel {
+    font-weight: 700
+}
+
+body>section.home-3>section>section.filter>section details section>a.sel::before {
+    content: "";
+    width: .5rem;
+    height: .5rem;
+    background-color: green;
+    border-radius: 50%
+}
+
+@media(hover: hover) {
+    body>section.home-3>section>section.filter>section details section>a:hover {
+        background-color: rgba(0, 0, 0, .0509803922)
+    }
+}
+
+body>section.home-3>section>section.top {
+    justify-content: space-between
+}
+
+body>section.home-3>section>section.top strong {
+    font-size: 1.5rem
+}
+
+body>section.home-3>section>section.top a {
+    padding: 0 .75rem;
+    line-height: 2rem;
+    text-decoration: none;
+    background-color: green;
+    color: #fff;
+    border-radius: .25rem
+}
+
+body>section.home-3>section>section.bottom {
+    justify-content: center;
+    gap: .5rem;
+    padding: 1.5rem 0 4rem
+}
+
+body>section.home-3>section>section.bottom a {
+    width: 2rem;
+    height: 2rem;
+    line-height: 2rem;
+    text-decoration: none;
+    text-align: center;
+    color: #444;
+    border-radius: 50%
+}
+
+body>section.home-3>section>section.bottom a.sel {
+    background-color: green;
+    color: #fff
+}
+
+body>section.home-3>section>a {
+    display: flex;
+    flex-flow: column;
+    top: 0;
+    width: calc((100% - 4rem)/3);
+    text-decoration: none;
+    background-color: #fff;
+    border-radius: .25rem;
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+    overflow: hidden;
+    transition: .3s
+}
+
+@media(hover: hover) {
+    body>section.home-3>section>a:hover {
+        top: -1px;
+        box-shadow: 0 .25rem .5rem rgba(0, 0, 0, .1019607843)
+    }
+}
+
+body>section.home-3>section>a>figcaption {
+    position: relative;
+    padding-top: 56.25%;
+    width: 100%
+}
+
+body>section.home-3>section>a>figcaption>img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #aaa
+}
+
+body>section.home-3>section>a>strong {
+    margin: 1.25rem 0;
+    padding: 0 .75rem
+}
+
+body>section.home-3>section>a>section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: .75rem
+}
+
+body>section.home-3>section>a>section.bar {
+    padding: 0 .75rem
+}
+
+body>section.home-3>section>a>section.bar span {
+    flex-shrink: 0;
+    font-size: .75rem
+}
+
+body>section.home-3>section>a>section.bar div {
+    position: relative;
+    width: 100%;
+    height: .5rem;
+    background-color: #ddd;
+    border-radius: .25rem
+}
+
+body>section.home-3>section>a>section.bar div[data-percent="0"]::before {
+    width: 0%
+}
+
+body>section.home-3>section>a>section.bar div[data-percent="10"]::before {
+    width: 10%
+}
+
+body>section.home-3>section>a>section.bar div[data-percent="20"]::before {
+    width: 20%
+}
+
+body>section.home-3>section>a>section.bar div[data-percent="30"]::before {
+    width: 30%
+}
+
+body>section.home-3>section>a>section.bar div[data-percent="40"]::before {
+    width: 40%
+}
+
+body>section.home-3>section>a>section.bar div[data-percent="50"]::before {
+    width: 50%
+}
+
+body>section.home-3>section>a>section.bar div[data-percent="60"]::before {
+    width: 60%
+}
+
+body>section.home-3>section>a>section.bar div[data-percent="70"]::before {
+    width: 70%
+}
+
+body>section.home-3>section>a>section.bar div[data-percent="80"]::before {
+    width: 80%
+}
+
+body>section.home-3>section>a>section.bar div[data-percent="90"]::before {
+    width: 90%
+}
+
+body>section.home-3>section>a>section.bar div::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: .5rem;
+    background-color: #4682b4;
+    border-radius: .25rem
+}
+
+body>section.home-3>section>a>section.bottom {
+    padding: .75rem .75rem 1.25rem
+}
+
+body>section.home-3>section>a>section.bottom strong {
+    font-size: .875rem
+}
+
+body>section.home-3>section>a>section.bottom span {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    gap: .25rem;
+    font-size: .875rem;
+    font-weight: 700;
+    color: #4682b4
+}
+
+body>section.home-3>section>a>section.bottom span i {
+    height: .875rem;
+    line-height: .875rem;
+    font-size: .75rem;
+    color: #444
+}
+
+body>section.home-3>section>a>section.bottom>section {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    gap: .75rem;
+    padding: 0
+}
+
+body>footer.footer {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    gap: 4rem;
+    padding: 4rem 0 0;
+    width: 100%;
+    background-color: #f9fafb
+}
+
+body>footer.footer>section {
+    display: flex;
+    width: 100%
+}
+
+body>footer.footer>section:first-child {
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 71.25rem
+}
+
+body>footer.footer>section:last-child {
+    justify-content: center;
+    padding: 1.5rem 0;
+    border: 1px solid #ddd
+}
+
+body>footer.footer>section:last-child>p {
+    font-size: .75rem;
+    color: #444
+}
+
+body>footer.footer>section>a:first-child,
+body>footer.footer>section>section:first-child {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    gap: 1rem
+}
+
+body>footer.footer>section>a:first-child>svg.logo,
+body>footer.footer>section>section:first-child>svg.logo {
+    width: 2.5rem;
+    height: 2.5rem
+}
+
+body>footer.footer>section>a:first-child>svg.logo path,
+body>footer.footer>section>section:first-child>svg.logo path {
+    fill: #444
+}
+
+body>footer.footer>section>a:first-child>svg.logo-text,
+body>footer.footer>section>section:first-child>svg.logo-text {
+    width: auto;
+    height: 1.5rem
+}
+
+body>footer.footer>section>a:first-child>svg.logo-text path,
+body>footer.footer>section>section:first-child>svg.logo-text path {
+    fill: #444
+}
+
+body>footer.footer>section>a:nth-child(2),
+body>footer.footer>section>a:nth-child(3),
+body>footer.footer>section>section:nth-child(2),
+body>footer.footer>section>section:nth-child(3) {
+    display: flex;
+    flex-flow: column;
+    gap: .75rem
+}
+
+body>footer.footer>section>a:nth-child(2) strong,
+body>footer.footer>section>a:nth-child(3) strong,
+body>footer.footer>section>section:nth-child(2) strong,
+body>footer.footer>section>section:nth-child(3) strong {
+    margin-bottom: .25rem
+}
+
+body>footer.footer>section>a:nth-child(2) a,
+body>footer.footer>section>a:nth-child(3) a,
+body>footer.footer>section>section:nth-child(2) a,
+body>footer.footer>section>section:nth-child(3) a {
+    text-decoration: none;
+    font-size: .875rem;
+    color: #444
+}
+
+body>footer.footer>section>a:last-child,
+body>footer.footer>section>section:last-child {
+    flex-shrink: 0;
+    display: flex;
+    gap: 1rem
+}
+
+body>footer.footer>section>a:last-child i,
+body>footer.footer>section>section:last-child i {
+    font-size: 2rem;
+    color: #444
+}
+
+body>header.project {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: 2rem;
+    margin-bottom: 2.5rem;
+    width: 100%
+}
+
+body>header.project>section {
+    display: flex;
+    gap: 2rem;
+    width: 100%;
+    max-width: 71.25rem;
+    background-color: #fff
+}
+
+body>header.project>section>section {
+    display: flex
+}
+
+body>header.project>section>section.left {
+    flex-shrink: 0;
+    width: 100%;
+    max-width: 48rem;
+    aspect-ratio: 16/9
+}
+
+body>header.project>section>section.left iframe {
+    width: 100%;
+    border-radius: .25rem
+}
+
+body>header.project>section>section.right {
+    flex-flow: column
+}
+
+body>header.project>section>section.right>section.top {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start
+}
+
+body>header.project>section>section.right>section.top>a {
+    text-decoration: none;
+    font-size: .75rem;
+    color: #777
+}
+
+body>header.project>section>section.right>section.top>a:not(:first-child)::before {
+    content: "＼";
+    padding: 0 .25rem
+}
+
+body>header.project>section>section.right>section.top p {
+    margin-top: .25rem;
+    width: 100%;
+    font-size: .875rem;
+    color: #777
+}
+
+body>header.project>section>section.right>section.top p a {
+    text-decoration: none;
+    font-weight: 700;
+    color: #4682b4;
+    letter-spacing: -0.25px
+}
+
+body>header.project>section>section.right strong {
+    margin-top: 1.5rem;
+    line-height: 2rem;
+    font-size: 1.125rem
+}
+
+body>header.project>section>section.right>section.data {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    margin-top: 1.25rem
+}
+
+body>header.project>section>section.right>section.data>div.circle {
+    --pie-width: 64px;
+    --pie-width-border: 2px;
+    --pie-color-unvalue: #ddd;
+    --pie-color-single: unset;
+    --pie-bg: linear-gradient(to right bottom, steelblue, steelblue);
+    --pie-color-center: #000;
+    --pie-bgcolor-center: #fff;
+    position: relative;
+    display: block;
+    width: var(--pie-width);
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    background-color: var(--pie-color-single);
+    background-image: var(--pie-bg)
+}
+
+body>header.project>section>section.right>section.data>div.circle[done="1"][percent="1"]>div:nth-child(1)::after {
+    transform: rotate(calc(36deg * 1)) translateZ(0);
+    animation: pie-right 1s linear;
+    -webkit-animation: pie-right 1s linear;
+    -moz-animation: pie-right 1s linear
+}
+
+body>header.project>section>section.right>section.data>div.circle[done="1"][percent="2"]>div:nth-child(1)::after {
+    transform: rotate(calc(36deg * 2)) translateZ(0);
+    animation: pie-right 1s linear;
+    -webkit-animation: pie-right 1s linear;
+    -moz-animation: pie-right 1s linear
+}
+
+body>header.project>section>section.right>section.data>div.circle[done="1"][percent="3"]>div:nth-child(1)::after {
+    transform: rotate(calc(36deg * 3)) translateZ(0);
+    animation: pie-right 1s linear;
+    -webkit-animation: pie-right 1s linear;
+    -moz-animation: pie-right 1s linear
+}
+
+body>header.project>section>section.right>section.data>div.circle[done="1"][percent="4"]>div:nth-child(1)::after {
+    transform: rotate(calc(36deg * 4)) translateZ(0);
+    animation: pie-right 1s linear;
+    -webkit-animation: pie-right 1s linear;
+    -moz-animation: pie-right 1s linear
+}
+
+body>header.project>section>section.right>section.data>div.circle[done="1"][percent="5"]>div:nth-child(1)::after {
+    transform: rotate(calc(36deg * 5)) translateZ(0);
+    animation: pie-right 1s linear;
+    -webkit-animation: pie-right 1s linear;
+    -moz-animation: pie-right 1s linear
+}
+
+body>header.project>section>section.right>section.data>div.circle[done="1"][percent="6"]>div:nth-child(1)::after {
+    transform: rotate(180deg) translateZ(0);
+    animation: pie-right 1s linear;
+    -webkit-animation: pie-right 1s linear;
+    -moz-animation: pie-right 1s linear
+}
+
+body>header.project>section>section.right>section.data>div.circle[done="1"][percent="6"]>div:nth-child(2)::after {
+    transform: rotate(calc(36deg * 1)) translateZ(0);
+    animation: pie-left 1.5s linear;
+    -webkit-animation: pie-left 1.5s linear;
+    -moz-animation: pie-left 1.5s linear
+}
+
+body>header.project>section>section.right>section.data>div.circle[done="1"][percent="7"]>div:nth-child(1)::after {
+    transform: rotate(180deg) translateZ(0);
+    animation: pie-right 1s linear;
+    -webkit-animation: pie-right 1s linear;
+    -moz-animation: pie-right 1s linear
+}
+
+body>header.project>section>section.right>section.data>div.circle[done="1"][percent="7"]>div:nth-child(2)::after {
+    transform: rotate(calc(36deg * 2)) translateZ(0);
+    animation: pie-left 1.5s linear;
+    -webkit-animation: pie-left 1.5s linear;
+    -moz-animation: pie-left 1.5s linear
+}
+
+body>header.project>section>section.right>section.data>div.circle[done="1"][percent="8"]>div:nth-child(1)::after {
+    transform: rotate(180deg) translateZ(0);
+    animation: pie-right 1s linear;
+    -webkit-animation: pie-right 1s linear;
+    -moz-animation: pie-right 1s linear
+}
+
+body>header.project>section>section.right>section.data>div.circle[done="1"][percent="8"]>div:nth-child(2)::after {
+    transform: rotate(calc(36deg * 3)) translateZ(0);
+    animation: pie-left 1.5s linear;
+    -webkit-animation: pie-left 1.5s linear;
+    -moz-animation: pie-left 1.5s linear
+}
+
+body>header.project>section>section.right>section.data>div.circle[done="1"][percent="9"]>div:nth-child(1)::after {
+    transform: rotate(180deg) translateZ(0);
+    animation: pie-right 1s linear;
+    -webkit-animation: pie-right 1s linear;
+    -moz-animation: pie-right 1s linear
+}
+
+body>header.project>section>section.right>section.data>div.circle[done="1"][percent="9"]>div:nth-child(2)::after {
+    transform: rotate(calc(36deg * 4)) translateZ(0);
+    animation: pie-left 1.5s linear;
+    -webkit-animation: pie-left 1.5s linear;
+    -moz-animation: pie-left 1.5s linear
+}
+
+body>header.project>section>section.right>section.data>div.circle[done="1"][percent="10"]>div:nth-child(1)::after {
+    transform: rotate(180deg) translateZ(0);
+    animation: pie-right 1s linear;
+    -webkit-animation: pie-right 1s linear;
+    -moz-animation: pie-right 1s linear
+}
+
+body>header.project>section>section.right>section.data>div.circle[done="1"][percent="10"]>div:nth-child(2)::after {
+    transform: rotate(calc(36deg * 5)) translateZ(0);
+    animation: pie-left 1.5s linear;
+    -webkit-animation: pie-left 1.5s linear;
+    -moz-animation: pie-left 1.5s linear
+}
+
+body>header.project>section>section.right>section.data>div.circle>div:nth-child(1) {
+    position: absolute;
+    display: block;
+    top: -1px;
+    right: -1px;
+    bottom: -1px;
+    width: calc(50% + 1px);
+    height: calc(100% + 2px);
+    transform: translateZ(0);
+    overflow: hidden
+}
+
+body>header.project>section>section.right>section.data>div.circle>div:nth-child(1)::after {
+    content: "";
+    position: relative;
+    display: block;
+    margin-left: -100%;
+    width: 200%;
+    height: 100%;
+    background-image: linear-gradient(to left, var(--pie-color-unvalue) 50%, transparent 0);
+    transform-origin: center;
+    transform: translateZ(0);
+    border-radius: 50%
+}
+
+body>header.project>section>section.right>section.data>div.circle>div:nth-child(2) {
+    position: absolute;
+    display: block;
+    top: -1px;
+    left: -1px;
+    bottom: -1px;
+    width: calc(50% + 1px);
+    height: calc(100% + 2px);
+    transform: translateZ(0);
+    overflow: hidden
+}
+
+body>header.project>section>section.right>section.data>div.circle>div:nth-child(2)::after {
+    content: "";
+    position: relative;
+    display: block;
+    width: 200%;
+    height: 100%;
+    background-image: linear-gradient(to right, var(--pie-color-unvalue) 50%, transparent 0);
+    transform-origin: center;
+    transform: translateZ(0);
+    border-radius: 50%
+}
+
+@keyframes pie-right {
+    0% {
+        transform: rotate(0deg) translateZ(0)
+    }
+}
+
+@-webkit-keyframes pie-right {
+    0% {
+        transform: rotate(0deg) translateZ(0)
+    }
+}
+
+@-moz-keyframes pie-right {
+    0% {
+        transform: rotate(0deg) translateZ(0)
+    }
+}
+
+@keyframes pie-left {
+    0% {
+        transform: rotate(0deg) translateZ(0)
+    }
+
+    67% {
+        transform: rotate(0deg) translateZ(0)
+    }
+}
+
+@-webkit-keyframes pie-left {
+    0% {
+        transform: rotate(0deg) translateZ(0)
+    }
+
+    67% {
+        transform: rotate(0deg) translateZ(0)
+    }
+}
+
+@-moz-keyframes pie-left {
+    0% {
+        transform: rotate(0deg) translateZ(0)
+    }
+
+    67% {
+        transform: rotate(0deg) translateZ(0)
+    }
+}
+
+body>header.project>section>section.right>section.data>div.circle[done="1"]::after {
+    color: #000
+}
+
+body>header.project>section>section.right>section.data>div.circle::after {
+    content: attr(percent) "0%";
+    position: absolute;
+    top: var(--pie-width-border);
+    left: var(--pie-width-border);
+    bottom: var(--pie-width-border);
+    right: var(--pie-width-border);
+    width: calc(var(--pie-width) - var(--pie-width-border)*2);
+    height: calc(var(--pie-width) - var(--pie-width-border)*2);
+    line-height: calc(var(--pie-width) - var(--pie-width-border)*2);
+    text-align: center;
+    font-family: "Roboto Mono", monospace;
+    font-size: .75rem;
+    letter-spacing: 1px;
+    background-color: var(--pie-bgcolor-center);
+    color: #444;
+    border-radius: 50%;
+    transition: 1s;
+    transition-delay: 1.2s
+}
+
+body>header.project>section>section.right>section.data>section {
+    flex-flow: column
+}
+
+body>header.project>section>section.right>section.data>section p {
+    font-size: .75rem;
+    color: #777
+}
+
+body>header.project>section>section.right>section.data>section strong {
+    font-size: 1.5rem;
+    letter-spacing: -0.25px
+}
+
+body>header.project>section>section.right>section.data>section>section {
+    display: flex;
+    gap: 1.25rem;
+    margin-top: .25rem
+}
+
+body>header.project>section>section.right>section.data>section>section span {
+    font-weight: 700;
+    color: #4682b4
+}
+
+body>header.project>section>section.right>section.data>section>section span i {
+    color: #444
+}
+
+body>header.project>section>section.right>p.content {
+    margin-top: 1.25rem;
+    padding-bottom: 1.5rem;
+    line-height: 1.5rem;
+    font-size: .875rem;
+    color: #777;
+    border-bottom: 1px solid #ddd
+}
+
+body>header.project>section>section.right>p.date {
+    margin-top: 1.25rem;
+    line-height: 1.5rem;
+    font-size: .75rem;
+    color: #777
+}
+
+body>header.project>section>section.right>section.button {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.25rem
+}
+
+body>header.project>section>section.right>section.button button {
+    padding: 0 .75rem;
+    line-height: 2rem;
+    font-size: .75rem;
+    border: 1px solid #ddd;
+    border-radius: .25rem;
+    color: #444
+}
+
+body>header.project>section>section.right>section.button a {
+    width: 2rem;
+    height: 2rem;
+    line-height: 2rem;
+    text-align: center;
+    color: #444;
+    border-radius: 50%;
+    border: 1px solid #ddd
+}
+
+body>header.project>section>section.right>section.button a i {
+    width: 2rem;
+    height: 2rem;
+    line-height: 2rem;
+    text-align: center
+}
+
+body>header.project>section>section.right>section.button a.facebook {
+    background-color: #3975ea;
+    color: #fff;
+    border: 1px solid #3975ea
+}
+
+body>header.project>section>section.right>section.button a.twitter {
+    background-color: #4a99e9;
+    color: #fff;
+    border: 1px solid #4a99e9
+}
+
+body>header.project-1 {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%
+}
+
+body>header.project-1>section {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    width: 100%;
+    max-width: 71.25rem;
+    background-color: #fff
+}
+
+body>header.project-1>section>img {
+    object-fit: cover;
+    width: 22.5rem;
+    aspect-ratio: 16/10;
+    background-color: #aaa
+}
+
+body>header.project-1>section>section {
+    display: flex;
+    flex-flow: column
+}
+
+body>header.project-1>section>section span {
+    padding: 1rem
+}
+
+body>header.project-1>section>section strong {
+    width: 80%;
+    font-size: 1.125rem
+}
+
+body>header.project-1>section>section strong span {
+    font-size: .875rem;
+    font-weight: 500;
+    color: #777
+}
+
+body>header.project-1>section>section p {
+    margin-top: .25rem;
+    font-size: .75rem;
+    color: #777
+}
+
+body>header.project-1>section>section p a {
+    color: #4682b4
+}
+
+body>section.project-1 {
+    z-index: 100;
+    position: sticky;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 4.5rem;
+    background-color: #f9fafb;
+    box-shadow: 0 0 .5rem rgba(0, 0, 0, .0509803922)
+}
+
+body>section.project-1>section:first-child {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    width: 100%;
+    height: 4.5rem;
+    max-width: 71.25rem
+}
+
+body>section.project-1>section:first-child>section {
+    display: flex
+}
+
+body>section.project-1>section:first-child>section.left {
+    flex-shrink: 0;
+    justify-content: flex-start;
+    gap: 2rem;
+    width: 100%;
+    max-width: 48rem
+}
+
+body>section.project-1>section:first-child>section.left a {
+    line-height: 2.5rem;
+    text-decoration: none;
+    font-size: .875rem;
+    color: #444
+}
+
+body>section.project-1>section:first-child>section.left a.sel {
+    border-bottom: .125rem solid #4682b4
+}
+
+body>section.project-1>section:first-child>section.left a span {
+    margin-left: .5rem
+}
+
+body>section.project-1>section:first-child>section.right {
+    gap: .75rem;
+    width: 100%
+}
+
+body>section.project-1>section:first-child>section.right button {
+    box-sizing: content-box;
+    width: 100%;
+    line-height: 2.75rem;
+    text-align: center;
+    background-color: #4682b4;
+    color: #fff;
+    border: 2px solid #4682b4;
+    border-radius: .25rem
+}
+
+body>section.project-1>section:first-child>section.right button * {
+    pointer-events: none
+}
+
+body>section.project-1>section:first-child>section.right button:has(i) {
+    width: 2.75rem;
+    height: 2.75rem;
+    background-color: rgba(0, 0, 0, 0)
+}
+
+body>section.project-1>section:first-child>section.right button:has(i) i {
+    width: 2.75rem;
+    height: 2.75rem;
+    line-height: 2.75rem;
+    text-align: center;
+    font-size: 1.25rem;
+    color: #4682b4
+}
+
+body>section.project-1>section.header {
+    position: absolute;
+    top: 4.75rem;
+    left: 0;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 0 1rem;
+    width: 100%;
+    max-width: 48rem;
+    height: 2.5rem;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: .25rem
+}
+
+@media screen and (min-width: 71.25rem) {
+    body>section.project-1>section.header {
+        left: calc((100% - 71.25rem)/2)
+    }
+}
+
+body>section.project-1>section.header button {
+    line-height: 2.375rem;
+    font-size: .875rem;
+    color: #444;
+    border-bottom: 1px solid rgba(0, 0, 0, 0)
+}
+
+@media(hover: hover) {
+    body>section.project-1>section.header button:hover {
+        border-bottom: 1px solid #000;
+        transition: .3s
+    }
+}
+
+body>section.project-2 {
+    display: flex;
+    justify-content: center;
+    margin-top: 2.75rem;
+    width: 100%;
+    background-color: #fff
+}
+
+body>section.project-2>section {
+    display: flex;
+    align-items: flex-start;
+    width: 100%;
+    max-width: 71.25rem;
+    gap: 2rem
+}
+
+body>section.project-2>section>section.markdown {
+    flex-shrink: 0;
+    display: flex;
+    width: 100%;
+    max-width: 48rem
+}
+
+body>section.project-2>section>section.markdown #md-viewer,
+body>section.project-2>section>section.markdown .md-viewer {
+    position: relative;
+    width: 100%;
+    height: initial
+}
+
+body>section.project-2>section>section.plan {
+    flex-shrink: 0;
+    display: flex;
+    flex-flow: column;
+    width: 100%;
+    max-width: calc(100% - 48rem - 2rem);
+    gap: 3rem
+}
+
+body>section.project-2>section>section.plan button {
+    position: relative;
+    padding: .75rem;
+    width: 100%;
+    border: 1.5px solid #ddd;
+    border-radius: .25rem
+}
+
+body>section.project-2>section>section.plan button::before {
+    z-index: 0;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to right bottom, red, purple, blue, steelblue, green, yellow);
+    background-size: 200%;
+    background-position: 0 0;
+    animation: background-color 3s linear infinite;
+    border-radius: .25rem
+}
+
+@keyframes background-color {
+    0% {
+        background-position: 0 0
+    }
+
+    25% {
+        background-position: 50% 50%
+    }
+
+    50% {
+        background-position: 100% 100%
+    }
+
+    75% {
+        background-position: 50% 50%
+    }
+
+    100% {
+        background-position: 0 0
+    }
+}
+
+body>section.project-2>section>section.plan button::after {
+    content: "";
+    z-index: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    transition: .3s;
+    border-radius: .25rem
+}
+
+@media(hover: hover) {
+    body>section.project-2>section>section.plan button:hover {
+        border: 1.5px solid rgba(0, 0, 0, 0)
+    }
+
+    body>section.project-2>section>section.plan button:hover::after {
+        top: 2px;
+        left: 2px;
+        bottom: 2px;
+        right: 2px;
+        width: calc(100% - .25rem);
+        height: calc(100% - .25rem)
+    }
+}
+
+body>section.project-2>section>section.plan button * {
+    position: relative;
+    z-index: 1
+}
+
+body>section.project-2>section>section.plan button img {
+    object-fit: cover;
+    width: 100%;
+    aspect-ratio: 3/1;
+    overflow: hidden
+}
+
+body>section.project-2>section>section.plan button p.title {
+    margin-top: 1.5rem;
+    font-weight: 700;
+    color: #777
+}
+
+body>section.project-2>section>section.plan button p.hint {
+    font-size: .75rem;
+    color: #777
+}
+
+body>section.project-2>section>section.plan button p.hint * {
+    color: inherit
+}
+
+body>section.project-2>section>section.plan button p.tag {
+    display: flex;
+    margin-top: .5rem
+}
+
+body>section.project-2>section>section.plan button p.tag span {
+    padding: 0 .5rem;
+    line-height: 1.5rem;
+    font-size: .75rem
+}
+
+body>section.project-2>section>section.plan button p.tag span:first-child {
+    background-color: red;
+    color: #fff
+}
+
+body>section.project-2>section>section.plan button p.tag span:last-child {
+    background-color: rgba(0, 0, 0, .0509803922);
+    color: #444
+}
+
+body>section.project-2>section>section.plan button p.content {
+    margin-top: .5rem;
+    font-size: .875rem;
+    color: #444
+}
+
+body>section.project-2>section>section.plan button p.bottom {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .5rem;
+    padding: .75rem 0 0;
+    font-size: .75rem;
+    color: #777
+}
+
+body>section.project-2>section>section.plan button section {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+    padding: 1rem 0;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd
+}
+
+body>section.project-2>section>section.plan button section span {
+    font-size: .75rem;
+    color: #777
+}
+
+body>section.project-2>section>section.plan button section span i {
+    font-size: .75rem;
+    color: green
+}
+
+body>section.project-2>section>section.plan button strong {
+    display: flex;
+    align-items: center;
+    gap: .75rem;
+    margin-top: .875rem;
+    font-size: 1.25rem
+}
+
+body>section.project-2>section>section.plan button strong::after {
+    content: attr(data-hint);
+    padding: 0 .5rem;
+    line-height: 1.5rem;
+    font-size: .75rem;
+    background-color: #ff0
+}
+
+body>section.project-3 {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    background-color: #fff
+}
+
+body>section.project-3>section {
+    display: flex;
+    flex-flow: column;
+    padding: 2rem 0 5rem;
+    width: 100%;
+    max-width: 71.25rem
+}
+
+body>section.project-3>section details {
+    background-color: #fff;
+    border-radius: .25rem
+}
+
+body>section.project-3>section details:nth-child(2n) {
+    background-color: #f1f5f9
+}
+
+body>section.project-3>section details[open]>p {
+    padding: 0 2rem 1.5rem
+}
+
+body>section.project-3>section details summary {
+    position: relative;
+    display: flex;
+    flex-flow: column;
+    gap: .5rem;
+    padding: 1.5rem 1rem;
+    width: 100%
+}
+
+body>section.project-3>section details summary::-webkit-details-marker {
+    display: none
+}
+
+body>section.project-3>section details summary p {
+    font-size: .75rem;
+    color: #777
+}
+
+body>section.project-3>section details summary i {
+    position: absolute;
+    top: 50%;
+    right: 1rem;
+    transform: translateY(-50%);
+    transition: .3s
+}
+
+body>section.project-3>section details>p {
+    line-height: 1.75rem;
+    font-size: .875rem;
+    color: #777
+}
+
+body>section.project-4 {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    background-color: #fff
+}
+
+body>section.project-4>section {
+    display: flex;
+    flex-flow: column;
+    padding: 0 0 5rem;
+    width: 100%;
+    max-width: 71.25rem
+}
+
+body>section.project-4>section>section.hint {
+    padding: 2rem 0;
+    border-bottom: 1px solid #ddd
+}
+
+body>section.project-4>section>section.hint p {
+    padding: 0 .75rem;
+    line-height: 2rem;
+    font-size: .75rem;
+    background-color: #eee;
+    color: #777
+}
+
+body>section.project-4>section>section.hint p a {
+    text-decoration: none;
+    font-weight: 700;
+    color: #444
+}
+
+body>section.project-4>section>section.list {
+    display: flex;
+    flex-flow: column
+}
+
+body>section.project-4>section>section.list>div {
+    display: flex;
+    gap: 1rem;
+    padding: 1.5rem 1rem;
+    border-bottom: 1px solid #ddd
+}
+
+body>section.project-4>section>section.list>div>img {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%
+}
+
+body>section.project-4>section>section.list>div>section {
+    display: flex;
+    flex-flow: column;
+    width: 100%
+}
+
+body>section.project-4>section>section.list>div>section section.name {
+    display: flex;
+    justify-content: space-between;
+    width: 100%
+}
+
+body>section.project-4>section>section.list>div>section section.name p {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    line-height: 1.5rem;
+    font-size: .875rem;
+    color: #777
+}
+
+body>section.project-4>section>section.list>div>section section.name p a {
+    text-decoration: none;
+    font-weight: 700;
+    color: #4682b4;
+    letter-spacing: -0.25px
+}
+
+body>section.project-4>section>section.list>div>section section.name p span {
+    padding: 0 .25rem;
+    line-height: 1.5rem;
+    font-size: .75rem;
+    border: 1px solid #444;
+    border-radius: .125rem
+}
+
+body>section.project-4>section>section.list>div>section section.name p span.clr {
+    color: #4682b4;
+    border: 1px solid #4682b4
+}
+
+body>section.project-4>section>section.list>div>section section.name p span.clr-bg {
+    background-color: green;
+    color: #fff;
+    border: 1px solid green
+}
+
+body>section.project-4>section>section.list>div>section>p {
+    margin-top: .5rem;
+    font-size: .875rem
+}
+
+body>section.project-4>section>section.list>div>section>section.reply {
+    display: flex;
+    flex-flow: column;
+    gap: 1.25rem;
+    padding: 1.5rem 0 0
+}
+
+body>section.project-4>section>section.list>div>section>section.reply div>p {
+    margin-top: .5rem;
+    font-size: .875rem
+}
+
+body>section.login {
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    background-color: #fff
+}
+
+body>section.login img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 36rem;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background-color: #aaa;
+    overflow: hidden
+}
+
+body>section.login>section {
+    display: flex;
+    flex-flow: column;
+    justify-content: flex-start;
+    padding: 4.5rem 5rem;
+    width: 100%;
+    max-width: 36rem;
+    background-color: #fff
+}
+
+body>section.login>section>section.top {
+    display: flex;
+    align-items: center;
+    gap: .75rem
+}
+
+body>section.login>section>section.top svg.logo {
+    width: 2rem;
+    height: 2rem
+}
+
+body>section.login>section>section.top svg.logo path {
+    color: #444
+}
+
+body>section.login>section>section.top svg.logo-text {
+    height: 1.5rem
+}
+
+body>section.login>section>section.top svg.logo-text path {
+    color: #444
+}
+
+body>section.login>section>section.top span {
+    margin: 0 .75rem;
+    width: 1px;
+    height: 1.5rem;
+    background-color: #aaa
+}
+
+body>section.login>section>section.top p {
+    color: #444
+}
+
+body>section.login>section>section.header {
+    display: flex;
+    flex-flow: column;
+    gap: .75rem;
+    margin-top: 5rem;
+    width: 100%
+}
+
+body>section.login>section>section.header strong {
+    font-size: 2rem
+}
+
+body>section.login>section>section.header p {
+    color: #444
+}
+
+body>section.login>section>section.header p a {
+    text-decoration: underline;
+    color: #4682b4
+}
+
+body>section.login>section>section.form {
+    display: flex;
+    flex-flow: column;
+    gap: 1.5rem;
+    margin-top: 3rem
+}
+
+body>section.login>section>section.form a {
+    flex-shrink: 0;
+    font-size: .875rem;
+    color: #777
+}
+
+body>section.login>section>section.form label {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    flex-flow: row wrap;
+    gap: .5rem;
+    font-size: .875rem;
+    font-weight: 600;
+    color: #777
+}
+
+body>section.login>section>section.form label input:not([type=checkbox]) {
+    padding: 0 .75rem;
+    width: 100%;
+    line-height: 2rem;
+    border: 1px solid #ddd;
+    border-radius: .25rem
+}
+
+body>section.login>section>section.form label input:not([type=checkbox]):focus {
+    border: 2px solid blue;
+    transition: .3s
+}
+
+body>section.login>section>section.form>section {
+    display: flex;
+    justify-content: space-between;
+    width: 100%
+}
+
+body>section.login>section button {
+    margin-top: 1.5rem;
+    width: 100%;
+    height: 3.5rem;
+    line-height: 3.5rem;
+    text-align: center;
+    color: #fff;
+    border-radius: 1.75rem
+}
+
+body>section.login>section>p {
+    margin-top: 1.5rem;
+    font-size: .875rem;
+    text-align: center;
+    color: #444
+}
+
+body>section.login>section>p a {
+    color: #4682b4
+}
+
+body>header.start {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: 1.5rem;
+    width: 100%
+}
+
+body>header.start>section {
+    display: flex;
+    width: 100%;
+    max-width: 71.25rem
+}
+
+body>header.start>section>img {
+    width: 100%;
+    box-shadow: 0 0 .5rem rgba(0, 0, 0, .0509803922);
+    border-radius: .25rem
+}
+
+body>section.start-1 {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%
+}
+
+body>section.start-1>section {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    gap: 4rem;
+    padding: 5rem 0 0;
+    width: 100%;
+    max-width: 71.25rem
+}
+
+body>section.start-1>section>strong {
+    line-height: 2.5rem;
+    font-size: 1.5rem;
+    border-bottom: .25rem solid green
+}
+
+body>section.start-1>section>section {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    width: 100%
+}
+
+body>section.start-1>section>section>div {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    gap: .75rem;
+    width: calc((100% - 4.5rem)/4)
+}
+
+body>section.start-1>section>section>div p {
+    font-size: 1.25rem
+}
+
+body>section.start-1>section>section>div strong {
+    font-size: 2.5rem;
+    color: green;
+    letter-spacing: -0.5px
+}
+
+body>section.start-2 {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%
+}
+
+body>section.start-2>section {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    gap: 4rem;
+    padding: 5rem 0;
+    width: 100%;
+    max-width: 71.25rem;
+    border-bottom: 1px solid #ddd
+}
+
+body>section.start-2>section>strong {
+    line-height: 2.5rem;
+    font-size: 1.5rem;
+    border-bottom: .25rem solid green
+}
+
+body>section.start-2>section>section {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    width: 100%
+}
+
+body>section.start-2>section>section>div {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.5rem 1rem;
+    width: calc((100% - 4rem)/3);
+    border: 2px solid #ddd;
+    border-radius: .25rem
+}
+
+body>section.start-2>section>section>div:first-child {
+    border: 2px solid #059669
+}
+
+body>section.start-2>section>section>div:first-child>p {
+    color: #059669
+}
+
+body>section.start-2>section>section>div:first-child section p i {
+    color: #059669
+}
+
+body>section.start-2>section>section>div:first-child section a {
+    background-color: #059669
+}
+
+body>section.start-2>section>section>div:nth-child(2) {
+    border: 2px solid #3366a9
+}
+
+body>section.start-2>section>section>div:nth-child(2)>p {
+    color: #3366a9
+}
+
+body>section.start-2>section>section>div:nth-child(2) section p i {
+    color: #3366a9
+}
+
+body>section.start-2>section>section>div:nth-child(2) section a {
+    background-color: #3366a9
+}
+
+body>section.start-2>section>section>div:last-child {
+    border: 2px solid #a06389
+}
+
+body>section.start-2>section>section>div:last-child>p {
+    color: #a06389
+}
+
+body>section.start-2>section>section>div:last-child section p i {
+    color: #a06389
+}
+
+body>section.start-2>section>section>div:last-child section a {
+    background-color: #a06389
+}
+
+body>section.start-2>section>section>div strong {
+    font-size: 1.25rem
+}
+
+body>section.start-2>section>section>div>p {
+    text-align: center
+}
+
+body>section.start-2>section>section>div section {
+    display: flex;
+    flex-flow: column;
+    padding: 0 .75rem .75rem;
+    background-color: rgba(0, 0, 0, .0156862745)
+}
+
+body>section.start-2>section>section>div section p {
+    display: flex;
+    align-items: center;
+    gap: .75rem;
+    padding: .75rem 0;
+    line-height: 1.75rem;
+    color: #777
+}
+
+body>section.start-2>section>section>div section p i {
+    font-size: 1.25rem
+}
+
+body>section.start-2>section>section>div section a {
+    margin-top: 1.5rem;
+    width: 100%;
+    line-height: 2.5rem;
+    text-align: center;
+    text-decoration: none;
+    background-color: rgba(0, 0, 0, .5019607843);
+    color: #fff;
+    border-radius: .25rem
+}
+
+body>section.start-3 {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%
+}
+
+body>section.start-3>section {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    padding-bottom: 5rem;
+    width: 100%;
+    max-width: 71.25rem
+}
+
+body>section.start-3>section>p {
+    margin-top: 3rem;
+    color: #777
+}
+
+body>section.start-3>section>p a {
+    text-decoration: none;
+    color: #4682b4
+}
+
+body>section.start-3>section>strong {
+    margin-top: 4rem;
+    line-height: 2.5rem;
+    font-size: 1.5rem;
+    border-bottom: .25rem solid green
+}
+
+body>section.start-3>section>section {
+    display: flex;
+    flex-flow: column;
+    margin-top: 3rem;
+    width: 100%
+}
+
+body>section.start-3>section>section details {
+    padding: 0 1.5rem;
+    width: 100%;
+    border-top: 1px solid #ddd
+}
+
+body>section.start-3>section>section details:last-child {
+    border-bottom: 1px solid #ddd
+}
+
+body>section.start-3>section>section details[open] summary i {
+    transform: rotate(90deg)
+}
+
+body>section.start-3>section>section details summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    line-height: 4.5rem;
+    font-weight: 700;
+    color: #444
+}
+
+body>section.start-3>section>section details summary::-webkit-details-marker {
+    display: none
+}
+
+body>section.start-3>section>section details summary i {
+    transition: .3s
+}
+
+body>section.start-3>section>section details p {
+    padding-bottom: 1.5rem;
+    width: 80%;
+    line-height: 1.75rem;
+    font-size: .875rem;
+    color: #777
+}
+
+body>section.start-3>section>section details p a {
+    color: #4682b4
+}
