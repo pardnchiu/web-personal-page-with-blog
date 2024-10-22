@@ -1,0 +1,430 @@
+>section[pg="post"] {
+    position: absolute;
+    top: 0;
+    left: calc(72px / 2 + 50%);
+    transform: translateX(-50%);
+    bottom: 0;
+    padding-bottom: 5rem;
+    width: 100%;
+    max-width: 900px;
+    height: 100%;
+    font-size: 0;
+    overflow-x: hidden;
+    overflow-y: scroll;
+
+    @media screen and (min-width: 1112px) {
+        max-width: 935px;
+    }
+
+    @media screen and (min-width: 1280px) {
+        left: calc(248px / 2 + 50%);
+    }
+
+    >div:nth-child(1) {
+        position: relative;
+        margin-bottom: 3rem;
+        padding-top: 44px;
+        padding-bottom: 3rem;
+        width: 100%;
+        height: initial;
+        font-size: 0;
+        border-bottom: 1px solid var(--col-border);
+
+        >div {
+            position: relative;
+            display: block;
+            width: 100%;
+            height: initial;
+            background-color: #fff;
+            border-radius: 0.5rem;
+            border: 1px solid var(--col-border);
+            overflow: hidden;
+
+            // 左側
+            >div:nth-child(1) {
+                position: relative;
+                display: inline-block;
+                vertical-align: top;
+                width: 100%;
+                height: initial;
+                background-color: #000;
+                overflow: hidden;
+
+                >img {
+                    display: block;
+                    object-fit: contain;
+                    width: calc(100% - 400px);
+                    height: auto;
+                    min-height: 600px;
+                }
+
+                >button {
+                    position: absolute;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    width: 25px;
+                    height: 25px;
+                    z-index: 1;
+                    border: none;
+                    outline: none;
+                    background-color: transparent;
+                    cursor: pointer;
+
+                    &:nth-last-child(2) {
+                        display: none;
+                        left: 2rem;
+                    }
+
+                    &:nth-last-child(1) {
+                        right: calc(400px + 2rem);
+                    }
+
+                    >i {
+                        position: relative;
+                        width: 25px;
+                        line-height: 25px !important;
+                        height: 25px;
+                        font-size: 1.5rem;
+                        text-align: center;
+                        color: rgba(255, 255, 255, 0.8);
+                    }
+                }
+            }
+
+            // 右側
+            >div:nth-child(2) {
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                width: 400px;
+                height: 100%;
+                background-color: #fff;
+                border-left: 1px solid var(--col-border);
+
+                // 張貼者
+                >div:nth-child(1) {
+                    position: relative;
+                    display: block;
+                    padding: calc((60px - 32px) / 2) 1rem;
+                    width: 100%;
+                    height: 60px;
+                    border-bottom: 1px solid var(--col-border);
+                    font-size: 0;
+
+                    >a:nth-child(1) {
+                        position: relative;
+                        display: inline-block;
+                        vertical-align: top;
+                        width: initial;
+                        height: initial;
+                        cursor: pointer;
+
+                        >img {
+                            position: relative;
+                            display: block;
+                            width: 32px;
+                            height: 32px;
+                            border: 1px solid var(--col-border);
+                            border-radius: 50%;
+                        }
+                    }
+
+                    >a:nth-child(2) {
+                        position: relative;
+                        display: inline-block;
+                        vertical-align: top;
+                        margin-left: 1rem;
+                        line-height: 32px;
+                        height: 32px;
+                        font-size: 0.875rem;
+                        font-weight: bolder;
+                        color: #000;
+                        cursor: pointer;
+                    }
+
+                    >i {
+                        position: absolute;
+                        top: calc((60px - 32px) / 2);
+                        right: 1rem;
+                        width: 32px;
+                        line-height: 32px !important;
+                        height: 32px;
+                        font-size: 1.25rem;
+                        text-align: center;
+                        cursor: pointer;
+                    }
+                }
+
+                // 內容、留言
+                >ul:nth-child(2) {
+                    position: relative;
+                    display: block;
+                    width: 100%;
+                    height: calc(100% - 60px - 112px - 50px);
+                    overflow-x: hidden;
+                    overflow-y: scroll;
+                    border-bottom: 1px solid var(--col-border);
+
+                    >li {
+                        position: relative;
+                        display: block;
+                        padding: 1rem 1rem 0;
+                        width: 100%;
+                        height: initial;
+                        font-size: 0;
+
+                        >a {
+                            position: relative;
+                            display: inline-block;
+                            vertical-align: top;
+                            width: initial;
+                            height: initial;
+                            cursor: pointer;
+
+                            >img {
+                                position: relative;
+                                width: 32px;
+                                height: 32px;
+                                border: 1px solid var(--col-border);
+                                border-radius: 50%;
+                            }
+                        }
+
+                        >div {
+                            position: relative;
+                            display: inline-block;
+                            vertical-align: top;
+                            margin-left: 1rem;
+                            max-width: calc(100% - 32px - 1rem - 24px);
+                            height: initial;
+
+                            >p:nth-child(1) {
+                                position: relative;
+                                display: block;
+                                width: 100%;
+                                line-height: 20px;
+                                height: initial;
+                                font-size: 0.875rem;
+                                word-wrap: break-word;
+
+                                >a {
+                                    padding-right: 0.5rem;
+                                    color: steelblue;
+
+                                    &::before {
+                                        content: "#";
+                                    }
+
+                                    &:nth-child(1) {
+                                        font-weight: bolder;
+                                        color: #000;
+
+                                        &::before {
+                                            content: "";
+                                        }
+                                    }
+                                }
+                            }
+
+                            >p:nth-child(2) {
+                                position: relative;
+                                display: block;
+                                margin-top: 0.25rem;
+                                width: 100%;
+                                line-height: 20px;
+                                height: 20px;
+                                font-size: 0.75rem;
+                                color: var(--col-text-lighter);
+
+                            }
+                        }
+
+                    }
+                }
+
+                >div:nth-child(3) {
+                    position: relative;
+                    display: block;
+                    padding-top: 0.75rem;
+                    width: 100%;
+                    height: 112px;
+                    border-bottom: 1px solid var(--col-border);
+
+                    >ul {
+                        position: relative;
+                        width: 100%;
+                        height: 32px;
+                        font-size: 0;
+
+                        >li {
+                            position: relative;
+                            display: inline-block;
+                            vertical-align: top;
+                            margin-left: 1rem;
+                            width: initial;
+                            height: 32px;
+
+                            >button {
+                                position: relative;
+                                display: block;
+                                width: initial;
+                                height: initial;
+
+                                >i {
+                                    position: relative;
+                                    display: block;
+                                    width: 32px;
+                                    line-height: 32px;
+                                    height: 32px;
+                                    font-size: 1.5rem;
+                                    text-align: center;
+                                }
+                            }
+                        }
+                    }
+
+                    >button {
+                        position: absolute;
+                        top: 0.75rem;
+                        right: 1rem;
+                        width: initial;
+                        height: 32px;
+
+                        >i {
+                            position: relative;
+                            display: block;
+                            width: 32px;
+                            line-height: 32px;
+                            height: 32px;
+                            font-size: 1.5rem;
+                            text-align: center;
+                        }
+                    }
+
+                    >div {
+                        position: relative;
+                        margin-top: 1rem;
+                        margin-left: 1rem;
+                        width: calc(100% - 2rem);
+                        font-size: 0;
+
+                        >a {
+                            display: inline-block;
+                            vertical-align: top;
+                            margin-left: -0.5rem;
+                            width: initial;
+                            height: initial;
+                            cursor: pointer;
+
+                            &:nth-child(1) {
+                                margin-left: 0;
+                            }
+
+                            >img {
+                                object-fit: cover;
+                                width: 20px;
+                                height: 20px;
+                                border-radius: 50%;
+                                border: 2px solid #fff;
+                            }
+                        }
+
+                        >p {
+                            display: inline-block;
+                            vertical-align: top;
+                            margin-left: 0.5rem;
+                            line-height: 20px;
+                            height: 20px;
+                            font-size: 0.75rem;
+                            font-weight: bolder;
+                            color: #000;
+
+                            &:nth-child(1) {
+                                margin-left: 0;
+                            }
+
+                            >a {
+                                cursor: pointer;
+                            }
+                        }
+                    }
+
+                    >p {
+                        position: relative;
+                        display: block;
+                        margin-top: 2px;
+                        margin-left: 1rem;
+                        width: calc(100% - 2rem);
+                        line-height: 20px;
+                        height: 20px;
+                        font-size: 0.75rem;
+                        color: var(--col-text-lighter);
+                    }
+                }
+
+                >div:nth-child(4) {
+                    position: relative;
+                    display: block;
+                    padding: calc((50px - 25px) / 2) 0;
+                    width: 100%;
+                    height: 50px;
+                    font-size: 0;
+
+                    >i {
+                        position: relative;
+                        display: inline-block;
+                        vertical-align: top;
+                        margin-left: 1rem;
+                        margin-right: 1rem;
+                        width: 25px;
+                        line-height: 25px !important;
+                        height: 25px;
+                        font-size: 1.5rem;
+                        text-align: center;
+                        cursor: pointer;
+                    }
+
+                    >input {
+                        position: relative;
+                        display: inline-block;
+                        vertical-align: top;
+                        width: calc(100% - 25px - 2rem);
+                        line-height: 25px !important;
+                        height: 25px;
+                        font-size: 0.875rem;
+                    }
+
+                    >button {
+                        position: absolute;
+                        top: 0.875rem;
+                        right: 1rem;
+                        line-height: 25px !important;
+                        height: 25px;
+                        font-size: 0.875rem;
+                        color: steelblue;
+                        opacity: 0.5;
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+    }
+
+    >p {
+        position: relative;
+        margin-bottom: 1rem;
+        width: 100%;
+        font-size: 1rem;
+        color: #000;
+
+        >a {
+            position: relative;
+            font-weight: bolder;
+            color: #000;
+            cursor: pointer;
+        }
+    }
+
+    @import "userList";
+}

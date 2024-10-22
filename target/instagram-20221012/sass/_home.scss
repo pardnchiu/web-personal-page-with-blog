@@ -1,0 +1,244 @@
+>section[pg="home"] {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    margin-right: -50%;
+    padding-top: 44px;
+    padding-bottom: 5rem;
+    width: initial;
+    max-width: 100%;
+    height: 100%;
+    font-size: 0;
+    overflow-x: hidden;
+    overflow-y: scroll;
+
+    @media screen and (min-width: 785px) {
+        left: calc(72px / 2 + 50%);
+        max-width: 821px;
+        padding-top: 0;
+    }
+
+    @media screen and (min-width: 1280px) {
+        left: calc(248px / 2 + 50%);
+    }
+
+    // 左側
+    >div:nth-child(1) {
+        position: relative;
+        display: inline-block;
+        vertical-align: top;
+        width: 470px;
+        max-width: 100%;
+        height: initial;
+
+        @media screen and (min-width: 1000px) {
+            margin-right: 32px;
+        }
+
+        @import "homeStory";
+
+        >ul {
+            position: relative;
+            width: 100%;
+            height: initial;
+            @import "postListRow";
+            @import "homeInfo";
+        }
+    }
+
+    // 右側
+    >div:nth-last-child(1) {
+        position: relative;
+        display: none;
+        vertical-align: top;
+        width: 319px;
+        height: 100px;
+
+        @media screen and (min-width: 1000px) {
+            display: inline-block;
+        }
+
+        >div:nth-child(1) {
+            position: relative;
+            margin-top: calc(22px + 25px);
+            width: 100%;
+            height: 56px;
+            font-size: 0;
+
+            >a:nth-child(1) {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: initial;
+                height: initial;
+                color: #000;
+                cursor: pointer;
+
+                >img {
+                    position: absolute;
+                    width: 56px;
+                    height: 56px;
+                    border: 1px solid var(--col-border);
+                    border-radius: 50%;
+                }
+            }
+
+            >a:nth-child(2) {
+                position: absolute;
+                top: 50%;
+                left: calc(56px + 1rem);
+                transform: translateY(-50%);
+                width: initial;
+                height: initial;
+                color: #000;
+
+                >p {
+                    position: relative;
+                    line-height: 18px;
+                    font-size: 0.875rem;
+
+                    &:nth-child(1) {
+                        font-weight: bolder;
+                    }
+
+                    &:nth-child(2) {
+                        color: var(--col-text-lighter);
+                    }
+                }
+            }
+
+            >button {
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                right: 0;
+                font-size: 0.875rem;
+                color: steelblue;
+                font-weight: bolder;
+            }
+        }
+
+        >div:nth-child(2) {
+            position: relative;
+            margin-top: 1rem;
+            width: 100%;
+
+            >p {
+                font-size: 1rem;
+                color: var(--col-text-lighter);
+            }
+
+            >button {
+                position: absolute;
+                top: 0;
+                right: 0;
+                font-size: 0.875rem;
+                font-weight: bolder;
+                color: #000;
+            }
+
+            >ul {
+                position: relative;
+                display: block;
+                width: 100%;
+                height: initial;
+
+                >li {
+                    position: relative;
+                    display: block;
+                    margin-top: 0.875rem;
+                    width: 100%;
+                    height: 40px;
+                    font-size: 0;
+
+                    >a:nth-child(1) {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: initial;
+                        height: initial;
+                        cursor: pointer;
+
+                        >img {
+                            position: relative;
+                            width: 32px;
+                            height: 32px;
+                            border: 1px solid var(--col-border);
+                            border-radius: 50%;
+                        }
+                    }
+
+                    >a:nth-child(2) {
+                        position: absolute;
+                        top: 0;
+                        left: calc(32px + 1rem);
+                        width: initial;
+                        height: initial;
+
+                        >p {
+                            position: relative;
+                            line-height: 20px;
+                            color: #000;
+
+                            &:nth-child(1) {
+                                font-size: 0.875rem;
+                                font-weight: bolder;
+                            }
+
+                            &:nth-child(2) {
+                                color: var(--col-text-lighter);
+                                font-size: 0.75rem;
+                            }
+                        }
+                    }
+
+                    >button {
+                        position: absolute;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        right: 0;
+                        font-size: 0.875rem;
+                        color: steelblue;
+                        font-weight: bolder;
+                    }
+
+                }
+            }
+
+        }
+
+        >ul {
+            position: relative;
+            margin-top: 1rem;
+            width: 100%;
+
+            >li {
+                position: relative;
+                display: inline-block;
+                vertical-align: top;
+                font-size: 0.875rem;
+                font-weight: lighter;
+                color: var(--col-text-lightest);
+
+                &::before {
+                    content: "・";
+                }
+
+                &:nth-child(1):before {
+                    content: "";
+                }
+            }
+        }
+
+        >p {
+            position: relative;
+            margin-top: 1rem;
+            width: 100%;
+            font-size: 0.875rem;
+            font-weight: lighter;
+            color: var(--col-text-lightest);
+        }
+    }
+}

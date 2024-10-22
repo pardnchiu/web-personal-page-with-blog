@@ -1,0 +1,110 @@
+// 媒體
+>div:nth-child(2) {
+    position: relative;
+    width: 100%;
+    height: initial;
+
+    &.r1 {
+
+        >ul:nth-child(2),
+        >button {
+            display: none;
+            opacity: 0;
+        }
+    }
+
+    >ul:nth-child(1) {
+        position: relative;
+        width: 100%;
+        height: initial;
+        font-size: 0;
+        white-space: nowrap;
+        overflow-x: scroll;
+        overflow-y: hidden;
+        z-index: 0;
+
+        >li {
+            position: relative;
+            display: inline-block;
+            vertical-align: top;
+            width: 100%;
+            height: initial;
+
+            >img {
+                object-fit: cover;
+                position: relative;
+                display: block;
+                width: 100%;
+            }
+
+            >video {
+                object-fit: contain;
+                position: relative;
+                display: block;
+                width: 100% !important;
+                height: auto !important;
+            }
+        }
+    }
+
+    >ul:nth-child(2) {
+        position: absolute;
+        left: 50%;
+        bottom: 1rem;
+        transform: translateX(-50%);
+        width: initial;
+        height: initial;
+        z-index: 1;
+
+        >li {
+            display: inline-block;
+            vertical-align: top;
+            margin: 0 2px;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background-color: #fff;
+            -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1), 0 1px 1px rgba(0, 0, 0, 0.15);
+            -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1), 0 1px 1px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1), 0 1px 1px rgba(0, 0, 0, 0.15);
+            opacity: 0.5;
+
+            &[sel="1"],
+            &[sel="true"] {
+                opacity: 1;
+            }
+        }
+    }
+
+    >button {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 25px;
+        height: 25px;
+        z-index: 1;
+        border: none;
+        outline: none;
+        background-color: transparent;
+        cursor: pointer;
+
+        &:nth-last-child(2) {
+            display: none;
+            left: 1rem;
+        }
+
+        &:nth-last-child(1) {
+            right: 1rem;
+        }
+
+        >i {
+            position: relative;
+            width: 25px;
+            line-height: 25px !important;
+            height: 25px;
+            font-size: 1.5rem;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.8);
+        }
+    }
+}

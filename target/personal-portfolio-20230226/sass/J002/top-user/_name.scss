@@ -1,0 +1,25 @@
+>h1 {
+    position: relative;
+    display: block;
+    margin-top: 1.5rem;
+    font-size: var(--user-top-name-size);
+    font-weight: 600;
+    text-align: center;
+    letter-spacing: 1px;
+    color: var(--global-col-h);
+    transition: 0.3s;
+
+    @media screen and (min-width: 480px) {
+        font-size: 2rem;
+    }
+
+    &::after {
+        content: attr(title);
+        position: relative;
+        display: block;
+        font-size: var(--user-top-title-size);
+        font-weight: 400;
+        letter-spacing: 1px;
+        color: var(--global-col-p);
+    }
+}

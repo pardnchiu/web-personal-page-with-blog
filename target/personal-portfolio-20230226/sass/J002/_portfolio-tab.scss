@@ -1,0 +1,99 @@
+>ul {
+    position: fixed;
+    z-index: 1;
+    left: 50%;
+    bottom: -100%;
+    margin-right: -50%;
+    transform: translateX(-50%);
+    width: initial;
+    height: 3rem;
+    font-size: 0;
+    background-color: var(--portfolio-tab-bg-col);
+    -webkit-backdrop-filter: blur(1rem);
+    backdrop-filter: blur(1rem);
+    border-radius: var(--global-radius);
+    transition: 0.5s;
+    overflow: hidden;
+
+    @media screen and (min-width: 800px) {
+        height: initial;
+
+        >li {
+            transform: unset !important;
+        }
+    }
+
+    @for $i from 0 through 16 {
+        &[sel="#{$i}"]>li {
+            transform: translateY(calc(-2.5rem * #{$i}));
+
+            @media screen and (min-width: 800px) {
+                &:nth-child(#{$i + 1}) {
+                    background-color: var(--portfolio-tab-bg-sel-col);
+                    color: var(--portfolio-tab-p-sel-bg-col);
+                }
+            }
+        }
+    }
+
+    &.show {
+        bottom: 2rem;
+    }
+
+    &.expand {
+        width: calc(100% - 2rem);
+        height: initial;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        transition: 0.3s;
+
+        @media screen and (min-width: 480px) {
+            width: 50%;
+        }
+
+        @media screen and (min-width: 800px) {
+            width: initial;
+        }
+
+        >li {
+            padding: 0.25rem 1rem;
+            transform: unset;
+
+            &:hover {
+                background-color: var(--portfolio-tab-bg-sel-col);
+                color: var(--portfolio-tab-p-sel-bg-col);
+            }
+        }
+    }
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        background-color: var(--col-bg);
+        opacity: 0.5;
+    }
+
+    >li {
+        position: relative;
+        display: block;
+        margin: 0.5rem;
+        padding: 0 1rem;
+        width: initial;
+        line-height: 2rem;
+        text-align: center;
+        font-size: 1.125rem;
+        letter-spacing: 1px;
+        color: var(--col-txt);
+        border-radius: var(--global-radius);
+        color: var(--portfolio-tab-p-col);
+        cursor: pointer;
+
+        @media screen and (min-width: 800px) {
+            display: inline-block;
+            vertical-align: top;
+        }
+    }
+}

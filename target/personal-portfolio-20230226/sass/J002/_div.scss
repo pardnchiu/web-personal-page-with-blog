@@ -1,0 +1,15 @@
+>div {
+    position: relative;
+    display: block;
+    padding: 5rem 1rem 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 1024px;
+    height: 100%;
+    overflow: scroll;
+
+    @import "top-user";
+    @import "portfolio-list";
+    @import "skill-list";
+}

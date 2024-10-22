@@ -1,0 +1,125 @@
+>div.button {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-top: 2.5rem;
+    width: 100%;
+    font-size: 0;
+
+    >a {
+        position: relative;
+        display: flex;
+        gap: 0.75rem;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: initial;
+        text-align: center;
+        background-color: var(--user-top-button-bg-col);
+        background-image: var(--user-top-button-bg);
+        border-radius: var(--global-radius);
+        background-size: 150% 150%;
+        -webkit-animation: line-grad-bg 3s ease infinite;
+        -moz-animation: line-grad-bg 3s ease infinite;
+        animation: line-grad-bg 3s ease infinite;
+        transition: 0.3s;
+
+        @for $i from 1 through 6 {
+            @if $i <=3 {
+                &[num="#{$i}"] {
+                    @media screen and (min-width: 320px) {
+                        width: calc(100% - 2rem * #{$i} - 0.5rem * #{$i - 1} - 2rem);
+                    }
+                }
+            }
+
+            @else {
+                &[num="#{$i}"] {
+                    @media screen and (min-width: 480px) {
+                        width: calc(100% - 2rem * #{$i} - 0.5rem * #{$i - 1} - 2rem);
+                    }
+                }
+            }
+
+        }
+
+        // width: calc(100% - 2rem * 3 - 0.5rem * 2 - 2rem);
+
+        @media screen and (min-width: 640px) {
+            width: 16rem !important;
+        }
+
+        >i,
+        >p {
+            position: relative;
+            display: inline-block;
+            vertical-align: top;
+            width: initial;
+            height: initial;
+            line-height: 3.5rem;
+            color: var(--user-top-button-p-col);
+        }
+
+        >i {
+            top: 1px;
+            font-size: 1.5rem;
+        }
+
+        >p {
+            font-size: 1.125rem;
+            letter-spacing: 2px;
+        }
+
+        >svg {
+            position: relative;
+            top: 1px;
+            width: 23px;
+            height: 23px;
+        }
+    }
+
+    >ul {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        font-size: 0;
+
+        &.contact {
+            gap: 0.5rem;
+
+            >li>a {
+                position: relative;
+                display: block;
+                width: initial;
+                height: initial;
+                background-color: var(--user-top-contact-bg-col);
+                -webkit-backdrop-filter: blur(1rem);
+                backdrop-filter: blur(1rem);
+                border-radius: calc(var(--global-radius) / 2);
+
+                >i {
+                    position: relative;
+                    display: block;
+                    width: 2rem;
+                    height: 2rem;
+                    line-height: 2rem;
+                    font-size: var(--user-top-contact-size);
+                    text-align: center;
+                    color: var(--global-col-h);
+                }
+            }
+
+        }
+
+        >li {
+            position: relative;
+            display: block;
+            width: initial;
+            height: initial;
+            font-size: 0;
+        }
+    }
+}

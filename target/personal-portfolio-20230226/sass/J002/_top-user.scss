@@ -1,0 +1,14 @@
+>div.top-user {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: initial;
+    text-align: center;
+
+    @import "top-user/head";
+    @import "top-user/name";
+    @import "top-user/link";
+    @import "top-user/exp";
+    @import "top-user/button";
+    @import "top-user/tab";
+}

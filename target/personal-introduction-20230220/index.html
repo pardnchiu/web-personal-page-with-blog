@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="zh-Hans-TW">
+
+    <head>
+
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Personal Introduction (2023/02/20) | 邱敬幃 Pardn Chiu</title>
+        <meta name="description" content="Personal Introduction (2023/02/20) | 邱敬幃 Pardn Chiu">
+        <meta name="keywords" content="Website範例, 邱敬幃, Pardn Chiu">
+        <meta name="theme-color" content="#000000">
+        <meta name="author" content="邱敬幃 Pardn Chiu">
+        <meta name="copyright" content="邱敬幃 Pardn Chiu">
+        <!-- Open Graph Metadata -->
+        <meta property="og:title" content="Personal Introduction (2023/02/20) | 邱敬幃 Pardn Chiu">
+        <meta property="og:description" content="Personal Introduction (2023/02/20) | 邱敬幃 Pardn Chiu">
+        <meta property="og:image" content="https://pardnchiu.github.io/web-template/image/personal-introduction-20230220.jpg">
+        <meta property="og:site_name" content="邱敬幃 Pardn Chiu">
+        <meta property="og:url" content="https://pardnchiu.github.io/web-template/target/personal-introduction-20230220">
+        <meta property="og:type" content="website">
+        <meta property="og:locale" content="zh_TW">
+        <!-- Twitter Metadata -->
+        <meta property="twitter:title" content="Personal Introduction (2023/02/20) | 邱敬幃 Pardn Chiu">
+        <meta property="twitter:description" content="Personal Introduction (2023/02/20) | 邱敬幃 Pardn Chiu">
+        <meta property="twitter:image" content="https://pardnchiu.github.io/web-template/image/personal-introduction-20230220.jpg">
+        <meta property="twitter:site" content="">
+        <meta property="twitter:card" content="summary_large_image">
+        <!-- Mobile Settings -->
+        <meta name="mobile-web-app-capable" content="no">
+        <meta name="apple-mobile-web-app-capable" content="no">
+        <meta name="apple-mobile-web-app-status-bar-style" content="default">
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, viewport-fit=cover">
+        <!-- Canonical URL (SEO) -->
+        <link rel="canonical" href="https://pardnchiu.github.io/web-template/target/personal-introduction-20230220">
+        <!-- Robots Tag (SEO) -->
+        <meta name="robots" content="index, follow">
+        <!-- Icons -->
+        <link rel="apple-touch-icon" href="">
+        <link rel="apple-touch-icon-precomposed" href="">
+        <link rel="icon" href="" type="image/x-icon">
+        <!-- Structured Data for Rich Snippets (SEO) -->
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            "name": "Personal Introduction (2023/02/20) | 邱敬幃 Pardn Chiu",
+            "description": "Personal Introduction (2023/02/20) | 邱敬幃 Pardn Chiu",
+            "url": "https://pardnchiu.github.io/web-template/target/personal-introduction-20230220",
+            "image": "https://pardnchiu.github.io/web-template/image/personal-introduction-20230220.jpg",
+            "author": {
+                "@type": "Person",
+                "name": "邱敬幃 Pardn Chiu"
+            }
+        }
+        </script>
+        <!-- Preconnect -->
+        <link rel="preconnect" href="https://cdn.jsdelivr.net">
+        <!-- Preloads for CDN -->
+        <link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/css/all.min.css" as="style">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/css/all.min.css">
+
+        <link rel="preload" href="https://cdn.jsdelivr.net/gh/pardnchiu/PDRenderKit@1.0.2/dist/PDRenderKit.js" as="script">
+        <script src="https://cdn.jsdelivr.net/gh/pardnchiu/PDRenderKit@1.0.2/dist/PDRenderKit.js" copyright="Pardn Ltd"></script>
+        <!-- Stylesheet Files -->
+        <link rel="stylesheet" href="./css/index.css">
+        <style>
+            * {
+                --clr-txt: #37475a;
+                --clr-grad-start: steelblue;
+                --clr-grad-end: red;
+                --clr-main: red;
+                --clr-bg: #f9fafe;
+
+                --size-heading: 4rem;
+
+                --grid-interval: 1rem;
+                --grid-radius: 2rem;
+                --grid-radio: 1 / 1;
+            }
+        </style>
+        <!-- JavaScript Files -->
+        <script src="./js/index.js"></script>
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-L5VYEZPVXX"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() { dataLayer.push(arguments); }
+            gtag('js', new Date());
+            gtag('config', 'G-L5VYEZPVXX');
+        </script>
+    </head>
+
+    <body id="body">
+        <section>
+            <nav>
+                <a href="">{{ nav.title }}<b>.</b></a>
+                <ul class="page">
+                    <li :class="e.class" :for="e in nav.tab">
+                        <a :href="e.href">{{ e.title }}</a>
+                    </li>
+                </ul>
+                <ul class="contact">
+                    <li>
+                        <a href="https://github.com/pardnchiu" target="_blank">
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://linkedin.com/in/pardnchiu" target="_blank">
+                            <i class="fa-brands fa-linkedin"></i>
+                        </a>
+                    </li>
+                    <li class="mobile">
+                        <button @click="show">
+                            <i class="fa-solid fa-bars"></i>
+                        </button>
+                    </li>
+                </ul>
+            </nav>
+            <ul id="mobile-tab">
+                <li :class="e.class" :for="e in nav.tab">
+                    <a :href="e.href">{{ e.title }}</a>
+                </li>
+                <ul>
+                    <li>
+                        <a href="https://github.com/pardnchiu" target="_blank">
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://linkedin.com/in/pardnchiu" target="_blank">
+                            <i class="fa-brands fa-linkedin"></i>
+                        </a>
+                    </li>
+                </ul>
+            </ul>
+            <div :if="is_home">
+                <div class="home">
+                    <p>Hello</p>
+                    <h1>I'm <b id="typing-area">Pardn Chiu</b></h1>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At nostrum consequuntur iste optio beatae ipsam ea, nesciunt excepturi officia quas necessitatibus non modi magni ab quaerat, rem sed dicta numquam?</p>
+                    <div>
+                        <a href="https://github.com/pardnchiu/web-template/" target="_blank">
+                            <i class="fa-solid fa-code"></i>
+                            Code
+                        </a>
+                        <a href="https://github.com/pardnchiu/" target="_blank">
+                            <i class="fa-brands fa-github"></i>
+                            GitHub
+                        </a>
+                    </div>
+                </div>
+                <span :path="image/home.svg"></span>
+                <img src="image/temp1.png" alt="">
+            </div>
+            <div :elseif="is_portfolio">
+                <div class="portfolio">
+                    <ul id="portfolio-tab" :data-target="type_index">
+                        <li data-href="?page=portfolio&type=all" @click="expand">ALL</li>
+                        <li :for="e in types" :data-href="e.href" @click="expand">{{ e.title }}</li>
+                    </ul>
+                    <div id="portfolio-list">
+                        <div :for="e in portfolio">
+                            <img class="lazyload" :data-src="e.src" src="" alt="">
+                            <ul>
+                                <li>
+                                    <a :href="e.src" target="_blank">
+                                        <i class="fa-solid fa-globe"></i>
+                                        開啟
+                                    </a>
+                                </li>
+                                <li>
+                                    <button @click="copy" :data-href="e.src">
+                                        <i class="fa-solid fa-share-nodes"></i>
+                                        分享
+                                    </button>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </body>
+
+</html>

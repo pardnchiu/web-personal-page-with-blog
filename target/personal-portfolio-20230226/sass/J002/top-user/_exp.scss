@@ -1,0 +1,46 @@
+>ul.exp {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 2.5rem;
+    width: 100%;
+    height: initial;
+    transition: 0.3s;
+    font-size: 0;
+
+    @media screen and (min-width: 480px) {
+        gap: 3rem;
+    }
+
+    >li {
+        position: relative;
+        display: block;
+        width: initial;
+        height: initial;
+        font-size: var(--user-top-exp-p-size);
+        letter-spacing: 1px;
+        color: var(--global-col-p);
+        transition: 0.3s;
+
+        @media screen and (min-width: 480px) {
+            font-size: 1.125rem;
+        }
+
+        &::before {
+            content: attr(num);
+            display: block;
+            margin-bottom: 0.5rem;
+            width: initial;
+            height: initial;
+            font-size: var(--user-top-exp-h-size);
+            font-weight: 600;
+            letter-spacing: 2px;
+            color: var(--global-col-h);
+
+            @media screen and (min-width: 480px) {
+                font-size: 1.375rem;
+            }
+        }
+    }
+}

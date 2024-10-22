@@ -1,0 +1,24 @@
+>li.row {
+    position: relative;
+    width: 100%;
+    height: initial;
+    background-color: #fff;
+
+    &:nth-child(1) {
+        border-top: 1px solid var(--col-border);
+    }
+
+    &:nth-last-child(1) {
+        border-bottom: 1px solid var(--col-border);
+    }
+
+    @media screen and (min-width: 470px) {
+        margin-top: 1rem;
+        border: 1px solid var(--col-border);
+        border-radius: 0.75rem;
+    }
+
+    @import "postListTop";
+    @import "postListCenter";
+    @import "postListBottom";
+}

@@ -1,0 +1,34 @@
+>ul.link {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2.5rem;
+    width: 100%;
+    height: initial;
+    transition: 0.3s;
+    font-size: 0;
+
+    >li {
+        position: relative;
+        display: block;
+        width: initial;
+        height: initial;
+
+        >a {
+            position: relative;
+            display: block;
+            width: initial;
+            height: initial;
+
+            >i {
+                position: relative;
+                display: block;
+                width: initial;
+                height: initial;
+                font-size: var(--user-top-link-size);
+                color: var(--global-col-h);
+            }
+        }
+    }
+}
