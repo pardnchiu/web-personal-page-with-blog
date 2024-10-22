@@ -6,12 +6,11 @@
 ![](https://img.shields.io/github/repo-size/pardnchiu/web-template?label=size&color=bb4444) ![](https://img.shields.io/github/license/pardnchiu/web-template?label=license&color=44bb44) ![](https://img.shields.io/badge/creator-邱敬幃-4444bb)
 
 這些範例的代碼包含了 HTML 渲染，純 JS 渲染<br>
-隨著 2023/09 開始 [PDRenderKit](https://github.com/pardnchiu/PDRenderKit) (原 PDExtension) 的「輕量化框架」功能開發，有修改幾個項目來測試與完善框架<br>
+隨著 2023/09 開始 [PDRenderKit](https://github.com/pardnchiu/PDRenderKit) (原 PDExtension) 的框架功能開發，有修改幾個項目來測試與完善框架<br>
 原本打算花時間全部改寫為 PDRenderKit 渲染，但在過程中又開啟了 [Website Builder](https://github.com/pardnchiu/website-builder) 項目<br>
 因此決定範例改為導入 Website Builder 裡，不會再針對現有的項目進行修改<br>
-
-內容授權皆從 GPL3.0 改爲 MIT<br>
-如果對你有一點幫助，可以給個 Star 讓我知道
+並且授權皆從 GPL3.0 改爲 MIT<br>
+如果對你有一點幫助，可以給個 ★ Star 讓我知道
 
 - #### Social Networking
     製作日期: 2023/07/30
@@ -73,6 +72,9 @@
 - #### Gallery Page
     製作日期: 2023/03/09
     [![](./image/gallery-page-20230309.jpg)](https://pardnchiu.github.io/web-template/target/gallery-page-20230309)
+- #### App Introduction
+    製作日期: 2023/03/02
+    [![](./image/app-introduction-20230302.jpg)](https://pardnchiu.github.io/web-template/target/app-introduction-202303021)
 - #### Service Info
     製作日期: 2023/03/01
     [![](./image/service-info-20230301.jpg)](https://pardnchiu.github.io/web-template/target/service-info-20230301)
