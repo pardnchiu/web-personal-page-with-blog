@@ -62,12 +62,15 @@
 - #### Personal Profile
     製作日期: 2023/05/12
     [![](./image/personal-profile-20230512.jpg)](https://pardnchiu.github.io/web-template/target/personal-profile-20230512)
-- #### Store Page
-    製作日期: 2023/05/07
-    [![](./image/store-page-20230507.jpg)](https://pardnchiu.github.io/web-template/target/store-page-20230507)
 - #### Moneybook
     製作日期: 2023/04/18
     [![](./image/20230418.jpg)](https://pardnchiu.github.io/web-template/target/20230418)
+- #### Store Page
+    製作日期: 2023/03/14
+    [![](./image/store-page-20230314.jpg)](https://pardnchiu.github.io/web-template/target/store-page-20230314)
+- #### Gallery Page
+    製作日期: 2023/03/01
+    [![](./image/gallery-page-20230301.jpg)](https://pardnchiu.github.io/web-template/target/gallery-page-20230301)
 - #### Personal Portfolio
     製作日期: 2023/02/26
     [![](./image/personal-portfolio-20230226.jpg)](https://pardnchiu.github.io/web-template/target/personal-portfolio-20230226)
