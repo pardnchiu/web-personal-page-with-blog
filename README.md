@@ -10,7 +10,7 @@
 原本打算花時間全部改寫為 PDRenderKit 渲染，但在過程中又開啟了 [Website Builder](https://github.com/pardnchiu/website-builder) 項目<br>
 因此決定範例改為導入 Website Builder 裡，不會再針對現有的項目進行修改<br>
 並且授權皆從 GPL3.0 改爲 MIT<br>
-如果對你有一點幫助，可以給個 ★ Star 讓我知道
+如果對你有一點幫助，可以給個 ★ 讓我知道
 
 | 項目 | |
 | - | - |
