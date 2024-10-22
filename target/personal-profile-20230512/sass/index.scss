@@ -1,0 +1,271 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-size: 1em;
+    font-family: 'Noto Sans TC', sans-serif;
+    letter-spacing: 0;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    color: #000;
+    word-wrap: break-word;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+
+    touch-action: manipulation;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
+    -webkit-touch-callout: inherit;
+    -webkit-user-select: inherit;
+    -khtml-user-select: inherit;
+    -moz-user-select: inherit;
+    -ms-user-select: inherit;
+    user-select: inherit;
+
+    &.no-animate {
+        transition: none;
+
+        * {
+            transition: none;
+        }
+    }
+}
+
+img {
+    object-fit: cover;
+
+    &[data-src] {
+        content: url("data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==");
+        background: linear-gradient(to right, #EEF0F3, #E0E2E8, #EEF0F3);
+    }
+}
+
+a[href]:not([href=""]) {
+    cursor: pointer;
+}
+
+button {
+    cursor: pointer;
+}
+
+html {
+    position: fixed;
+    display: block;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+*[select="false"],
+*[select="0"] {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+*[select="true"],
+*[select="1"] {
+    -webkit-touch-callout: initial;
+    -webkit-user-select: initial;
+    -khtml-user-select: initial;
+    -moz-user-select: initial;
+    -ms-user-select: initial;
+    user-select: initial;
+}
+
+:root {
+    --tab-width: 0px;
+    --head-width: 10rem;
+
+    @media screen and (min-width: 800px) {
+        --tab-width: 240px;
+    }
+
+    @media screen and (min-width: 1024px) {
+        --tab-width: 360px;
+        --head-width: 12rem;
+    }
+}
+
+.firstload * {
+    transition: none !important;
+    -webkit-transition: none !important;
+    -moz-transition: none !important;
+    -ms-transition: none !important;
+    -o-transition: none !important;
+}
+
+body {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: var(--global-bg-col);
+    overflow: hidden;
+
+
+    &.show {
+
+        >nav {
+            left: calc(100vw - 3rem - 2rem);
+        }
+
+        >section.left-bar {
+            width: calc(100vw - 3rem - 2rem);
+            opacity: 1;
+
+            >footer {
+                width: calc(100vw - 3rem - 2rem - 2rem);
+            }
+        }
+    }
+
+    >nav {
+        position: fixed;
+        display: flex;
+        justify-content: space-between;
+        z-index: 1000;
+        top: 0;
+        left: 0;
+        padding: 0 1rem;
+        width: 100%;
+        height: 4rem;
+        opacity: 1;
+        background-color: rgba(0, 0, 0, 0.8);
+        transition: 0.2s;
+        overflow: hidden;
+
+        @media screen and (min-width: 800px) {
+            height: 0px;
+            opacity: 0;
+        }
+
+        >a,
+        >button {
+            position: relative;
+            margin-top: 0.5rem;
+            width: 3rem;
+            line-height: 3rem;
+            height: 3rem;
+
+            >i {
+                position: relative;
+                width: 3rem;
+                line-height: 3rem !important;
+                height: 3rem;
+                text-align: center;
+                font-size: 2rem;
+                color: #fff;
+            }
+        }
+    }
+
+    @import "./left-bar";
+
+    >section.right-body {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        width: calc(100% - var(--tab-width));
+        height: 100%;
+        background-color: #eee;
+        transition: 0.2s;
+
+        @import "./home";
+        @import "./about";
+
+        >section.portfolio {
+            position: relative;
+            display: flex;
+            justify-content: flex-start;
+            align-content: flex-start;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin: 0 auto;
+            padding: 6rem 1rem;
+            width: 100%;
+            max-width: 1280px;
+            height: 100%;
+            overflow-x: hidden;
+            overflow-y: scroll;
+            transition: 0.2s;
+
+            @media screen and (min-width: 414px) {
+                padding: 6rem 2rem;
+            }
+
+            @media screen and (min-width: 1024px) {
+                padding: 6rem 4rem;
+            }
+
+            --album-row-width: 100%;
+
+            @media screen and (min-width: 640px) {
+                --album-row-width: calc((100% - 2rem) / 2);
+            }
+
+            @media screen and (min-width: 1280px) {
+                --album-row-width: calc((100% - 4rem) / 3);
+            }
+
+            >a {
+                position: relative;
+                display: flex;
+                justify-content: flex-start;
+                align-content: flex-start;
+                flex-wrap: wrap;
+                width: var(--album-row-width);
+                height: initial;
+                background-color: rgba(255, 255, 255, 0.5);
+                -webkit-backdrop-filter: blur(1rem);
+                backdrop-filter: blur(1rem);
+                box-shadow: 0 4px 8px rgba(0, 0, 0, .2);
+                border-radius: 1rem;
+                overflow: hidden;
+                transition: 0.2s;
+
+                >img {
+                    object-fit: cover;
+                    position: relative;
+                    width: 100%;
+                    aspect-ratio: 3 / 2;
+                }
+
+                >h6 {
+                    position: relative;
+                    padding: 0.5rem 1rem 0;
+                    width: 100%;
+                    font-size: 1.125rem;
+                    letter-spacing: 1px;
+                }
+
+                >p {
+                    position: relative;
+                    padding: 0.5rem 1rem 1rem;
+                    width: 100%;
+                    line-height: 1.5rem;
+                    font-size: 1rem;
+                    letter-spacing: 1px;
+                    color: #444;
+                }
+            }
+        }
+    }
+}
+
+#copy {
+    position: absolute;
+    top: -100vh;
+    left: -100vw;
+    opacity: 0;
+}

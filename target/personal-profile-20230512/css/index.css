@@ -1,0 +1,1049 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+    font-size: 1em;
+    font-family: "Noto Sans TC", sans-serif;
+    letter-spacing: 0;
+    border: none;
+    outline: none;
+    background-color: rgba(0, 0, 0, 0);
+    color: #000;
+    word-wrap: break-word;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    touch-action: manipulation;
+    -webkit-touch-callout: inherit;
+    -webkit-user-select: inherit;
+    -khtml-user-select: inherit;
+    -moz-user-select: inherit;
+    -ms-user-select: inherit;
+    user-select: inherit
+}
+
+*::-webkit-scrollbar {
+    display: none
+}
+
+*.no-animate {
+    transition: none
+}
+
+*.no-animate * {
+    transition: none
+}
+
+img {
+    object-fit: cover
+}
+
+img[data-src] {
+    content: url("data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==");
+    background: linear-gradient(to right, #EEF0F3, #E0E2E8, #EEF0F3)
+}
+
+a[href]:not([href=""]) {
+    cursor: pointer
+}
+
+button {
+    cursor: pointer
+}
+
+html {
+    position: fixed;
+    display: block;
+    width: 100%;
+    height: 100%;
+    overflow: hidden
+}
+
+*[select=false],
+*[select="0"] {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none
+}
+
+*[select=true],
+*[select="1"] {
+    -webkit-touch-callout: initial;
+    -webkit-user-select: initial;
+    -khtml-user-select: initial;
+    -moz-user-select: initial;
+    -ms-user-select: initial;
+    user-select: initial
+}
+
+:root {
+    --tab-width: 0px;
+    --head-width: 10rem
+}
+
+@media screen and (min-width: 800px) {
+    :root {
+        --tab-width: 240px
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    :root {
+        --tab-width: 360px;
+        --head-width: 12rem
+    }
+}
+
+.firstload * {
+    transition: none !important;
+    -webkit-transition: none !important;
+    -moz-transition: none !important;
+    -ms-transition: none !important;
+    -o-transition: none !important
+}
+
+body {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: var(--global-bg-col);
+    overflow: hidden
+}
+
+body.show>nav {
+    left: calc(100vw - 3rem - 2rem)
+}
+
+body.show>section.left-bar {
+    width: calc(100vw - 3rem - 2rem);
+    opacity: 1
+}
+
+body.show>section.left-bar>footer {
+    width: calc(100vw - 3rem - 2rem - 2rem)
+}
+
+body>nav {
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    padding: 0 1rem;
+    width: 100%;
+    height: 4rem;
+    opacity: 1;
+    background-color: rgba(0, 0, 0, .8);
+    transition: .2s;
+    overflow: hidden
+}
+
+@media screen and (min-width: 800px) {
+    body>nav {
+        height: 0px;
+        opacity: 0
+    }
+}
+
+body>nav>a,
+body>nav>button {
+    position: relative;
+    margin-top: .5rem;
+    width: 3rem;
+    line-height: 3rem;
+    height: 3rem
+}
+
+body>nav>a>i,
+body>nav>button>i {
+    position: relative;
+    width: 3rem;
+    line-height: 3rem !important;
+    height: 3rem;
+    text-align: center;
+    font-size: 2rem;
+    color: #fff
+}
+
+body>section.left-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: var(--tab-width);
+    height: 100%;
+    opacity: 0;
+    transition: .2s;
+    background-color: #000;
+    overflow: hidden;
+    z-index: 100
+}
+
+@media screen and (min-width: 800px) {
+    body>section.left-bar {
+        opacity: 1
+    }
+}
+
+body>section.left-bar>section.user {
+    position: relative;
+    width: 100%;
+    height: initial
+}
+
+body>section.left-bar>section.user>section.head {
+    position: relative;
+    margin: 2rem auto 0;
+    width: var(--head-width);
+    height: var(--head-width);
+    background-color: #444;
+    border-radius: 50%;
+    transition: .3s
+}
+
+body>section.left-bar>section.user>section.head>img {
+    position: relative;
+    margin: .75rem;
+    width: calc(var(--head-width) - 1.5rem);
+    height: calc(var(--head-width) - 1.5rem);
+    background-color: #444;
+    border-radius: 50%;
+    transition: .3s
+}
+
+body>section.left-bar>section.user>h6.name {
+    position: relative;
+    padding: 1rem 1rem 0;
+    width: 100%;
+    text-align: center;
+    font-size: 2rem;
+    letter-spacing: 1px;
+    color: #fff
+}
+
+body>section.left-bar>section.user>section.button {
+    position: relative;
+    margin-top: .5rem;
+    width: 100%;
+    height: 2.5rem;
+    text-align: center
+}
+
+body>section.left-bar>section.user>section.button>a,
+body>section.left-bar>section.user>section.button>button {
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    margin-right: .5rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    background-color: #444;
+    border-radius: 50%
+}
+
+body>section.left-bar>section.user>section.button>a:nth-last-child(1),
+body>section.left-bar>section.user>section.button>button:nth-last-child(1) {
+    margin-right: 0
+}
+
+body>section.left-bar>section.user>section.button>a>i,
+body>section.left-bar>section.user>section.button>button>i {
+    position: relative;
+    width: 100%;
+    line-height: 2.5rem;
+    height: 100%;
+    font-size: 1.5rem;
+    color: #fff
+}
+
+body>section.left-bar>section.tab {
+    position: relative;
+    padding-top: 2rem;
+    width: 100%;
+    height: initial
+}
+
+body>section.left-bar>section.tab>a,
+body>section.left-bar>section.tab>button {
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    margin: 1rem 1rem 0;
+    padding: 0 1rem;
+    width: calc(100% - 2rem);
+    height: 3rem;
+    text-align: left;
+    border-radius: 1rem
+}
+
+body>section.left-bar>section.tab>a.sel>i,
+body>section.left-bar>section.tab>button.sel>i {
+    color: red
+}
+
+body>section.left-bar>section.tab>a>i,
+body>section.left-bar>section.tab>button>i {
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    width: 2rem;
+    line-height: 3rem;
+    height: 3rem;
+    color: #fff;
+    font-size: 1.5rem;
+    text-align: center
+}
+
+body>section.left-bar>section.tab>a>p,
+body>section.left-bar>section.tab>button>p {
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 1rem;
+    height: calc(100% - 3rem);
+    line-height: 3rem;
+    height: 3rem;
+    color: #fff;
+    letter-spacing: 1px
+}
+
+body>section.left-bar>footer {
+    position: fixed;
+    left: 1rem;
+    bottom: 1.5rem;
+    width: calc(var(--tab-width) - 2rem);
+    height: initial;
+    transition: .2s
+}
+
+body>section.left-bar>footer>p {
+    text-align: center;
+    letter-spacing: 1px;
+    font-size: .875rem;
+    color: #fff
+}
+
+body>section.left-bar>footer>p>i {
+    font-size: .75rem;
+    color: #fff
+}
+
+body>section.right-body {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: calc(100% - var(--tab-width));
+    height: 100%;
+    background-color: #eee;
+    transition: .2s
+}
+
+body>section.right-body>section.home {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-image: url("../image/cgfaces_e5d2485f-d7b9-45ba-a525-e45a237fe958.jpg");
+    background-size: cover;
+    background-position: center center
+}
+
+body>section.right-body>section.home::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .2)
+}
+
+body>section.right-body>section.home>section {
+    position: absolute;
+    top: 45%;
+    left: 1rem;
+    transform: translateY(-50%);
+    width: calc(100% - 2rem);
+    height: initial
+}
+
+@media screen and (min-width: 414px) {
+    body>section.right-body>section.home>section {
+        left: 2rem;
+        width: calc(100% - 4rem)
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    body>section.right-body>section.home>section {
+        left: 4rem;
+        width: calc(100% - 8rem)
+    }
+}
+
+body>section.right-body>section.home>section>p {
+    position: relative;
+    display: block;
+    margin-top: 1rem;
+    font-size: 1.5rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    color: #fff
+}
+
+@media screen and (min-width: 1024px) {
+    body>section.right-body>section.home>section>p {
+        font-size: 2rem
+    }
+}
+
+body>section.right-body>section.home>section>p.title {
+    margin-top: 0px;
+    font-size: 2rem
+}
+
+@media screen and (min-width: 1024px) {
+    body>section.right-body>section.home>section>p.title {
+        font-size: 2.5rem
+    }
+}
+
+body>section.right-body>section.home>section>p>b {
+    color: red
+}
+
+body>section.right-body>section.home>section>h1 {
+    position: relative;
+    display: inline-block;
+    vertical-align: bottom;
+    font-size: 2.5rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #fff
+}
+
+@media screen and (min-width: 1024px) {
+    body>section.right-body>section.home>section>h1 {
+        font-size: 4rem
+    }
+}
+
+body>section.right-body>section.home>section>h1>b {
+    position: relative;
+    margin-left: .75rem;
+    color: red
+}
+
+body>section.right-body>section.about {
+    position: relative;
+    display: block;
+    margin: 0 auto;
+    padding: 6rem 1rem;
+    width: 100%;
+    max-width: 1280px;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    transition: .2s
+}
+
+@media screen and (min-width: 414px) {
+    body>section.right-body>section.about {
+        padding: 6rem 2rem
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    body>section.right-body>section.about {
+        padding: 6rem 4rem
+    }
+}
+
+body>section.right-body>section.about>h4 {
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    padding-bottom: 1.5rem;
+    font-size: 2.5rem
+}
+
+body>section.right-body>section.about>h4::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 65%;
+    height: .25rem;
+    background-color: red;
+    border-radius: .125rem
+}
+
+body>section.right-body>section.about>h5 {
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 4rem;
+    padding-bottom: 1.5rem;
+    font-size: 1.5rem
+}
+
+body>section.right-body>section.about>h5::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 65%;
+    height: .25rem;
+    background-color: red;
+    border-radius: .125rem
+}
+
+body>section.right-body>section.about>p {
+    position: relative;
+    display: block;
+    margin-top: 3rem;
+    font-size: 1rem;
+    letter-spacing: 1px
+}
+
+body>section.right-body>section.about>section.user {
+    --about-head-width: 8rem;
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+    width: 100%;
+    height: initial
+}
+
+@media screen and (min-width: 1024px) {
+    body>section.right-body>section.about>section.user {
+        --about-head-width: 12rem
+    }
+}
+
+@media screen and (min-width: 1280px) {
+    body>section.right-body>section.about>section.user {
+        --about-head-width: 16rem
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    body>section.right-body>section.about>section.user {
+        --about-head-width: 20rem
+    }
+}
+
+body>section.right-body>section.about>section.user>img {
+    position: relative;
+    display: block;
+    width: var(--about-head-width);
+    height: var(--about-head-width);
+    border-radius: .5rem;
+    transition: .2s
+}
+
+body>section.right-body>section.about>section.user>section {
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    align-content: flex-start;
+    flex-wrap: wrap;
+    padding-top: 1.5rem;
+    width: 100%;
+    border-radius: .5rem;
+    transition: .2s
+}
+
+@media screen and (min-width: 640px) {
+    body>section.right-body>section.about>section.user>section {
+        padding-top: 0;
+        padding-left: 2rem;
+        width: calc(100% - var(--about-head-width))
+    }
+}
+
+body>section.right-body>section.about>section.user>section>h6 {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: initial;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: red
+}
+
+body>section.right-body>section.about>section.user>section>p {
+    position: relative;
+    display: block;
+    margin-top: 1rem;
+    width: 100%;
+    height: initial;
+    font-size: 1rem;
+    letter-spacing: 1px
+}
+
+body>section.right-body>section.about>section.user>section>section {
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    align-content: flex-start;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+    width: 100%;
+    height: initial
+}
+
+body>section.right-body>section.about>section.user>section>section>p {
+    position: relative;
+    display: block;
+    margin-top: 1rem;
+    width: 100%;
+    line-height: 2rem;
+    height: 2rem;
+    font-size: 1.125rem;
+    letter-spacing: 1px;
+    white-space: nowrap;
+    overflow: hidden
+}
+
+@media screen and (min-width: 414px) {
+    body>section.right-body>section.about>section.user>section>section>p {
+        width: calc(50% - .5rem)
+    }
+
+    body>section.right-body>section.about>section.user>section>section>p:nth-child(2n) {
+        margin-left: 1rem
+    }
+}
+
+body>section.right-body>section.about>section.user>section>section>p>i {
+    width: 1rem;
+    color: red
+}
+
+body>section.right-body>section.about>section.user>section>section>p>b {
+    width: 3rem
+}
+
+body>section.right-body>section.about>section.user>section>section>p>a {
+    display: inline-block;
+    vertical-align: top;
+    width: calc(100% - 4rem);
+    text-overflow: ellipsis;
+    color: red;
+    line-clamp: 1;
+    -webkit-line-clamp: 1;
+    white-space: nowrap;
+    overflow: hidden
+}
+
+body>section.right-body>section.about>section.item {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 2rem auto 0;
+    width: 100%;
+    max-width: 800px;
+    height: initial
+}
+
+body>section.right-body>section.about>section.item>div {
+    position: relative;
+    margin-top: 2rem;
+    width: 50%
+}
+
+@media screen and (min-width: 640px) {
+    body>section.right-body>section.about>section.item>div {
+        width: 25%
+    }
+}
+
+body>section.right-body>section.about>section.item>div>h6 {
+    font-size: 1.5rem;
+    letter-spacing: 1px
+}
+
+body>section.right-body>section.about>section.item>div>h6>i {
+    margin-right: .5rem;
+    line-height: 3rem;
+    height: 3rem;
+    text-align: center;
+    font-size: 2.5rem;
+    color: red
+}
+
+body>section.right-body>section.about>section.item>div>p {
+    margin-top: .5rem;
+    font-size: 1.125rem;
+    letter-spacing: 1px
+}
+
+body>section.right-body>section.about>section.skill {
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    align-content: flex-start;
+    flex-wrap: wrap;
+    width: 100%;
+    height: initial
+}
+
+body>section.right-body>section.about>section.skill>div {
+    position: relative;
+    display: block;
+    margin-top: 3.5rem;
+    width: 100%;
+    height: .75rem;
+    background-color: #ddd;
+    border-radius: .5rem;
+    transition: .2s
+}
+
+@media screen and (min-width: 480px) {
+    body>section.right-body>section.about>section.skill>div {
+        width: calc(50% - .5rem)
+    }
+
+    body>section.right-body>section.about>section.skill>div:nth-child(2n) {
+        margin-left: 1rem
+    }
+}
+
+@media screen and (min-width: 640px) {
+    body>section.right-body>section.about>section.skill>div {
+        width: calc(50% - 1rem)
+    }
+
+    body>section.right-body>section.about>section.skill>div:nth-child(2n) {
+        margin-left: 2rem
+    }
+}
+
+body>section.right-body>section.about>section.skill>div::before {
+    content: attr(skill);
+    position: absolute;
+    top: -2rem;
+    left: 0;
+    font-weight: 700;
+    font-style: italic;
+    letter-spacing: 1px
+}
+
+body>section.right-body>section.about>section.skill>div::after {
+    content: attr(year) "年";
+    position: absolute;
+    top: -2rem;
+    right: 0;
+    font-weight: 700;
+    font-style: italic;
+    letter-spacing: 1px
+}
+
+body>section.right-body>section.about>section.skill>div[year="0"]>span {
+    width: 0%
+}
+
+body>section.right-body>section.about>section.skill>div[year="1"]>span {
+    width: 10%
+}
+
+body>section.right-body>section.about>section.skill>div[year="2"]>span {
+    width: 20%
+}
+
+body>section.right-body>section.about>section.skill>div[year="3"]>span {
+    width: 30%
+}
+
+body>section.right-body>section.about>section.skill>div[year="4"]>span {
+    width: 40%
+}
+
+body>section.right-body>section.about>section.skill>div[year="5"]>span {
+    width: 50%
+}
+
+body>section.right-body>section.about>section.skill>div[year="6"]>span {
+    width: 60%
+}
+
+body>section.right-body>section.about>section.skill>div[year="7"]>span {
+    width: 70%
+}
+
+body>section.right-body>section.about>section.skill>div[year="8"]>span {
+    width: 80%
+}
+
+body>section.right-body>section.about>section.skill>div[year="9"]>span {
+    width: 90%
+}
+
+body>section.right-body>section.about>section.skill>div[year="10"]>span {
+    width: 100%
+}
+
+body>section.right-body>section.about>section.skill>div>span {
+    position: absolute;
+    width: 0;
+    height: .75rem;
+    background-color: red;
+    border-radius: .5rem
+}
+
+body>section.right-body>section.about>section.other {
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    align-content: flex-start;
+    flex-wrap: wrap;
+    width: 100%;
+    height: initial
+}
+
+body>section.right-body>section.about>section.other>section {
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    align-content: flex-start;
+    flex-wrap: wrap;
+    width: 100%;
+    height: initial;
+    transition: .2s
+}
+
+@media screen and (min-width: 640px) {
+    body>section.right-body>section.about>section.other>section {
+        width: calc(50% - 1rem)
+    }
+
+    body>section.right-body>section.about>section.other>section.right {
+        margin-left: 2rem
+    }
+}
+
+body>section.right-body>section.about>section.other>section.x2 {
+    width: 100%
+}
+
+body>section.right-body>section.about>section.other>section>h6 {
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 4rem;
+    font-size: 1.5rem;
+    letter-spacing: 1px
+}
+
+body>section.right-body>section.about>section.other>section>section.timeline {
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    padding-bottom: 1.5rem;
+    width: 100%;
+    height: initial
+}
+
+body>section.right-body>section.about>section.other>section>section.timeline:nth-child(2) {
+    margin-top: 2rem
+}
+
+body>section.right-body>section.about>section.other>section>section.timeline:nth-last-child(1) {
+    padding-bottom: 0px
+}
+
+body>section.right-body>section.about>section.other>section>section.timeline::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1rem;
+    height: 1rem;
+    border: 3px solid red;
+    border-radius: 50%
+}
+
+body>section.right-body>section.about>section.other>section>section.timeline::after {
+    content: "";
+    position: absolute;
+    top: calc(1rem + 3px);
+    left: calc(.5rem + 1.5px - .1px);
+    bottom: 0;
+    width: 3px;
+    background-color: red
+}
+
+body>section.right-body>section.about>section.other>section>section.timeline>h6 {
+    position: relative;
+    display: block;
+    padding-left: 2rem;
+    width: 100%;
+    height: initial;
+    font-size: 1.25rem;
+    letter-spacing: 1px
+}
+
+body>section.right-body>section.about>section.other>section>section.timeline>p {
+    position: relative;
+    display: block;
+    margin-top: .5rem;
+    padding-left: 2rem;
+    width: 100%;
+    height: initial;
+    letter-spacing: 1px
+}
+
+body>section.right-body>section.about>section.other>section>section.timeline>p.date {
+    margin-top: 0px;
+    font-size: .875rem
+}
+
+body>section.right-body>section.about>section.other>section>section.timeline>ul {
+    position: relative;
+    display: block;
+    padding-left: 2rem;
+    width: 100%;
+    height: initial
+}
+
+body>section.right-body>section.about>section.other>section>section.timeline>ul>p {
+    position: relative;
+    padding-top: .5rem;
+    font-size: 1rem;
+    font-weight: 400
+}
+
+body>section.right-body>section.about>section.other>section>section.timeline>ul>li {
+    margin-left: 1.25rem;
+    list-style-type: disc;
+    list-style-position: outside
+}
+
+body>section.right-body>section.about>section.other>section>ul {
+    position: relative;
+    display: block;
+    margin-top: 1rem;
+    width: 100%;
+    height: initial
+}
+
+body>section.right-body>section.about>section.other>section>ul>b {
+    position: relative;
+    display: block;
+    padding-top: 1rem;
+    height: initial;
+    font-size: 1.125rem
+}
+
+body>section.right-body>section.about>section.other>section>ul>li {
+    position: relative;
+    margin-left: 1.25rem;
+    line-height: 2rem;
+    list-style-type: disc;
+    list-style-position: outside
+}
+
+body>section.right-body>section.portfolio {
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    align-content: flex-start;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin: 0 auto;
+    padding: 6rem 1rem;
+    width: 100%;
+    max-width: 1280px;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    transition: .2s;
+    --album-row-width: 100%
+}
+
+@media screen and (min-width: 414px) {
+    body>section.right-body>section.portfolio {
+        padding: 6rem 2rem
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    body>section.right-body>section.portfolio {
+        padding: 6rem 4rem
+    }
+}
+
+@media screen and (min-width: 640px) {
+    body>section.right-body>section.portfolio {
+        --album-row-width: calc((100% - 2rem) / 2)
+    }
+}
+
+@media screen and (min-width: 1280px) {
+    body>section.right-body>section.portfolio {
+        --album-row-width: calc((100% - 4rem) / 3)
+    }
+}
+
+body>section.right-body>section.portfolio>a {
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    align-content: flex-start;
+    flex-wrap: wrap;
+    width: var(--album-row-width);
+    height: initial;
+    background-color: rgba(255, 255, 255, .5);
+    -webkit-backdrop-filter: blur(1rem);
+    backdrop-filter: blur(1rem);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, .2);
+    border-radius: 1rem;
+    overflow: hidden;
+    transition: .2s
+}
+
+body>section.right-body>section.portfolio>a>img {
+    object-fit: cover;
+    position: relative;
+    width: 100%;
+    aspect-ratio: 3/2
+}
+
+body>section.right-body>section.portfolio>a>h6 {
+    position: relative;
+    padding: .5rem 1rem 0;
+    width: 100%;
+    font-size: 1.125rem;
+    letter-spacing: 1px
+}
+
+body>section.right-body>section.portfolio>a>p {
+    position: relative;
+    padding: .5rem 1rem 1rem;
+    width: 100%;
+    line-height: 1.5rem;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    color: #444
+}
+
+#copy {
+    position: absolute;
+    top: -100vh;
+    left: -100vw;
+    opacity: 0
+}

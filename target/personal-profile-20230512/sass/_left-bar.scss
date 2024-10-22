@@ -1,0 +1,155 @@
+>section.left-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: var(--tab-width);
+    height: 100%;
+    opacity: 0;
+    transition: 0.2s;
+    background-color: #000;
+    overflow: hidden;
+    z-index: 100;
+
+    @media screen and (min-width: 800px) {
+        opacity: 1;
+    }
+
+    >section.user {
+        position: relative;
+        width: 100%;
+        height: initial;
+
+        >section.head {
+            position: relative;
+            margin: 2rem auto 0;
+            width: var(--head-width);
+            height: var(--head-width);
+            background-color: #444;
+            border-radius: 50%;
+            transition: 0.3s;
+
+            >img {
+                position: relative;
+                margin: 0.75rem;
+                width: calc(var(--head-width) - 1.5rem);
+                height: calc(var(--head-width) - 1.5rem);
+                background-color: #444;
+                border-radius: 50%;
+                transition: 0.3s;
+            }
+        }
+
+        >h6.name {
+            position: relative;
+            padding: 1rem 1rem 0;
+            width: 100%;
+            text-align: center;
+            font-size: 2rem;
+            letter-spacing: 1px;
+            color: #fff;
+        }
+
+        >section.button {
+            position: relative;
+            margin-top: 0.5rem;
+            width: 100%;
+            height: 2.5rem;
+            text-align: center;
+
+            >a,
+            >button {
+                position: relative;
+                display: inline-block;
+                vertical-align: top;
+                margin-right: 0.5rem;
+                width: 2.5rem;
+                height: 2.5rem;
+                background-color: #444;
+                border-radius: 50%;
+
+                &:nth-last-child(1) {
+                    margin-right: 0;
+                }
+
+                >i {
+                    position: relative;
+                    width: 100%;
+                    line-height: 2.5rem;
+                    height: 100%;
+                    font-size: 1.5rem;
+                    color: #fff;
+                }
+            }
+        }
+    }
+
+    >section.tab {
+        position: relative;
+        padding-top: 2rem;
+        width: 100%;
+        height: initial;
+
+        >a,
+        >button {
+            position: relative;
+            display: inline-block;
+            vertical-align: top;
+            margin: 1rem 1rem 0;
+            padding: 0 1rem;
+            width: calc(100% - 2rem);
+            height: 3rem;
+            text-align: left;
+            border-radius: 1rem;
+
+            &.sel>i {
+                color: red;
+            }
+
+            >i {
+                position: relative;
+                display: inline-block;
+                vertical-align: top;
+                width: 2rem;
+                line-height: 3rem;
+                height: 3rem;
+                color: #fff;
+                font-size: 1.5rem;
+                text-align: center;
+            }
+
+            >p {
+                position: relative;
+                display: inline-block;
+                vertical-align: top;
+                margin-left: 1rem;
+                height: calc(100% - 3rem);
+                line-height: 3rem;
+                height: 3rem;
+                color: #fff;
+                letter-spacing: 1px;
+            }
+        }
+    }
+
+    >footer {
+        position: fixed;
+        left: 1rem;
+        bottom: 1.5rem;
+        width: calc(var(--tab-width) - 2rem);
+        height: initial;
+        transition: 0.2s;
+
+        >p {
+            text-align: center;
+            letter-spacing: 1px;
+            font-size: 0.875rem;
+            color: #fff;
+
+            >i {
+                font-size: 0.75rem;
+                color: #fff;
+            }
+        }
+    }
+}

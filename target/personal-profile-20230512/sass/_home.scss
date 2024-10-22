@@ -1,0 +1,87 @@
+>section.home {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-image: url("../image/cgfaces_e5d2485f-d7b9-45ba-a525-e45a237fe958.jpg");
+    background-size: cover;
+    background-position: center center;
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.2);
+    }
+
+    >section {
+        position: absolute;
+        top: 45%;
+        left: 1rem;
+        transform: translateY(-50%);
+        width: calc(100% - 2rem);
+        height: initial;
+
+        @media screen and (min-width: 414px) {
+            left: 2rem;
+            width: calc(100% - 4rem);
+        }
+
+        @media screen and (min-width: 1024px) {
+            left: 4rem;
+            width: calc(100% - 8rem);
+        }
+
+        >p {
+            position: relative;
+            display: block;
+            margin-top: 1rem;
+            font-size: 1.5rem;
+            font-weight: 500;
+            letter-spacing: 1px;
+            color: #fff;
+
+            @media screen and (min-width: 1024px) {
+                font-size: 2rem;
+            }
+
+            &.title {
+                margin-top: 0px;
+                font-size: 2rem;
+
+                @media screen and (min-width: 1024px) {
+                    font-size: 2.5rem;
+                }
+            }
+
+            >b {
+                color: red;
+            }
+        }
+
+        >h1 {
+            position: relative;
+            display: inline-block;
+            vertical-align: bottom;
+            font-size: 2.5rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            color: #fff;
+
+            @media screen and (min-width: 1024px) {
+                font-size: 4rem;
+            }
+
+            >b {
+                position: relative;
+                margin-left: 0.75rem;
+                color: red;
+            }
+        }
+    }
+}
