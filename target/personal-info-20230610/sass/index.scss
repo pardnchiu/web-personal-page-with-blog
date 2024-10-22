@@ -1,0 +1,153 @@
+:root {
+	--safe-top: env(safe-area-inset-top);
+	--safe-left: env(safe-area-inset-left);
+	--safe-bottom: env(safe-area-inset-bottom);
+	--safe-right: env(safe-area-inset-right);
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	font-size: 1em;
+	font-family: 'Noto Sans TC', sans-serif;
+	letter-spacing: 0;
+	border: none;
+	outline: none;
+	background-color: transparent;
+	color: #000;
+	word-wrap: break-word;
+	text-decoration: none;
+	list-style: none;
+	box-sizing: border-box;
+	-ms-overflow-style: none;
+	scrollbar-width: none;
+
+	touch-action: manipulation;
+
+	&::-webkit-scrollbar {
+		display: none;
+	}
+
+	-webkit-touch-callout: inherit;
+	-webkit-user-select: inherit;
+	-khtml-user-select: inherit;
+	-moz-user-select: inherit;
+	-ms-user-select: inherit;
+	user-select: inherit;
+
+	&.no-animate {
+		transition: none;
+
+		* {
+			transition: none;
+		}
+	}
+}
+
+img {
+	object-fit: cover;
+
+	&[data-src] {
+		content: url("data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==");
+		background: linear-gradient(to right, #EEF0F3, #E0E2E8, #EEF0F3);
+	}
+}
+
+a[href]:not([href=""]) {
+	cursor: pointer;
+}
+
+button {
+	cursor: pointer;
+}
+
+html {
+	position: fixed;
+	display: block;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+
+*[select="false"],
+*[select="0"] {
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+*[select="true"],
+*[select="1"] {
+	-webkit-touch-callout: initial;
+	-webkit-user-select: initial;
+	-khtml-user-select: initial;
+	-moz-user-select: initial;
+	-ms-user-select: initial;
+	user-select: initial;
+}
+
+body {
+	position: relative;
+	display: block;
+	width: 100%;
+	height: 100%;
+	background: var(--col-brand-1);
+	overflow: hidden scroll;
+
+	@import "./nav";
+	
+	>section {
+		padding-left: 0;
+		transition: 0.5s;
+
+		@media screen and (min-width: 800px) {
+			padding-left: 8rem;
+		}
+
+		>section {
+			display: flex;
+			margin: 0 auto;
+			padding: 2rem 1rem;
+			width: 100%;
+			max-width: var(--width-max);
+			overflow: visible;
+
+            @media screen and (min-width: 800px) {
+				padding: 5rem 1rem;
+            }
+
+			@import "./section-0";
+			@import "./section-1";
+			@import "./section-2";
+			@import "./section-3";
+			@import "./section-4";
+			@import "./section-5";
+			@import "./section-6";
+			@import "./section-7";
+		}
+	}
+}
+
+@keyframes linear-move {
+	0% {
+		background-position: 0%;
+	}
+
+	50% {
+		background-position: 100%;
+	}
+
+	100% {
+		background-position: 0%;
+	}
+}
+
+#copy {
+	position: absolute;
+	top: -100vh;
+	left: -100vw;
+	opacity: 0;
+}

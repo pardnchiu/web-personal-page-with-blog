@@ -1,0 +1,119 @@
+&:nth-child(8) {
+    position: relative;
+    display: flex;
+    flex-flow: row wrap;
+    gap: 3rem;
+    width: 100%;
+
+    >img {
+        position: absolute;
+        top: 4.5rem;
+        left: -.25rem;
+        width: 2.5rem;
+        height: 2.5rem;
+    }
+
+    h6 {
+        width: 100%;
+        font-size: 2rem;
+        font-weight: 900;
+        color: var(--col-brand-9);
+        opacity: 0.9;
+    }
+
+    >section {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+
+        @media screen and (min-width: 640px) {
+            gap: 3rem;
+        }
+
+        >section {
+            width: 100%;
+            max-width: 440px;
+
+            @media screen and (min-width: 640px) {
+                max-width: 100%;
+
+                &:nth-child(1) {
+                    width: calc(30% - 3rem);
+                }
+    
+                &:nth-child(2) {
+                    width: 70%;
+                }
+            }
+
+            b {
+                font-size: 1.125rem;
+                font-weight: 700;
+                color: var(--col-brand-9);
+            }
+
+            p {
+                color: var(--col-brand-9);
+                opacity: 0.75;
+            }
+
+            form {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 1rem;
+
+                input,
+                textarea {
+                    padding: 1rem 1.5rem;
+                    width: 100%;
+                    line-height: 2rem;
+                    background-color: #fff;
+                    resize: none;
+                    box-shadow: 0 0.375rem 0.75rem rgba(0, 0, 0, 0.05);
+
+                    &:nth-child(1) {
+                        border-radius: 1rem 1rem 0.25rem 0.25rem;
+                    }
+
+                    &:nth-child(2),
+                    &:nth-child(3) {
+                        border-radius: 0.25rem;
+                    }
+
+                    &:nth-child(4) {
+                        border-radius: 0.25rem 0.25rem 1rem 1rem;
+                        height: 12rem;
+                    }
+
+                    @media screen and (min-width: 480px) {
+
+                        &.r2 {
+                            width: calc((100% - 1rem) / 2);
+                        }
+
+                        &:nth-child(1) {
+                            border-radius: 1rem 0.25rem 0.25rem 0.25rem;
+                        }
+
+                        &:nth-child(2) {
+                            border-radius: 0.25rem 1rem 0.25rem 0.25rem;
+                        }
+                    }
+                }
+            }
+
+            >a,
+            >button {
+                display: inline-block;
+                margin-top: 1.5rem;
+                padding: 0 2rem;
+                line-height: 2.5rem;
+                font-weight: 600;
+                background-color: var(--col-error-5);
+                color: #fff;
+                border-radius: 1.25rem;
+            }
+        }
+    }
+}

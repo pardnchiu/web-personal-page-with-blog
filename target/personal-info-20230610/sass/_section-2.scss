@@ -1,0 +1,119 @@
+&:nth-child(3) {
+    position: relative;
+    display: flex;
+    flex-flow: row wrap;
+    gap: 3rem;
+    width: 100%;
+
+    >img {
+        position: absolute;
+        top: 4.5rem;
+        left: -.25rem;
+        width: 2.5rem;
+        height: 2.5rem;
+    }
+
+    h6 {
+        width: 100%;
+        font-size: 2rem;
+        font-weight: 900;
+        color: var(--col-brand-9);
+        opacity: 0.9;
+    }
+
+    >section {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 2rem;
+        width: 100%;
+        transition: 0.5s;
+
+        div {
+            display: flex;
+            flex-flow: column nowrap;
+            align-items: center;
+            gap: 1rem;
+            padding: 2rem 1rem;
+            width: 100%;
+            max-width: 440px;
+            border-radius: 1rem;
+            box-shadow: 0 0.375rem 0.75rem rgba(0, 0, 0, 0.05);
+
+            @media screen and (min-width: 640px) {
+                width: calc((100% - 2rem * 2) / 3);
+                max-width: 100%;
+            }
+
+            &:nth-child(1) {
+                background: linear-gradient(to right bottom, var(--col-error-4), var(--col-error-5));
+
+                i,
+                h6,
+                p {
+                    background: linear-gradient(to right bottom, var(--col-error-2), #fff);
+                    background-size: 200%;
+                    background-clip: text;
+                    -webkit-background-clip: text;
+                    color: transparent;
+                    animation: linear-move 2s linear infinite;
+                }
+            }
+
+            &:nth-child(2) {
+                background: linear-gradient(to right bottom, var(--col-info-4), var(--col-info-5));
+
+                i,
+                h6,
+                p {
+                    background: linear-gradient(to right bottom, var(--col-info-8), #000);
+                    background-size: 200%;
+                    background-clip: text;
+                    -webkit-background-clip: text;
+                    color: transparent;
+                    animation: linear-move 2s linear infinite;
+                }
+            }
+
+            &:nth-child(3) {
+                background: linear-gradient(to right bottom, var(--col-hint-4), var(--col-hint-5));
+
+                i,
+                h6,
+                p {
+                    background: linear-gradient(to right bottom, var(--col-hint-2), #fff);
+                    background-size: 200%;
+                    background-clip: text;
+                    -webkit-background-clip: text;
+                    color: transparent;
+                    animation: linear-move 2s linear infinite;
+                }
+            }
+
+            &:nth-child(4) {
+                background-color: var(--col-brand-5);
+
+                h6,
+                p {
+                    color: #fff;
+                }
+            }
+
+            i {
+                font-size: 4rem;
+            }
+
+            h6 {
+                max-width: 400px;
+                text-align: center;
+                font-size: 1.125rem;
+            }
+
+            p {
+                max-width: 400px;
+                text-align: center;
+            }
+        }
+    }
+}

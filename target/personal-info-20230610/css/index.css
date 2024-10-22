@@ -1,0 +1,2498 @@
+:root {
+    --safe-top: env(safe-area-inset-top);
+    --safe-left: env(safe-area-inset-left);
+    --safe-bottom: env(safe-area-inset-bottom);
+    --safe-right: env(safe-area-inset-right)
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-size: 1em;
+    font-family: "Noto Sans TC", sans-serif;
+    letter-spacing: 0;
+    border: none;
+    outline: none;
+    background-color: rgba(0, 0, 0, 0);
+    color: #000;
+    word-wrap: break-word;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    touch-action: manipulation;
+    -webkit-touch-callout: inherit;
+    -webkit-user-select: inherit;
+    -khtml-user-select: inherit;
+    -moz-user-select: inherit;
+    -ms-user-select: inherit;
+    user-select: inherit
+}
+
+*::-webkit-scrollbar {
+    display: none
+}
+
+*.no-animate {
+    transition: none
+}
+
+*.no-animate * {
+    transition: none
+}
+
+img {
+    object-fit: cover
+}
+
+img[data-src] {
+    content: url("data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==");
+    background: linear-gradient(to right, #EEF0F3, #E0E2E8, #EEF0F3)
+}
+
+a[href]:not([href=""]) {
+    cursor: pointer
+}
+
+button {
+    cursor: pointer
+}
+
+html {
+    position: fixed;
+    display: block;
+    width: 100%;
+    height: 100%;
+    overflow: hidden
+}
+
+*[select=false],
+*[select="0"] {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none
+}
+
+*[select=true],
+*[select="1"] {
+    -webkit-touch-callout: initial;
+    -webkit-user-select: initial;
+    -khtml-user-select: initial;
+    -moz-user-select: initial;
+    -ms-user-select: initial;
+    user-select: initial
+}
+
+body {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: var(--col-brand-1);
+    overflow: hidden scroll
+}
+
+body>button#nav-button {
+    position: fixed;
+    z-index: 1001;
+    top: 1rem;
+    left: 1rem
+}
+
+body>button#nav-button i {
+    width: 2rem;
+    line-height: 2rem;
+    height: 2rem;
+    text-align: center;
+    font-size: 1.5rem;
+    opacity: 1;
+    transition: .5s
+}
+
+@media screen and (min-width: 800px) {
+    body>button#nav-button i {
+        width: 0;
+        line-height: 0;
+        height: 0;
+        font-size: 0;
+        opacity: 0
+    }
+}
+
+body>nav {
+    position: fixed;
+    z-index: 1000;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: space-between;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    border-right: 1px solid rgba(0, 0, 0, .1254901961);
+    background: var(--col-brand-1);
+    transition: .5s;
+    overflow: hidden
+}
+
+@media screen and (min-width: 800px) {
+    body>nav {
+        width: 8rem
+    }
+}
+
+body>nav.show {
+    width: 8rem
+}
+
+body>nav>h6 {
+    margin-top: 4rem;
+    width: 100%;
+    line-height: 2.5rem;
+    font-size: 2rem;
+    font-weight: 900;
+    text-align: center;
+    white-space: nowrap;
+    color: var(--col-brand-9);
+    opacity: .9
+}
+
+@media screen and (min-width: 800px) {
+    body>nav>h6 {
+        margin-top: 2.5rem
+    }
+}
+
+body>nav>h6::after {
+    content: "";
+    display: inline-block;
+    vertical-align: bottom;
+    width: .5rem;
+    height: .5rem;
+    border-radius: 50%;
+    background-color: var(--col-error-5)
+}
+
+body>nav>ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    width: 100%
+}
+
+body>nav>ul[sel="0"]>li:nth-child(1)>i {
+    color: var(--col-brand-5)
+}
+
+body>nav>ul[sel="1"]>li:nth-child(2)>i {
+    color: var(--col-brand-5)
+}
+
+body>nav>ul[sel="2"]>li:nth-child(3)>i {
+    color: var(--col-brand-5)
+}
+
+body>nav>ul[sel="3"]>li:nth-child(4)>i {
+    color: var(--col-brand-5)
+}
+
+body>nav>ul[sel="4"]>li:nth-child(5)>i {
+    color: var(--col-brand-5)
+}
+
+body>nav>ul[sel="5"]>li:nth-child(6)>i {
+    color: var(--col-brand-5)
+}
+
+body>nav>ul[sel="6"]>li:nth-child(7)>i {
+    color: var(--col-brand-5)
+}
+
+body>nav>ul[sel="7"]>li:nth-child(8)>i {
+    color: var(--col-brand-5)
+}
+
+body>nav>ul>li {
+    width: 100%;
+    text-align: center;
+    cursor: pointer
+}
+
+body>nav>ul>li.sel>i {
+    color: var(--col-brand-5)
+}
+
+body>nav>ul>li i {
+    font-size: 1.25rem
+}
+
+body>nav>p {
+    padding-top: 2rem;
+    font-size: .75rem;
+    letter-spacing: .125rem;
+    writing-mode: vertical-rl;
+    -webkit-writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    color: #000;
+    opacity: .15
+}
+
+body>section {
+    padding-left: 0;
+    transition: .5s
+}
+
+@media screen and (min-width: 800px) {
+    body>section {
+        padding-left: 8rem
+    }
+}
+
+body>section>section {
+    display: flex;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    width: 100%;
+    max-width: var(--width-max);
+    overflow: visible
+}
+
+@media screen and (min-width: 800px) {
+    body>section>section {
+        padding: 5rem 1rem
+    }
+}
+
+body>section>section:nth-child(1) {
+    position: relative;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: calc(100vh - var(--safe-top) - var(--safe-bottom));
+    background-image: url("../image/section-0.svg");
+    background-size: 100%;
+    background-position: center
+}
+
+body>section>section:nth-child(1) img {
+    object-fit: cover;
+    width: 8rem;
+    height: 8rem;
+    background-color: var(--col-brand-2);
+    border-radius: 50%;
+    box-shadow: 0 .375rem .75rem rgba(0, 0, 0, .05)
+}
+
+body>section>section:nth-child(1) h1 {
+    margin-top: 1rem;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 900;
+    color: var(--col-brand-9);
+    opacity: .9
+}
+
+body>section>section:nth-child(1) p {
+    margin-top: .25rem;
+    font-weight: 500;
+    color: var(--col-brand-9);
+    opacity: .6
+}
+
+body>section>section:nth-child(1) ul {
+    display: flex;
+    flex-flow: row nowrap;
+    margin-top: 1.5rem;
+    gap: 1rem
+}
+
+body>section>section:nth-child(1) ul li a i {
+    font-size: 1.5rem;
+    color: var(--col-brand-9);
+    opacity: .9
+}
+
+body>section>section:nth-child(1)>a,
+body>section>section:nth-child(1)>button {
+    margin-top: 1.5rem;
+    padding: 0 2rem;
+    line-height: 2.5rem;
+    font-weight: 600;
+    background-color: var(--col-error-5);
+    color: #fff;
+    border-radius: 1.25rem
+}
+
+body>section>section:nth-child(1) span {
+    position: absolute;
+    bottom: 3.75rem;
+    font-size: .75rem;
+    font-weight: 600;
+    color: var(--col-brand-7)
+}
+
+body>section>section:nth-child(1) span::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -2.5rem;
+    transform: translateX(-50%);
+    width: 1rem;
+    height: 1.5rem;
+    border-radius: .75rem;
+    border: 3px solid var(--col-brand-9)
+}
+
+body>section>section:nth-child(1) span::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -1.5rem;
+    transform: translateX(-50%);
+    width: .25rem;
+    height: .25rem;
+    background-color: var(--col-brand-9);
+    border-radius: 50%;
+    animation: mouse-animate 1.5s linear infinite
+}
+
+@keyframes mouse-animate {
+    0% {
+        bottom: -1.5rem
+    }
+
+    70% {
+        bottom: -2rem
+    }
+}
+
+body>section>section:nth-child(2) {
+    position: relative;
+    display: flex;
+    flex-flow: row wrap;
+    gap: 3rem;
+    width: 100%
+}
+
+body>section>section:nth-child(2)>img {
+    position: absolute;
+    top: 4.5rem;
+    left: -0.25rem;
+    width: 2.5rem;
+    height: 2.5rem
+}
+
+body>section>section:nth-child(2) h6 {
+    width: 100%;
+    font-size: 2rem;
+    font-weight: 900;
+    color: var(--col-brand-9);
+    opacity: .9
+}
+
+body>section>section:nth-child(2)>section {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 3rem;
+    width: 100%;
+    transition: .5s
+}
+
+@media screen and (min-width: 1024px) {
+    body>section>section:nth-child(2)>section {
+        gap: 8rem
+    }
+}
+
+body>section>section:nth-child(2)>section img {
+    flex-shrink: 0;
+    object-fit: cover;
+    width: 10rem;
+    height: 10rem;
+    background-color: var(--col-brand-2);
+    border-radius: 50%;
+    box-shadow: 0 .375rem .75rem rgba(0, 0, 0, .05)
+}
+
+body>section>section:nth-child(2)>section>section {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 2rem;
+    gap: 2rem;
+    width: 100%;
+    max-width: 440px;
+    background-color: #fff;
+    border-radius: 1rem;
+    box-shadow: 0 .375rem .75rem rgba(0, 0, 0, .05)
+}
+
+@media screen and (min-width: 640px) {
+    body>section>section:nth-child(2)>section>section {
+        width: calc(100% - 10rem - 3rem);
+        max-width: 100%
+    }
+}
+
+body>section>section:nth-child(2)>section>section>section {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: flex-start;
+    gap: 1.5rem;
+    width: 100%
+}
+
+@media screen and (min-width: 1024px) {
+    body>section>section:nth-child(2)>section>section>section {
+        width: calc((100% - 2rem)/2)
+    }
+}
+
+body>section>section:nth-child(2)>section>section>section p {
+    color: var(--col-brand-9);
+    opacity: .6
+}
+
+body>section>section:nth-child(2)>section>section>section>a,
+body>section>section:nth-child(2)>section>section>section>button {
+    padding: 0 2rem;
+    line-height: 2.5rem;
+    font-weight: 600;
+    background-color: var(--col-error-5);
+    color: #fff;
+    border-radius: 1.25rem
+}
+
+body>section>section:nth-child(2)>section>section>section>span {
+    position: relative;
+    width: 100%;
+    height: 2.75rem;
+    font-weight: 500;
+    color: var(--col-brand-9)
+}
+
+body>section>section:nth-child(2)>section>section>section>span:nth-child(1)::after {
+    background-color: var(--col-info-5)
+}
+
+body>section>section:nth-child(2)>section>section>section>span:nth-child(2)::after {
+    background-color: var(--col-error-5)
+}
+
+body>section>section:nth-child(2)>section>section>section>span:nth-child(3)::after {
+    background-color: var(--col-hint-5)
+}
+
+body>section>section:nth-child(2)>section>section>section>span:nth-child(4)::after {
+    background-color: var(--col-brand-5)
+}
+
+body>section>section:nth-child(2)>section>section>section>span::before {
+    content: attr(percent) "%";
+    position: absolute;
+    display: block;
+    bottom: 0;
+    width: 100%;
+    line-height: 2rem;
+    height: .5rem;
+    text-align: right;
+    font-size: .75rem;
+    background-color: var(--col-brand-1);
+    border-radius: .25rem
+}
+
+body>section>section:nth-child(2)>section>section>section>span::after {
+    content: "";
+    position: absolute;
+    display: block;
+    bottom: 0;
+    height: .5rem;
+    border-radius: .25rem
+}
+
+body>section>section:nth-child(2)>section>section>section>span[percent="1"]::after {
+    width: 1%
+}
+
+body>section>section:nth-child(2)>section>section>section>span[percent="2"]::after {
+    width: 2%
+}
+
+body>section>section:nth-child(2)>section>section>section>span[percent="3"]::after {
+    width: 3%
+}
+
+body>section>section:nth-child(2)>section>section>section>span[percent="4"]::after {
+    width: 4%
+}
+
+body>section>section:nth-child(2)>section>section>section>span[percent="5"]::after {
+    width: 5%
+}
+
+body>section>section:nth-child(2)>section>section>section>span[percent="6"]::after {
+    width: 6%
+}
+
+body>section>section:nth-child(2)>section>section>section>span[percent="7"]::after {
+    width: 7%
+}
+
+body>section>section:nth-child(2)>section>section>section>span[percent="8"]::after {
+    width: 8%
+}
+
+body>section>section:nth-child(2)>section>section>section>span[percent="9"]::after {
+    width: 9%
+}
+
+body>section>section:nth-child(2)>section>section>section>span[percent="10"]::after {
+    width: 10%
+}
+
+body>section>section:nth-child(2)>section>section>section>span[percent="11"]::after {
+    width: 11%
+}
+
+body>section>section:nth-child(2)>section>section>section>span[percent="12"]::after {
+    width: 12%
+}
+
+body>section>section:nth-child(2)>section>section>section>span[percent="13"]::after {
+    width: 13%
+}
+
+body>section>section:nth-child(2)>section>section>section>span[percent="14"]::after {
+    width: 14%
+}
+
+body>section>section:nth-child(2)>section>section>section>span[percent="15"]::after {
+    width: 15%
+}
+
+body>section>section:nth-child(2)>section>section>section>span[percent="16"]::after {
+    width: 16%
+}
+
+body>section>section:nth-child(2)>section>section>section>span[percent="17"]::after {
+    width: 17%
+}
+
+body>section>section:nth-child(2)>section>section>section>span[percent="18"]::after {
+    width: 18%
+}
+
+body>section>section:nth-child(2)>section>section>section>span[percent="19"]::after {
+    width: 19%
+}
+
+body>section>section:nth-child(2)>section>section>section>span[percent="20"]::after {
+    width: 20%
+}
+
+body>section>section:nth-child(2)>section>section>section>span[percent="21"]::after {
+    width: 21%
+}
+
+body>section>section:nth-child(2)>section>section>section>span[percent="22"]::after {
+    width: 22%
+}
+
+body>section>section:nth-child(2)>section>section>section>span[percent="23"]::after {
+    width: 23%
+}
+
+body>section>section:nth-child(2)>section>section>section>span[percent="24"]::after {
+    width: 24%
+}
+
+body>section>section:nth-child(2)>section>section>section>span[percent="25"]::after {
+    width: 25%
+}
+
+body>section>section:nth-child(2)>section>section>section>span[percent="26"]::after {
+    width: 26%
+}
+
+body>section>section:nth-child(2)>section>section>section>span[percent="27"]::after {
+    width: 27%
+}
+
+body>section>section:nth-child(2)>section>section>section>span[percent="28"]::after {
+    width: 28%
+}
+
+body>section>section:nth-child(2)>section>section>section>span[percent="29"]::after {
+    width: 29%
+}
+
+body>section>section:nth-child(2)>section>section>section>span[percent="30"]::after {
+    width: 30%
+}
+
+body>section>section:nth-child(2)>section>section>section>span[percent="31"]::after {
+    width: 31%
+}
+
+body>section>section:nth-child(2)>section>section>section>span[percent="32"]::after {
+    width: 32%
+}
+
+body>section>section:nth-child(2)>section>section>section>span[percent="33"]::after {
+    width: 33%
+}
+
+body>section>section:nth-child(2)>section>section>section>span[percent="34"]::after {
+    width: 34%
+}
+
+body>section>section:nth-child(2)>section>section>section>span[percent="35"]::after {
+    width: 35%
+}
+
+body>section>section:nth-child(2)>section>section>section>span[percent="36"]::after {
+    width: 36%
+}
+
+body>section>section:nth-child(2)>section>section>section>span[percent="37"]::after {
+    width: 37%
+}
+
+body>section>section:nth-child(2)>section>section>section>span[percent="38"]::after {
+    width: 38%
+}
+
+body>section>section:nth-child(2)>section>section>section>span[percent="39"]::after {
+    width: 39%
+}
+
+body>section>section:nth-child(2)>section>section>section>span[percent="40"]::after {
+    width: 40%
+}
+
+body>section>section:nth-child(2)>section>section>section>span[percent="41"]::after {
+    width: 41%
+}
+
+body>section>section:nth-child(2)>section>section>section>span[percent="42"]::after {
+    width: 42%
+}
+
+body>section>section:nth-child(2)>section>section>section>span[percent="43"]::after {
+    width: 43%
+}
+
+body>section>section:nth-child(2)>section>section>section>span[percent="44"]::after {
+    width: 44%
+}
+
+body>section>section:nth-child(2)>section>section>section>span[percent="45"]::after {
+    width: 45%
+}
+
+body>section>section:nth-child(2)>section>section>section>span[percent="46"]::after {
+    width: 46%
+}
+
+body>section>section:nth-child(2)>section>section>section>span[percent="47"]::after {
+    width: 47%
+}
+
+body>section>section:nth-child(2)>section>section>section>span[percent="48"]::after {
+    width: 48%
+}
+
+body>section>section:nth-child(2)>section>section>section>span[percent="49"]::after {
+    width: 49%
+}
+
+body>section>section:nth-child(2)>section>section>section>span[percent="50"]::after {
+    width: 50%
+}
+
+body>section>section:nth-child(2)>section>section>section>span[percent="51"]::after {
+    width: 51%
+}
+
+body>section>section:nth-child(2)>section>section>section>span[percent="52"]::after {
+    width: 52%
+}
+
+body>section>section:nth-child(2)>section>section>section>span[percent="53"]::after {
+    width: 53%
+}
+
+body>section>section:nth-child(2)>section>section>section>span[percent="54"]::after {
+    width: 54%
+}
+
+body>section>section:nth-child(2)>section>section>section>span[percent="55"]::after {
+    width: 55%
+}
+
+body>section>section:nth-child(2)>section>section>section>span[percent="56"]::after {
+    width: 56%
+}
+
+body>section>section:nth-child(2)>section>section>section>span[percent="57"]::after {
+    width: 57%
+}
+
+body>section>section:nth-child(2)>section>section>section>span[percent="58"]::after {
+    width: 58%
+}
+
+body>section>section:nth-child(2)>section>section>section>span[percent="59"]::after {
+    width: 59%
+}
+
+body>section>section:nth-child(2)>section>section>section>span[percent="60"]::after {
+    width: 60%
+}
+
+body>section>section:nth-child(2)>section>section>section>span[percent="61"]::after {
+    width: 61%
+}
+
+body>section>section:nth-child(2)>section>section>section>span[percent="62"]::after {
+    width: 62%
+}
+
+body>section>section:nth-child(2)>section>section>section>span[percent="63"]::after {
+    width: 63%
+}
+
+body>section>section:nth-child(2)>section>section>section>span[percent="64"]::after {
+    width: 64%
+}
+
+body>section>section:nth-child(2)>section>section>section>span[percent="65"]::after {
+    width: 65%
+}
+
+body>section>section:nth-child(2)>section>section>section>span[percent="66"]::after {
+    width: 66%
+}
+
+body>section>section:nth-child(2)>section>section>section>span[percent="67"]::after {
+    width: 67%
+}
+
+body>section>section:nth-child(2)>section>section>section>span[percent="68"]::after {
+    width: 68%
+}
+
+body>section>section:nth-child(2)>section>section>section>span[percent="69"]::after {
+    width: 69%
+}
+
+body>section>section:nth-child(2)>section>section>section>span[percent="70"]::after {
+    width: 70%
+}
+
+body>section>section:nth-child(2)>section>section>section>span[percent="71"]::after {
+    width: 71%
+}
+
+body>section>section:nth-child(2)>section>section>section>span[percent="72"]::after {
+    width: 72%
+}
+
+body>section>section:nth-child(2)>section>section>section>span[percent="73"]::after {
+    width: 73%
+}
+
+body>section>section:nth-child(2)>section>section>section>span[percent="74"]::after {
+    width: 74%
+}
+
+body>section>section:nth-child(2)>section>section>section>span[percent="75"]::after {
+    width: 75%
+}
+
+body>section>section:nth-child(2)>section>section>section>span[percent="76"]::after {
+    width: 76%
+}
+
+body>section>section:nth-child(2)>section>section>section>span[percent="77"]::after {
+    width: 77%
+}
+
+body>section>section:nth-child(2)>section>section>section>span[percent="78"]::after {
+    width: 78%
+}
+
+body>section>section:nth-child(2)>section>section>section>span[percent="79"]::after {
+    width: 79%
+}
+
+body>section>section:nth-child(2)>section>section>section>span[percent="80"]::after {
+    width: 80%
+}
+
+body>section>section:nth-child(2)>section>section>section>span[percent="81"]::after {
+    width: 81%
+}
+
+body>section>section:nth-child(2)>section>section>section>span[percent="82"]::after {
+    width: 82%
+}
+
+body>section>section:nth-child(2)>section>section>section>span[percent="83"]::after {
+    width: 83%
+}
+
+body>section>section:nth-child(2)>section>section>section>span[percent="84"]::after {
+    width: 84%
+}
+
+body>section>section:nth-child(2)>section>section>section>span[percent="85"]::after {
+    width: 85%
+}
+
+body>section>section:nth-child(2)>section>section>section>span[percent="86"]::after {
+    width: 86%
+}
+
+body>section>section:nth-child(2)>section>section>section>span[percent="87"]::after {
+    width: 87%
+}
+
+body>section>section:nth-child(2)>section>section>section>span[percent="88"]::after {
+    width: 88%
+}
+
+body>section>section:nth-child(2)>section>section>section>span[percent="89"]::after {
+    width: 89%
+}
+
+body>section>section:nth-child(2)>section>section>section>span[percent="90"]::after {
+    width: 90%
+}
+
+body>section>section:nth-child(2)>section>section>section>span[percent="91"]::after {
+    width: 91%
+}
+
+body>section>section:nth-child(2)>section>section>section>span[percent="92"]::after {
+    width: 92%
+}
+
+body>section>section:nth-child(2)>section>section>section>span[percent="93"]::after {
+    width: 93%
+}
+
+body>section>section:nth-child(2)>section>section>section>span[percent="94"]::after {
+    width: 94%
+}
+
+body>section>section:nth-child(2)>section>section>section>span[percent="95"]::after {
+    width: 95%
+}
+
+body>section>section:nth-child(2)>section>section>section>span[percent="96"]::after {
+    width: 96%
+}
+
+body>section>section:nth-child(2)>section>section>section>span[percent="97"]::after {
+    width: 97%
+}
+
+body>section>section:nth-child(2)>section>section>section>span[percent="98"]::after {
+    width: 98%
+}
+
+body>section>section:nth-child(2)>section>section>section>span[percent="99"]::after {
+    width: 99%
+}
+
+body>section>section:nth-child(2)>section>section>section>span[percent="100"]::after {
+    width: 100%
+}
+
+body>section>section:nth-child(2) ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2.5rem;
+    width: 100%
+}
+
+body>section>section:nth-child(2) ul li {
+    display: flex;
+    width: 90%;
+    gap: 1.5rem
+}
+
+@media screen and (min-width: 414px) {
+    body>section>section:nth-child(2) ul li {
+        width: calc((100% - 2.5rem)/2)
+    }
+}
+
+@media screen and (min-width: 640px) {
+    body>section>section:nth-child(2) ul li {
+        width: calc((100% - 7.5rem)/4)
+    }
+}
+
+body>section>section:nth-child(2) ul li i {
+    width: 3rem;
+    line-height: 3rem;
+    text-align: center;
+    font-size: 2rem;
+    color: var(--col-brand-9);
+    opacity: .15
+}
+
+body>section>section:nth-child(2) ul li section h6 {
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: var(--col-brand-9);
+    opacity: .9
+}
+
+body>section>section:nth-child(2) ul li section p {
+    margin-top: .25rem;
+    font-size: .875rem;
+    font-weight: 500;
+    color: var(--col-brand-9);
+    opacity: .6
+}
+
+body>section>section:nth-child(3) {
+    position: relative;
+    display: flex;
+    flex-flow: row wrap;
+    gap: 3rem;
+    width: 100%
+}
+
+body>section>section:nth-child(3)>img {
+    position: absolute;
+    top: 4.5rem;
+    left: -0.25rem;
+    width: 2.5rem;
+    height: 2.5rem
+}
+
+body>section>section:nth-child(3) h6 {
+    width: 100%;
+    font-size: 2rem;
+    font-weight: 900;
+    color: var(--col-brand-9);
+    opacity: .9
+}
+
+body>section>section:nth-child(3)>section {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 2rem;
+    width: 100%;
+    transition: .5s
+}
+
+body>section>section:nth-child(3)>section div {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    gap: 1rem;
+    padding: 2rem 1rem;
+    width: 100%;
+    max-width: 440px;
+    border-radius: 1rem;
+    box-shadow: 0 .375rem .75rem rgba(0, 0, 0, .05)
+}
+
+@media screen and (min-width: 640px) {
+    body>section>section:nth-child(3)>section div {
+        width: calc((100% - 4rem)/3);
+        max-width: 100%
+    }
+}
+
+body>section>section:nth-child(3)>section div:nth-child(1) {
+    background: linear-gradient(to right bottom, var(--col-error-4), var(--col-error-5))
+}
+
+body>section>section:nth-child(3)>section div:nth-child(1) i,
+body>section>section:nth-child(3)>section div:nth-child(1) h6,
+body>section>section:nth-child(3)>section div:nth-child(1) p {
+    background: linear-gradient(to right bottom, var(--col-error-2), #fff);
+    background-size: 200%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: rgba(0, 0, 0, 0);
+    animation: linear-move 2s linear infinite
+}
+
+body>section>section:nth-child(3)>section div:nth-child(2) {
+    background: linear-gradient(to right bottom, var(--col-info-4), var(--col-info-5))
+}
+
+body>section>section:nth-child(3)>section div:nth-child(2) i,
+body>section>section:nth-child(3)>section div:nth-child(2) h6,
+body>section>section:nth-child(3)>section div:nth-child(2) p {
+    background: linear-gradient(to right bottom, var(--col-info-8), #000);
+    background-size: 200%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: rgba(0, 0, 0, 0);
+    animation: linear-move 2s linear infinite
+}
+
+body>section>section:nth-child(3)>section div:nth-child(3) {
+    background: linear-gradient(to right bottom, var(--col-hint-4), var(--col-hint-5))
+}
+
+body>section>section:nth-child(3)>section div:nth-child(3) i,
+body>section>section:nth-child(3)>section div:nth-child(3) h6,
+body>section>section:nth-child(3)>section div:nth-child(3) p {
+    background: linear-gradient(to right bottom, var(--col-hint-2), #fff);
+    background-size: 200%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: rgba(0, 0, 0, 0);
+    animation: linear-move 2s linear infinite
+}
+
+body>section>section:nth-child(3)>section div:nth-child(4) {
+    background-color: var(--col-brand-5)
+}
+
+body>section>section:nth-child(3)>section div:nth-child(4) h6,
+body>section>section:nth-child(3)>section div:nth-child(4) p {
+    color: #fff
+}
+
+body>section>section:nth-child(3)>section div i {
+    font-size: 4rem
+}
+
+body>section>section:nth-child(3)>section div h6 {
+    max-width: 400px;
+    text-align: center;
+    font-size: 1.125rem
+}
+
+body>section>section:nth-child(3)>section div p {
+    max-width: 400px;
+    text-align: center
+}
+
+body>section>section:nth-child(4) {
+    position: relative;
+    display: flex;
+    flex-flow: row wrap;
+    gap: 3rem;
+    width: 100%
+}
+
+body>section>section:nth-child(4)>img {
+    position: absolute;
+    top: 4.5rem;
+    left: -0.25rem;
+    width: 2.5rem;
+    height: 2.5rem
+}
+
+body>section>section:nth-child(4) h6 {
+    width: 100%;
+    font-size: 2rem;
+    font-weight: 900;
+    color: var(--col-brand-9);
+    opacity: .9
+}
+
+body>section>section:nth-child(4)>section {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 2rem;
+    width: 100%;
+    transition: .5s
+}
+
+body>section>section:nth-child(4)>section>section {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 4rem;
+    padding: 2rem 1.5rem;
+    width: 100%;
+    max-width: 440px;
+    background-color: #fff;
+    border-radius: 1rem;
+    box-shadow: 0 .375rem .75rem rgba(0, 0, 0, .05)
+}
+
+@media screen and (min-width: 640px) {
+    body>section>section:nth-child(4)>section>section {
+        width: calc((100% - 2rem)/2);
+        max-width: 100%
+    }
+}
+
+body>section>section:nth-child(4)>section>section div {
+    display: flex;
+    gap: 1.5rem
+}
+
+body>section>section:nth-child(4)>section>section div:nth-last-child(1)>i::after {
+    bottom: 0
+}
+
+body>section>section:nth-child(4)>section>section div>i {
+    position: relative;
+    width: 2rem;
+    line-height: 2rem;
+    font-size: 1.25rem;
+    color: var(--col-brand-4)
+}
+
+body>section>section:nth-child(4)>section>section div>i::after {
+    content: "";
+    position: absolute;
+    top: 2.5rem;
+    left: 50%;
+    bottom: -3.5rem;
+    transform: translateX(-50%);
+    width: 1px;
+    background-color: var(--col-brand-6)
+}
+
+body>section>section:nth-child(4)>section>section div section {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: .75rem
+}
+
+body>section>section:nth-child(4)>section>section div section i {
+    font-size: .875rem;
+    color: var(--col-brand-9);
+    opacity: .6
+}
+
+body>section>section:nth-child(4)>section>section div section h6 {
+    font-size: 1.25rem
+}
+
+body>section>section:nth-child(4)>section>section div section p {
+    color: var(--col-brand-9);
+    opacity: .6
+}
+
+body>section>section:nth-child(5) {
+    position: relative;
+    display: flex;
+    flex-flow: row wrap;
+    gap: 3rem;
+    width: 100%
+}
+
+body>section>section:nth-child(5)>img {
+    position: absolute;
+    top: 4.5rem;
+    left: -0.25rem;
+    width: 2.5rem;
+    height: 2.5rem
+}
+
+body>section>section:nth-child(5) h6 {
+    width: 100%;
+    font-size: 2rem;
+    font-weight: 900;
+    color: var(--col-brand-9);
+    opacity: .9
+}
+
+body>section>section:nth-child(5) ul:nth-child(3) {
+    display: flex;
+    gap: 2rem
+}
+
+body>section>section:nth-child(5) ul:nth-child(3) li {
+    color: var(--col-brand-9);
+    opacity: .3;
+    transition: .5s;
+    cursor: pointer
+}
+
+body>section>section:nth-child(5) ul:nth-child(3) li.sel {
+    font-weight: 600;
+    opacity: .9
+}
+
+body>section>section:nth-child(5)>section {
+    position: relative;
+    width: 100%
+}
+
+body>section>section:nth-child(5)>section>section {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: flex-start;
+    align-content: flex-start;
+    gap: 1rem;
+    width: 100%;
+    height: calc((100vw - 2rem)/4*3*2 + 1rem);
+    overflow: hidden;
+    filter: drop-shadow(0 0.375rem 0.75rem rgba(0, 0, 0, 0.05));
+    -webkit-filter: drop-shadow(0 0.375rem 0.75rem rgba(0, 0, 0, 0.05))
+}
+
+@media screen and (min-width: 414px) {
+    body>section>section:nth-child(5)>section>section {
+        gap: 1.5rem;
+        height: calc((100vw - 2rem - 1.5rem)/2/4*3*2 + 1.5rem)
+    }
+}
+
+@media screen and (min-width: 640px) {
+    body>section>section:nth-child(5)>section>section {
+        height: calc((100vw - 2rem - 3rem)/3/4*3*2 + 1.5rem)
+    }
+}
+
+@media screen and (min-width: 800px) {
+    body>section>section:nth-child(5)>section>section {
+        height: calc((100vw - 8rem - 2rem - 3rem)/3/4*3*2 + 1.5rem);
+        max-height: calc((1024px - 8rem - 2rem - 3rem)/3/4*3*2 + 1.5rem + 4rem)
+    }
+}
+
+body>section>section:nth-child(5)>section>section[tag-filter=all] a,
+body>section>section:nth-child(5)>section>section[tag-filter=all] div {
+    margin-bottom: 0;
+    max-width: 100%;
+    opacity: 1
+}
+
+body>section>section:nth-child(5)>section>section[tag-filter="1"] a[tag-key="1"],
+body>section>section:nth-child(5)>section>section[tag-filter="1"] div[tag-key="1"] {
+    margin-bottom: 0;
+    max-width: 100%;
+    opacity: 1
+}
+
+body>section>section:nth-child(5)>section>section[tag-filter="2"] a[tag-key="2"],
+body>section>section:nth-child(5)>section>section[tag-filter="2"] div[tag-key="2"] {
+    margin-bottom: 0;
+    max-width: 100%;
+    opacity: 1
+}
+
+body>section>section:nth-child(5)>section>section[tag-filter="3"] a[tag-key="3"],
+body>section>section:nth-child(5)>section>section[tag-filter="3"] div[tag-key="3"] {
+    margin-bottom: 0;
+    max-width: 100%;
+    opacity: 1
+}
+
+body>section>section:nth-child(5)>section>section[tag-filter="4"] a[tag-key="4"],
+body>section>section:nth-child(5)>section>section[tag-filter="4"] div[tag-key="4"] {
+    margin-bottom: 0;
+    max-width: 100%;
+    opacity: 1
+}
+
+body>section>section:nth-child(5)>section>section[tag-filter="5"] a[tag-key="5"],
+body>section>section:nth-child(5)>section>section[tag-filter="5"] div[tag-key="5"] {
+    margin-bottom: 0;
+    max-width: 100%;
+    opacity: 1
+}
+
+body>section>section:nth-child(5)>section>section[tag-filter="6"] a[tag-key="6"],
+body>section>section:nth-child(5)>section>section[tag-filter="6"] div[tag-key="6"] {
+    margin-bottom: 0;
+    max-width: 100%;
+    opacity: 1
+}
+
+body>section>section:nth-child(5)>section>section[tag-filter="7"] a[tag-key="7"],
+body>section>section:nth-child(5)>section>section[tag-filter="7"] div[tag-key="7"] {
+    margin-bottom: 0;
+    max-width: 100%;
+    opacity: 1
+}
+
+body>section>section:nth-child(5)>section>section[tag-filter="8"] a[tag-key="8"],
+body>section>section:nth-child(5)>section>section[tag-filter="8"] div[tag-key="8"] {
+    margin-bottom: 0;
+    max-width: 100%;
+    opacity: 1
+}
+
+body>section>section:nth-child(5)>section>section[tag-filter="9"] a[tag-key="9"],
+body>section>section:nth-child(5)>section>section[tag-filter="9"] div[tag-key="9"] {
+    margin-bottom: 0;
+    max-width: 100%;
+    opacity: 1
+}
+
+body>section>section:nth-child(5)>section>section[tag-filter="10"] a[tag-key="10"],
+body>section>section:nth-child(5)>section>section[tag-filter="10"] div[tag-key="10"] {
+    margin-bottom: 0;
+    max-width: 100%;
+    opacity: 1
+}
+
+body>section>section:nth-child(5)>section>section[tag-filter="11"] a[tag-key="11"],
+body>section>section:nth-child(5)>section>section[tag-filter="11"] div[tag-key="11"] {
+    margin-bottom: 0;
+    max-width: 100%;
+    opacity: 1
+}
+
+body>section>section:nth-child(5)>section>section[tag-filter="12"] a[tag-key="12"],
+body>section>section:nth-child(5)>section>section[tag-filter="12"] div[tag-key="12"] {
+    margin-bottom: 0;
+    max-width: 100%;
+    opacity: 1
+}
+
+body>section>section:nth-child(5)>section>section[tag-filter="13"] a[tag-key="13"],
+body>section>section:nth-child(5)>section>section[tag-filter="13"] div[tag-key="13"] {
+    margin-bottom: 0;
+    max-width: 100%;
+    opacity: 1
+}
+
+body>section>section:nth-child(5)>section>section[tag-filter="14"] a[tag-key="14"],
+body>section>section:nth-child(5)>section>section[tag-filter="14"] div[tag-key="14"] {
+    margin-bottom: 0;
+    max-width: 100%;
+    opacity: 1
+}
+
+body>section>section:nth-child(5)>section>section[tag-filter="15"] a[tag-key="15"],
+body>section>section:nth-child(5)>section>section[tag-filter="15"] div[tag-key="15"] {
+    margin-bottom: 0;
+    max-width: 100%;
+    opacity: 1
+}
+
+body>section>section:nth-child(5)>section>section[tag-filter="16"] a[tag-key="16"],
+body>section>section:nth-child(5)>section>section[tag-filter="16"] div[tag-key="16"] {
+    margin-bottom: 0;
+    max-width: 100%;
+    opacity: 1
+}
+
+body>section>section:nth-child(5)>section>section[tag-filter="17"] a[tag-key="17"],
+body>section>section:nth-child(5)>section>section[tag-filter="17"] div[tag-key="17"] {
+    margin-bottom: 0;
+    max-width: 100%;
+    opacity: 1
+}
+
+body>section>section:nth-child(5)>section>section[tag-filter="18"] a[tag-key="18"],
+body>section>section:nth-child(5)>section>section[tag-filter="18"] div[tag-key="18"] {
+    margin-bottom: 0;
+    max-width: 100%;
+    opacity: 1
+}
+
+body>section>section:nth-child(5)>section>section[tag-filter="19"] a[tag-key="19"],
+body>section>section:nth-child(5)>section>section[tag-filter="19"] div[tag-key="19"] {
+    margin-bottom: 0;
+    max-width: 100%;
+    opacity: 1
+}
+
+body>section>section:nth-child(5)>section>section[tag-filter="20"] a[tag-key="20"],
+body>section>section:nth-child(5)>section>section[tag-filter="20"] div[tag-key="20"] {
+    margin-bottom: 0;
+    max-width: 100%;
+    opacity: 1
+}
+
+body>section>section:nth-child(5)>section>section[tag-filter="21"] a[tag-key="21"],
+body>section>section:nth-child(5)>section>section[tag-filter="21"] div[tag-key="21"] {
+    margin-bottom: 0;
+    max-width: 100%;
+    opacity: 1
+}
+
+body>section>section:nth-child(5)>section>section[tag-filter="22"] a[tag-key="22"],
+body>section>section:nth-child(5)>section>section[tag-filter="22"] div[tag-key="22"] {
+    margin-bottom: 0;
+    max-width: 100%;
+    opacity: 1
+}
+
+body>section>section:nth-child(5)>section>section[tag-filter="23"] a[tag-key="23"],
+body>section>section:nth-child(5)>section>section[tag-filter="23"] div[tag-key="23"] {
+    margin-bottom: 0;
+    max-width: 100%;
+    opacity: 1
+}
+
+body>section>section:nth-child(5)>section>section[tag-filter="24"] a[tag-key="24"],
+body>section>section:nth-child(5)>section>section[tag-filter="24"] div[tag-key="24"] {
+    margin-bottom: 0;
+    max-width: 100%;
+    opacity: 1
+}
+
+body>section>section:nth-child(5)>section>section[tag-filter="25"] a[tag-key="25"],
+body>section>section:nth-child(5)>section>section[tag-filter="25"] div[tag-key="25"] {
+    margin-bottom: 0;
+    max-width: 100%;
+    opacity: 1
+}
+
+body>section>section:nth-child(5)>section>section[tag-filter="26"] a[tag-key="26"],
+body>section>section:nth-child(5)>section>section[tag-filter="26"] div[tag-key="26"] {
+    margin-bottom: 0;
+    max-width: 100%;
+    opacity: 1
+}
+
+body>section>section:nth-child(5)>section>section[tag-filter="27"] a[tag-key="27"],
+body>section>section:nth-child(5)>section>section[tag-filter="27"] div[tag-key="27"] {
+    margin-bottom: 0;
+    max-width: 100%;
+    opacity: 1
+}
+
+body>section>section:nth-child(5)>section>section[tag-filter="28"] a[tag-key="28"],
+body>section>section:nth-child(5)>section>section[tag-filter="28"] div[tag-key="28"] {
+    margin-bottom: 0;
+    max-width: 100%;
+    opacity: 1
+}
+
+body>section>section:nth-child(5)>section>section[tag-filter="29"] a[tag-key="29"],
+body>section>section:nth-child(5)>section>section[tag-filter="29"] div[tag-key="29"] {
+    margin-bottom: 0;
+    max-width: 100%;
+    opacity: 1
+}
+
+body>section>section:nth-child(5)>section>section[tag-filter="30"] a[tag-key="30"],
+body>section>section:nth-child(5)>section>section[tag-filter="30"] div[tag-key="30"] {
+    margin-bottom: 0;
+    max-width: 100%;
+    opacity: 1
+}
+
+body>section>section:nth-child(5)>section>section[tag-filter="31"] a[tag-key="31"],
+body>section>section:nth-child(5)>section>section[tag-filter="31"] div[tag-key="31"] {
+    margin-bottom: 0;
+    max-width: 100%;
+    opacity: 1
+}
+
+body>section>section:nth-child(5)>section>section[tag-filter="32"] a[tag-key="32"],
+body>section>section:nth-child(5)>section>section[tag-filter="32"] div[tag-key="32"] {
+    margin-bottom: 0;
+    max-width: 100%;
+    opacity: 1
+}
+
+body>section>section:nth-child(5)>section>section[tag-filter="33"] a[tag-key="33"],
+body>section>section:nth-child(5)>section>section[tag-filter="33"] div[tag-key="33"] {
+    margin-bottom: 0;
+    max-width: 100%;
+    opacity: 1
+}
+
+body>section>section:nth-child(5)>section>section[tag-filter="34"] a[tag-key="34"],
+body>section>section:nth-child(5)>section>section[tag-filter="34"] div[tag-key="34"] {
+    margin-bottom: 0;
+    max-width: 100%;
+    opacity: 1
+}
+
+body>section>section:nth-child(5)>section>section[tag-filter="35"] a[tag-key="35"],
+body>section>section:nth-child(5)>section>section[tag-filter="35"] div[tag-key="35"] {
+    margin-bottom: 0;
+    max-width: 100%;
+    opacity: 1
+}
+
+body>section>section:nth-child(5)>section>section[tag-filter="36"] a[tag-key="36"],
+body>section>section:nth-child(5)>section>section[tag-filter="36"] div[tag-key="36"] {
+    margin-bottom: 0;
+    max-width: 100%;
+    opacity: 1
+}
+
+body>section>section:nth-child(5)>section>section[tag-filter="37"] a[tag-key="37"],
+body>section>section:nth-child(5)>section>section[tag-filter="37"] div[tag-key="37"] {
+    margin-bottom: 0;
+    max-width: 100%;
+    opacity: 1
+}
+
+body>section>section:nth-child(5)>section>section[tag-filter="38"] a[tag-key="38"],
+body>section>section:nth-child(5)>section>section[tag-filter="38"] div[tag-key="38"] {
+    margin-bottom: 0;
+    max-width: 100%;
+    opacity: 1
+}
+
+body>section>section:nth-child(5)>section>section[tag-filter="39"] a[tag-key="39"],
+body>section>section:nth-child(5)>section>section[tag-filter="39"] div[tag-key="39"] {
+    margin-bottom: 0;
+    max-width: 100%;
+    opacity: 1
+}
+
+body>section>section:nth-child(5)>section>section[tag-filter="40"] a[tag-key="40"],
+body>section>section:nth-child(5)>section>section[tag-filter="40"] div[tag-key="40"] {
+    margin-bottom: 0;
+    max-width: 100%;
+    opacity: 1
+}
+
+body>section>section:nth-child(5)>section>section[tag-filter="41"] a[tag-key="41"],
+body>section>section:nth-child(5)>section>section[tag-filter="41"] div[tag-key="41"] {
+    margin-bottom: 0;
+    max-width: 100%;
+    opacity: 1
+}
+
+body>section>section:nth-child(5)>section>section[tag-filter="42"] a[tag-key="42"],
+body>section>section:nth-child(5)>section>section[tag-filter="42"] div[tag-key="42"] {
+    margin-bottom: 0;
+    max-width: 100%;
+    opacity: 1
+}
+
+body>section>section:nth-child(5)>section>section[tag-filter="43"] a[tag-key="43"],
+body>section>section:nth-child(5)>section>section[tag-filter="43"] div[tag-key="43"] {
+    margin-bottom: 0;
+    max-width: 100%;
+    opacity: 1
+}
+
+body>section>section:nth-child(5)>section>section[tag-filter="44"] a[tag-key="44"],
+body>section>section:nth-child(5)>section>section[tag-filter="44"] div[tag-key="44"] {
+    margin-bottom: 0;
+    max-width: 100%;
+    opacity: 1
+}
+
+body>section>section:nth-child(5)>section>section[tag-filter="45"] a[tag-key="45"],
+body>section>section:nth-child(5)>section>section[tag-filter="45"] div[tag-key="45"] {
+    margin-bottom: 0;
+    max-width: 100%;
+    opacity: 1
+}
+
+body>section>section:nth-child(5)>section>section[tag-filter="46"] a[tag-key="46"],
+body>section>section:nth-child(5)>section>section[tag-filter="46"] div[tag-key="46"] {
+    margin-bottom: 0;
+    max-width: 100%;
+    opacity: 1
+}
+
+body>section>section:nth-child(5)>section>section[tag-filter="47"] a[tag-key="47"],
+body>section>section:nth-child(5)>section>section[tag-filter="47"] div[tag-key="47"] {
+    margin-bottom: 0;
+    max-width: 100%;
+    opacity: 1
+}
+
+body>section>section:nth-child(5)>section>section[tag-filter="48"] a[tag-key="48"],
+body>section>section:nth-child(5)>section>section[tag-filter="48"] div[tag-key="48"] {
+    margin-bottom: 0;
+    max-width: 100%;
+    opacity: 1
+}
+
+body>section>section:nth-child(5)>section>section[tag-filter="49"] a[tag-key="49"],
+body>section>section:nth-child(5)>section>section[tag-filter="49"] div[tag-key="49"] {
+    margin-bottom: 0;
+    max-width: 100%;
+    opacity: 1
+}
+
+body>section>section:nth-child(5)>section>section[tag-filter="50"] a[tag-key="50"],
+body>section>section:nth-child(5)>section>section[tag-filter="50"] div[tag-key="50"] {
+    margin-bottom: 0;
+    max-width: 100%;
+    opacity: 1
+}
+
+body>section>section:nth-child(5)>section>section[tag-filter="51"] a[tag-key="51"],
+body>section>section:nth-child(5)>section>section[tag-filter="51"] div[tag-key="51"] {
+    margin-bottom: 0;
+    max-width: 100%;
+    opacity: 1
+}
+
+body>section>section:nth-child(5)>section>section[tag-filter="52"] a[tag-key="52"],
+body>section>section:nth-child(5)>section>section[tag-filter="52"] div[tag-key="52"] {
+    margin-bottom: 0;
+    max-width: 100%;
+    opacity: 1
+}
+
+body>section>section:nth-child(5)>section>section[tag-filter="53"] a[tag-key="53"],
+body>section>section:nth-child(5)>section>section[tag-filter="53"] div[tag-key="53"] {
+    margin-bottom: 0;
+    max-width: 100%;
+    opacity: 1
+}
+
+body>section>section:nth-child(5)>section>section[tag-filter="54"] a[tag-key="54"],
+body>section>section:nth-child(5)>section>section[tag-filter="54"] div[tag-key="54"] {
+    margin-bottom: 0;
+    max-width: 100%;
+    opacity: 1
+}
+
+body>section>section:nth-child(5)>section>section[tag-filter="55"] a[tag-key="55"],
+body>section>section:nth-child(5)>section>section[tag-filter="55"] div[tag-key="55"] {
+    margin-bottom: 0;
+    max-width: 100%;
+    opacity: 1
+}
+
+body>section>section:nth-child(5)>section>section[tag-filter="56"] a[tag-key="56"],
+body>section>section:nth-child(5)>section>section[tag-filter="56"] div[tag-key="56"] {
+    margin-bottom: 0;
+    max-width: 100%;
+    opacity: 1
+}
+
+body>section>section:nth-child(5)>section>section[tag-filter="57"] a[tag-key="57"],
+body>section>section:nth-child(5)>section>section[tag-filter="57"] div[tag-key="57"] {
+    margin-bottom: 0;
+    max-width: 100%;
+    opacity: 1
+}
+
+body>section>section:nth-child(5)>section>section[tag-filter="58"] a[tag-key="58"],
+body>section>section:nth-child(5)>section>section[tag-filter="58"] div[tag-key="58"] {
+    margin-bottom: 0;
+    max-width: 100%;
+    opacity: 1
+}
+
+body>section>section:nth-child(5)>section>section[tag-filter="59"] a[tag-key="59"],
+body>section>section:nth-child(5)>section>section[tag-filter="59"] div[tag-key="59"] {
+    margin-bottom: 0;
+    max-width: 100%;
+    opacity: 1
+}
+
+body>section>section:nth-child(5)>section>section[tag-filter="60"] a[tag-key="60"],
+body>section>section:nth-child(5)>section>section[tag-filter="60"] div[tag-key="60"] {
+    margin-bottom: 0;
+    max-width: 100%;
+    opacity: 1
+}
+
+body>section>section:nth-child(5)>section>section[tag-filter="61"] a[tag-key="61"],
+body>section>section:nth-child(5)>section>section[tag-filter="61"] div[tag-key="61"] {
+    margin-bottom: 0;
+    max-width: 100%;
+    opacity: 1
+}
+
+body>section>section:nth-child(5)>section>section[tag-filter="62"] a[tag-key="62"],
+body>section>section:nth-child(5)>section>section[tag-filter="62"] div[tag-key="62"] {
+    margin-bottom: 0;
+    max-width: 100%;
+    opacity: 1
+}
+
+body>section>section:nth-child(5)>section>section[tag-filter="63"] a[tag-key="63"],
+body>section>section:nth-child(5)>section>section[tag-filter="63"] div[tag-key="63"] {
+    margin-bottom: 0;
+    max-width: 100%;
+    opacity: 1
+}
+
+body>section>section:nth-child(5)>section>section[tag-filter="64"] a[tag-key="64"],
+body>section>section:nth-child(5)>section>section[tag-filter="64"] div[tag-key="64"] {
+    margin-bottom: 0;
+    max-width: 100%;
+    opacity: 1
+}
+
+body>section>section:nth-child(5)>section>section[tag-filter="65"] a[tag-key="65"],
+body>section>section:nth-child(5)>section>section[tag-filter="65"] div[tag-key="65"] {
+    margin-bottom: 0;
+    max-width: 100%;
+    opacity: 1
+}
+
+body>section>section:nth-child(5)>section>section[tag-filter="66"] a[tag-key="66"],
+body>section>section:nth-child(5)>section>section[tag-filter="66"] div[tag-key="66"] {
+    margin-bottom: 0;
+    max-width: 100%;
+    opacity: 1
+}
+
+body>section>section:nth-child(5)>section>section[tag-filter="67"] a[tag-key="67"],
+body>section>section:nth-child(5)>section>section[tag-filter="67"] div[tag-key="67"] {
+    margin-bottom: 0;
+    max-width: 100%;
+    opacity: 1
+}
+
+body>section>section:nth-child(5)>section>section[tag-filter="68"] a[tag-key="68"],
+body>section>section:nth-child(5)>section>section[tag-filter="68"] div[tag-key="68"] {
+    margin-bottom: 0;
+    max-width: 100%;
+    opacity: 1
+}
+
+body>section>section:nth-child(5)>section>section[tag-filter="69"] a[tag-key="69"],
+body>section>section:nth-child(5)>section>section[tag-filter="69"] div[tag-key="69"] {
+    margin-bottom: 0;
+    max-width: 100%;
+    opacity: 1
+}
+
+body>section>section:nth-child(5)>section>section[tag-filter="70"] a[tag-key="70"],
+body>section>section:nth-child(5)>section>section[tag-filter="70"] div[tag-key="70"] {
+    margin-bottom: 0;
+    max-width: 100%;
+    opacity: 1
+}
+
+body>section>section:nth-child(5)>section>section[tag-filter="71"] a[tag-key="71"],
+body>section>section:nth-child(5)>section>section[tag-filter="71"] div[tag-key="71"] {
+    margin-bottom: 0;
+    max-width: 100%;
+    opacity: 1
+}
+
+body>section>section:nth-child(5)>section>section[tag-filter="72"] a[tag-key="72"],
+body>section>section:nth-child(5)>section>section[tag-filter="72"] div[tag-key="72"] {
+    margin-bottom: 0;
+    max-width: 100%;
+    opacity: 1
+}
+
+body>section>section:nth-child(5)>section>section[tag-filter="73"] a[tag-key="73"],
+body>section>section:nth-child(5)>section>section[tag-filter="73"] div[tag-key="73"] {
+    margin-bottom: 0;
+    max-width: 100%;
+    opacity: 1
+}
+
+body>section>section:nth-child(5)>section>section[tag-filter="74"] a[tag-key="74"],
+body>section>section:nth-child(5)>section>section[tag-filter="74"] div[tag-key="74"] {
+    margin-bottom: 0;
+    max-width: 100%;
+    opacity: 1
+}
+
+body>section>section:nth-child(5)>section>section[tag-filter="75"] a[tag-key="75"],
+body>section>section:nth-child(5)>section>section[tag-filter="75"] div[tag-key="75"] {
+    margin-bottom: 0;
+    max-width: 100%;
+    opacity: 1
+}
+
+body>section>section:nth-child(5)>section>section[tag-filter="76"] a[tag-key="76"],
+body>section>section:nth-child(5)>section>section[tag-filter="76"] div[tag-key="76"] {
+    margin-bottom: 0;
+    max-width: 100%;
+    opacity: 1
+}
+
+body>section>section:nth-child(5)>section>section[tag-filter="77"] a[tag-key="77"],
+body>section>section:nth-child(5)>section>section[tag-filter="77"] div[tag-key="77"] {
+    margin-bottom: 0;
+    max-width: 100%;
+    opacity: 1
+}
+
+body>section>section:nth-child(5)>section>section[tag-filter="78"] a[tag-key="78"],
+body>section>section:nth-child(5)>section>section[tag-filter="78"] div[tag-key="78"] {
+    margin-bottom: 0;
+    max-width: 100%;
+    opacity: 1
+}
+
+body>section>section:nth-child(5)>section>section[tag-filter="79"] a[tag-key="79"],
+body>section>section:nth-child(5)>section>section[tag-filter="79"] div[tag-key="79"] {
+    margin-bottom: 0;
+    max-width: 100%;
+    opacity: 1
+}
+
+body>section>section:nth-child(5)>section>section[tag-filter="80"] a[tag-key="80"],
+body>section>section:nth-child(5)>section>section[tag-filter="80"] div[tag-key="80"] {
+    margin-bottom: 0;
+    max-width: 100%;
+    opacity: 1
+}
+
+body>section>section:nth-child(5)>section>section[tag-filter="81"] a[tag-key="81"],
+body>section>section:nth-child(5)>section>section[tag-filter="81"] div[tag-key="81"] {
+    margin-bottom: 0;
+    max-width: 100%;
+    opacity: 1
+}
+
+body>section>section:nth-child(5)>section>section[tag-filter="82"] a[tag-key="82"],
+body>section>section:nth-child(5)>section>section[tag-filter="82"] div[tag-key="82"] {
+    margin-bottom: 0;
+    max-width: 100%;
+    opacity: 1
+}
+
+body>section>section:nth-child(5)>section>section[tag-filter="83"] a[tag-key="83"],
+body>section>section:nth-child(5)>section>section[tag-filter="83"] div[tag-key="83"] {
+    margin-bottom: 0;
+    max-width: 100%;
+    opacity: 1
+}
+
+body>section>section:nth-child(5)>section>section[tag-filter="84"] a[tag-key="84"],
+body>section>section:nth-child(5)>section>section[tag-filter="84"] div[tag-key="84"] {
+    margin-bottom: 0;
+    max-width: 100%;
+    opacity: 1
+}
+
+body>section>section:nth-child(5)>section>section[tag-filter="85"] a[tag-key="85"],
+body>section>section:nth-child(5)>section>section[tag-filter="85"] div[tag-key="85"] {
+    margin-bottom: 0;
+    max-width: 100%;
+    opacity: 1
+}
+
+body>section>section:nth-child(5)>section>section[tag-filter="86"] a[tag-key="86"],
+body>section>section:nth-child(5)>section>section[tag-filter="86"] div[tag-key="86"] {
+    margin-bottom: 0;
+    max-width: 100%;
+    opacity: 1
+}
+
+body>section>section:nth-child(5)>section>section[tag-filter="87"] a[tag-key="87"],
+body>section>section:nth-child(5)>section>section[tag-filter="87"] div[tag-key="87"] {
+    margin-bottom: 0;
+    max-width: 100%;
+    opacity: 1
+}
+
+body>section>section:nth-child(5)>section>section[tag-filter="88"] a[tag-key="88"],
+body>section>section:nth-child(5)>section>section[tag-filter="88"] div[tag-key="88"] {
+    margin-bottom: 0;
+    max-width: 100%;
+    opacity: 1
+}
+
+body>section>section:nth-child(5)>section>section[tag-filter="89"] a[tag-key="89"],
+body>section>section:nth-child(5)>section>section[tag-filter="89"] div[tag-key="89"] {
+    margin-bottom: 0;
+    max-width: 100%;
+    opacity: 1
+}
+
+body>section>section:nth-child(5)>section>section[tag-filter="90"] a[tag-key="90"],
+body>section>section:nth-child(5)>section>section[tag-filter="90"] div[tag-key="90"] {
+    margin-bottom: 0;
+    max-width: 100%;
+    opacity: 1
+}
+
+body>section>section:nth-child(5)>section>section[tag-filter="91"] a[tag-key="91"],
+body>section>section:nth-child(5)>section>section[tag-filter="91"] div[tag-key="91"] {
+    margin-bottom: 0;
+    max-width: 100%;
+    opacity: 1
+}
+
+body>section>section:nth-child(5)>section>section[tag-filter="92"] a[tag-key="92"],
+body>section>section:nth-child(5)>section>section[tag-filter="92"] div[tag-key="92"] {
+    margin-bottom: 0;
+    max-width: 100%;
+    opacity: 1
+}
+
+body>section>section:nth-child(5)>section>section[tag-filter="93"] a[tag-key="93"],
+body>section>section:nth-child(5)>section>section[tag-filter="93"] div[tag-key="93"] {
+    margin-bottom: 0;
+    max-width: 100%;
+    opacity: 1
+}
+
+body>section>section:nth-child(5)>section>section[tag-filter="94"] a[tag-key="94"],
+body>section>section:nth-child(5)>section>section[tag-filter="94"] div[tag-key="94"] {
+    margin-bottom: 0;
+    max-width: 100%;
+    opacity: 1
+}
+
+body>section>section:nth-child(5)>section>section[tag-filter="95"] a[tag-key="95"],
+body>section>section:nth-child(5)>section>section[tag-filter="95"] div[tag-key="95"] {
+    margin-bottom: 0;
+    max-width: 100%;
+    opacity: 1
+}
+
+body>section>section:nth-child(5)>section>section[tag-filter="96"] a[tag-key="96"],
+body>section>section:nth-child(5)>section>section[tag-filter="96"] div[tag-key="96"] {
+    margin-bottom: 0;
+    max-width: 100%;
+    opacity: 1
+}
+
+body>section>section:nth-child(5)>section>section[tag-filter="97"] a[tag-key="97"],
+body>section>section:nth-child(5)>section>section[tag-filter="97"] div[tag-key="97"] {
+    margin-bottom: 0;
+    max-width: 100%;
+    opacity: 1
+}
+
+body>section>section:nth-child(5)>section>section[tag-filter="98"] a[tag-key="98"],
+body>section>section:nth-child(5)>section>section[tag-filter="98"] div[tag-key="98"] {
+    margin-bottom: 0;
+    max-width: 100%;
+    opacity: 1
+}
+
+body>section>section:nth-child(5)>section>section[tag-filter="99"] a[tag-key="99"],
+body>section>section:nth-child(5)>section>section[tag-filter="99"] div[tag-key="99"] {
+    margin-bottom: 0;
+    max-width: 100%;
+    opacity: 1
+}
+
+body>section>section:nth-child(5)>section>section[tag-filter="100"] a[tag-key="100"],
+body>section>section:nth-child(5)>section>section[tag-filter="100"] div[tag-key="100"] {
+    margin-bottom: 0;
+    max-width: 100%;
+    opacity: 1
+}
+
+body>section>section:nth-child(5)>section>section a,
+body>section>section:nth-child(5)>section>section div {
+    margin-bottom: -1rem;
+    width: 100%;
+    max-width: 0;
+    aspect-ratio: 4/3;
+    background-color: #fff;
+    border-radius: 1rem;
+    opacity: 0;
+    transition: .5s;
+    overflow: hidden
+}
+
+@media screen and (min-width: 414px) {
+
+    body>section>section:nth-child(5)>section>section a,
+    body>section>section:nth-child(5)>section>section div {
+        margin-bottom: -1.5rem;
+        width: calc((100% - 1.5rem)/2)
+    }
+}
+
+@media screen and (min-width: 640px) {
+
+    body>section>section:nth-child(5)>section>section a,
+    body>section>section:nth-child(5)>section>section div {
+        width: calc((100% - 3rem)/3)
+    }
+}
+
+body>section>section:nth-child(5)>section>section a img,
+body>section>section:nth-child(5)>section>section div img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%
+}
+
+body>section>section:nth-child(5)>section>a,
+body>section>section:nth-child(5)>section>button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 2rem;
+    line-height: 3rem;
+    height: 3rem;
+    font-size: 2rem;
+    color: var(--col-brand-9)
+}
+
+body>section>section:nth-child(5)>section>a:nth-last-child(2),
+body>section>section:nth-child(5)>section>button:nth-last-child(2) {
+    left: -1rem;
+    text-align: left
+}
+
+body>section>section:nth-child(5)>section>a:nth-last-child(1),
+body>section>section:nth-child(5)>section>button:nth-last-child(1) {
+    right: -1rem;
+    text-align: right
+}
+
+body>section>section:nth-child(5) ul:nth-last-child(1) {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: -1rem;
+    width: 100%
+}
+
+body>section>section:nth-child(5) ul:nth-last-child(1) li {
+    width: .25rem;
+    height: .25rem;
+    background-color: var(--col-brand-9);
+    border-radius: .125rem;
+    opacity: .1
+}
+
+body>section>section:nth-child(5) ul:nth-last-child(1) li.sel {
+    width: 1rem;
+    background-color: var(--col-brand-5);
+    opacity: 1
+}
+
+body>section>section:nth-child(6) {
+    position: relative;
+    display: flex;
+    flex-flow: row wrap;
+    gap: 3rem;
+    width: 100%
+}
+
+body>section>section:nth-child(6)>img {
+    position: absolute;
+    top: 4.5rem;
+    left: -0.25rem;
+    width: 2.5rem;
+    height: 2.5rem
+}
+
+body>section>section:nth-child(6) h6 {
+    width: 100%;
+    font-size: 2rem;
+    font-weight: 900;
+    color: var(--col-brand-9);
+    opacity: .9
+}
+
+body>section>section:nth-child(6)>section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    width: 100%
+}
+
+@media screen and (min-width: 640px) {
+    body>section>section:nth-child(6)>section {
+        gap: 0
+    }
+}
+
+body>section>section:nth-child(6)>section div {
+    position: relative;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem;
+    width: 100%;
+    max-width: 440px;
+    background-color: #fff;
+    border-radius: 1rem;
+    box-shadow: 0 .375rem .75rem rgba(0, 0, 0, .05)
+}
+
+@media screen and (min-width: 640px) {
+    body>section>section:nth-child(6)>section div {
+        width: 33.3333333333%;
+        max-width: 100%
+    }
+
+    body>section>section:nth-child(6)>section div:nth-child(2) {
+        z-index: 1;
+        padding: 4rem 2rem;
+        box-shadow: 0 .375rem 1rem rgba(0, 0, 0, .07)
+    }
+}
+
+body>section>section:nth-child(6)>section div i {
+    font-size: 3rem;
+    color: var(--col-brand-4);
+    background: linear-gradient(to left bottom, var(--col-brand-3), var(--col-brand-7));
+    background-size: 200%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: rgba(0, 0, 0, 0);
+    animation: linear-move 2s linear infinite
+}
+
+body>section>section:nth-child(6)>section div h6 {
+    font-size: 1.25rem;
+    text-align: center;
+    color: var(--col-brand-4);
+    background: linear-gradient(to right bottom, var(--col-brand-3), var(--col-brand-7));
+    background-size: 200%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: rgba(0, 0, 0, 0);
+    animation: linear-move 2s linear infinite
+}
+
+body>section>section:nth-child(6)>section div p {
+    text-align: center;
+    color: var(--col-brand-9);
+    opacity: .6
+}
+
+body>section>section:nth-child(6)>section div span {
+    position: relative;
+    font-size: 2.25rem;
+    font-weight: 900;
+    color: var(--col-brand-9)
+}
+
+body>section>section:nth-child(6)>section div span::before {
+    content: "$";
+    position: absolute;
+    top: .5rem;
+    left: -1rem;
+    font-size: .875rem;
+    font-weight: 900;
+    color: var(--col-brand-9)
+}
+
+body>section>section:nth-child(6)>section div span b {
+    margin-right: .5rem;
+    font-size: 1rem;
+    color: var(--col-brand-9)
+}
+
+body>section>section:nth-child(6)>section div a,
+body>section>section:nth-child(6)>section div button {
+    padding: 0 2rem;
+    line-height: 2.5rem;
+    font-weight: 600;
+    background-color: var(--col-error-5);
+    color: #fff;
+    border-radius: 1.25rem
+}
+
+body>section>section:nth-child(6) ul:nth-last-child(1) {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: -1rem;
+    width: 100%
+}
+
+body>section>section:nth-child(6) ul:nth-last-child(1) li {
+    width: .25rem;
+    height: .25rem;
+    background-color: var(--col-brand-9);
+    border-radius: .125rem;
+    opacity: .1
+}
+
+body>section>section:nth-child(6) ul:nth-last-child(1) li.sel {
+    width: 1rem;
+    background-color: var(--col-brand-5);
+    opacity: 1
+}
+
+body>section>section:nth-child(7) {
+    position: relative;
+    display: flex;
+    flex-flow: row wrap;
+    gap: 3rem;
+    width: 100%
+}
+
+body>section>section:nth-child(7)>img {
+    position: absolute;
+    top: 4.5rem;
+    left: -0.25rem;
+    width: 2.5rem;
+    height: 2.5rem
+}
+
+body>section>section:nth-child(7) h6 {
+    width: 100%;
+    font-size: 2rem;
+    font-weight: 900;
+    color: var(--col-brand-9);
+    opacity: .9
+}
+
+body>section>section:nth-child(7)>section {
+    position: relative;
+    width: 100%
+}
+
+body>section>section:nth-child(7)>section>section {
+    display: flex;
+    flex-flow: row;
+    width: 100%;
+    overflow: hidden;
+    filter: drop-shadow(0 0.375rem 0.75rem rgba(0, 0, 0, 0.05));
+    -webkit-filter: drop-shadow(0 0.375rem 0.75rem rgba(0, 0, 0, 0.05))
+}
+
+body>section>section:nth-child(7)>section>section div {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    flex-shrink: 0;
+    width: 100%
+}
+
+@media screen and (min-width: 800px) {
+    body>section>section:nth-child(7)>section>section div {
+        padding: 0 20%
+    }
+}
+
+body>section>section:nth-child(7)>section>section div img {
+    object-fit: cover;
+    width: 7rem;
+    height: 7rem;
+    border-radius: 50%
+}
+
+body>section>section:nth-child(7)>section>section div h6 {
+    margin-top: .5rem;
+    line-height: 1.5rem;
+    text-align: center;
+    font-size: 1.125rem
+}
+
+body>section>section:nth-child(7)>section>section div i {
+    line-height: 1.5rem;
+    text-align: center;
+    font-size: .75rem;
+    font-style: normal;
+    color: var(--col-brand-9);
+    opacity: .6
+}
+
+body>section>section:nth-child(7)>section>section div p {
+    margin-top: 1.5rem;
+    padding: 1.5rem;
+    width: 100%;
+    max-width: 440px;
+    line-height: 1.5rem;
+    text-align: center;
+    background-color: #fff;
+    color: var(--col-brand-9);
+    border-radius: 1rem;
+    overflow: hidden
+}
+
+body>section>section:nth-child(7)>section>a,
+body>section>section:nth-child(7)>section>button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 2rem;
+    line-height: 3rem;
+    height: 3rem;
+    font-size: 2rem;
+    color: var(--col-brand-9)
+}
+
+body>section>section:nth-child(7)>section>a:nth-last-child(2),
+body>section>section:nth-child(7)>section>button:nth-last-child(2) {
+    left: -1rem;
+    text-align: left
+}
+
+body>section>section:nth-child(7)>section>a:nth-last-child(1),
+body>section>section:nth-child(7)>section>button:nth-last-child(1) {
+    right: -1rem;
+    text-align: right
+}
+
+body>section>section:nth-child(7) ul:nth-last-child(1) {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: -1rem;
+    width: 100%
+}
+
+body>section>section:nth-child(7) ul:nth-last-child(1) li {
+    width: .25rem;
+    height: .25rem;
+    background-color: var(--col-brand-9);
+    border-radius: .125rem;
+    opacity: .1
+}
+
+body>section>section:nth-child(7) ul:nth-last-child(1) li.sel {
+    width: 1rem;
+    background-color: var(--col-brand-5);
+    opacity: 1
+}
+
+body>section>section:nth-child(8) {
+    position: relative;
+    display: flex;
+    flex-flow: row wrap;
+    gap: 3rem;
+    width: 100%
+}
+
+body>section>section:nth-child(8)>img {
+    position: absolute;
+    top: 4.5rem;
+    left: -0.25rem;
+    width: 2.5rem;
+    height: 2.5rem
+}
+
+body>section>section:nth-child(8) h6 {
+    width: 100%;
+    font-size: 2rem;
+    font-weight: 900;
+    color: var(--col-brand-9);
+    opacity: .9
+}
+
+body>section>section:nth-child(8)>section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem
+}
+
+@media screen and (min-width: 640px) {
+    body>section>section:nth-child(8)>section {
+        gap: 3rem
+    }
+}
+
+body>section>section:nth-child(8)>section>section {
+    width: 100%;
+    max-width: 440px
+}
+
+@media screen and (min-width: 640px) {
+    body>section>section:nth-child(8)>section>section {
+        max-width: 100%
+    }
+
+    body>section>section:nth-child(8)>section>section:nth-child(1) {
+        width: calc(30% - 3rem)
+    }
+
+    body>section>section:nth-child(8)>section>section:nth-child(2) {
+        width: 70%
+    }
+}
+
+body>section>section:nth-child(8)>section>section b {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: var(--col-brand-9)
+}
+
+body>section>section:nth-child(8)>section>section p {
+    color: var(--col-brand-9);
+    opacity: .75
+}
+
+body>section>section:nth-child(8)>section>section form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem
+}
+
+body>section>section:nth-child(8)>section>section form input,
+body>section>section:nth-child(8)>section>section form textarea {
+    padding: 1rem 1.5rem;
+    width: 100%;
+    line-height: 2rem;
+    background-color: #fff;
+    resize: none;
+    box-shadow: 0 .375rem .75rem rgba(0, 0, 0, .05)
+}
+
+body>section>section:nth-child(8)>section>section form input:nth-child(1),
+body>section>section:nth-child(8)>section>section form textarea:nth-child(1) {
+    border-radius: 1rem 1rem .25rem .25rem
+}
+
+body>section>section:nth-child(8)>section>section form input:nth-child(2),
+body>section>section:nth-child(8)>section>section form input:nth-child(3),
+body>section>section:nth-child(8)>section>section form textarea:nth-child(2),
+body>section>section:nth-child(8)>section>section form textarea:nth-child(3) {
+    border-radius: .25rem
+}
+
+body>section>section:nth-child(8)>section>section form input:nth-child(4),
+body>section>section:nth-child(8)>section>section form textarea:nth-child(4) {
+    border-radius: .25rem .25rem 1rem 1rem;
+    height: 12rem
+}
+
+@media screen and (min-width: 480px) {
+
+    body>section>section:nth-child(8)>section>section form input.r2,
+    body>section>section:nth-child(8)>section>section form textarea.r2 {
+        width: calc((100% - 1rem)/2)
+    }
+
+    body>section>section:nth-child(8)>section>section form input:nth-child(1),
+    body>section>section:nth-child(8)>section>section form textarea:nth-child(1) {
+        border-radius: 1rem .25rem .25rem .25rem
+    }
+
+    body>section>section:nth-child(8)>section>section form input:nth-child(2),
+    body>section>section:nth-child(8)>section>section form textarea:nth-child(2) {
+        border-radius: .25rem 1rem .25rem .25rem
+    }
+}
+
+body>section>section:nth-child(8)>section>section>a,
+body>section>section:nth-child(8)>section>section>button {
+    display: inline-block;
+    margin-top: 1.5rem;
+    padding: 0 2rem;
+    line-height: 2.5rem;
+    font-weight: 600;
+    background-color: var(--col-error-5);
+    color: #fff;
+    border-radius: 1.25rem
+}
+
+@keyframes linear-move {
+    0% {
+        background-position: 0%
+    }
+
+    50% {
+        background-position: 100%
+    }
+
+    100% {
+        background-position: 0%
+    }
+}
+
+#copy {
+    position: absolute;
+    top: -100vh;
+    left: -100vw;
+    opacity: 0
+}

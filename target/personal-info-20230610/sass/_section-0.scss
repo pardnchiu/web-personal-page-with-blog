@@ -1,0 +1,108 @@
+&:nth-child(1) {
+    position: relative;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: calc(100vh - var(--safe-top) - var(--safe-bottom));
+    background-image: url("../image/section-0.svg");
+    background-size: 100%;
+    background-position: center;
+
+    img {
+        object-fit: cover;
+        width: 8rem;
+        height: 8rem;
+        background-color: var(--col-brand-2);
+        border-radius: 50%;
+        box-shadow: 0 0.375rem 0.75rem rgba(0, 0, 0, 0.05);
+    }
+
+    h1 {
+        margin-top: 1rem;
+        text-align: center;
+        font-size: 2rem;
+        font-weight: 900;
+        color: var(--col-brand-9);
+        opacity: 0.9;
+    }
+
+    p {
+        margin-top: 0.25rem;
+        font-weight: 500;
+        color: var(--col-brand-9);
+        opacity: 0.6;
+    }
+
+    ul {
+        display: flex;
+        flex-flow: row nowrap;
+        margin-top: 1.5rem;
+        gap: 1rem;
+
+        li {
+
+            a i {
+                font-size: 1.5rem;
+                color: var(--col-brand-9);
+                opacity: 0.9;
+            }
+        }
+    }
+
+    >a,
+    >button {
+        margin-top: 1.5rem;
+        padding: 0 2rem;
+        line-height: 2.5rem;
+        font-weight: 600;
+        background-color: var(--col-error-5);
+        color: #fff;
+        border-radius: 1.25rem;
+    }
+
+    span {
+        position: absolute;
+        bottom: 3.75rem;
+        font-size: 0.75rem;
+        font-weight: 600;
+        color: var(--col-brand-7);
+
+        &::before {
+            content: "";
+            position: absolute;
+            left: 50%;
+            bottom: -2.5rem;
+            transform: translateX(-50%);
+            width: 1rem;
+            height: 1.5rem;
+            border-radius: 0.75rem;
+            border: 3px solid var(--col-brand-9);
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+            left: 50%;
+            bottom: -1.5rem;
+            transform: translateX(-50%);
+            width: 0.25rem;
+            height: 0.25rem;
+            background-color: var(--col-brand-9);
+            border-radius: 50%;
+            animation: mouse-animate 1.5s linear infinite;
+        }
+
+        @keyframes mouse-animate {
+
+            0% {
+                bottom: -1.5rem;
+            }
+
+            70% {
+                bottom: -2rem;
+            }
+        }
+    }
+}
